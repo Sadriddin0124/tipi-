@@ -11,41 +11,41 @@
   },
   "hover": {
     "title1": "About TIPI",
-    "title2": "History of TIPI",
+    "title2": "TIPI History",
     "title3": "Mission and Vision",
     "title4": "Accreditation, Recognition, Ranking, Membership",
     "title5": "Regulations and Legal Documents",
     "title6": "Strategic Plan",
     "title7": "Administration",
     "title8": "Rector",
-    "title_in1": "Members of the Academic Council",
+    "title_in1": "Academic Council Members",
     "title_in2": "Rectorate",
     "title_in3": "Educators",
     "title_in4": "Documents",
-    "title_in5": "Documents of the Institute's Executive Council",
+    "title_in5": "Institute Executive Council Documents",
     "title_in6": "About the Rector",
     "title_in7": "Message from the Rector",
     "title_in8": "Rector Online"
   },
   "hero": {
-    "title": "Register Online Now",
+    "title": "Register online now",
     "btn": "Register"
   },
-  "campus": "Campus Life",
   "statistics": {
     "item1": "Students",
     "item2": "Teachers",
-    "item3": "Grants"
+    "item3": "Billion-Value Grants"
   },
+  "campus": "Campus Life",
   "news": {
     "title": "News",
     "date": "November 7, 2024",
-    "desc": "As part of the European Union project, our university was visited by Evgeni Raychev, a representative of Varna University of Economics, Bulgaria..."
+    "desc": "Evgeni Raychev, a representative of Varna University of Economics in Bulgaria, visited our university as part of the EU project..."
   },
   "pedagogue": {
-    "title": "Teachers",
-    "title1": "Islom Rustamov Bunyodovich",
-    "desc1": "Doctor of Philological Sciences (DSc), Professor",
+    "title": "Educators",
+    "title1": "Islam Rustamov Bunyodovich",
+    "desc1": "Doctor of Philology (DSc), Professor",
     "btn": "Learn More"
   },
   "events": {
@@ -54,7 +54,7 @@
   "contact": {
     "title": "Contact Us",
     "num_t": "Phone Number",
-    "mail_t": "E-mail",
+    "mail_t": "Email",
     "address_t": "Address",
     "address_v": "Feruza St., Chirchiq, Tashkent Region",
     "title1": "Send a Message",
@@ -64,19 +64,19 @@
     "btn": "Send"
   },
   "footer": {
-    "logo": "Tashkent Institute of Economics and Pedagogy",
+    "logo": "TASHKENT INSTITUTE OF ECONOMICS AND PEDAGOGY",
     "address": "Tashkent, Chirchiq City, Metallurgchilar Street 13",
-    "phone": "Tel: +998 99 999 99 99",
-    "mail": "E-mail: tipiuniversity@mail.uz",
+    "phone": "Phone: +998 99 999 99 99",
+    "mail": "Email: tipiuniversity@mail.uz",
     "link1": "Contacts",
     "link2": "About Us",
     "link3": "Events",
     "link4": "Departments",
     "link5": "Scientific Potential",
     "link6": "Talented Students",
-    "link7": "Education Sphere",
+    "link7": "Field of Education",
     "link8": "Campus",
-    "link9": "Registration",
+    "link9": "Register",
     "link10": "Exchange Program",
     "link11": "News"
   },

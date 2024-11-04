@@ -20,9 +20,9 @@ const Pedagogue = () => {
             {
                 data?.map((item,index)=> {
                     return <div key={index} className='shadow-md rounded-[10px] overflow-hidden'>
-                        <Image src={item?.img} alt={item?.name} width={350} height={300}/>
+                        <Image src={item?.img} alt={item?.name} width={350} height={300} className='w-full'/>
                         <div className='p-5 flex flex-col items-start gap-[10px]'>
-                            <h5 className='text-[20px] font-[600] max-w-[160px]'>{item?.name}</h5>
+                            <h5 className='text-[20px] font-[600] lg:max-w-[160px]'>{item?.name}</h5>
                             <p className='text_main text-[18px] font-[600]'>{item?.desc}</p>
                             <button className='bg-white self-end hover:text-white px-6 py-3 rounded-lg border-2 hover:border-transparent border-[#404B7C] ease-linear duration-200 hover:bg-[#404B7C] bg-transparent text-[#404B7C]'>{t("pedagogue.btn")}</button>
                         </div>

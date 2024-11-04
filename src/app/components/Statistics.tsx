@@ -13,7 +13,7 @@ const Statistics = () => {
         {title: "", count: 0, icon: "", start: 0, plus: false, increase: 0, price: ""},
         {title: t("statistics.item2"), count: 400, icon: Statistics2, start: 0, plus: true, increase: 3, price: ""}, 
         {title: "", count: 0, icon: "", start: 0, plus: false, increase: 0, price: ""},
-        {title: t("statistics.item3"), count: 1000000000, icon: Statistics3, start: 0, plus: false, increase: 5000000, price: "milliardlik"},
+        {title: t("statistics.item3"), count: 1000000000, icon: Statistics3, start: 0, plus: false, increase: 5000000, price: ""},
     ]
   return (
     <section className='w-full flex justify-center pt-12 sm:pt-[150px] pb-10 sm:pb-[100px] px-3'>

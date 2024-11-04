@@ -13,6 +13,7 @@ import { LangType } from "../types/all.types";
 import HoverComponent from "./HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
+import Cookies from "js-cookie"
 const Navbar = () => {
   const t = useTranslations(); // Use the translation hook here
   const navLink: NavLinkType[] = [
@@ -48,7 +49,7 @@ const Navbar = () => {
 
   const SwitchLang = (value: string) => {
     const lang = sessionStorage.getItem("lang");
-    let path = pathname.split(`/${activeLang.value}`).slice(1).join("");
+    let path = pathname.split(`/${cookieValue}`).slice(1).join("");
     if (lang) {
       path = lang;
     }
@@ -68,6 +69,7 @@ const Navbar = () => {
     const path = pathname.split(`/${activeLang?.value}`).slice(1).join("");
     sessionStorage.setItem("lang", path);
   };
+  const [cookieValue, setCookieValue] = useState<string | null>(null);
   useEffect(() => {
     const language = sessionStorage.getItem("language");
     if (language) {
@@ -75,7 +77,10 @@ const Navbar = () => {
     } else {
       setActiveLang(languages[1]);
     }
-  }, []);
+        const item = Cookies.get('NEXT_LOCALE');
+        setCookieValue(item || 'No cookie found');
+        console.log(item);
+  }, [cookieValue]);
   const [appBar, setAppBar] = useState(false)
   return (
     <nav className="flex justify-center px-3 bg-white">
