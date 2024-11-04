@@ -61,27 +61,20 @@ ${name}
     const focusNumber = () => {
         setNumber("+998")
     }
-    
-    function changeNumber(e: ChangeEvent<HTMLInputElement>) {
-        // Agar raqam boshida "+" bo'lmasa, uni qo'shing
-        let number = e.target.value
-        if (!number.startsWith("+")) {
-            number = "+998" + number; // assume it's missing the country code
-        }
-        
-        // Faqat raqamlarni qoldirish
-        setNumber(number.replace(/\D/g, ""))
-    
-        // Raqam uzunligini tekshirish va formatlash
-        if (number.length === 12) { // to'liq format, 998 bilan
-            return number.replace(/(\d{3})(\d{2})(\d{3})(\d{2})(\d{2})/, "+$1 $2 $3 $4 $5");
-        } else if (number.length === 9) { // mahalliy format, 998siz
-            return "+998 " + number.replace(/(\d{2})(\d{3})(\d{2})(\d{2})/, "$1 $2 $3 $4");
-        } else {
-            return "Noto'g'ri raqam formati";
-        }
-    }
-    
+    const handleChange = (value: string) => {
+        setNumber(value    );
+
+    };
+    const contactStyle = {
+        fontWeight: 600,
+        fontSize: "16px",
+        padding: '1.5rem', 
+        paddingLeft: "3rem",
+        color: '#404B7C',
+        maxWidth: '350px',
+        width: '100%',
+        height: "74px",
+    };
   return (
     <section className='w-full flex justify-center px-3 py-[100px]'>
         <div className={`${notify ? "right-3" : "right-[-400px] opacity-0"}  ease-linear duration-300 w-full max-w-[300px] p-4 flex cursor-pointer gap-4 items-center fixed z-[30] top-3 text-white shadow-gray-500 shadow-md bg-green-500`}>
@@ -108,7 +101,9 @@ ${name}
                     <h3 className='text-[24px] font-[600] text_main'>{t("contact.title1")}</h3>
                     <div className='flex gap-[12px] w-full'>
                         <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='contact font-[600] p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] max-w-[350px] w-full' placeholder={t("contact.name_placeholder")}/>
-                        <input value={number} onFocus={focusNumber} onChange={changeNumber} type="text" className='contact font-[600] p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] max-w-[350px] w-full' placeholder={t("contact.phone_placeholder")}/>
+                        <div className='contact font-[600] overflow-hidden rounded-[10px] border text-[#404B7C] border-[#404B7C] max-w-[350px] w-full'>
+                            <PhoneInput country={'uz'} value={number} onChange={handleChange} inputStyle={contactStyle} placeholder={t("contact.phone_placeholder")}/>
+                        </div>
                     </div>
                     <textarea value={message} onChange={(e)=>setMessage(e.target.value)} className='contact font-[600] p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] w-full resize-none h-[134px]' placeholder={t("contact.message_placeholder")}></textarea>
                     <button type='submit' className='bg-white self-end hover:text-white px-6 py-3 rounded-lg border-2 hover:border-transparent border-[#404B7C] ease-linear duration-200 hover:bg-[#404B7C] bg-transparent text-[#404B7C]'>{t("contact.btn")}</button>

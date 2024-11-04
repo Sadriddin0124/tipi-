@@ -9,6 +9,24 @@
     "link6": "ARM (kutubxona)",
     "link7": "Bog‘lanish"
   },
+  "hover": {
+    "title1": "TIPI haqida",
+    "title2": "TIPI tarixi",
+    "title3": "Missiya va ko`rish",
+    "title4": "Akkreditatsiya, Tan olish, Reyting, Azolik",
+    "title5": "Qoidalar va qonunosti hujjatlari",
+    "title6": "Strategig reja ",
+    "title7": "Administratsiya",
+    "title8": "Rektor",
+    "title_in1": "Ilmiy kengash a`zolari",
+    "title_in2": "Rektorat",
+    "title_in3": "Pedagoklar",
+    "title_in4": "Hujatlari",
+    "title_in5": "Institut ijoriya kengashi hujatlari",
+    "title_in6": "Rektor haqida",
+    "title_in7": "Rektor xabari",
+    "title_in8": "Rektor online"
+  },
   "hero": {
     "title": "Hoziroq online ro'yxatdan o`tish",
     "btn": "Ro'yxatdan o'tish"
