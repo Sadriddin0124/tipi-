@@ -56,6 +56,9 @@ ${name}
             return () => clearTimeout(timer); 
         }
     }, [notify]);
+    const focusNumber = () => {
+        setNumber("+998")
+    }
   return (
     <section className='w-full flex justify-center px-3 py-[100px]'>
         <div className={`${notify ? "right-3" : "right-[-400px] opacity-0"}  ease-linear duration-300 w-full max-w-[300px] p-4 flex cursor-pointer gap-4 items-center fixed z-[30] top-3 text-white shadow-gray-500 shadow-md bg-green-500`}>
@@ -82,10 +85,10 @@ ${name}
                     <h3 className='text-[24px] font-[600] text_main'>{t("contact.title1")}</h3>
                     <div className='flex gap-[12px] w-full'>
                         <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='contact font-[600] p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] max-w-[350px] w-full' placeholder={t("contact.name_placeholder")}/>
-                        <input value={number} onChange={(e)=>setNumber(e.target.value)} type="text" className='contact font-[600] p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] max-w-[350px] w-full' placeholder={t("contact.phone_placeholder")}/>
+                        <input value={number} onFocus={focusNumber} onChange={(e)=>setNumber(e.target.value)} type="text" className='contact font-[600] p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] max-w-[350px] w-full' placeholder={t("contact.phone_placeholder")}/>
                     </div>
                     <textarea value={message} onChange={(e)=>setMessage(e.target.value)} className='contact font-[600] p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] w-full resize-none h-[134px]' placeholder={t("contact.message_placeholder")}></textarea>
-                    <button type='submit' className='text-[24px] bg_main font-[600] px-6 py-5 self-end text-white rounded-[10px] border-4 border-transparent hover:border-[#404B7C] ease-linear duration-200 hover:bg-transparent hover:text-[#404B7C]'>{t("contact.btn")}</button>
+                    <button type='submit' className='bg-white self-end hover:text-white px-6 py-3 rounded-lg border-2 hover:border-transparent border-[#404B7C] ease-linear duration-200 hover:bg-[#404B7C] bg-transparent text-[#404B7C]'>{t("contact.btn")}</button>
                 </form>
             </div>
         </div>
