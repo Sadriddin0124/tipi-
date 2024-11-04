@@ -1,11 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
+import { formatWithSpaces } from '../lib/utils';
 
 interface CounterProps {
   end: number;
+  start: number;
+  increase: number;
+  plus: boolean;
 }
 
-const Counter = ({ end }: CounterProps) => {
-  const [counter, setCounter] = useState(100);
+const Counter = ({ end, start, increase, plus }: CounterProps) => {
+  const [counter, setCounter] = useState(start);
   const sectionRef = useRef<HTMLDivElement | null>(null); // Div element uchun tip
   const intervalRef = useRef<NodeJS.Timeout | null>(null); // Interval uchun tip
 
@@ -19,9 +23,9 @@ const Counter = ({ end }: CounterProps) => {
                 if (intervalRef.current) clearInterval(intervalRef.current);
                 return end;
               }
-              return prev + 10;
+              return prev + increase;
             });
-          }, 0.001); 
+          }, 0.00000000001); 
         } else {
           if (intervalRef.current) clearInterval(intervalRef.current);
         }
@@ -38,10 +42,10 @@ const Counter = ({ end }: CounterProps) => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, [end]);
-
+  const formatter = formatWithSpaces(counter)
   return (
     <div ref={sectionRef} className='text_main text-[40px] font-[600]'>
-      {counter}+
+      {formatter}{plus ? "+" : ""}
     </div>
   );
 };
