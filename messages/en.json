@@ -60,5 +60,8 @@
     "link9": "Registration",
     "link10": "Exchange Program",
     "link11": "News"
+  },
+  "message": {
+    "success": "Message sent successfully!"
   }
 }

@@ -60,5 +60,8 @@
     "link9": "Ro`yxatdan o`tish",
     "link10": "Almashuv dasturi",
     "link11": "Yangiliklar"
+  },
+  "message": {
+    "success": "Xabar muvaffaqiyatli jo'natildi!"
   }
 }
