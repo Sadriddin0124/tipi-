@@ -45,7 +45,7 @@ const News = () => {
   return (
     <section className='py-[100px]'>
       <div className='max-w-[1320px] mx-auto'>
-        <h2 className='pl-[20px] text-[40px] font-[600] mb-[20px]'>{t('news.title')}</h2>
+        <h2 className='pl-[20px] text-[32px] md:text-[40px] font-[600] mb-[20px]'>{t('news.title')}</h2>
         <Carousel data={data}/>
       </div>
     </section>

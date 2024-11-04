@@ -71,9 +71,9 @@ const Footer = () => {
         },
     ]
   return (
-    <footer className='p-[58px] bg_main flex justify-start'>
-        <div className='flex justify-between max-w-[1100px] w-full'>
-            <div className='flex flex-col items-end'>
+    <footer className='py-[58px] px-3 sm:px-[58px] bg_main flex justify-start'>
+        <div className='flex justify-between flex-wrap gap-8 md:flex-nowrap max-w-[1100px] w-full'>
+            <div className='flex flex-col items-start sm:items-end'>
                 <div className='max-w-[394px] flex gap-4 items-start'>
                     <Image src={Logo} alt='Logo' width={100} height={100}/>
                     <span className='max-w-[280px] font-bold text-white'>{t("footer.logo")}</span>
@@ -91,7 +91,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-between max-w-[460px] w-full'>
+            <div className='flex justify-start sm:justify-between gap-5 flex-wrap max-w-[460px] w-full'>
                 <div className='text-[20px] font-[400] flex flex-col gap-5 text-white'>
                     {
                         links1?.map((item,index)=> {

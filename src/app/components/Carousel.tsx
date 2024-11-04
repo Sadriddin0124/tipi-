@@ -14,6 +14,32 @@ const Carousel = ({data}: {data: NewsType[]}) => {
         autoplay: true,
         speed: 500,
         autoplaySpeed: 2000,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
       };
   return (
     <Slider {...settings}>
@@ -25,7 +51,7 @@ const Carousel = ({data}: {data: NewsType[]}) => {
                         </div>
                         <div className='pt-[26px] px-[18px] pb-[40px] text_main flex flex-col gap-4 ease-linear duration-200 hover:text-white hover:bg-[#404B7C]'>
                             <span className='text-[20px] font-[600]'>{item?.date}</span>
-                            <p className='text-[17px] font-[600] text-center'>{item?.desc}</p>
+                            <p className='text-[17px] font-[600] text-center leading-5'>{item?.desc}</p>
                         </div>
                     </div>
                 </div>

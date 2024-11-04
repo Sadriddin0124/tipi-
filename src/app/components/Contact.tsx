@@ -71,7 +71,6 @@ ${name}
         padding: '1.5rem', 
         paddingLeft: "3rem",
         color: '#404B7C',
-        maxWidth: '350px',
         width: '100%',
         height: "74px",
     };
@@ -82,16 +81,16 @@ ${name}
             <IoCloseSharp size={24} onClick={()=>setNotify(false)}/>
         </div>
         <div className='max-w-[1133px] w-full flex flex-col gap-10 items-center'>
-            <h2 className='text-[40px] font-[600]'>{t("contact.title")}</h2>
-            <div className='flex gap-4 justify-between w-full'>
-                <div className='flex flex-col gap-5'>
+            <h2 className='text-[32px] md:text-[40px] font-[600]'>{t("contact.title")}</h2>
+            <div className='flex flex-col-reverse md:flex-row gap-4 justify-between w-full'>
+                <div className='grid sm:grid-cols-2 md:flex flex-col gap-5'>
                     {
                         data?.map((item,index)=> {
-                            return <div key={index} className='bg_main p-6 max-w-[328px] w-full flex items-center gap-7'>
+                            return <div key={index} className={`bg_main p-6 md:max-w-[328px] w-full flex items-center gap-5 lg:gap-7 ${index === 2 ? "sm:col-span-2" : ""}`}>
                                 <span className='text_main bg-white p-3 rounded-full'>{item?.icon}</span>
-                                <div className='flex flex-col text-white text-[20px] font-[600] gap-[14px]'>
+                                <div className='flex flex-col text-white text-[16px] lg:text-[20px] font-[600] gap-[14px]'>
                                     <span>{item?.title}</span>
-                                    <a href="">{item?.value}</a>
+                                    <a href="" className={index === 0 ? 'whitespace-nowrap' : ""}>{item?.value}</a>
                                 </div>
                             </div>
                         })
@@ -99,9 +98,9 @@ ${name}
                 </div>
                 <form className='max-w-[714px] w-full flex flex-col items-start gap-5' onSubmit={handleSubmit}>
                     <h3 className='text-[24px] font-[600] text_main'>{t("contact.title1")}</h3>
-                    <div className='flex gap-[12px] w-full'>
-                        <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='contact font-[600] p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] max-w-[350px] w-full' placeholder={t("contact.name_placeholder")}/>
-                        <div className='contact font-[600] overflow-hidden rounded-[10px] border text-[#404B7C] border-[#404B7C] max-w-[350px] w-full'>
+                    <div className='flex flex-col sm:flex-row gap-[12px] w-full'>
+                        <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='contact font-[600] p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] sm:max-w-[350px] w-full' placeholder={t("contact.name_placeholder")}/>
+                        <div className='contact font-[600] overflow-hidden rounded-[10px] border text-[#404B7C] border-[#404B7C] sm:max-w-[350px] w-full'>
                             <PhoneInput country={'uz'} value={number} onChange={handleChange} inputStyle={contactStyle} placeholder={t("contact.phone_placeholder")}/>
                         </div>
                     </div>
