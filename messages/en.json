@@ -9,6 +9,24 @@
     "link6": "Library (ARM)",
     "link7": "Contact"
   },
+  "hover": {
+    "title1": "About TIPI",
+    "title2": "History of TIPI",
+    "title3": "Mission and Vision",
+    "title4": "Accreditation, Recognition, Ranking, Membership",
+    "title5": "Regulations and Legal Documents",
+    "title6": "Strategic Plan",
+    "title7": "Administration",
+    "title8": "Rector",
+    "title_in1": "Members of the Academic Council",
+    "title_in2": "Rectorate",
+    "title_in3": "Educators",
+    "title_in4": "Documents",
+    "title_in5": "Documents of the Institute's Executive Council",
+    "title_in6": "About the Rector",
+    "title_in7": "Message from the Rector",
+    "title_in8": "Rector Online"
+  },
   "hero": {
     "title": "Register Online Now",
     "btn": "Register"
