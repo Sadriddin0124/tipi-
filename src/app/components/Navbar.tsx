@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { NavLinkType } from "../types/navbar.types";
 import Logo from "@/assets/logo.webp"
-import { CiGlobe } from "react-icons/ci";
 import UzFlag from "@/assets/uz.webp"
 import RuFlag from "@/assets/ru.webp"
 import EnFlag from "@/assets/en.webp"
@@ -43,8 +42,6 @@ const Navbar = () => {
     startTransition(() => {
       router.replace(`/${value}${path}`);
     });
-    console.log(`/${value}${path}`);
-    
   };
   const changeLang = (item: LangType) => {
     setActiveLang(item)
@@ -76,8 +73,9 @@ const Navbar = () => {
         <ul className="flex items-center gap-[20px]">
           {
             navLink?.map((item,index)=> {
-              return <li key={index} className="text-[20px]">
+              return <li key={index} className="text-[20px] relative group">
                 <Link href={item?.path}>{item?.label}</Link>
+                <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0 left-0"></span>
               </li>
             })
           }

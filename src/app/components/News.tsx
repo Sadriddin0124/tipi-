@@ -1,38 +1,43 @@
 "use client"
 import React from 'react'
-import Image1 from "@/assets/logo.webp"
+import News1 from "@/assets/news1.webp"
+import News2 from "@/assets/news2.webp"
+import News3 from "@/assets/news3.webp"
+import News4 from "@/assets/news4.webp"
+import News5 from "@/assets/news5.webp"
+import News6 from "@/assets/news6.webp"
 import { useTranslations } from 'next-intl';
 import Carousel from './Carousel';
 const News = () => {
     const t = useTranslations()
     const data = [
     {
-        img: Image1, 
+        img: News1, 
         date: t("news.date"),
         desc: t("news.desc")
     },
     {
-        img: Image1, 
+        img: News2, 
         date: t("news.date"),
         desc: t("news.desc")
     },
     {
-        img: Image1, 
+        img: News3, 
         date: t("news.date"),
         desc: t("news.desc")
     },
     {
-        img: Image1, 
+        img: News4, 
         date: t("news.date"),
         desc: t("news.desc")
     },
     {
-        img: Image1, 
+        img: News5, 
         date: t("news.date"),
         desc: t("news.desc")
     },
     {
-        img: Image1, 
+        img: News6, 
         date: t("news.date"),
         desc: t("news.desc")
     },

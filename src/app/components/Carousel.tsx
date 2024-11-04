@@ -21,7 +21,7 @@ const Carousel = ({data}: {data: NewsType[]}) => {
                 <div className='px-[10px] py-[30px]' key={index}>
                     <div key={index} className='rounded-[10px] overflow-hidden shadow-lg flex flex-col gap-[26px]'>
                         <div className='bg-[#D9D9D9] min-h-[200px] h-full flex justify-center items-center'>
-                            <Image src={item?.img} alt={`Slide ${index + 1}`} className='w-[144px] h-[144px]' width={500} height={400}/>
+                            <Image src={item?.img} alt={`Slide ${index + 1}`} className='w-full h-full object-cover min-h-[200px]' width={500} height={400}/>
                         </div>
                         <div className=' px-[18px] pb-[40px] text_main flex flex-col gap-4'>
                             <span className='text-[20px] font-[600]'>{item?.date}</span>
