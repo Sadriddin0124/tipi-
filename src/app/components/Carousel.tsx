@@ -7,7 +7,6 @@ import { NewsType } from '../types/all.types';
 
 const Carousel = ({data}: {data: NewsType[]}) => {
     const settings = {
-        // dots: true,
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,

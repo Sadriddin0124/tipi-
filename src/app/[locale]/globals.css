@@ -1,3 +1,4 @@
+@import 'aos/dist/aos.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -44,8 +45,6 @@
     z-index: 1;
 }
 
-
-
 .text_main {
     color: #404B7C;
 }
@@ -56,4 +55,9 @@
 
 .contact::placeholder {
     color: #404B7C;
+}
+
+.flag-dropdown  {
+    background: transparent !important;
+    border: none !important;
 }

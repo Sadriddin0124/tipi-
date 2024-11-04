@@ -11,6 +11,7 @@
   "dependencies": {
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
+    "aos": "^2.3.4",
     "axios": "^1.7.2",
     "isomorphic-unfetch": "^4.0.2",
     "js-cookie": "^3.0.5",
@@ -28,6 +29,7 @@
     "swiper": "^11.1.14"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",

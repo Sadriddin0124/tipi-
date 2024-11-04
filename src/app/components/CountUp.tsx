@@ -44,7 +44,7 @@ const Counter = ({ end, start, increase, plus }: CounterProps) => {
   }, [end]);
   const formatter = formatWithSpaces(counter)
   return (
-    <div ref={sectionRef} className='text_main text-[16px] whitespace-nowrap sm:text-[24px] lg:text-[40px] font-[600]'>
+    <div ref={sectionRef} className='text_main whitespace-nowrap text-[28px] lg:text-[40px] font-[600]'>
       {formatter}{plus ? "+" : ""}
     </div>
   );
