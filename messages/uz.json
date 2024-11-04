@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA INSTITUTI",
+    "link1": "Kontakt",
+    "link2": "Biz haqimizda",
+    "link3": "Tadbirlar",
+    "link4": "Bo`limlar",
+    "link5": "Ilmiy salohiyat",
+    "link6": "Iqtidorliy talabalar"
+  },
+  "hero": {
+    "title": "Hoziroq online ro'yxatdan o`tish",
+    "btn": "Ro'yxatdan o'tish"
+  },
+  "statistics": {
+    "item1": "Talabalar",
+    "item2": "O`qituvchilar",
+    "item3": "Grantlar"
+  },
+  "campus": "Kampus hayoti",
+  "news": {
+    "title": "Yangiliklar",
+    "date": "7 Noyabr, 2024",
+    "desc": "Yevropa ittifoqining loyihasi doirasida universitetimizga Bolgariyaning Varna Iqtisodiyot universiteti vakili Evgeni Raychev tashrif buyurdi..."
+  },
+  "pedagogue": {
+    "title": "Pedagoglar",
+    "title1": "Islom Rustamov Bunyodovich",
+    "desc1": "Filologiya fanlar doktori (DSc) professor",
+    "btn": "Batafsil"
+  },
+  "events": {
+    "title": "Tadbirlar"
+  },
+  "contact": {
+    "title": "Biz Bilan Bog`lanish",
+    "num_t": "Telefon raqam",
+    "mail_t": "E-mail",
+    "address_t": "Manzil",
+    "address_v": "Feruza k., Chirchiq, Toshkent viloyati",
+    "title1": "Xabar yuborish",
+    "name_placeholder": "Ismingiz",
+    "phone_placeholder": "Telefon Raqam",
+    "message_placeholder": "Xabar",
+    "btn": "Jo'natish"
+  },
+  "footer": {
+    "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA INSTITUTI",
+    "address": "Manzil: Feruza ko'chasi, Chirchiq, Toshkent Viloyati",
+    "phone": "Tel: +998 99 999 99 99",
+    "mail": "E-mail: tipiuniversity@mail.uz",
+    "link1": "Kontaktlar",
+    "link2": "Biz haqimizda",
+    "link3": "Tadbirlar",
+    "link4": "Bo`limlar",
+    "link5": "Ilmiy salohiyat",
+    "link6": "Iqtidorli talabalar",
+    "link7": "Talim sohasi",
+    "link8": "Kampus",
+    "link9": "Ro`yxatdan o`tish",
+    "link10": "Almashuv dasturi",
+    "link11": "Yangiliklar"
+  }
+}

@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Inter;
+    src: url("../../fonts/Inter/Inter_18pt-Regular.ttf"), format(truetype);;
+}
+
+* {
+    font-family: Inter, sans-serif;
+}
+
+.btn_gradient {
+    background: linear-gradient(270.05deg, #404B7C 34.74%, #5BA1D1 99.95%);
+}
+
+.btn_gradient:hover {
+    background: linear-gradient(270.05deg, #5BA1D1 34.74%, #404B7C 99.95%);
+}
+
+.text_main {
+    color: #404B7C;
+}
+
+.bg_main {
+    background: #404B7C;
+}
+
+.contact::placeholder {
+    color: #404B7C;
+}

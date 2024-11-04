@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "logo": "Tashkent Institute of Economics and Pedagogy",
+    "link1": "Contact",
+    "link2": "About Us",
+    "link3": "Events",
+    "link4": "Departments",
+    "link5": "Scientific Potential",
+    "link6": "Talented Students"
+  },
+  "hero": {
+    "title": "Register Online Now",
+    "btn": "Register"
+  },
+  "campus": "Campus Life",
+  "statistics": {
+    "item1": "Students",
+    "item2": "Teachers",
+    "item3": "Grants"
+  },
+  "news": {
+    "title": "News",
+    "date": "November 7, 2024",
+    "desc": "As part of the European Union project, our university was visited by Evgeni Raychev, a representative of Varna University of Economics, Bulgaria..."
+  },
+  "pedagogue": {
+    "title": "Teachers",
+    "title1": "Islom Rustamov Bunyodovich",
+    "desc1": "Doctor of Philological Sciences (DSc), Professor",
+    "btn": "Learn More"
+  },
+  "events": {
+    "title": "Events"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "num_t": "Phone Number",
+    "mail_t": "E-mail",
+    "address_t": "Address",
+    "address_v": "Feruza St., Chirchiq, Tashkent Region",
+    "title1": "Send a Message",
+    "name_placeholder": "Your Name",
+    "phone_placeholder": "Phone Number",
+    "message_placeholder": "Message",
+    "btn": "Send"
+  },
+  "footer": {
+    "logo": "Tashkent Institute of Economics and Pedagogy",
+    "address": "Address: Feruza St., Chirchiq, Tashkent Region",
+    "phone": "Tel: +998 99 999 99 99",
+    "mail": "E-mail: tipiuniversity@mail.uz",
+    "link1": "Contacts",
+    "link2": "About Us",
+    "link3": "Events",
+    "link4": "Departments",
+    "link5": "Scientific Potential",
+    "link6": "Talented Students",
+    "link7": "Education Sphere",
+    "link8": "Campus",
+    "link9": "Registration",
+    "link10": "Exchange Program",
+    "link11": "News"
+  }
+}
