@@ -13,12 +13,13 @@ import { LangType } from "../types/all.types";
 const Navbar = () => {
   const t = useTranslations(); // Use the translation hook here
   const navLink: NavLinkType[] = [
-    { id: 1, label: t("nav.link6"), path: "/" },
+    { id: 1, label: t("nav.link1"), path: "/" },
     { id: 2, label: t("nav.link2"), path: "/" },
     { id: 3, label: t("nav.link3"), path: "/" },
     { id: 4, label: t("nav.link4"), path: "/" },
     { id: 5, label: t("nav.link5"), path: "/" },
-    { id: 6, label: t("nav.link1"), path: "/" },
+    { id: 6, label: t("nav.link6"), path: "/" },
+    { id: 7, label: t("nav.link7"), path: "/" },
   ];
 
   //state for hover component
@@ -71,17 +72,17 @@ const Navbar = () => {
     <nav className="py-[25px] px-[60px] shadow-md flex items-center justify-between">
       <div className="flex items-center max-w-[400px] gap-[20px]">
         <Image src={Logo} alt="Logo"  width={100} height={100}/>
-        <span className="text-[20px] font-bold">{t('nav.logo')}</span>
+        <span className="text-[18px] font-bold">{t('nav.logo')}</span>
       </div>
-      <div className="flex items-center gap-[20px]">
-        <ul className="flex items-center gap-[20px]">
+      <div className="flex items-center gap-[15px]">
+        <ul className="flex items-center gap-[15px]">
           {
             navLink?.map((item,index)=> {
-              return <li key={index} className="text-[20px] relative group flex flex-col items-center" onMouseEnter={()=>setHoverStatus(item?.id)} onMouseLeave={()=>setHoverStatus(0)}>
+              return <li key={index} className="text-[18px] whitespace-nowrap relative group flex flex-col items-center" onMouseEnter={()=>setHoverStatus(item?.id)} onMouseLeave={()=>setHoverStatus(0)}>
                 <Link href={item?.path}>{item?.label}</Link>
                 <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0 left-0"></span>
                 {hoverStatus === item?.id && 
-                  <div className={`${item?.id === 4 || item?.id === 5 || item?.id === 6 ? "right-[-100px]" : ""} p-10 min-w-[940px] w-full min-h-[200px] bg-white shadow-md border absolute z-50 top-8 rounded-[10px]`}>
+                  <div className={`${item?.id === 5 || item?.id === 6 || item?.id === 7 ? "right-[-100px]" : item?.id === 1 ? "left-[-100px]" : ""} p-10 min-w-[940px] w-full min-h-[200px] bg-white shadow-md border absolute z-50 top-8 rounded-[10px]`}>
 
                   </div>
                 }

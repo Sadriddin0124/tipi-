@@ -15,8 +15,7 @@ const Hero = () => {
       <div className='h-[577px] w-[50%] relative z-20 flex justify-center items-center'>
         <Image src={HeroImgBlur} alt='Hero Image Blur' className='absolute z-[-1] w-auto h-[577px] top-0 left-0' width={500} height={400}/>
         <div className='flex flex-col gap-5 items-center'>
-            <h1 className='text-[40px] max-w-[320px] text-center'>{title}</h1>
-            <button className='p-6 btn_gradient flex items-center text-[24px] rounded-[10px] gap-3 text-white'>{btn}<FaArrowRightLong size={30}/></button>
+            <button className='btn_gradient text-[24px] rounded-[10px] gap-3 text-white'><span className='flex items-center p-5 gap-3'>{btn}<FaArrowRightLong size={30}/></span></button>
         </div>
       </div>
     </header>

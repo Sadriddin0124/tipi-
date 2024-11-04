@@ -74,7 +74,7 @@ const Footer = () => {
     <footer className='p-[58px] bg_main flex justify-start'>
         <div className='flex justify-between max-w-[1100px] w-full'>
             <div className='flex flex-col items-end'>
-                <div className='max-w-[394px] flex gap-4 items-center'>
+                <div className='max-w-[394px] flex gap-4 items-start'>
                     <Image src={Logo} alt='Logo' width={100} height={100}/>
                     <span className='max-w-[280px] font-bold text-white'>{t("footer.logo")}</span>
                 </div>

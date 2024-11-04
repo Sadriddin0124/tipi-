@@ -1,12 +1,13 @@
 {
   "nav": {
     "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA INSTITUTI",
-    "link1": "Kontakt",
-    "link2": "Biz haqimizda",
-    "link3": "Tadbirlar",
-    "link4": "Bo`limlar",
-    "link5": "Ilmiy salohiyat",
-    "link6": "Iqtidorliy talabalar"
+    "link1": " Institut haqida",
+    "link2": "Bo‘limlar",
+    "link3": "Fakultetlar",
+    "link4": "Yangiliklar",
+    "link5": "Interaktiv xizmatlar",
+    "link6": "ARM (kutubxona)",
+    "link7": "Bog‘lanish"
   },
   "hero": {
     "title": "Hoziroq online ro'yxatdan o`tish",

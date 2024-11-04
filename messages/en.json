@@ -1,12 +1,13 @@
 {
   "nav": {
-    "logo": "Tashkent Institute of Economics and Pedagogy",
-    "link1": "Contact",
-    "link2": "About Us",
-    "link3": "Events",
-    "link4": "Departments",
-    "link5": "Scientific Potential",
-    "link6": "Talented Students"
+    "logo": "TASHKENT INSTITUTE OF ECONOMICS AND PEDAGOGY",
+    "link1": "About the Institute",
+    "link2": "Departments",
+    "link3": "Faculties",
+    "link4": "News",
+    "link5": "Interactive Services",
+    "link6": "Library (ARM)",
+    "link7": "Contact"
   },
   "hero": {
     "title": "Register Online Now",
