@@ -134,19 +134,6 @@ const Navbar = () => {
         setCookieValue(cookiesValue || 'No cookie found');
   }, [cookieValue]);
   const [appBar, setAppBar] = useState(false)
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
-
-  const handleSelect = (value: string) => {
-    setSelectedOption(value);
-    console.log('Selected option:', value);
-  };
-
-  const options = [
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' },
-  ];
-  const [hoverActive,setHoverActive] = useState(false)
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
 
   const HoverEnter = (id: number | undefined) => {
@@ -156,14 +143,12 @@ const Navbar = () => {
       setTimer(null);
     }
     setHoverStatus(id);
-    setHoverActive(true);
   };
 
   const HoverLeave = (id: number | undefined) => {
     // Set a 3-second timer to close the hover component
     const newTimer = setTimeout(() => {
       setHoverStatus(0);
-      setHoverActive(false);
     }, 3000);
     setTimer(newTimer);
   };
@@ -173,12 +158,10 @@ const Navbar = () => {
       clearTimeout(timer);
       setTimer(null);
     }
-    setHoverActive(true);
   };
 
   const HoverComponentLeave = () => {
     setHoverStatus(0);
-    setHoverActive(false);
   };
   const [downLinks, setDownLinks] = useState<number>(0)
   const handleLinkDown = (id: number) => {

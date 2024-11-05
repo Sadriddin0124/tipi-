@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(()=> {
     setTimeout(() => {
       setLoader(false)
-    }, 500);
+    }, 2000);
   },[])
   return (
     <div className=' overflow-hidden'>
