@@ -329,7 +329,7 @@ const Navbar = () => {
             })}
           </ul>
         </div>
-        <div className="min-h-[100vh] w-[100%] absolute z-[-1] right-0 bg-red-300"  onClick={()=>setAppBar(false)}></div>
+        <div className="min-h-[100vh] w-[100%] absolute z-[-1] right-0"  onClick={()=>setAppBar(false)}></div>
       </div>
     </nav>
   );
