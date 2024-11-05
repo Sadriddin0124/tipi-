@@ -4,9 +4,10 @@ import { IoIosArrowForward } from "react-icons/io";
 interface PropsHover {
     id: number | undefined;
     hoverStatus: number | undefined;
-    setHoverStatus: Dispatch<SetStateAction<number | undefined>>;
+    HoverComponentEnter: (id: number | undefined)=> void;
+    HoverComponentLeave: (id: number | undefined)=> void;
 }
-const HoverComponent = ({id, hoverStatus, setHoverStatus}: PropsHover) => {
+const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLeave}: PropsHover) => {
   const t = useTranslations();
   const HoverElements = [
     {
@@ -61,15 +62,11 @@ const HoverComponent = ({id, hoverStatus, setHoverStatus}: PropsHover) => {
     setHoverElementActive(hoverElementActive === id ? 0 : id);
   };
   return (
-    <div
-      onMouseLeave={() => setHoverStatus(0)}
-      className={`${
-        id === 5 || id === 7
-          ? "right-[-100px]"
-          : id === 4 || id === 3 || id === 2
-          ? ""
-          : "left-[-100px] "
-      } p-10 min-w-[1040px] w-full min-h-[200px] gap-10 flex justify-between bg-white shadow-md border absolute z-50 top-8 rounded-[10px]`}
+    <div className={`${hoverStatus === id ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"} transform transition-all duration-300 linear origin-top fixed z-50 top-[158px] left-0 w-full h-[100vh] flex justify-center items-start`}>
+      <div
+      onMouseLeave={() => HoverComponentLeave(id)}
+      onMouseEnter={() => HoverComponentEnter(id)}
+      className={`p-10 max-w-[1040px] w-full h-auto gap-10 flex justify-between bg-white shadow-md border rounded-[10px]`}
     >
       <div className="flex flex-col">
         {/* Hover Elements */}
@@ -91,13 +88,7 @@ const HoverComponent = ({id, hoverStatus, setHoverStatus}: PropsHover) => {
                 <span className="max-w-[280px] w-full">{item?.value}</span>
               </div>
               {/* Hover elements Inside */}
-              <div
-                className={`${
-                  item?.id === hoverElementActive
-                    ? "h-auto flex flex-col pl-3"
-                    : "h-0 overflow-hidden"
-                } duration-300 ease-linear`}
-              >
+              <div className={`${ item?.id === hoverElementActive ? "scale-y-100 opacity-100 h-auto" : "scale-y-0 opacity-0 h-0" } transform transition-all duration-300 linear origin-top flex flex-col pl-3`}>
                 {HoverElementsIn?.map((item, index) => {
                   return (
                     <div
@@ -130,13 +121,7 @@ const HoverComponent = ({id, hoverStatus, setHoverStatus}: PropsHover) => {
           <span className="max-w-[280px] w-full">{t("hover.title7")}</span>
         </div>
         {/* Hover elements Inside */}
-        <div
-          className={`${
-            7 === hoverElementActive
-              ? "h-auto flex flex-col pl-3"
-              : "h-0 overflow-hidden"
-          } duration-300 ease-linear`}
-        >
+        <div className={`${ 7 === hoverElementActive ? "scale-y-100 opacity-100 h-auto" : "scale-y-0 opacity-0 h-0" } transform transition-all duration-300 linear origin-top flex flex-col pl-3`}>
           {HoverElementsIn?.map((item, index) => {
             return (
               <div
@@ -166,13 +151,7 @@ const HoverComponent = ({id, hoverStatus, setHoverStatus}: PropsHover) => {
           <span className="max-w-[280px] w-full">{t("hover.title8")}</span>
         </div>
         {/* Hover elements Inside */}
-        <div
-          className={`${
-            8 === hoverElementActive
-              ? "h-auto flex flex-col pl-3"
-              : "h-0 overflow-hidden"
-          } duration-300 ease-linear`}
-        >
+        <div className={`${ 8 === hoverElementActive ? "scale-y-100 opacity-100 h-auto" : "scale-y-0 opacity-0 h-0" } transform transition-all duration-300 linear origin-top flex flex-col pl-3`}>
           {HoverElementsIn?.map((item, index) => {
             return (
               <div
@@ -185,6 +164,7 @@ const HoverComponent = ({id, hoverStatus, setHoverStatus}: PropsHover) => {
             );
           })}
         </div>
+      </div>
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ const Pedagogue = () => {
       Aos.init({
           duration: 1000,
           once: true, 
-          easing: 'ease-in-out',
+          easing: 'linear',
       });
   }, []);
   return (

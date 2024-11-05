@@ -59,14 +59,11 @@ const Contact = () => {
             return () => clearTimeout(timer); 
         }
         Aos.init({
-            duration: 1000,
+            duration: 500,
             once: true, 
-            easing: 'ease-in-out',
+            easing: 'linear',
         });
     }, [notify]);
-    const focusNumber = () => {
-        setNumber("+998")
-    }
     const handleChange = (value: string) => {
         setNumber(value    );
 
@@ -82,18 +79,16 @@ const Contact = () => {
         height: "100%",
         border: "none"
     };
-    useEffect(() => {
-    }, []);
   return (
-    <section className='w-full flex justify-center px-3 pb-[100px] pt-2 lg:pt-[100px]' data-aos="fade-up">
+    <section className='w-full flex justify-center px-3 pb-[100px] pt-2 lg:pt-[100px]'>
         <div className={`${notify ? "right-3" : "right-[-400px] opacity-0"}  ease-linear duration-300 w-full max-w-[300px] p-4 flex cursor-pointer gap-4 items-center fixed z-[30] top-3 text-white shadow-gray-500 shadow-md bg-green-500`}>
             <span>{t("message.success")}</span>
             <IoCloseSharp size={24} onClick={()=>setNotify(false)}/>
         </div>
         <div className='max-w-[1133px] w-full flex flex-col gap-10 items-center'>
-            <h2 className='text-[32px] md:text-[40px] font-[600]'>{t("contact.title")}</h2>
+            <h2 className='text-[32px] md:text-[40px] font-[600]' data-aos="fade-up">{t("contact.title")}</h2>
             <div className='flex flex-col-reverse md:flex-row gap-4 justify-between w-full'>
-                <div className='grid sm:grid-cols-2 md:flex flex-col gap-3 sm:gap-5'>
+                <div className='grid sm:grid-cols-2 md:flex flex-col gap-3 sm:gap-5' data-aos="fade-up">
                     {
                         data?.map((item,index)=> {
                             return <div key={index} className={`bg_main rounded-[10px] p-6 md:max-w-[328px] w-full flex items-center gap-5 lg:gap-7 ${index === 2 ? "sm:col-span-2" : ""}`}>
@@ -106,7 +101,7 @@ const Contact = () => {
                         })
                     }
                 </div>
-                <form className='max-w-[714px] w-full flex flex-col items-start gap-5' onSubmit={handleSubmit}>
+                <form className='max-w-[714px] w-full flex flex-col items-start gap-5' onSubmit={handleSubmit} data-aos="fade-up">
                     <h3 className='text-[24px] font-[600] text_main'>{t("contact.title1")}</h3>
                     <div className='flex flex-col sm:flex-row gap-[12px] w-full'>
                         <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='contact font-[600] p-4 sm:p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] sm:max-w-[350px] w-full' placeholder={t("contact.name_placeholder")}/>
