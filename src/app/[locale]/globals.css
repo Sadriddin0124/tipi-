@@ -20,7 +20,7 @@
   cursor: pointer;
   overflow: hidden;
   background: linear-gradient(270.05deg, #404b7c 34.74%, #5ba1d1 99.95%);
-  transition: color 1.2s ease; /* For smooth color transition */
+  transition: color 1.2s ease;
 }
 
 .btn_gradient::after {
@@ -60,6 +60,11 @@
 .flag-dropdown {
   background: transparent !important;
   border: none !important;
+}
+
+.form-control {
+    border-radius: 10px !important;
+    border: 1px solid #404b7c;
 }
 
 /* Loader */
