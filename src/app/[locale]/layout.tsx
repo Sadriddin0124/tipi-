@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import React, { ReactNode } from 'react';
 import "./globals.css"
 import Navbar from '../components/Navbar';
+import Loader from '../components/ui/loader';
 interface RootLayoutProps {
     children: ReactNode;
     params: {
@@ -26,6 +27,7 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
             <body>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Navbar/>
+                    <Loader/>
                     {children}
                 </NextIntlClientProvider>
             </body>

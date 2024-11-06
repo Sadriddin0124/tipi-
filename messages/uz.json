@@ -1,13 +1,12 @@
 {
   "nav": {
     "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA INSTITUTI",
-    "link1": " Institut haqida",
-    "link2": "Bo‘limlar",
-    "link3": "Fakultetlar",
+    "link1": "Ilmiy yo'nalish",
+    "link2": "Fakultetlar",
+    "link3": "Institut haqida",
     "link4": "Yangiliklar",
-    "link5": "Interaktiv xizmatlar",
-    "link6": "ARM (kutubxona)",
-    "link7": "Bog‘lanish"
+    "link5": "Iqtidorli Talabalar",
+    "link6": "Bo'limlar"
   },
   "hover": {
     "title1": "TIPI haqida",

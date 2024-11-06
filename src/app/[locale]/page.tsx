@@ -1,4 +1,3 @@
-"use client"
 import Campus from '@/app/components/Campus'
 import Contact from '@/app/components/Contact'
 import Events from '@/app/components/Events'
@@ -10,17 +9,8 @@ import Statistics from '@/app/components/Statistics'
 import React, { useEffect, useState } from 'react'
 
 const Home = () => {
-  const [loader, setLoader] = useState<boolean>(true)
-  useEffect(()=> {
-    setTimeout(() => {
-      setLoader(false)
-    }, 2000);
-  },[])
   return (
     <div className=' overflow-hidden'>
-      {loader && <div className='fixed w-full min-h-screen flex items-center justify-center bg-black z-50 top-0'>
-        <span className="loader"></span>
-      </div>}
       <Hero/>
       <Statistics/>
       <Campus/>

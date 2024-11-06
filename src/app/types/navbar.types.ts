@@ -1,7 +1,7 @@
 export type Route = '/' | '/about' | '/contact';
 export interface NavLinkType {
     label: string;
-    path: Route;
+    path: string;
     id?: number;
     href?: string
 }
