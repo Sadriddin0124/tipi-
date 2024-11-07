@@ -1,13 +1,12 @@
 "use client"
 import axios from 'axios';
 import { useTranslations } from 'next-intl'
-import React, { ChangeEvent, ChangeEventHandler, FormEventHandler, useEffect, useState } from 'react'
+import React, { FormEventHandler, useEffect, useState } from 'react'
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoCloseSharp } from 'react-icons/io5';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Aos from 'aos';
-import 'aos/dist/aos.css';  
 const Contact = () => {
     const t = useTranslations()
     const data = [
@@ -53,14 +52,14 @@ const Contact = () => {
                 console.error('Xabar yuborishda xatolik:', error);
             }
         }
-        useEffect(() => {
+    useEffect(() => {
         if (notify) {
             const timer = setTimeout(() => setNotify(false), 5000);
             return () => clearTimeout(timer); 
         }
     }, [notify]);
     const handleChange = (value: string) => {
-        setNumber(value    );
+        setNumber(value);
 
     };
     const contactStyle = {
@@ -74,11 +73,14 @@ const Contact = () => {
         height: "100%",
         border: "none"
     };
-    Aos.init({
-        duration: 1000,
-        once: true, 
-        easing: 'linear',
-    });
+    
+    useEffect(()=> {
+        Aos.init({
+            duration: 1000,
+            once: true, 
+            easing: 'linear',
+        });
+    }, [])
   return (
     <section className='w-full flex justify-center px-3 pb-[100px] pt-2 lg:pt-[100px]'>
         <div className={`${notify ? "right-3" : "right-[-400px] opacity-0"}  ease-linear duration-300 w-full max-w-[300px] p-4 flex cursor-pointer gap-4 items-center fixed z-[30] top-3 text-white shadow-gray-500 shadow-md bg-green-500`}>
@@ -106,7 +108,7 @@ const Contact = () => {
                     <div className='flex flex-col sm:flex-row gap-[12px] w-full'>
                         <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='contact font-[600] p-4 sm:p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] sm:max-w-[350px] w-full' placeholder={t("contact.name_placeholder")} data-aos="fade-up"/>
                         <div className='contact font-[600] overflow-hidden flex items-center h-[58px] sm:h-[74px] rounded-[10px] border text-[#404B7C] border-[#404B7C] sm:max-w-[350px] w-full' data-aos="fade-up">
-                            <PhoneInput country={'uz'} value={number} onChange={handleChange} inputStyle={contactStyle} placeholder={t("contact.phone_placeholder")}/>
+                            <PhoneInput country={'uz'} value={number} onChange={handleChange} inputStyle={contactStyle} />
                         </div>
                     </div>
                     <textarea value={message} onChange={(e)=>setMessage(e.target.value)} className='contact font-[600] p-4 sm:p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] w-full resize-none h-[134px]' placeholder={t("contact.message_placeholder")} data-aos="fade-up"></textarea>

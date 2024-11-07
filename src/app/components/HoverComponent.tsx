@@ -1,170 +1,63 @@
 import { useTranslations } from "next-intl";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import { usePathname } from "next/navigation";
+import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
+import { HoverItemType } from "../types/all.types";
+import Link from "next/link";
 interface PropsHover {
     id: number | undefined;
     hoverStatus: number | undefined;
     HoverComponentEnter: (id: number | undefined)=> void;
     HoverComponentLeave: (id: number | undefined)=> void;
+    item1: HoverItemType[] | undefined;
+    item2: HoverItemType[] | undefined;
 }
-const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLeave}: PropsHover) => {
-  const t = useTranslations();
-  const HoverElements = [
-    {
-      id: 1,
-      value: t("hover.title1"),
-    },
-    {
-      id: 2,
-      value: t("hover.title2"),
-    },
-    {
-      id: 3,
-      value: t("hover.title3"),
-    },
-    {
-      id: 4,
-      value: t("hover.title4"),
-    },
-    {
-      id: 5,
-      value: t("hover.title5"),
-    },
-    {
-      id: 6,
-      value: t("hover.title6"),
-    },
-  ];
-  const HoverElementsIn = [
-    {
-      id: 1,
-      value: t("hover.title_in1"),
-    },
-    {
-      id: 2,
-      value: t("hover.title_in2"),
-    },
-    {
-      id: 3,
-      value: t("hover.title_in3"),
-    },
-    {
-      id: 4,
-      value: t("hover.title_in4"),
-    },
-    {
-      id: 5,
-      value: t("hover.title_in5"),
-    },
-  ];
+const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLeave, item1, item2}: PropsHover) => {
   const [hoverElementActive, setHoverElementActive] = useState(0);
+  const pathname = usePathname().length
+
   const openElement = (id: number) => {
     setHoverElementActive(hoverElementActive === id ? 0 : id);
   };
   return (
-    <div className={`${hoverStatus === id ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"} transform transition-all duration-300 linear origin-top fixed z-50 top-[150px] left-0 w-full h-[100vh] flex justify-center items-start`}>
+    <div className={`${hoverStatus === id ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"} ${pathname < 4 ? "top-[150px]" : "top-[190px]" } transform transition-all duration-300 linear origin-top fixed z-50 left-0 w-full h-[100vh] flex justify-center items-start`}>
       <div
       onMouseLeave={() => HoverComponentLeave(id)}
       onMouseEnter={() => HoverComponentEnter(id)}
-      className={`p-10 max-w-[1040px] w-full h-auto gap-10 flex justify-between bg-white shadow-md border rounded-[10px]`}
+      className={`p-10 max-w-[650px] h-auto gap-10 flex justify-between bg-white shadow-md border rounded-[10px]`}
     >
-      <div className="flex flex-col">
-        {/* Hover Elements */}
-        {HoverElements?.map((item, index) => {
+      {item1 && <div className="flex flex-col">
+        {item1?.map((item, index) => {
           return (
-            <div key={index} className="flex flex-col items-start w-full">
-              <div
-                className="flex w-full max-w-[280px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[20px]"
+              <Link
+              href={"/"}
+              key={index}
+                className={item?.status === "big" ? "flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[20px]" : "flex gap-2 font-[400] text-[16px] pl-3 items-center text-[#404B7C]"}
                 onClick={() => openElement(item?.id)}
               >
                 <IoIosArrowForward
-                  size={24}
-                  className={
-                    item?.id === hoverElementActive
-                      ? "rotate-[90deg] duration-200 ease-linear"
-                      : "duration-200 ease-linear"
-                  }
+                  className="text-[20px]"
                 />
-                <span className="max-w-[280px] w-full">{item?.value}</span>
-              </div>
-              {/* Hover elements Inside */}
-              <div className={`${ item?.id === hoverElementActive ? "scale-y-100 opacity-100 h-auto" : "scale-y-0 opacity-0 h-0" } transform transition-all duration-300 linear origin-top flex flex-col pl-3`}>
-                {HoverElementsIn?.map((item, index) => {
-                  return (
-                    <div
-                      className="flex gap-2 items-center pb-1 pt-3 border-b-2 text-[#404B7C]"
-                      key={index}
-                    >
-                      <IoIosArrowForward size={24} />
-                      <span>{item?.value}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
+                <span className="max-w-[250px] w-full">{item?.value}</span>
+              </Link>
           );
         })}
-      </div>
-      <div className="flex flex-col">
-        <div
-          className="flex w-full max-w-[280px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[20px]"
-          onClick={() => openElement(7)}
-        >
-          <IoIosArrowForward
-            size={24}
-            className={
-              id === hoverElementActive
-                ? "rotate-[90deg] duration-200 ease-linear"
-                : "duration-200 ease-linear"
-            }
-          />
-          <span className="max-w-[280px] w-full">{t("hover.title7")}</span>
-        </div>
-        {/* Hover elements Inside */}
-        <div className={`${ 7 === hoverElementActive ? "scale-y-100 opacity-100 h-auto" : "scale-y-0 opacity-0 h-0" } transform transition-all duration-300 linear origin-top flex flex-col pl-3`}>
-          {HoverElementsIn?.map((item, index) => {
-            return (
-              <div
-                className="flex gap-2 items-center pb-1 pt-3 border-b-2 text-[#404B7C]"
-                key={index}
-              >
-                <IoIosArrowForward size={24} />
-                <span>{item?.value}</span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <div className="flex flex-col">
-        <div
-          className="flex w-full max-w-[280px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[20px]"
-          onClick={() => openElement(8)}
-        >
-          <IoIosArrowForward
-            size={24}
-            className={
-              id === hoverElementActive
-                ? "rotate-[90deg] duration-200 ease-linear"
-                : "duration-200 ease-linear"
-            }
-          />
-          <span className="max-w-[280px] w-full">{t("hover.title8")}</span>
-        </div>
-        {/* Hover elements Inside */}
-        <div className={`${ 8 === hoverElementActive ? "scale-y-100 opacity-100 h-auto" : "scale-y-0 opacity-0 h-0" } transform transition-all duration-300 linear origin-top flex flex-col pl-3`}>
-          {HoverElementsIn?.map((item, index) => {
-            return (
-              <div
-                className="flex gap-2 items-center pb-1 pt-3 border-b-2 text-[#404B7C]"
-                key={index}
-              >
-                <IoIosArrowForward size={24} />
-                <span>{item?.value}</span>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      </div>}
+      {item2 && <div className="flex flex-col">
+        {
+          item2?.map((item,index)=> {
+            return <Link
+            href={"/"} 
+            key={index}
+            className={item?.status === "big" ? "flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[20px]" : "flex gap-2 font-[400] text-[16px] pl-3 items-center text-[#404B7C]"}
+            onClick={() => openElement(7)}
+          >
+            <IoIosArrowForward />
+            <span className="max-w-[250px] w-full">{item?.value}</span>
+          </Link>
+          })
+        }
+      </div>}
       </div>
     </div>
   );

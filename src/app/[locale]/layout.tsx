@@ -1,9 +1,11 @@
-// app/layout.tsx
 import { NextIntlClientProvider } from 'next-intl';
 import React, { ReactNode } from 'react';
 import "./globals.css"
 import Navbar from '../components/Navbar';
 import Loader from '../components/ui/loader';
+import Footer from '../components/Footer';
+import 'aos/dist/aos.css';  
+
 interface RootLayoutProps {
     children: ReactNode;
     params: {
@@ -29,6 +31,7 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
                     <Navbar/>
                     <Loader/>
                     {children}
+                    <Footer/>
                 </NextIntlClientProvider>
             </body>
         </html>

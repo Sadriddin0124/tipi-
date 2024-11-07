@@ -25,3 +25,36 @@ export interface ContactType {
     title: string;
     value: string
 }
+
+export interface FakultetlarType {
+    img: StaticImageData
+}
+export interface CounterType {
+    title: string;
+    count: number;
+    start: number;
+    increase: number;
+    price?: string;
+}
+
+
+export interface BreadcrumbItem {
+    label: string;
+    href: string;
+  }
+export interface HoverItemType {
+    id: number;
+    value: string;
+    status: string;
+}
+  
+export interface TBodyTYpe {
+    tb1: string;
+    tb2: string;
+    tb3: string;
+    tb4: string;
+    tb5?: string;
+}
+  
+
+  

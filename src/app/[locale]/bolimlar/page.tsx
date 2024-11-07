@@ -3,7 +3,7 @@ import React from 'react'
 const Bolimlar = () => {
   return (
     <div>
-      Bo'limlar
+      Bolimlar
     </div>
   )
 }

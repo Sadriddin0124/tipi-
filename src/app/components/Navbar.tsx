@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useTransition } from "react";
+import React, { useEffect, useState, useTransition, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -9,11 +9,11 @@ import Logo from "@/assets/logo.webp";
 import UzFlag from "@/assets/uz.webp";
 import RuFlag from "@/assets/ru.webp";
 import EnFlag from "@/assets/en.webp";
-import { LangType } from "../types/all.types";
+import { BreadcrumbItem, HoverItemType, LangType } from "../types/all.types";
 import HoverComponent from "./HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
-// import Dropdown from "./Dropdown";
+import Breadcrumb from "./ui/Breadcrumb";
 
 const Navbar = () => {
   const t = useTranslations();
@@ -25,7 +25,7 @@ const Navbar = () => {
     { value: "en", title: "En", icon: EnFlag },
     { value: "ru", title: "Ru", icon: RuFlag },
   ];
-  
+
   const currentLanguage = pathname.split("/")[1];
   const filterLang = languages.find(item => item.value === currentLanguage) || languages[0];
   const [activeLang, setActiveLang] = useState<LangType>(filterLang);
@@ -34,13 +34,140 @@ const Navbar = () => {
   const [appBar, setAppBar] = useState(false);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
   const [isPending, startTransition] = useTransition();
+  const [breadcrumbItems, setBreadcrumbItems] = useState<BreadcrumbItem[]>([]);
+  
+  const ScientificDirection: HoverItemType[] = [
+    {
+      id: 1,
+      value: t("hover.title1"),
+      status: "big"
+    },
+    {
+      id: 2,
+      value: t("hover.title2"),
+      status: "small"
+    },
+    {
+      id: 3,
+      value: t("hover.title3"),
+      status: "small"
+    },
+    {
+      id: 4,
+      value: t("hover.title4"),
+      status: "small"
+    },
+    {
+      id: 5,
+      value: t("hover.title5"),
+      status: "small"
+    },
+    {
+      id: 6,
+      value: t("hover.title6"),
+      status: "small"
+    },
+  ];
+  const ScientificDirection2: HoverItemType[] = [
+    {
+      id: 7,
+      value: t("hover.title7"),
+      status: "big"
+    },
+    {
+      id: 8,
+      value: t("hover.title8"),
+      status: "big"
+    },
+    {
+      id: 9,
+      value: t("hover.title9"),
+      status: "big"
+    },
+  ];
+  const Faculties: HoverItemType[] = [
+    {
+      id: 1,
+      value: t("hover.faculty1"),
+      status: "big"
+    },
+    {
+      id: 2,
+      value: t("hover.faculty2"),
+      status: "small"
+    },
+    {
+      id: 3,
+      value: t("hover.faculty3"),
+      status: "small"
+    },
+    {
+      id: 4,
+      value: t("hover.faculty4"),
+      status: "small"
+    },
+    {
+      id: 5,
+      value: t("hover.faculty5"),
+      status: "small"
+    },
+    {
+      id: 6,
+      value: t("hover.faculty6"),
+      status: "small"
+    },
+  ]
+  const AboutInstitute: HoverItemType[] = [
+    {
+      id: 1,
+      value: t("hover.about1"),
+      status: "big"
+    },
+    {
+      id: 2,
+      value: t("hover.about2"),
+      status: "small"
+    },
+    {
+      id: 3,
+      value: t("hover.about3"),
+      status: "small"
+    },
+  ]
+  const AboutInstitute2: HoverItemType[] = [
+    {
+      id: 1,
+      value: t("hover.about4"),
+      status: "big"
+    },
+    {
+      id: 2,
+      value: t("hover.about2"),
+      status: "small"
+    },
+    {
+      id: 3,
+      value: t("hover.about3"),
+      status: "small"
+    },
+  ]
   const navLink: NavLinkType[] = [
-    { id: 1, label: t("nav.link1"), path: `/${activeLang?.value}/ilmiy-yonalish` },
-    { id: 2, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar` },
-    { id: 3, label: t("nav.link3"), path: `/${activeLang?.value}/institut-haqida` },
-    { id: 4, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar` },
-    { id: 5, label: t("nav.link5"), path: `/${activeLang?.value}/iqtidorli-talabalar` },
-    { id: 6, label: t("nav.link6"), path: `/${activeLang?.value}/bolimlar` },
+    { id: 1, label: t("nav.link1"), path: `/${activeLang?.value}/ilmiy-yonalish`, hover: true, item1: ScientificDirection, item2: ScientificDirection2 },
+    { id: 2, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, item1: Faculties },
+    { id: 3, label: t("nav.link3"), path: `/${activeLang?.value}/institut-haqida`, hover: true, item1: AboutInstitute, item2: AboutInstitute2 },
+    { id: 4, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
+    { id: 5, label: t("nav.link5"), path: `/${activeLang?.value}/iqtidorli-talabalar`, hover: false },
+    { id: 6, label: t("nav.link6"), path: `/${activeLang?.value}/bolimlar`, hover: false },
+  ];
+
+  const Destinations = [
+    { label: t("path.link1"), href: "ilmiy-yonalish" },
+    { label: t("path.link2"), href: "fakultetlar" },
+    { label: t("path.link3"), href: "institut-haqida" },
+    { label: t("path.link4"), href: "yangiliklar" },
+    { label: t("path.link5"), href: "iqtidorli-talabalar" },
+    { label: t("path.link6"), href: "bolimlar" },
+    { label: t("path.link7"), href: "1" },
   ];
 
 
@@ -64,6 +191,19 @@ const Navbar = () => {
     sessionStorage.setItem("path", path);
   };
 
+  const handleNavigate = (path: string) => {
+    sessionStorage.setItem("path", path);
+    findBreadcrumbItems();
+  };
+
+  const findBreadcrumbItems = () => {
+    const activePath = pathname.split("/").filter(item => item !== "");
+    const filteredPath: BreadcrumbItem[] = Destinations.filter(item =>
+      activePath.includes(item.href)
+    );
+    setBreadcrumbItems(filteredPath);
+  };
+
   useEffect(() => {
     const storedLang = localStorage.getItem("language");
     if (storedLang) {
@@ -79,7 +219,8 @@ const Navbar = () => {
         setActiveLang(languages[1]);
       }
     }
-  }, []);
+    findBreadcrumbItems();
+  }, [pathname]);
 
   const HoverEnter = (id: number | undefined) => {
     if (timer) {
@@ -106,9 +247,8 @@ const Navbar = () => {
   const HoverComponentLeave = () => {
     setHoverStatus(0);
   };
-
   return (
-    <nav className="flex justify-center px-3 bg-white">
+    <nav className="flex justify-center flex-col items-center px-3 bg-white">
       <div className="py-[25px] w-full max-w-[1400px] flex items-center justify-between">
         <Link href="/" className="flex items-center max-w-[400px] gap-[20px]">
           <Image src={Logo} alt="Logo" width={100} height={100} className="w-[50px] sm:w-[100px] h-[50px] sm:h-[100px]" />
@@ -124,12 +264,12 @@ const Navbar = () => {
                       {item.label}
                     </a>
                   ) : (
-                    <Link href={item.path}>{item.label}</Link>
+                    <Link href={item.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
                   )}
                   <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
                 </div>
-                {item.id !== 6 && (
-                  <HoverComponent id={item.id} HoverComponentEnter={HoverComponentEnter} HoverComponentLeave={HoverComponentLeave} hoverStatus={hoverStatus} />
+                {item.hover && (
+                  <HoverComponent id={item.id} HoverComponentEnter={HoverComponentEnter} HoverComponentLeave={HoverComponentLeave} hoverStatus={hoverStatus} item1={item?.item1} item2={item?.item2}/>
                 )}
               </li>
             ))}
@@ -137,66 +277,48 @@ const Navbar = () => {
           <div className="relative min-w-[65px]">
             <button onClick={changeLangStatus} className="flex items-center gap-1 border border-[#404B7C] rounded-md px-2 py-1 bg-white relative z-10 text-[20px]">
               {activeLang?.title}
-              <Image src={activeLang?.icon} alt={activeLang?.title} className="w-[20px] h-[20px] rounded-full" />
+              <Image src={activeLang.icon} alt={activeLang.title} className="w-[20px] h-[20px] rounded-full" />
             </button>
             <div className={`${langStatus ? "top-[40px] z-[20] bg-white" : "top-0 hidden"} ease-linear duration-200 flex flex-col justify-center border border-[#404B7C] p-1 rounded-md absolute`}>
-              {languages
-                .filter(item => item.value !== activeLang?.value)
-                .map(item => (
-                  <button onClick={() => changeLang(item)} key={item.value} className="hover:text-blue-600 transition-all py-1 px-1 flex items-center gap-1 text-[20px]">
-                    {item.title}
-                    <Image src={item.icon} alt={item.title} className="w-[20px] h-[20px] rounded-full" />
-                  </button>
-                ))}
+              {languages.filter(item => item.value !== activeLang?.value).map(item => (
+                <button onClick={() => changeLang(item)} key={item.value} className="hover:text-blue-600 transition-all py-1 px-1 flex items-center gap-1 text-[20px]">
+                  {item.title}
+                  <Image src={item.icon} alt={item.title} className="w-[20px] h-[20px] rounded-full" />
+                </button>
+              ))}
             </div>
           </div>
         </div>
-        <button onClick={() => setAppBar(true)} className="block xl:hidden">
-          <HiMiniBars3BottomRight size={34} />
-        </button>
+        <button className="block xl:hidden text-[40px] p-2" onClick={() => setAppBar(!appBar)}>{appBar ? <RiCloseLargeFill /> : <HiMiniBars3BottomRight />}</button>
       </div>
-      <div className={`w-full h-screen bg-[#00000072] fixed ease-linear duration-300 ${appBar ? "z-50" : "hidden"}`}></div>
-      <div className={`${appBar ? "left-0" : "left-[-1700px]"} ease-linear flex justify-start duration-300 fixed z-[51] w-full min-h-[100vh] top-0`}>
-        <div className="max-w-[400px] min-w-[250px] w-full min-h-[100vh] bg-white p-6">
-          <div className="flex w-full justify-between mb-5">
-            <div className="relative min-w-[65px]">
-              <button onClick={changeLangStatus} className="flex items-center gap-1 border border-[#404B7C] rounded-md px-2 py-1 bg-white relative z-10 text-[20px]">
-                {activeLang?.title}
-                <Image src={activeLang?.icon} alt={activeLang?.title} className="w-[20px] h-[20px] rounded-full" />
-              </button>
-              <div className={`${langStatus ? "top-[40px] z-[20] bg-white" : "top-0 hidden"} ease-linear duration-200 flex flex-col justify-center border border-[#404B7C] p-1 rounded-md absolute`}>
-                {languages
-                  .filter(item => item.value !== activeLang?.value)
-                  .map(item => (
-                    <button onClick={() => changeLang(item)} key={item.value} className="hover:text-blue-600 transition-all py-1 px-1 flex items-center gap-1 text-[20px]">
-                      {item.title}
-                      <Image src={item.icon} alt={item.title} className="w-[20px] h-[20px] rounded-full" />
-                    </button>
-                  ))}
-              </div>
-            </div>
-            <button onClick={() => setAppBar(false)} className="text-[#404B7C]">
-              <RiCloseLargeFill size={34} />
+      <div className={`${appBar ? "h-[350px] bg-white" : "h-0"} w-full overflow-hidden xl:hidden transition-all ease-linear duration-200`}>
+        <ul className="flex flex-col items-center gap-[10px] mt-[25px]">
+          {navLink.map(item => (
+            <li key={item.id} className="text-[18px] whitespace-nowrap" onClick={() => setAppBar(!appBar)}>
+              {item.href ? (
+                <a target="blank" href={item.href}>{item.label}</a>
+              ) : (
+                <Link href={item.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
+              )}
+            </li>
+          ))}
+          <div className="min-w-[65px] flex items-center justify-center relative mt-[20px]">
+            <button onClick={changeLangStatus} className="flex items-center gap-1 border border-[#404B7C] rounded-md px-2 py-1 bg-white relative z-10 text-[20px]">
+              {activeLang?.title}
+              <Image src={activeLang.icon} alt={activeLang.title} className="w-[20px] h-[20px] rounded-full" />
             </button>
+            <div className={`${langStatus ? "top-[40px] z-[20] bg-white" : "top-0 hidden"} ease-linear duration-200 flex flex-col justify-center border border-[#404B7C] p-1 rounded-md absolute`}>
+              {languages.filter(item => item.value !== activeLang?.value).map(item => (
+                <button onClick={() => changeLang(item)} key={item.value} className="hover:text-blue-600 transition-all py-1 px-1 flex items-center gap-1 text-[20px]">
+                  {item.title}
+                  <Image src={item.icon} alt={item.title} className="w-[20px] h-[20px] rounded-full" />
+                </button>
+              ))}
+            </div>
           </div>
-          <ul className="flex flex-col items-start gap-[15px]">
-            {navLink.map(item => (
-              <li key={item.id} className="text-[18px] whitespace-nowrap">
-                <div className="relative group flex justify-center">
-                  {item.href ? (
-                    <a target="blank" href={item.href}>
-                      {item.label}
-                    </a>
-                  ) : (
-                    <Link href={item.path}>{item.label}</Link>
-                  )}
-                  <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+        </ul>
       </div>
+      {breadcrumbItems.length ? <Breadcrumb items={breadcrumbItems} activeLang={activeLang}/> : ""}
     </nav>
   );
 };

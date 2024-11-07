@@ -6,7 +6,7 @@ import Hero from '@/app/components/Hero'
 import News from '@/app/components/News'
 import Pedagogue from '@/app/components/Pedagogue'
 import Statistics from '@/app/components/Statistics'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 const Home = () => {
   return (

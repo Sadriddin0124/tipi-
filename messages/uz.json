@@ -8,15 +8,36 @@
     "link5": "Iqtidorli Talabalar",
     "link6": "Bo'limlar"
   },
+  "path": {
+    "mainPage": "Asosiy sahifa",
+    "link1": "Ilmiy yo'nalish",
+    "link2": "Fakultetlar",
+    "link3": "Institut haqida",
+    "link4": "Yangiliklar",
+    "link5": "Iqtidorli Talabalar",
+    "link6": "Bo'limlar",
+    "link7": "Axborot Texnologiyalari"
+  },
   "hover": {
-    "title1": "TIPI haqida",
-    "title2": "TIPI tarixi",
-    "title3": "Missiya va ko`rish",
-    "title4": "Akkreditatsiya, Tan olish, Reyting, Azolik",
-    "title5": "Qoidalar va qonunosti hujjatlari",
-    "title6": "Strategig reja ",
-    "title7": "Administratsiya",
-    "title8": "Rektor",
+    "title1": "Bo'limlar",
+    "title2": "Ilmiy bo'lim",
+    "title3": "Ma'naviyat",
+    "title4": "Reja Moliya",
+    "title5": "DevonXona",
+    "title6": "Xalqaro",
+    "title7": "Almashinuv dasturi",
+    "title8": "ARM (kutubxona)",
+    "title9": "Ilmiy jurnal",
+    "faculty1": "Fakultetlar",
+    "faculty2": "Iqtisodiyot fakulteti",
+    "faculty3": "Pedagogika",
+    "faculty4": "Axborot texnologiyalari",
+    "faculty5": "Tillar va maktabgacha ta'lim",
+    "faculty6": "Ijtimoiy fanlar",
+    "about1": "Institut haqida",
+    "about2": "TIPI tarixi",
+    "about3": "TIPI haqida",
+    "about4": "Adminstratsiya",
     "title_in1": "Ilmiy kengash a`zolari",
     "title_in2": "Rektorat",
     "title_in3": "Pedagoklar",
@@ -33,7 +54,7 @@
   "statistics": {
     "item1": "Talabalar",
     "item2": "O`qituvchilar",
-    "item3": "milliardlik",
+    "item3": "Milliard qiymatli",
     "item4": "Grandlar"
   },
   "campus": "Kampus hayoti",
@@ -82,5 +103,38 @@
   },
   "message": {
     "success": "Xabar muvaffaqiyatli jo'natildi!"
+  },
+  "fakultetlarHero": {
+    "title": "Fakultetlar"
+  },
+  "fakultetStatistics": {
+    "item1": "Fakultetlar",
+    "item2": "Yo'nalishlar",
+    "item3": "Milliard qiymatli",
+    "item4": "Grandlar"
+  },
+  "information": {
+    "title": "Axborot texnologiyalari",
+    "statistics1": "Yo'nalishlar",
+    "statistics2": "Pedagoglar",
+    "statistics3": "Online qabul",
+    "th1": "Yo'nalish nomi",
+    "th2": "Ta'lim bosqichi",
+    "th3": "Ta'lim yili",
+    "th4": "Bo'lim",
+    "th5": "Unvoni",
+    "th6": "Pedagog ismi",
+    "th7": "Bog’lanish",
+    "th8": "Ijtimoyi tarmoqlar",
+    "th9": "Web sayt",
+    "tb1": "Axborot Texnologiyalari",
+    "tb2": "Bakalavr",
+    "tb3": "4 yil",
+    "tb4": "Ijtimoiy fanlar",
+    "tb5": "Doktor",
+    "tb6": "Avazov Avaz  Avazovich",
+    "reception1": "Bakalavr",
+    "reception2": "O'qishni ko'chirish",
+    "reception3": "Magistratura"
   }
 }
