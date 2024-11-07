@@ -146,19 +146,18 @@ const Statistics = () => {
     ]
   return (
     <section className='w-full flex flex-col items-center gap-20 justify-center pt-[60px] lg:pt-[122px] pb-20 lg:pb-[100px] px-3' data-aos="fade-up">
-        <div className='max-w-[1166px] w-full flex flex-row items-center justify-center lg:justify-between gap-8'>
+        <div className='max-w-[1166px] w-full flex flex-row items-center md:border-0 border rounded-full justify-between md:justify-center lg:justify-between bg-slate-200 md:bg-transparent p-1 md:gap-3 lg:gap-8'>
             {
                 data?.map((item,index)=> {
                     return ( item?.line ? 
-                    <div className='w-1 h-full bg_main min-h-[88px]' key={index}></div> : 
-                    <button className='bg_main whitespace-nowrap group px-12 py-6 text-white cursor-pointer text-[20px] rounded-[10px] lg:text-[24px] font-[600] justify-center flex gap-3 items-center' key={index} onClick={()=>changeStatistic(item?.id)}>
+                    <div className='hidden lg:block w-1 h-full bg_main min-h-[88px]' key={index}></div> : 
+                    <button className={`${item?.id === activeStatistic ? "bg_main" : "hover:bg-[#404B7C] text_main md:text-white hover:text-white"} ease-linear duration-200 md:bg-[#404B7C] shadow-md shadow-gray-500 w-full md:w-auto whitespace-nowrap group px-4 md:px-12 py-3 md:py-6 text-white cursor-pointer text-[12px] sm:text-[16px] md:text-[20px] rounded-full md:rounded-[10px] lg:text-[24px] font-[600] justify-center flex gap-3 items-center`} key={index} onClick={()=>changeStatistic(item?.id)}>
                         <span className='relative flex justify-center'>
                             {item?.title}
-                            {item?.id === activeStatistic && <span className=' inline-block w-full h-[2px] bg-white absolute bottom-0 left-0'></span> }
-                            <span className=' h-[2px] bottom-0 bg-white ease-linear duration-200 w-0 group-hover:w-[100%] absolute'></span>
-                            <span className=' h-[2px] bottom-0 bg-white ease-linear duration-200 w-0 group-hover:w-[100%] absolute'></span>
+                            {item?.id === activeStatistic && <span className='hidden md:inline-block w-full h-[2px] bg-white absolute bottom-0 left-0'></span> }
+                            <span className='hidden md:block h-[2px] bottom-0 bg-white ease-linear duration-200 w-0 group-hover:w-[100%] absolute'></span>
                         </span>
-                        <Image src={item?.icon} alt={item?.title} className={`w-[28px] lg:w-[40px] h-[28px] lg:h-[40px] object-contain`} width={100} height={100}/>
+                        <Image src={item?.icon} alt={item?.title} className={`hidden md:block w-[28px] lg:w-[40px] h-[28px] lg:h-[40px] object-contain`} width={100} height={100}/>
                     </button>)
                 })
             }
