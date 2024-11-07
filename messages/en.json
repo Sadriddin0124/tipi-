@@ -1,53 +1,73 @@
 {
   "nav": {
-    "logo": "TASHKENT INSTITUTE OF ECONOMICS AND PEDAGOGY",
-    "link1": "About the Institute",
-    "link2": "Departments",
-    "link3": "Faculties",
+    "logo": "TASHKENT ECONOMICS AND PEDAGOGY INSTITUTE",
+    "link1": "Scientific Directions",
+    "link2": "Faculties",
+    "link3": "About the Institute",
     "link4": "News",
-    "link5": "Interactive Services",
-    "link6": "Library (ARM)",
-    "link7": "Contact"
+    "link5": "Talented Students",
+    "link6": "Departments"
+  },
+  "path": {
+    "mainPage": "Home Page",
+    "link1": "Scientific Directions",
+    "link2": "Faculties",
+    "link3": "About the Institute",
+    "link4": "News",
+    "link5": "Talented Students",
+    "link6": "Departments",
+    "link7": "Information Technology"
   },
   "hover": {
-    "title1": "About TIPI",
-    "title2": "TIPI History",
-    "title3": "Mission and Vision",
-    "title4": "Accreditation, Recognition, Ranking, Membership",
-    "title5": "Regulations and Legal Documents",
-    "title6": "Strategic Plan",
-    "title7": "Administration",
-    "title8": "Rector",
-    "title_in1": "Academic Council Members",
+    "title1": "Departments",
+    "title2": "Scientific Department",
+    "title3": "Spirituality",
+    "title4": "Finance Plan",
+    "title5": "Chancellery",
+    "title6": "International",
+    "title7": "Exchange Program",
+    "title8": "ARM (Library)",
+    "title9": "Scientific Journal",
+    "faculty1": "Faculties",
+    "faculty2": "Economics Faculty",
+    "faculty3": "Pedagogy",
+    "faculty4": "Information Technologies",
+    "faculty5": "Languages and Preschool Education",
+    "faculty6": "Social Sciences",
+    "about1": "About the Institute",
+    "about2": "TIPI History",
+    "about3": "About TIPI",
+    "about4": "Administration",
+    "title_in1": "Members of the Scientific Council",
     "title_in2": "Rectorate",
-    "title_in3": "Educators",
+    "title_in3": "Pedagogues",
     "title_in4": "Documents",
     "title_in5": "Institute Executive Council Documents",
     "title_in6": "About the Rector",
-    "title_in7": "Message from the Rector",
+    "title_in7": "Rector's Message",
     "title_in8": "Rector Online"
   },
   "hero": {
-    "title": "Register online now",
+    "title": "Register Online Now",
     "btn": "Register"
   },
   "statistics": {
     "item1": "Students",
     "item2": "Teachers",
-    "item3": "Billion-Value",
+    "item3": "Valued in Billions",
     "item4": "Grants"
   },
   "campus": "Campus Life",
   "news": {
     "title": "News",
     "date": "November 7, 2024",
-    "desc": "Evgeni Raychev, a representative of Varna University of Economics in Bulgaria, visited our university as part of the EU project..."
+    "desc": "As part of the European Union's project, a representative from Varna University of Economics, Bulgaria, Evgeni Raychev, visited our university..."
   },
   "pedagogue": {
-    "title": "Educators",
-    "title1": "Islam Rustamov Bunyodovich",
-    "desc1": "Doctor of Philology (DSc), Professor",
-    "btn": "Learn More"
+    "title": "Pedagogues",
+    "title1": "Islom Rustamov Bunyodovich",
+    "desc1": "Doctor of Philology (DSc) Professor",
+    "btn": "More Details"
   },
   "events": {
     "title": "Events"
@@ -57,31 +77,68 @@
     "num_t": "Phone Number",
     "mail_t": "Email",
     "address_t": "Address",
-    "address_v": "Feruza St., Chirchiq, Tashkent Region",
-    "title1": "Send a Message",
+    "address_v": "Feruza k., Chirchiq, Tashkent Region",
+    "title1": "Send Message",
     "name_placeholder": "Your Name",
     "phone_placeholder": "Phone Number",
     "message_placeholder": "Message",
     "btn": "Send"
   },
   "footer": {
-    "logo": "TASHKENT INSTITUTE OF ECONOMICS AND PEDAGOGY",
-    "address": "Tashkent, Chirchiq City, Metallurgchilar Street 13",
-    "phone": "Phone: +998 99 999 99 99",
-    "mail": "Email: tipiuniversity@mail.uz",
+    "logo": "TASHKENT ECONOMICS AND PEDAGOGY INSTITUTE",
+    "address": "Tashkent Region, Chirchiq City, Metallurgchilar 13",
+    "phone": "Tel: +998 99 999 99 99",
+    "mail": "E-mail: tipiuniversity@mail.uz",
     "link1": "Contacts",
     "link2": "About Us",
     "link3": "Events",
     "link4": "Departments",
     "link5": "Scientific Potential",
     "link6": "Talented Students",
-    "link7": "Field of Education",
+    "link7": "Education Sector",
     "link8": "Campus",
-    "link9": "Register",
+    "link9": "Registration",
     "link10": "Exchange Program",
     "link11": "News"
   },
   "message": {
-    "success": "Message sent successfully!"
+    "success": "Message successfully sent!"
+  },
+  "fakultetlarHero": {
+    "title": "Faculties"
+  },
+  "fakultetStatistics": {
+    "item1": "Faculties",
+    "item2": "Directions",
+    "item3": "Valued in Billions",
+    "item4": "Grants"
+  },
+  "aboutFaculty": {
+    "title": "About faculty",
+    "desc": "The School of Computing and Technology (SCT), established in 1979, is the oldest unit of the Eastern Mediterranean University . SCT provides a high-tech education in a fully digital and multicultural environment to its multinational student profile. The teaching language is English in the four year Information Technology Program (BS) and in the graduate program Master of Technology in Information Technology (MTech in IT). However, Turkish language is used as a teaching language in the two-year and three-year course programs. With its excellent facilities coupled with a commitment to excellence in teaching and ''Project-based learning'', the SCT offers a course of study leading to: An International Student Advisor (ISA) within SCT is available full-time to assist our international students with both academic and non-academic concerns. Also a Student-to-Student Advisory service (S2S) is provided by the Student Assistants in order to help with students' study problems. The primary goal of the School of Computing and Technology (SCT) is to prepare highly skilled technical human resources demanded by the business, industry and service sectors of today's globalized digital world. To accomplish its primary goal, SCT is committed to equip graduates with the necessary knowledge and skills in their fields of study, through regularly revised project-based learning curriculum, and qualified teaching staff with industrial background. The medium of instruction is English in Information Technology, (BS) and Master of Technology in Information Technology (MTech in IT) , whereas the medium of instruction is Turkish in the two and three year vocational programs"
+  },
+  "information": {
+    "title": "Information Technologies",
+    "statistics1": "Directions",
+    "statistics2": "Pedagogues",
+    "statistics3": "Online Admission",
+    "th1": "Direction Name",
+    "th2": "Education Level",
+    "th3": "Education Year",
+    "th4": "Department",
+    "th5": "Title",
+    "th6": "Pedagogue Name",
+    "th7": "Contact",
+    "th8": "Social Networks",
+    "th9": "Website",
+    "tb1": "Information Technologies",
+    "tb2": "Bachelor",
+    "tb3": "4 years",
+    "tb4": "Social Sciences",
+    "tb5": "Doctor",
+    "tb6": "Avazov Avaz Avazovich",
+    "reception1": "Bachelor",
+    "reception2": "Transfer",
+    "reception3": "Master's"
   }
 }

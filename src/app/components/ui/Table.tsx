@@ -22,8 +22,8 @@ const TableComponent = ({THeads, TBodies}: {THeads: string[]; TBodies: TBodyTYpe
                 <td className='py-5'>{item?.tb1}</td>
                 <td className='py-5'>{item?.tb2}</td>
                 <td className='py-5'>{item?.tb3}</td>
-                <td className='py-5'>{item?.tb4}</td>
-                {item?.tb5 && <td className='py-5'>{item?.tb5}</td>}
+                {item?.tb5 && <td className='py-5'>{item?.tb4?.map((el,index)=> <a href={el?.link} target='blank' key={index}>{el?.icons}</a>)}</td>}
+                <td className='py-5'>{item?.tb5}</td>
               </tr>
             ))
           }

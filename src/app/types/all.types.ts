@@ -47,14 +47,21 @@ export interface HoverItemType {
     value: string;
     status: string;
 }
+
+interface MediaType {
+    icons: ReactNode;
+    link: string
+}
   
 export interface TBodyTYpe {
     tb1: string;
     tb2: string;
     tb3: string;
-    tb4: string;
-    tb5?: string;
+    tb4?: MediaType[];
+    tb5: string;
 }
+
+
   
 
   

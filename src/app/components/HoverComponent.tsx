@@ -22,10 +22,10 @@ const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLea
   return (
     <div className={`${hoverStatus === id ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"} ${pathname < 4 ? "top-[150px]" : "top-[190px]" } transform transition-all duration-300 linear origin-top fixed z-50 left-0 w-full h-[100vh] flex justify-center items-start`}>
       <div
-      onMouseLeave={() => HoverComponentLeave(id)}
-      onMouseEnter={() => HoverComponentEnter(id)}
-      className={`p-10 max-w-[650px] h-auto gap-10 flex justify-between bg-white shadow-md border rounded-[10px]`}
-    >
+        onMouseLeave={() => HoverComponentLeave(id)}
+        onMouseEnter={() => HoverComponentEnter(id)}
+        className={`p-10 max-w-[650px] min-h-[400px] h-auto gap-10 flex justify-between bg-white shadow-md border rounded-[10px]`}
+      >
       {item1 && <div className="flex flex-col">
         {item1?.map((item, index) => {
           return (
@@ -38,7 +38,9 @@ const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLea
                 <IoIosArrowForward
                   className="text-[20px]"
                 />
-                <span className="max-w-[250px] w-full">{item?.value}</span>
+                <span className="max-w-[250px] w-full relative flex justify-start group">{item?.value}
+                  <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
+                </span>
               </Link>
           );
         })}
@@ -49,11 +51,13 @@ const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLea
             return <Link
             href={"/"} 
             key={index}
-            className={item?.status === "big" ? "flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[20px]" : "flex gap-2 font-[400] text-[16px] pl-3 items-center text-[#404B7C]"}
+            className={item?.status === "big" ? "relative group flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[20px]" : "flex gap-2 font-[400] text-[16px] pl-3 items-center text-[#404B7C]"}
             onClick={() => openElement(7)}
           >
             <IoIosArrowForward />
-            <span className="max-w-[250px] w-full">{item?.value}</span>
+            <span className="max-w-[250px] w-full flex justify-normal">{item?.value}
+              <span className="absolute inline-block w-0 h-[2px] left-0 bottom-0 group-hover:w-full ease-linear duration-200 bg-[#404B7C]"></span>
+            </span>
           </Link>
           })
         }

@@ -25,7 +25,7 @@ const FacultiesHero = () => {
     },
   ]
   const FixedItem = () => {
-    return <div className='absolute left-0 bottom-0  w-full h-full p-14 flex items-center justify-start'>
+    return <div className='absolute left-0 bottom-0  w-full h-full p-14 flex items-end md:items-center justify-start'>
               <h2 className='font-[500] text-[40px] text-white'>{t("fakultetlarHero.title")}</h2>
           </div>
   }

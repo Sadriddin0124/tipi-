@@ -20,6 +20,22 @@ const Navbar = () => {
   const router = useRouter();
   const pathname = usePathname();
 
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollTop(window.scrollY); // or window.pageYOffset
+    };
+    if (scrollTop > 20) {
+      setHoverStatus(0)
+    }
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollTop]);
+  
   const languages: LangType[] = [
     { value: "uz", title: "Uz", icon: UzFlag },
     { value: "en", title: "En", icon: EnFlag },
@@ -291,7 +307,7 @@ const Navbar = () => {
         </div>
         <button className="block xl:hidden text-[40px] p-2" onClick={() => setAppBar(!appBar)}>{appBar ? <RiCloseLargeFill /> : <HiMiniBars3BottomRight />}</button>
       </div>
-      <div className={`${appBar ? "h-[350px] bg-white" : "h-0"} w-full overflow-hidden xl:hidden transition-all ease-linear duration-200`}>
+      <div className={`${appBar ? "h-[400px] bg-white" : "h-0"} w-full overflow-hidden xl:hidden transition-all ease-linear duration-200`}>
         <ul className="flex flex-col items-center gap-[10px] mt-[25px]">
           {navLink.map(item => (
             <li key={item.id} className="text-[18px] whitespace-nowrap" onClick={() => setAppBar(!appBar)}>
@@ -302,12 +318,12 @@ const Navbar = () => {
               )}
             </li>
           ))}
-          <div className="min-w-[65px] flex items-center justify-center relative mt-[20px]">
+          <div className="min-w-[65px] flex items-center flex-col justify-center relative mt-[20px]">
             <button onClick={changeLangStatus} className="flex items-center gap-1 border border-[#404B7C] rounded-md px-2 py-1 bg-white relative z-10 text-[20px]">
               {activeLang?.title}
               <Image src={activeLang.icon} alt={activeLang.title} className="w-[20px] h-[20px] rounded-full" />
             </button>
-            <div className={`${langStatus ? "top-[40px] z-[20] bg-white" : "top-0 hidden"} ease-linear duration-200 flex flex-col justify-center border border-[#404B7C] p-1 rounded-md absolute`}>
+            <div className={`${langStatus ? "top-[40px] z-[20] bg-white" : "top-0 hidden"} z-[60] ease-linear duration-200 flex flex-col justify-center border border-[#404B7C] p-1 rounded-md`}>
               {languages.filter(item => item.value !== activeLang?.value).map(item => (
                 <button onClick={() => changeLang(item)} key={item.value} className="hover:text-blue-600 transition-all py-1 px-1 flex items-center gap-1 text-[20px]">
                   {item.title}

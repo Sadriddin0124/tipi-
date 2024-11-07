@@ -18,7 +18,6 @@ const Home = () => {
       <Pedagogue/>
       <Events/>
       <Contact/>
-      <Footer/>
     </div>
   )
 }

@@ -18,7 +18,7 @@ const Contact = () => {
         {
             icon: <FaPhoneAlt size={20}/>,
             title: t("contact.mail_t"),
-            value: "+998 70 200 70 07"
+            value: "tipiuniversity@mail.uz"
         },
         {
             icon: <FaPhoneAlt size={20}/>,

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import ITImage from "@/assets/it.webp"
 import Image from 'next/image'
 import Link from 'next/link'
-import { activeLang } from '@/app/lib/utils'
+import Blur from "@/assets/faculties_blur.webp"
 import { usePathname } from 'next/navigation'
 const IT = () => {
     const [lang, setLang] = useState<string>()
@@ -11,7 +11,7 @@ const IT = () => {
     useEffect(()=> {
     const lng = pathname.split("/")[1]
         setLang(lng)
-    },[])
+    },[pathname])
     
     const data = [
         {
@@ -64,14 +64,15 @@ const IT = () => {
         },
     ]
   return (
-    <section className='w-full flex justify-center'>
-      <div className='max-w-[1240px] w-full grid grid-cols-4 gap-[20px]'>
+    <section className='w-full flex justify-center px-3'>
+      <div className='max-w-[700px] lg:max-w-[1240px] w-full grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-[20px]'>
         {
             data?.map((item,index)=> {
-                return <div key={index} className='w-full relative flex justify-center items-center h-[160px]'>
-                    <Image src={item?.img} alt={item?.title} width={400} height={300} className='absolute left-0 top-0 z-[-1] object-cover'/>
-                    <Link href={`${item?.href}/fakultetlar/${item?.id}`} className='text-white font-[500] text-[30px] text-center'>{item?.title}</Link>
-                </div>
+                return <Link href={`${item?.href}/fakultetlar/${item?.id}`}  key={index} className='w-full rounded-[10px] overflow-hidden relative flex justify-center items-center h-[160px]'>
+                    <Image src={Blur} alt={item?.title} width={400} height={300} className='absolute w-full h-full left-0 top-0 z-[1] object-cover'/>
+                    <Image src={item?.img} alt={item?.title} width={400} height={300} className='absolute w-full h-full left-0 top-0 z-[-1] object-cover'/>
+                    <span className='text-white font-[500] text-[24px] relative z-[2] lg:text-[30px] text-center'>{item?.title}</span>
+                </Link>
             })
         }
       </div>

@@ -1,6 +1,7 @@
 import Contact from '@/app/components/Contact'
-import SingleFacultyHero from '@/app/components/fakultetlar/AxborotTexnologiyalari/SingleFacultyHero'
-import Statistics from '@/app/components/fakultetlar/AxborotTexnologiyalari/Statistics'
+import AboutFaculty from '@/app/components/fakultetlar/SingleFaculty/AboutFaculty'
+import SingleFacultyHero from '@/app/components/fakultetlar/SingleFaculty/SingleFacultyHero'
+import Statistics from '@/app/components/fakultetlar/SingleFaculty/Statistics'
 import React from 'react'
 
 const Check = () => {
@@ -8,6 +9,7 @@ const Check = () => {
     <div>
       <SingleFacultyHero/>
       <Statistics/>
+      <AboutFaculty/>
       <Contact/>
     </div>
   )
