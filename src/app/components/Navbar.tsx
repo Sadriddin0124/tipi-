@@ -14,6 +14,7 @@ import HoverComponent from "./HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
 import Breadcrumb from "./ui/Breadcrumb";
+import Dropdown from "./Dropdown";
 
 const Navbar = () => {
   const t = useTranslations();
@@ -56,115 +57,136 @@ const Navbar = () => {
     {
       id: 1,
       value: t("hover.title1"),
-      status: "big"
+      status: "big",
+      href: `${activeLang?.value}`
     },
     {
       id: 2,
       value: t("hover.title2"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 3,
       value: t("hover.title3"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 4,
       value: t("hover.title4"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 5,
       value: t("hover.title5"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 6,
       value: t("hover.title6"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
   ];
   const ScientificDirection2: HoverItemType[] = [
     {
       id: 7,
       value: t("hover.title7"),
-      status: "big"
+      status: "big",
+      href: `/${activeLang?.value}/almashinuv-dasturi`
     },
     {
       id: 8,
       value: t("hover.title8"),
-      status: "big"
+      status: "big",
+      href: `${activeLang?.value}`
     },
     {
       id: 9,
       value: t("hover.title9"),
-      status: "big"
+      status: "big",
+      href: `${activeLang?.value}`
     },
   ];
   const Faculties: HoverItemType[] = [
     {
       id: 1,
       value: t("hover.faculty1"),
-      status: "big"
+      status: "big",
+      href: `${activeLang?.value}`
     },
     {
       id: 2,
       value: t("hover.faculty2"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 3,
       value: t("hover.faculty3"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 4,
       value: t("hover.faculty4"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 5,
       value: t("hover.faculty5"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 6,
       value: t("hover.faculty6"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
   ]
   const AboutInstitute: HoverItemType[] = [
     {
       id: 1,
       value: t("hover.about1"),
-      status: "big"
+      status: "big",
+      href: `${activeLang?.value}`
     },
     {
       id: 2,
       value: t("hover.about2"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 3,
       value: t("hover.about3"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
   ]
   const AboutInstitute2: HoverItemType[] = [
     {
       id: 1,
       value: t("hover.about4"),
-      status: "big"
+      status: "big",
+      href: `${activeLang?.value}`
     },
     {
       id: 2,
       value: t("hover.about2"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
     {
       id: 3,
       value: t("hover.about3"),
-      status: "small"
+      status: "small",
+      href: `${activeLang?.value}`
     },
   ]
   const navLink: NavLinkType[] = [
@@ -184,6 +206,7 @@ const Navbar = () => {
     { label: t("path.link5"), href: "iqtidorli-talabalar" },
     { label: t("path.link6"), href: "bolimlar" },
     { label: t("path.link7"), href: "1" },
+    { label: t("path.link8"), href: "almashinuv-dasturi" },
   ];
 
 
@@ -263,6 +286,14 @@ const Navbar = () => {
   const HoverComponentLeave = () => {
     setHoverStatus(0);
   };
+  const [dropDown, setDropDown] = useState<number | undefined>(0)
+  const openDropDown = (id: number | undefined) => {
+    setDropDown(dropDown === id ? 0 : id)
+  }
+  const closeDropDown = (id: number | undefined) => {
+    setDropDown(dropDown === id ? 0 : id)
+  }
+  
   return (
     <nav className="flex justify-center flex-col items-center px-3 bg-white">
       <div className="py-[25px] w-full max-w-[1400px] flex items-center justify-between">
@@ -305,17 +336,19 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <button className="block xl:hidden text-[40px] p-2" onClick={() => setAppBar(!appBar)}>{appBar ? <RiCloseLargeFill /> : <HiMiniBars3BottomRight />}</button>
+        <button className="block xl:hidden text-[30px] p-2" onClick={() => setAppBar(!appBar)}>{appBar ? <RiCloseLargeFill /> : <HiMiniBars3BottomRight />}</button>
       </div>
-      <div className={`${appBar ? "h-[400px] bg-white" : "h-0"} w-full overflow-hidden xl:hidden transition-all ease-linear duration-200`}>
+      <div className={`${appBar ? "h-[450px] bg-white" : "h-0"} w-full overflow-hidden xl:hidden transition-all ease-linear duration-200`}>
         <ul className="flex flex-col items-center gap-[10px] mt-[25px]">
           {navLink.map(item => (
-            <li key={item.id} className="text-[18px] whitespace-nowrap" onClick={() => setAppBar(!appBar)}>
+            <li key={item.id} className="text-[18px] relative flex justify-center group whitespace-nowrap" onMouseEnter={()=>openDropDown(item?.id)} onMouseLeave={()=>openDropDown(item?.id)}>
               {item.href ? (
                 <a target="blank" href={item.href}>{item.label}</a>
               ) : (
                 <Link href={item.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
               )}
+              <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
+              {item?.hover && item?.id === dropDown && <Dropdown id={item?.id} closeDropDown={closeDropDown} item1={item?.item1} item2={item?.item2}/>}
             </li>
           ))}
           <div className="min-w-[65px] flex items-center flex-col justify-center relative mt-[20px]">

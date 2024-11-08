@@ -19,7 +19,7 @@ const Counter = ({data}: {data: CounterType[]}) => {
         });
     }, []);
   return (
-    <section className='w-full flex justify-center pt-[60px] lg:pt-[122px] pb-10 lg:pb-[100px] px-3' data-aos="fade-up">
+    <section className='w-full flex justify-center pt-2 md:pt-[60px] lg:pt-[122px] pb-10 lg:pb-[100px] px-3' data-aos="fade-up">
         <div className='max-w-[1000px] w-full flex flex-col sm:flex-row items-center justify-center lg:justify-between gap-8'>
             {
                 data?.map((item,index)=> {

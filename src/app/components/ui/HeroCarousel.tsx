@@ -39,10 +39,10 @@ const HeroCarousel = ({data, FixedItem}: {data: FakultetlarType[]; FixedItem: ()
               </header>
           ))}
       </Slider>
-      <div className="absolute top-[-7px] left-0 w-auto h-full bg-cover bg-center z-0">
-        <Image src={HeroImgBlue} alt='Hero Image' className='w-[80%] sm:w-full  h-full object-cover' width={1400} height={600}/>
+      <div className="md:absolute top-[-7px] left-0 w-auto h-full bg-cover bg-center z-0">
+        <Image src={HeroImgBlue} alt='Hero Image' className='hidden md:block w-[80%] md:w-full  h-full object-cover' width={1400} height={600}/>
         <FixedItem/>
-        <div className=' absolute w-[50px] h-[40px] bottom-0 left-0 bg-white z-[-1]'></div>
+        <div className='hidden md:block absolute w-[50px] h-[40px] bottom-0 left-0 bg-white z-[-1]'></div>
       </div>
     </div>
   )

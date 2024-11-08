@@ -16,7 +16,8 @@
     "link4": "Yangiliklar",
     "link5": "Iqtidorli Talabalar",
     "link6": "Bo'limlar",
-    "link7": "Axborot Texnologiyalari"
+    "link7": "Axborot Texnologiyalari",
+    "link8": "Almashinuv dasturi"
   },
   "hover": {
     "title1": "Bo'limlar",
@@ -137,8 +138,15 @@
     "tb4": "Ijtimoiy fanlar",
     "tb5": "Doktor",
     "tb6": "Avazov Avaz  Avazovich",
+    "btn": "Sahifa",
     "reception1": "Bakalavr",
     "reception2": "O'qishni ko'chirish",
     "reception3": "Magistratura"
+  },
+  "exchange": {
+    "title": "Almashinuv dasturi"
+  },
+  "directions": {
+    "title": "Yo'nalishlar"
   }
 }

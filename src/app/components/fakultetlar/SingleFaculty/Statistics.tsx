@@ -10,6 +10,7 @@ import Link from 'next/link'
 import ITImage from "@/assets/it.webp"
 import { FaFacebookF, FaTelegramPlane, FaYoutube } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
+import { usePathname } from 'next/navigation'
 
 const Statistics = () => {
     const t = useTranslations()
@@ -145,13 +146,13 @@ const Statistics = () => {
         {id: 3, component: <OnlineReception/>},
     ]
   return (
-    <section className='w-full flex flex-col items-center gap-20 justify-center pt-[60px] lg:pt-[122px] pb-20 lg:pb-[100px] px-3' data-aos="fade-up">
+    <section className='w-full flex flex-col items-center gap-3 md:gap-20 justify-center pt-[60px] lg:pt-[122px] pb-20 lg:pb-[100px] px-3' data-aos="fade-up">
         <div className='max-w-[1166px] w-full flex flex-row items-center md:border-0 border rounded-full justify-between md:justify-center lg:justify-between bg-slate-200 md:bg-transparent p-1 md:gap-3 lg:gap-8'>
             {
                 data?.map((item,index)=> {
                     return ( item?.line ? 
                     <div className='hidden lg:block w-1 h-full bg_main min-h-[88px]' key={index}></div> : 
-                    <button className={`${item?.id === activeStatistic ? "bg_main" : "hover:bg-[#404B7C] text_main md:text-white hover:text-white"} ease-linear duration-200 md:bg-[#404B7C] shadow-md shadow-gray-500 w-full md:w-auto whitespace-nowrap group px-4 md:px-12 py-3 md:py-6 text-white cursor-pointer text-[12px] sm:text-[16px] md:text-[20px] rounded-full md:rounded-[10px] lg:text-[24px] font-[600] justify-center flex gap-3 items-center`} key={index} onClick={()=>changeStatistic(item?.id)}>
+                    <button className={`${item?.id === activeStatistic ? "bg_main" : "hover:bg-[#404B7C] text_main md:text-white hover:text-white"} ease-linear duration-200 md:bg-[#404B7C] shadow-md shadow-gray-500 w-full md:w-auto whitespace-nowrap group px-4 md:px-12 py-3 md:py-6 text-white cursor-pointer text-[11px] sm:text-[16px] md:text-[20px] rounded-full md:rounded-[10px] lg:text-[24px] font-[600] justify-center flex gap-3 items-center`} key={index} onClick={()=>changeStatistic(item?.id)}>
                         <span className='relative flex justify-center'>
                             {item?.title}
                             {item?.id === activeStatistic && <span className='hidden md:inline-block w-full h-[2px] bg-white absolute bottom-0 left-0'></span> }
@@ -193,16 +194,117 @@ const OnlineReception = () => {
             href: "/"
         },
     ]
-    return <div className='max-w-[1240px] w-full grid grid-cols-3 gap-[20px]'>
+    return <div className='max-w-[1240px] w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-[20px]'>
         {
             OnlineReceptionData?.map((item,index)=> {
-                return <div key={index} className='w-full relative flex justify-center items-center h-[160px]'>
-                    <Image src={item?.img} alt={item?.title} width={400} height={300} className='absolute left-0 top-0 z-[-1] object-cover'/>
-                    <Link href={item?.href} className='text-white font-[500] text-[30px] text-center'>{item?.title}</Link>
+                return <div key={index} className='w-full relative flex justify-center items-center rounded-[10px] overflow-hidden h-[160px]'>
+                    <Image src={item?.img} alt={item?.title} width={400} height={300} className='absolute w-full h-full left-0 top-0 z-[-1] object-cover'/>
+                    <Link href={item?.href} className='text-white font-[500] text-[24px] sm:text-[30px] text-center'>{item?.title}</Link>
                 </div>
             })
         }
   </div>
+}
+
+const DirectionsTable = () => {
+    const t = useTranslations()
+    const pathname = usePathname()
+    const DirectionTHeads = [
+        t("information.th1"),
+        t("information.th2"),
+        t("information.th3"),
+        t("information.th4"),
+        t("information.th9"),
+    ]
+    const DirectionTBodies = [
+        {
+            tb1: t("information.tb1"),
+            tb2: t("information.tb2"),
+            tb3: t("information.tb3"),
+            tb4: t("information.tb4"),
+            href: `${pathname}/yonalishlar`
+        },
+        {
+            tb1: t("information.tb1"),
+            tb2: t("information.tb2"),
+            tb3: t("information.tb3"),
+            tb4: t("information.tb4"),
+            href: `${pathname}/yonalishlar`
+        },
+        {
+            tb1: t("information.tb1"),
+            tb2: t("information.tb2"),
+            tb3: t("information.tb3"),
+            tb4: t("information.tb4"),
+            href: `${pathname}/yonalishlar`
+        },
+        {
+            tb1: t("information.tb1"),
+            tb2: t("information.tb2"),
+            tb3: t("information.tb3"),
+            tb4: t("information.tb4"),
+            href: `${pathname}/yonalishlar`
+        },
+        {
+            tb1: t("information.tb1"),
+            tb2: t("information.tb2"),
+            tb3: t("information.tb3"),
+            tb4: t("information.tb4"),
+            href: `${pathname}/yonalishlar`
+        },
+        {
+            tb1: t("information.tb1"),
+            tb2: t("information.tb2"),
+            tb3: t("information.tb3"),
+            tb4: t("information.tb4"),
+            href: `${pathname}/yonalishlar`
+        },
+        {
+            tb1: t("information.tb1"),
+            tb2: t("information.tb2"),
+            tb3: t("information.tb3"),
+            tb4: t("information.tb4"),
+            href: `${pathname}/yonalishlar`
+        },
+        {
+            tb1: t("information.tb1"),
+            tb2: t("information.tb2"),
+            tb3: t("information.tb3"),
+            tb4: t("information.tb4"),
+            href: `${pathname}/yonalishlar`
+        },
+        
+    ]
+    return (
+        <div className='overflow-x-auto w-full flex justify-center'>
+            <table className='w-full max-w-[1300px]'>
+                <thead>
+                    <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
+                        {
+                            DirectionTHeads?.map((item,index)=> (
+                            <td key={index} className="py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]">{item}</td>
+                            ))
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        DirectionTBodies?.map((item,index)=> (
+                        <tr className='text-[16px] whitespace-nowrap lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb1}</td>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb2}</td>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb4}</td>
+                            <td className='px-2 lg:px-0'>
+                                <Link href={item?.href} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
+                            </td>
+                        </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
+    )
 }
 
 const EducatorsTable = () => {
@@ -409,114 +511,29 @@ const EducatorsTable = () => {
         },
     ]
     return (
-        <table className='w-full max-w-[1300px]'>
-      <thead className='flex justify-between'>
-      </thead>
-      <tbody>
-            <tr className='w-full text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
-              {
-                EducatorTHeads?.map((item,index)=> (
-                  <td key={index} className="py-5">{item}</td>
-                ))
-              }
-            </tr>
-          {
-            EducatorTBodies?.map((item,index)=> (
-              <tr className='text-[26px] py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
-                <td className='py-5'>{item?.tb1}</td>
-                <td className='py-5'>{item?.tb2}</td>
-                <td className='py-5'>{item?.tb3}</td>
-                <td className='py-5 flex items-center gap-3 text-[30px]'>{item?.tb4?.map((el,index)=> <a href={el?.link} target='blank' key={index}>{el?.icon}</a>)}</td>
-                <td className='py-5'>{item?.tb5}</td>
-              </tr>
-            ))
-          }
-      </tbody>
-    </table>
-    )
-}
-
-const DirectionsTable = () => {
-    const t = useTranslations()
-    const DirectionTHeads = [
-        t("information.th1"),
-        t("information.th2"),
-        t("information.th3"),
-        t("information.th4"),
-    ]
-    const DirectionTBodies = [
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4")
-        },
-    ]
-    return (
-        <table className='w-full max-w-[1300px]'>
-      <thead className='flex justify-between'>
-      </thead>
-      <tbody>
-            <tr className='w-full text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
-              {
-                DirectionTHeads?.map((item,index)=> (
-                  <td key={index} className="py-5">{item}</td>
-                ))
-              }
-            </tr>
-          {
-            DirectionTBodies?.map((item,index)=> (
-              <tr className='text-[26px] py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
-                <td className='py-5'>{item?.tb1}</td>
-                <td className='py-5'>{item?.tb2}</td>
-                <td className='py-5'>{item?.tb3}</td>
-                <td className='py-5'>{item?.tb4}</td>
-              </tr>
-            ))
-          }
-      </tbody>
-    </table>
+        <div className='overflow-x-auto'>
+            <table className='w-full max-w-[1300px]'>
+                <tbody>
+                        <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
+                        {
+                            EducatorTHeads?.map((item,index)=> (
+                            <td key={index} className="py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]">{item}</td>
+                            ))
+                        }
+                        </tr>
+                    {
+                        EducatorTBodies?.map((item,index)=> (
+                        <tr className='text-[16px] whitespace-nowrap lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb1}</td>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb2}</td>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5 flex items-center gap-3 text-[20px] lg:text-[30px]'>{item?.tb4?.map((el,index)=> <a href={el?.link} target='blank' key={index}>{el?.icon}</a>)}</td>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb5}</td>
+                        </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
+        </div>
     )
 }

@@ -46,6 +46,7 @@ export interface HoverItemType {
     id: number;
     value: string;
     status: string;
+    href: string
 }
 
 interface MediaType {
