@@ -32,14 +32,14 @@ const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLea
               <Link
               href={item?.href}
               key={index}
-                className={item?.status === "big" ? "flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[18px]" : "flex gap-2 font-[400] text-[16px] pl-3 items-center text-[#404B7C]"}
+                className={item?.status === "big" ? "flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 hover:border-b-transparent ease-linear duration-200 border-b-2 items-center text-[18px]" : "flex gap-2 font-[400] text-[16px] pl-3 items-center text-[#404B7C]"}
                 onClick={() => openElement(item?.id)}
               >
                 <IoIosArrowForward
                   className="text-[18px]"
                 />
                 <span className="max-w-[250px] w-full relative flex justify-start group">{item?.value}
-                  <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
+                  <span className={`${item?.status === "big" ? "bottom-[-5px] left-[-24px]" : "bottom-0"} absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0`}></span>
                 </span>
               </Link>
           );
@@ -51,12 +51,13 @@ const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLea
             return <Link
             href={item?.href} 
             key={index}
+            target={item?.target ? item?.target : ""}
             className={item?.status === "big" ? "relative group flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[18px]" : "flex gap-2 font-[400] text-[16px] pl-3 items-center text-[#404B7C]"}
             onClick={() => openElement(7)}
           >
             <IoIosArrowForward />
             <span className="max-w-[250px] w-full flex justify-normal">{item?.value}
-              <span className="absolute inline-block w-0 h-[2px] left-0 bottom-0 group-hover:w-full ease-linear duration-200 bg-[#404B7C]"></span>
+              <span className={`${item?.status === "big" ? "bottom-[-2px]" : "bottom-0"} absolute inline-block w-0 h-[2px] left-0 group-hover:w-full ease-linear duration-200 bg-[#404B7C]`}></span>
             </span>
           </Link>
           })

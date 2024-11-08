@@ -102,7 +102,8 @@ const Navbar = () => {
       id: 8,
       value: t("hover.title8"),
       status: "big",
-      href: `${activeLang?.value}`
+      href: `https://www.online-library.uz/`,
+      target: "blank"
     },
     {
       id: 9,
@@ -116,7 +117,7 @@ const Navbar = () => {
       id: 1,
       value: t("hover.faculty1"),
       status: "big",
-      href: `${activeLang?.value}`
+      href: `${activeLang?.value}/fakultetlar`
     },
     {
       id: 2,
@@ -342,10 +343,12 @@ const Navbar = () => {
         <ul className="flex flex-col items-center gap-[10px] mt-[25px]">
           {navLink.map(item => (
             <li key={item.id} className="text-[18px] relative flex justify-center group whitespace-nowrap" onMouseEnter={()=>openDropDown(item?.id)} onMouseLeave={()=>openDropDown(item?.id)}>
-              {item.href ? (
+              {item.href && !item?.hover ? (
                 <a target="blank" href={item.href}>{item.label}</a>
+              ) : item?.hover && !item?.href ? (
+                <button onClick={() => handleNavigate(item.path)}>{item.label}</button>
               ) : (
-                <Link href={item.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
+                <Link href={item?.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
               )}
               <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
               {item?.hover && item?.id === dropDown && <Dropdown id={item?.id} closeDropDown={closeDropDown} item1={item?.item1} item2={item?.item2}/>}
