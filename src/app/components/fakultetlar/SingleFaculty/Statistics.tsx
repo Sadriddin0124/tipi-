@@ -276,7 +276,7 @@ const DirectionsTable = () => {
         
     ]
     return (
-        <div className='overflow-x-auto'>
+        <div className='overflow-x-auto w-full md:flex justify-center'>
             <table className='w-full max-w-[1300px]'>
                 <thead>
                     <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
@@ -511,7 +511,7 @@ const EducatorsTable = () => {
         },
     ]
     return (
-        <div className='overflow-x-auto'>
+        <div className='overflow-x-auto w-full md:flex justify-center'>
             <table className='w-full max-w-[1300px]'>
                 <tbody>
                         <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
