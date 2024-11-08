@@ -24,7 +24,7 @@ const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLea
       <div
         onMouseLeave={() => HoverComponentLeave(id)}
         onMouseEnter={() => HoverComponentEnter(id)}
-        className={`p-10 max-w-[650px] min-h-[300px] h-auto gap-10 flex justify-between bg-white shadow-md border rounded-[10px]`}
+        className={`p-6 max-w-[650px] min-h-[300px] h-auto gap-10 flex justify-between bg-white shadow-md border rounded-[10px]`}
       >
       {item1 && <div className="flex flex-col">
         {item1?.map((item, index) => {
