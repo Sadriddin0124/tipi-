@@ -5,7 +5,6 @@ import IT2 from "@/assets/it2.webp"
 import IT3 from "@/assets/it3.webp"
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
-import TableComponent from '../../ui/Table'
 import Link from 'next/link'
 import ITImage from "@/assets/it.webp"
 import { FaFacebookF, FaTelegramPlane, FaYoutube } from 'react-icons/fa'
@@ -50,95 +49,6 @@ const Statistics = () => {
     const changeStatistic = (id: number) => {
         setActiveStatistic(id)
     }
-    const DirectionTHeads = [
-        t("information.th1"),
-        t("information.th2"),
-        t("information.th3"),
-        t("information.th4"),
-    ]
-    const DirectionTBodies = [
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb5: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb5: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb5: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb5: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb5: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb5: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb5: t("information.tb4")
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb5: t("information.tb4")
-        },
-    ]
-    const EducatorTHeads = [
-        t("information.th5"),
-        t("information.th6"),
-        t("information.th7"),
-        t("information.th8"),
-        t("information.th9"),
-    ]
-    const EducatorTBodies = [
-        {
-            tb1: t("information.tb5"),
-            tb2: t("information.tb6"),
-            tb3: "+998 90 123 4567",
-            tb4: [
-                {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com"
-                },
-                {
-                    icon:  <FaTelegramPlane />,
-                    link: "https://t.me"
-                },
-                {
-                    icon: <RiInstagramFill />,
-                    link: "https://instagram.com"
-                },
-                {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com"
-                },
-            ],
-            tb5: "Link",
-        },
-    ]
     
     const components = [
         {id: 1, component: <DirectionsTable/>},

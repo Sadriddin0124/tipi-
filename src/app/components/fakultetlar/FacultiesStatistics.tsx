@@ -14,7 +14,7 @@ const FakultetlarStatistics = () => {
     {title: t("fakultetStatistics.item4"), count: 1, icon: Statistics3, start: 1, increase: 0, price: t("fakultetStatistics.item3")},
 ]
   return (
-    <Counter data={data}/>
+    <Counter data={data} data-aos="fade-up"/>
   )
 }
 

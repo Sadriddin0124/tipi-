@@ -62,7 +62,8 @@
   "news": {
     "title": "Yangiliklar",
     "date": "7 Noyabr, 2024",
-    "desc": "Yevropa ittifoqining loyihasi doirasida universitetimizga Bolgariyaning Varna Iqtisodiyot universiteti vakili Evgeni Raychev tashrif buyurdi..."
+    "desc": "Yevropa ittifoqining loyihasi doirasida universitetimizga Bolgariyaning Varna Iqtisodiyot universiteti vakili Evgeni Raychev tashrif buyurdi...",
+    "more": "Barchasi"
   },
   "pedagogue": {
     "title": "Pedagoglar",
@@ -71,7 +72,8 @@
     "btn": "Batafsil"
   },
   "events": {
-    "title": "Tadbirlar"
+    "title": "Tadbirlar",
+    "more": "Barchasi"
   },
   "contact": {
     "title": "Biz Bilan Bog`lanish",

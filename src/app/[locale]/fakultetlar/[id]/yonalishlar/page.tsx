@@ -1,4 +1,4 @@
-import Contact from '@/app/components/Contact'
+import Contact from '@/app/components/home/Contact'
 import AboutFaculty from '@/app/components/fakultetlar/SingleFaculty/AboutFaculty'
 import DirectionsHero from '@/app/components/fakultetlar/SingleFaculty/directions/DirectionsHero'
 import React from 'react'

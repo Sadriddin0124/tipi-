@@ -58,37 +58,37 @@ const Navbar = () => {
       id: 1,
       value: t("hover.title1"),
       status: "big",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 2,
       value: t("hover.title2"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 3,
       value: t("hover.title3"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 4,
       value: t("hover.title4"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 5,
       value: t("hover.title5"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 6,
       value: t("hover.title6"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
   ];
   const ScientificDirection2: HoverItemType[] = [
@@ -109,7 +109,7 @@ const Navbar = () => {
       id: 9,
       value: t("hover.title9"),
       status: "big",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
   ];
   const Faculties: HoverItemType[] = [
@@ -117,37 +117,37 @@ const Navbar = () => {
       id: 1,
       value: t("hover.faculty1"),
       status: "big",
-      href: `${activeLang?.value}/fakultetlar`
+      href: `/${activeLang?.value}/fakultetlar`
     },
     {
       id: 2,
       value: t("hover.faculty2"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 3,
       value: t("hover.faculty3"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 4,
       value: t("hover.faculty4"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 5,
       value: t("hover.faculty5"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 6,
       value: t("hover.faculty6"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
   ]
   const AboutInstitute: HoverItemType[] = [
@@ -155,19 +155,19 @@ const Navbar = () => {
       id: 1,
       value: t("hover.about1"),
       status: "big",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 2,
       value: t("hover.about2"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 3,
       value: t("hover.about3"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
   ]
   const AboutInstitute2: HoverItemType[] = [
@@ -175,19 +175,19 @@ const Navbar = () => {
       id: 1,
       value: t("hover.about4"),
       status: "big",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 2,
       value: t("hover.about2"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
     {
       id: 3,
       value: t("hover.about3"),
       status: "small",
-      href: `${activeLang?.value}`
+      href: `/${activeLang?.value}`
     },
   ]
   const navLink: NavLinkType[] = [

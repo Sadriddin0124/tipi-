@@ -1,7 +1,7 @@
 "use client"
 import { useTranslations } from 'next-intl';
 import React from 'react'
-import Counter from './ui/Counter';
+import Counter from '../ui/Counter';
 const Statistics = () => {
     const t = useTranslations()
     const data = [

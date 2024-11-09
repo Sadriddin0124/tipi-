@@ -1,4 +1,4 @@
-import Contact from '@/app/components/Contact'
+import Contact from '@/app/components/home/Contact'
 import ScientificCards from '@/app/components/exchange-program/ScientificCards'
 import ScientificHero from '@/app/components/exchange-program/ScientificHero'
 import React from 'react'

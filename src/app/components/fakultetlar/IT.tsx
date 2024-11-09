@@ -64,7 +64,7 @@ const IT = () => {
         },
     ]
   return (
-    <section className='w-full flex justify-center px-3'>
+    <section className='w-full flex justify-center px-3'data-aos="fade-up">
       <div className='max-w-[700px] lg:max-w-[1240px] w-full grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-[20px]'>
         {
             data?.map((item,index)=> {

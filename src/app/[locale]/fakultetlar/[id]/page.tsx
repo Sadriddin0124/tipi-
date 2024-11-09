@@ -1,4 +1,4 @@
-import Contact from '@/app/components/Contact'
+import Contact from '@/app/components/home/Contact'
 import AboutFaculty from '@/app/components/fakultetlar/SingleFaculty/AboutFaculty'
 import SingleFacultyHero from '@/app/components/fakultetlar/SingleFaculty/SingleFacultyHero'
 import Statistics from '@/app/components/fakultetlar/SingleFaculty/Statistics'

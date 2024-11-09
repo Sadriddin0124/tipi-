@@ -1,11 +1,10 @@
-import Campus from '@/app/components/Campus'
-import Contact from '@/app/components/Contact'
-import Events from '@/app/components/Events'
-import Footer from '@/app/components/Footer'
-import Hero from '@/app/components/Hero'
-import News from '@/app/components/News'
-import Pedagogue from '@/app/components/Pedagogue'
-import Statistics from '@/app/components/Statistics'
+import Campus from '@/app/components/home/Campus'
+import Contact from '@/app/components/home/Contact'
+import Events from '@/app/components/home/Events'
+import Hero from '@/app/components/home/Hero'
+import News from '@/app/components/home/News'
+import Pedagogue from '@/app/components/home/Pedagogue'
+import Statistics from '@/app/components/home/Statistics'
 import React from 'react'
 
 const Home = () => {

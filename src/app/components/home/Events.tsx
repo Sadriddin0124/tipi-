@@ -7,9 +7,11 @@ import Event4 from "@/assets/event4.webp"
 import Event5 from "@/assets/event5.webp"
 import Event6 from "@/assets/event6.webp"
 import { useTranslations } from 'next-intl';
-import Carousel from './Carousel';
+import Carousel from '../Carousel';
 import Aos from 'aos';
 import 'aos/dist/aos.css'; 
+import Link from 'next/link'
+import { IoIosArrowForward } from 'react-icons/io'
 const Events = () => {
     const t = useTranslations()
     const data = [
@@ -56,6 +58,9 @@ const Events = () => {
       <div className='max-w-[1320px] mx-auto'>
         <h2 className='pl-[20px] text-[32px] md:text-[40px] font-[600] mb-[20px]'>{t('events.title')}</h2>
         <Carousel data={data}/>
+        <div className='w-full flex justify-end px-2'>
+          <Link href={"/"} className='text-[20px] pb-0 border-b-2 border-b-[#404B7C] text-[#404B7C]'>{t("events.more")}</Link>
+        </div>
       </div>
     </section>
   )
