@@ -16,7 +16,7 @@ const Dropdown: React.FC<DropDownProps> = ({ id, closeDropDown, item1, item2 }) 
         {item1?.map((item, index) => {
           return (
               <Link
-              href={"/"}
+              href={item?.href}
               key={index}
                 className="hover:bg-[#404B7C] hover:text-white text-[#404B7C] flex items-center gap-1 px-3 py-2"
                 onClick={() => closeDropDown(id)}
