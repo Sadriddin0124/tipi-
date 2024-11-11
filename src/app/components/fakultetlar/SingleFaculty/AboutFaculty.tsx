@@ -3,7 +3,8 @@ import { useTranslations } from 'next-intl'
 import React, { useState } from 'react'
 import FileLogo from "@/assets/file_logo.webp"
 import Image from 'next/image'
-import FacultyMasonry from './FacultyMasonry/FacultyMasonry'
+import FacultyMasonry from './FacultyMasonry'
+import Video from "@/assets/video.webp"
 const AboutFaculty = () => {
   const t = useTranslations()
   const files = [
@@ -61,14 +62,16 @@ const AboutFaculty = () => {
         </div>
         <div className='flex flex-col items-center justify-center md:flex-row gap-5'>
           <div className='max-w-[650px]'>
-            <video controls className='w-full h-auto'>
+            <Image src={Video} alt='Video 1' width={500} height={300} className='w-full h-auto'/>
+            {/* <video controls className='w-full h-auto'>
               <source src='/bmw.mp4' type='video/mp4'/>
-            </video>
+              </video> */}
           </div>
           <div className='max-w-[650px]'>
-            <video controls className='w-full h-auto'>
+            <Image src={Video} alt='Video 1' width={500} height={300} className='w-full h-auto'/>
+            {/* <video controls className='w-full h-auto'>
               <source src='/bmw.mp4' type='video/mp4'/>
-            </video>
+            </video> */}
           </div>
         </div>
       </div>
