@@ -5,21 +5,28 @@ import PedagogueImg2 from "@/assets/pedagogue2.webp"
 import PedagogueImg3 from "@/assets/pedagogue3.webp"
 import { useTranslations } from 'next-intl'
 import { PedagogueType } from '@/app/types/all.types'
-import { useRouter } from 'next/router'
 import { usePathname } from 'next/navigation'
 const SingleEducator = () => {
     const t = useTranslations()
     const id = usePathname().split("/")[3]
-    const data:PedagogueType[] = [
-        {id: "pedagog-1", img: PedagogueImg1, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+    const data = [
+        {
+            id: "pedagog-1", 
+            img: PedagogueImg1, 
+            name: t("pedagogue.title1"), 
+            desc: t("pedagogue.desc1"),
+            about1: t("educator.about_v1"),
+            about2: t("educator.about_v2"),
+            about3: t("educator.about_v3"),
+            profession: [
+                t("educator.profession1"),
+                t("educator.profession2"),
+                t("educator.profession3"),
+                t("educator.profession4"),
+            ]
+        },
         {id: "pedagog-2", img: PedagogueImg2, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
         {id: "pedagog-3", img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {id: "pedagog-4", img: PedagogueImg1, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {id: "pedagog-5", img: PedagogueImg2, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {id: "pedagog-6", img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {id: "pedagog-7", img: PedagogueImg1, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {id: "pedagog-8", img: PedagogueImg2, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {id: "pedagog-9", img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
     ]
     const item = data?.find(item=> item?.id === id)
     console.log(item);

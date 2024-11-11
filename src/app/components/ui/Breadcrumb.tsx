@@ -10,7 +10,7 @@ export interface BreadcrumbProps {
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, activeLang }) => {
   const t = useTranslations()
   return (
-    <nav className="flex space-x-1 text-sm font-medium self-start pb-5 max-w-[1400px] w-full mx-auto">
+    <nav className="flex space-x-1 text-sm font-medium self-start pb-[10px] max-w-[1400px] w-full mx-auto">
         <div className="flex items-center">
           <Link href="/" className='text-[12px] md:text-[18px]'>
             <span className="text-[#000000B2] hover:text-[#404B7C]">

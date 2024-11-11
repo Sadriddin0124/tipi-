@@ -5,8 +5,8 @@
     "link2": "Fakultetlar",
     "link3": "Institut haqida",
     "link4": "Yangiliklar",
-    "link5": "Iqtidorli Talabalar",
-    "link6": "Bo'limlar"
+    "link5": "Bo'limlar",
+    "link6": "Interaktiv xizmatlar"
   },
   "path": {
     "mainPage": "Asosiy sahifa",
@@ -31,6 +31,7 @@
     "title7": "Almashinuv dasturi",
     "title8": "ARM (kutubxona)",
     "title9": "Ilmiy jurnal",
+    "title10": "Iqtidorli Talabalar",
     "faculty1": "Fakultetlar",
     "faculty2": "Iqtisodiyot fakulteti",
     "faculty3": "Pedagogika",
@@ -136,7 +137,7 @@
     "th6": "Pedagog ismi",
     "th7": "Bog’lanish",
     "th8": "Ijtimoyi tarmoqlar",
-    "th9": "Web sayt",
+    "th9": "Batafsil",
     "tb1": "Axborot Texnologiyalari",
     "tb2": "Bakalavr",
     "tb3": "4 yil",
@@ -144,6 +145,7 @@
     "tb5": "Doktor",
     "tb6": "Avazov Avaz  Avazovich",
     "btn": "Sahifa",
+    "btn2": "Batafsil",
     "reception1": "Bakalavr",
     "reception2": "O'qishni ko'chirish",
     "reception3": "Magistratura"
@@ -165,6 +167,14 @@
     "profession1": "Tadqiqot darvozasi",
     "profession2": "Google olimi",
     "profession3": "Orcide",
-    "profession4": "LinkedIn"
+    "profession4": "LinkedIn",
+    "work1": "Loyihalar",
+    "work2": "Kitoblar",
+    "work3": "Maqolalar",
+    "work4": "Sertifikatlar",
+    "work5": "Multimedia",
+    "work6": "Autoreferat (PhD, DSc)",
+    "nation_t": "Millati",
+    "nation_v": "O'zbek"
   }
 }

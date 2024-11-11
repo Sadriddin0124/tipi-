@@ -20,7 +20,7 @@ const HoverComponent = ({id, hoverStatus, HoverComponentEnter, HoverComponentLea
     setHoverElementActive(hoverElementActive === id ? 0 : id);
   };
   return (
-    <div className={`${hoverStatus === id ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"} ${pathname < 4 ? "top-[150px]" : "top-[190px]" } transform transition-all duration-300 linear origin-top fixed z-50 left-0 w-full h-[100vh] flex justify-center items-start`}>
+    <div className={`${hoverStatus === id ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"} ${pathname < 4 ? "top-[110px]" : "top-[110px]" } transform transition-all duration-300 linear origin-top fixed z-50  h-[100vh] flex justify-center items-start`}>
       <div
         onMouseLeave={() => HoverComponentLeave(id)}
         onMouseEnter={() => HoverComponentEnter(id)}

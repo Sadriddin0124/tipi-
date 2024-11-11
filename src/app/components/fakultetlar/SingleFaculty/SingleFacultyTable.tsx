@@ -10,7 +10,7 @@ import ITImage from "@/assets/it.webp"
 import { FaFacebookF, FaTelegramPlane, FaYoutube } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
 import { usePathname } from 'next/navigation'
-
+import EducatorImg from "@/assets/pedagogue1.webp"
 const Statistics = () => {
     const t = useTranslations()
     const [activeStatistic, setActiveStatistic] = useState<number>(1)
@@ -220,8 +220,9 @@ const DirectionsTable = () => {
 const EducatorsTable = () => {
     const t = useTranslations()
     const EducatorTHeads = [
-        t("information.th5"),
+        "",
         t("information.th6"),
+        t("information.th5"),
         t("information.th7"),
         t("information.th8"),
         t("information.th9"),
@@ -393,7 +394,6 @@ const EducatorsTable = () => {
                     link: "https://youtube.com"
                 },
             ],
-            tb5: "Link",
         },
         {
             tb1: t("information.tb5"),
@@ -434,11 +434,16 @@ const EducatorsTable = () => {
                     {
                         EducatorTBodies?.map((item,index)=> (
                         <tr className='text-[16px] whitespace-nowrap lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5 w-[60px]'>
+                                <Image src={EducatorImg} alt='Educator' width={100} height={100} className='w-[50px] object-cover h-[50px] rounded-full'/>
+                            </td>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5 '>{item?.tb2}</td>
                             <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb1}</td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb2}</td>
                             <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
                             <td className='py-3 px-2 lg:px-0 lg:py-5 flex items-center gap-3 text-[20px] lg:text-[30px]'>{item?.tb4?.map((el,index)=> <a href={el?.link} target='blank' key={index}>{el?.icon}</a>)}</td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb5}</td>
+                            <td className='py-3 px-2 lg:px-0 lg:py-5'>
+                                <Link href={""} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn2")}</Link>
+                            </td>
                         </tr>
                         ))
                     }

@@ -190,13 +190,27 @@ const Navbar = () => {
       href: `/${activeLang?.value}`
     },
   ]
+  const InteractiveService: HoverItemType[] = [
+    {
+      id: 1,
+      value: t("hover.title10"),
+      status: "big",
+      href: `/${activeLang?.value}`
+    },
+    {
+      id: 2,
+      value: t("hover.title8"),
+      status: "big",
+      href: `/${activeLang?.value}`
+    },
+  ]
   const navLink: NavLinkType[] = [
-    { id: 1, label: t("nav.link1"), path: `/${activeLang?.value}/ilmiy-yonalish`, hover: true, item1: ScientificDirection, item2: ScientificDirection2 },
-    { id: 2, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, item1: Faculties },
-    { id: 3, label: t("nav.link3"), path: `/${activeLang?.value}/institut-haqida`, hover: true, item1: AboutInstitute, item2: AboutInstitute2 },
-    { id: 4, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
-    { id: 5, label: t("nav.link5"), path: `/${activeLang?.value}/iqtidorli-talabalar`, hover: false },
-    { id: 6, label: t("nav.link6"), path: `/${activeLang?.value}/bolimlar`, hover: false },
+    { id: 1, label: t("nav.link3"), path: `/${activeLang?.value}/institut-haqida`, hover: true, item1: AboutInstitute, item2: AboutInstitute2 },
+    { id: 2, label: t("nav.link5"), path: `/${activeLang?.value}/bolimlar`, hover: false },
+    { id: 3, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, item1: Faculties },
+    { id: 4, label: t("nav.link1"), path: `/${activeLang?.value}/ilmiy-yonalish`, hover: true, item1: ScientificDirection, item2: ScientificDirection2 },
+    { id: 5, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
+    { id: 6, label: t("nav.link6"), path: `/${activeLang?.value}/interaktive-xizmatlar`, hover: true, item1:  InteractiveService},
   ];
 
   const Destinations = [
@@ -298,9 +312,9 @@ const Navbar = () => {
   
   return (
     <nav className="flex justify-center flex-col items-center px-3 bg-white">
-      <div className="py-[25px] w-full max-w-[1400px] flex items-center justify-between">
+      <div className="py-[10px] w-full max-w-[1400px] flex items-center justify-between">
         <Link href="/" className="flex items-center max-w-[400px] gap-[20px]">
-          <Image src={Logo} alt="Logo" width={100} height={100} className="w-[50px] sm:w-[100px] h-[50px] sm:h-[100px]" />
+          <Image src={Logo} alt="Logo" width={100} height={100} className="w-[50px] sm:w-[90px] h-[50px] sm:h-[90px]" />
           <span className="hidden sm:inline-block text-[18px] font-bold">{t("nav.logo")}</span>
         </Link>
         <div className="hidden xl:flex items-center gap-[15px]">
@@ -371,7 +385,7 @@ const Navbar = () => {
           </div>
         </ul>
       </div>
-      {breadcrumbItems.length ? <Breadcrumb items={breadcrumbItems} activeLang={activeLang}/> : ""}
+      {/* {breadcrumbItems.length ? <Breadcrumb items={breadcrumbItems} activeLang={activeLang}/> : ""} */}
     </nav>
   );
 };
