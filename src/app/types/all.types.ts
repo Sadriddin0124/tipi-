@@ -15,6 +15,7 @@ export interface NewsType {
 }
 
 export interface PedagogueType {
+    id?: string;
     img: StaticImageData;
     name: string;
     desc: string;

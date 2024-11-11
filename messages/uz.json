@@ -17,7 +17,9 @@
     "link5": "Iqtidorli Talabalar",
     "link6": "Bo'limlar",
     "link7": "Axborot Texnologiyalari",
-    "link8": "Almashinuv dasturi"
+    "link8": "Almashinuv dasturi",
+    "link9": "Pedagoglar",
+    "link10": "Pedagog"
   },
   "hover": {
     "title1": "Bo'limlar",
@@ -118,7 +120,8 @@
   },
   "aboutFaculty": {
   "title": "Fakultet haqida",
-  "desc": "1979 yilda tashkil etilgan Kompyuter texnologiyalari maktabi (SCT) Sharqiy O'rta dengiz universitetining eng qadimgi bo'limidir. SCT o'zining ko'p millatli talabalar profiliga raqamli va madaniyatlararo muhitda yuqori texnologik ta'lim beradi. Ta'lim tili to'rt yillik Axborot Texnologiyalari dasturida (BS) va magistratura dasturida (MTech in IT) ingliz tili hisoblanadi. Biroq, ikki va uch yillik kurs dasturlarida ta'lim tili turk tilidir. O'zining mukammal inshootlari va 'Loyiha asosida o'rganish'ga sodiqligi bilan SCT quyidagi ta'lim yo'nalishlarini taqdim etadi: SCTda xalqaro talabalar bilan ishlash uchun Xalqaro Talabalar Maslahatchisi (ISA) mavjud bo'lib, u talabalar uchun akademik va akademik bo'lmagan masalalarda yordam beradi. Shuningdek, talabalar yordamchilari tomonidan Talaba-Talaba Maslahati (S2S) xizmatlari taqdim etiladi, bu esa talabalar o'quv muammolariga yordam beradi. Kompyuter texnologiyalari maktabining (SCT) asosiy maqsadi bugungi global raqamli dunyoning biznes, sanoat va xizmat ko'rsatish sohalarida talab qilinadigan yuqori malakali texnik inson resurslarini tayyorlashdir. O'zining asosiy maqsadiga erishish uchun SCT o'z talabalarini o'zlarining sohalarida zarur bilim va ko'nikmalar bilan ta'minlashga intiladi, muntazam ravishda yangilangan loyiha asosidagi o'rganish dasturi va sanoat tajribasiga ega malakali o'qituvchilar orqali. Axborot texnologiyalari bo'yicha o'qitish tili ingliz tilida (BS) va Axborot texnologiyalari bo'yicha magistratura dasturi (MTech in IT), ikki va uch yillik kasbiy dasturlarda esa o'qitish tili turk tilida."
+  "desc": "1979 yilda tashkil etilgan Kompyuter texnologiyalari maktabi (SCT) Sharqiy O'rta dengiz universitetining eng qadimgi bo'limidir. SCT o'zining ko'p millatli talabalar profiliga raqamli va madaniyatlararo muhitda yuqori texnologik ta'lim beradi. Ta'lim tili to'rt yillik Axborot Texnologiyalari dasturida (BS) va magistratura dasturida (MTech in IT) ingliz tili hisoblanadi. Biroq, ikki va uch yillik kurs dasturlarida ta'lim tili turk tilidir. O'zining mukammal inshootlari va 'Loyiha asosida o'rganish'ga sodiqligi bilan SCT quyidagi ta'lim yo'nalishlarini taqdim etadi: SCTda xalqaro talabalar bilan ishlash uchun Xalqaro Talabalar Maslahatchisi (ISA) mavjud bo'lib, u talabalar uchun akademik va akademik bo'lmagan masalalarda yordam beradi. Shuningdek, talabalar yordamchilari tomonidan Talaba-Talaba Maslahati (S2S) xizmatlari taqdim etiladi, bu esa talabalar o'quv muammolariga yordam beradi. Kompyuter texnologiyalari maktabining (SCT) asosiy maqsadi bugungi global raqamli dunyoning biznes, sanoat va xizmat ko'rsatish sohalarida talab qilinadigan yuqori malakali texnik inson resurslarini tayyorlashdir. O'zining asosiy maqsadiga erishish uchun SCT o'z talabalarini o'zlarining sohalarida zarur bilim va ko'nikmalar bilan ta'minlashga intiladi, muntazam ravishda yangilangan loyiha asosidagi o'rganish dasturi va sanoat tajribasiga ega malakali o'qituvchilar orqali. Axborot texnologiyalari bo'yicha o'qitish tili ingliz tilida (BS) va Axborot texnologiyalari bo'yicha magistratura dasturi (MTech in IT), ikki va uch yillik kasbiy dasturlarda esa o'qitish tili turk tilida.",
+  "fileDesc": "Bu yerda fayl tavsifi bo'lishi mumkin edi..."
   },
   "information": {
     "title": "Axborot texnologiyalari",
@@ -150,5 +153,18 @@
   },
   "directions": {
     "title": "Yo'nalishlar"
+  },
+  "educator": {
+    "name": "Talipov Farxod Farxodovich",
+    "about_t1": "Lavozim",
+    "about_v1": "Xalqaro munosabatlar va geosiyosat kafedrasi professori",
+    "about_t2": "Fakultet",
+    "about_v2": "Xalqaro munosabat",
+    "about_t3": "Kafedra",
+    "about_v3": "Jahon tarixi",
+    "profession1": "Tadqiqot darvozasi",
+    "profession2": "Google olimi",
+    "profession3": "Orcide",
+    "profession4": "LinkedIn"
   }
 }

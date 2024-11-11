@@ -208,8 +208,9 @@ const Navbar = () => {
     { label: t("path.link6"), href: "bolimlar" },
     { label: t("path.link7"), href: "1" },
     { label: t("path.link8"), href: "almashinuv-dasturi" },
+    { label: t("path.link9"), href: "pedagoglar" },
+    { label: t("path.link10"), href: "pedagog-1" },
   ];
-
 
   const SwitchLang = (value: string) => {
     const path = sessionStorage.getItem("path") || "";

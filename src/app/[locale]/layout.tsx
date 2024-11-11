@@ -29,7 +29,7 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
             <body>
                 <NextIntlClientProvider locale={locale} messages={messages}>
                     <Navbar/>
-                    <Loader/>
+                    {/* <Loader/> */}
                     {children}
                     <Footer/>
                 </NextIntlClientProvider>

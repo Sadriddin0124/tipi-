@@ -6,21 +6,24 @@ import PedagogueImg3 from "@/assets/pedagogue3.webp"
 import { useTranslations } from 'next-intl'
 import { PedagogueType } from '@/app/types/all.types'
 import Image from 'next/image'
-import { FiDownload } from "react-icons/fi";
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const EducatorsCards = () => {
     const t = useTranslations()
     const data:PedagogueType[] = [
-        {img: PedagogueImg1, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {img: PedagogueImg2, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {img: PedagogueImg1, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {img: PedagogueImg2, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {img: PedagogueImg1, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {img: PedagogueImg2, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
-        {img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+        {id: "pedagog-1", img: PedagogueImg1, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+        {id: "pedagog-2", img: PedagogueImg2, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+        {id: "pedagog-3", img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+        {id: "pedagog-4", img: PedagogueImg1, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+        {id: "pedagog-5", img: PedagogueImg2, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+        {id: "pedagog-6", img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+        {id: "pedagog-7", img: PedagogueImg1, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+        {id: "pedagog-8", img: PedagogueImg2, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
+        {id: "pedagog-9", img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
     ]
+    const activeLang = usePathname().split("/")[1]
+    
   return (
     <section className='flex justify-center flex-col items-center gap-10 w-full py-[100px]' data-aos="fade-up">
         <h2 className='text-[24px] md:text-[40px] font-[500]'>{t("pedagogue.title")}</h2>
@@ -33,8 +36,8 @@ const EducatorsCards = () => {
                             <div className='p-5 flex flex-col items-start gap-[10px]'>
                                 <h5 className='text-[20px] font-[600] lg:max-w-[160px]'>{item?.name}</h5>
                                 <p className='text_main text-[18px] font-[600]'>{item?.desc}</p>
-                                <button className='text-[24px] self-end'><FiDownload /></button>
-                            </div>
+                                <Link href={`/${activeLang}/pedagoglar/${item?.id}`} className='hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]'>{t("pedagogue.btn")}</Link>
+                                </div>
                         </div>
                     </div>
                 })
