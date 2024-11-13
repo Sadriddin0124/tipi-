@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React from 'react'
 import Logo from "@/assets/logo.webp"
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
@@ -7,8 +7,6 @@ import Link from 'next/link'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { FaFacebookF } from 'react-icons/fa6'
 import { RiInstagramFill } from 'react-icons/ri'
-import Aos from 'aos';
-import 'aos/dist/aos.css'; 
 const Footer = () => {
     const t = useTranslations()
     const links1 = [
@@ -73,15 +71,8 @@ const Footer = () => {
             path: "https://instagram.com/"
         },
     ]
-    useEffect(() => {
-        Aos.init({
-            duration: 1000,
-            once: true, 
-            easing: 'linear',
-        });
-    }, []);
   return (
-    <footer className='py-[58px] px-3 sm:px-[58px] bg_main flex justify-start' data-aos="fade-up">
+    <footer className='py-[58px] px-3 sm:px-[58px] bg_main flex justify-start'>
         <div className='flex justify-between flex-wrap gap-8 md:flex-nowrap max-w-[1100px] w-full'>
             <div className='flex flex-col items-start sm:items-end'>
                 <div className='max-w-[394px] flex gap-4 items-start'>

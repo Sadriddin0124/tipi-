@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from 'react-icons/io';
-import { HoverItemType } from '../types/all.types';
 import Link from 'next/link';
+import { HoverItemType } from '@/app/types/all.types';
 
 interface DropDownProps {
   id: number | undefined;

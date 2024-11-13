@@ -90,10 +90,10 @@ const Contact = () => {
         <div className='max-w-[1133px] w-full flex flex-col gap-10 items-center'>
             <h2 className='text-[32px] md:text-[40px] font-[600]' data-aos="fade-up">{t("contact.title")}</h2>
             <div className='flex flex-col-reverse md:flex-row gap-4 justify-between w-full'>
-                <div className='grid sm:grid-cols-2 md:flex flex-col gap-3 sm:gap-5'>
+                <div className='grid sm:grid-cols-2 md:flex flex-col gap-3 sm:gap-5' data-aos="fade-up">
                     {
                         data?.map((item,index)=> {
-                            return <div key={index} data-aos="fade-up" className={`bg_main rounded-[10px] p-6 md:max-w-[328px] w-full flex items-center gap-5 lg:gap-7 ${index === 2 ? "sm:col-span-2" : ""}`}>
+                            return <div key={index} className={`bg_main rounded-[10px] p-6 md:max-w-[328px] w-full flex items-center gap-5 lg:gap-7 ${index === 2 ? "sm:col-span-2" : ""}`}>
                                 <span className='text_main bg-white p-3 rounded-full'>{item?.icon}</span>
                                 <div className='flex flex-col text-white text-[16px] lg:text-[20px] font-[600] gap-[14px]'>
                                     <span>{item?.title}</span>
@@ -104,15 +104,15 @@ const Contact = () => {
                     }
                 </div>
                 <form className='max-w-[714px] w-full flex flex-col items-start gap-3 md:gap-5' onSubmit={handleSubmit} data-aos="fade-up">
-                    <h3 className='text-[24px] font-[600] text_main' data-aos="fade-up">{t("contact.title1")}</h3>
+                    <h3 className='text-[24px] font-[600] text_main'>{t("contact.title1")}</h3>
                     <div className='flex flex-col sm:flex-row gap-[12px] w-full'>
-                        <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='contact font-[600] p-4 sm:p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] sm:max-w-[350px] w-full' placeholder={t("contact.name_placeholder")} data-aos="fade-up"/>
-                        <div className='contact font-[600] overflow-hidden flex items-center h-[58px] sm:h-[74px] rounded-[10px] border text-[#404B7C] border-[#404B7C] sm:max-w-[350px] w-full' data-aos="fade-up">
+                        <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className='contact font-[600] p-4 sm:p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] sm:max-w-[350px] w-full' placeholder={t("contact.name_placeholder")}/>
+                        <div className='contact font-[600] overflow-hidden flex items-center h-[58px] sm:h-[74px] rounded-[10px] border text-[#404B7C] border-[#404B7C] sm:max-w-[350px] w-full'>
                             <PhoneInput country={'uz'} value={number} onChange={handleChange} inputStyle={contactStyle} />
                         </div>
                     </div>
-                    <textarea value={message} onChange={(e)=>setMessage(e.target.value)} className='contact font-[600] p-4 sm:p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] w-full resize-none h-[134px]' placeholder={t("contact.message_placeholder")} data-aos="fade-up"></textarea>
-                    <button type='submit' className='hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]' data-aos="fade-up">{t("contact.btn")}</button>
+                    <textarea value={message} onChange={(e)=>setMessage(e.target.value)} className='contact font-[600] p-4 sm:p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] w-full resize-none h-[134px]' placeholder={t("contact.message_placeholder")}></textarea>
+                    <button type='submit' className='hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]'>{t("contact.btn")}</button>
                 </form>
             </div>
         </div>

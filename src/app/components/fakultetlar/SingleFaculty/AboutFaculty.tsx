@@ -41,7 +41,7 @@ const AboutFaculty = () => {
   ]
   return (
     <section className='flex justify-center px-3 py-4 md:py-[100px]' data-aos="fade-up">
-      <div className='max-w-[1300px] w-full flex flex-col gap-[96px]'>
+      <div className='max-w-[1300px] w-full flex flex-col gap-4 md:gap-[96px]'>
         <FacultyMasonry/>
         <div className='grid grid-cols-4 gap-3 2xl:gap-[65px]'>
         </div>

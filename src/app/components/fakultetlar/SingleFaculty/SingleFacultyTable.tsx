@@ -10,7 +10,7 @@ import ITImage from "@/assets/it.webp"
 import { FaFacebookF, FaTelegramPlane, FaYoutube } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
 import { usePathname } from 'next/navigation'
-import EducatorImg from "@/assets/pedagogue1.webp"
+import EducatorImg from "@/assets/educator.webp"
 const Statistics = () => {
     const t = useTranslations()
     const [activeStatistic, setActiveStatistic] = useState<number>(1)
@@ -229,6 +229,7 @@ const EducatorsTable = () => {
     ]
     const EducatorTBodies = [
         {
+            id: 1,
             tb1: t("information.tb5"),
             tb2: t("information.tb6"),
             tb3: "+998 90 123 4567",
@@ -253,6 +254,7 @@ const EducatorsTable = () => {
             tb5: "Link",
         },
         {
+            id: 2,
             tb1: t("information.tb5"),
             tb2: t("information.tb6"),
             tb3: "+998 90 123 4567",
@@ -277,6 +279,7 @@ const EducatorsTable = () => {
             tb5: "Link",
         },
         {
+            id: 3,
             tb1: t("information.tb5"),
             tb2: t("information.tb6"),
             tb3: "+998 90 123 4567",
@@ -301,6 +304,7 @@ const EducatorsTable = () => {
             tb5: "Link",
         },
         {
+            id: 4,
             tb1: t("information.tb5"),
             tb2: t("information.tb6"),
             tb3: "+998 90 123 4567",
@@ -325,6 +329,7 @@ const EducatorsTable = () => {
             tb5: "Link",
         },
         {
+            id: 5,
             tb1: t("information.tb5"),
             tb2: t("information.tb6"),
             tb3: "+998 90 123 4567",
@@ -349,6 +354,7 @@ const EducatorsTable = () => {
             tb5: "Link",
         },
         {
+            id: 6,
             tb1: t("information.tb5"),
             tb2: t("information.tb6"),
             tb3: "+998 90 123 4567",
@@ -373,6 +379,7 @@ const EducatorsTable = () => {
             tb5: "Link",
         },
         {
+            id: 7,
             tb1: t("information.tb5"),
             tb2: t("information.tb6"),
             tb3: "+998 90 123 4567",
@@ -396,6 +403,7 @@ const EducatorsTable = () => {
             ],
         },
         {
+            id: 8,
             tb1: t("information.tb5"),
             tb2: t("information.tb6"),
             tb3: "+998 90 123 4567",
@@ -420,9 +428,10 @@ const EducatorsTable = () => {
             tb5: "Link",
         },
     ]
+    const [activeItem, setActiveItem] = useState<number>(0)
     return (
         <div className='overflow-x-auto w-full md:flex justify-center'>
-            <table className='w-full max-w-[1300px]'>
+            <table className='w-full max-w-[1300px] bg-white'>
                 <tbody>
                         <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
                         {
@@ -433,18 +442,31 @@ const EducatorsTable = () => {
                         </tr>
                     {
                         EducatorTBodies?.map((item,index)=> (
-                        <tr className='text-[16px] whitespace-nowrap lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5 w-[60px]'>
-                                <Image src={EducatorImg} alt='Educator' width={100} height={100} className='w-[50px] object-cover h-[50px] rounded-full'/>
-                            </td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5 '>{item?.tb2}</td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb1}</td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5 flex items-center gap-3 text-[20px] lg:text-[30px]'>{item?.tb4?.map((el,index)=> <a href={el?.link} target='blank' key={index}>{el?.icon}</a>)}</td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5'>
-                                <Link href={""} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn2")}</Link>
-                            </td>
-                        </tr>
+                        <>
+                            <tr className='text-[16px] whitespace-nowrap relative lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
+                                <td className='py-3 px-3  lg:py-5'>
+                                    <Image src={EducatorImg} alt='Educator' width={100} height={100} className='w-[50px] object-cover h-[50px] rounded-full'/>
+                                </td>
+                                <td className='py-3 px-2 lg:px-0 lg:py-5 '>{item?.tb2}</td>
+                                <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb1}</td>
+                                <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
+                                <td className='py-3 px-2 lg:px-0 lg:py-5'>
+                                    <div className='flex items-center gap-3 text-[20px] lg:text-[30px]'>
+                                        {item?.tb4?.map((el,index)=> <a href={el?.link} target='blank' key={index}>{el?.icon}</a>)}
+                                    </div>
+                                </td>
+                                <td className='py-3 px-2 lg:px-0 lg:py-5'>
+                                    <button onClick={()=>setActiveItem(item?.id === activeItem ? 0 : item?.id)} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn2")}</button>
+                                </td>
+                            </tr>
+                            <tr className={`${activeItem === item?.id ? "" : "hidden"} relative`}>
+                                <td colSpan={6} className='w-full'>
+                                    <div className={`flex justify-center w-full`}>
+                                        <h2>{item?.tb2}</h2>
+                                    </div>
+                                </td>
+                            </tr>
+                        </>
                         ))
                     }
                 </tbody>

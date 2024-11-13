@@ -4,7 +4,7 @@ import SingleFacultyHero from '@/app/components/fakultetlar/SingleFaculty/Single
 import Statistics from '@/app/components/fakultetlar/SingleFaculty/SingleFacultyTable'
 import React from 'react'
 
-const Check = () => {
+const SingleFaculty = () => {
   return (
     <div>
       <SingleFacultyHero/>
@@ -15,4 +15,4 @@ const Check = () => {
   )
 }
 
-export default Check
+export default SingleFaculty

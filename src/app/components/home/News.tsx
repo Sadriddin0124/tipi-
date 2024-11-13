@@ -59,7 +59,10 @@ const News = () => {
         <h2 className='pl-[20px] text-[32px] md:text-[40px] font-[600] mb-[20px]'>{t('news.title')}</h2>
         <Carousel data={data}/>
         <div className='w-full flex justify-end px-2'>
-          <Link href={"/"} className='text-[20px] pb-0 border-b-2 border-b-[#404B7C] text-[#404B7C]'>{t("news.more")}</Link>
+          <Link href={"/"} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
+            {t("news.more")}
+            <span className='group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]'></span>
+          </Link>
         </div>
       </div>
     </section>

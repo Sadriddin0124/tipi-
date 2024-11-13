@@ -49,13 +49,15 @@ const Hero = () => {
   };
   return (
     <div className='pb-4 relative'>
-      <Slider {...settings}>
-        {data.map((item, index) => (
-            <header key={index} className='md:h-[400px] lg:h-[577px] w-full relative rounded-b-[20px] md:rounded-b-[40px] overflow-hidden' data-aos="zoom-up">
-              <Image src={item?.img} alt='Hero Image' className='w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]' width={1400} height={600}/>
-            </header>
-        ))}
-    </Slider>
+      <div className='rounded-b-[20px] md:rounded-b-[40px] overflow-hidden md:h-[400px] lg:h-[577px]'>
+        <Slider {...settings}>
+          {data.map((item, index) => (
+              <header key={index} className=' w-full relative' data-aos="zoom-up">
+                <Image src={item?.img} alt='Hero Image' className='w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]' width={1400} height={600}/>
+              </header>
+          ))}
+        </Slider>
+      </div>
     <div className="absolute top-0 left-0 w-[50%] md:w-auto h-full bg-cover bg-center z-0">
         <Image src={HeroImgBlur} alt='Hero Image Blur' className='lg:w-auto h-[300px] md:h-[577px]' width={500} height={400}/>
         <div className='hidden sm:flex justify-center gap-5 w-[100%] h-full items-center absolute z-10 top-0 left-0'>

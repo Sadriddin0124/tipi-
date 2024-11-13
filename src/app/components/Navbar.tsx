@@ -13,8 +13,8 @@ import { BreadcrumbItem, HoverItemType, LangType } from "../types/all.types";
 import HoverComponent from "./HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
-import Breadcrumb from "./ui/Breadcrumb";
-import Dropdown from "./Dropdown";
+// import Breadcrumb from "./ui/Breadcrumb";
+import Dropdown from "./ui/Dropdown";
 
 const Navbar = () => {
   const t = useTranslations();
@@ -95,20 +95,13 @@ const Navbar = () => {
     {
       id: 7,
       value: t("hover.title7"),
-      status: "big",
+      status: "small",
       href: `/${activeLang?.value}/almashinuv-dasturi`
-    },
-    {
-      id: 8,
-      value: t("hover.title8"),
-      status: "big",
-      href: `https://www.online-library.uz/`,
-      target: "blank"
     },
     {
       id: 9,
       value: t("hover.title9"),
-      status: "big",
+      status: "small",
       href: `/${activeLang?.value}`
     },
   ];
@@ -195,26 +188,27 @@ const Navbar = () => {
       id: 1,
       value: t("hover.title10"),
       status: "big",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`
     },
     {
-      id: 2,
+      id: 8,
       value: t("hover.title8"),
-      status: "big",
-      href: `/${activeLang?.value}`
+      status: "small",
+      href: `https://www.online-library.uz/`,
+      target: "blank"
     },
   ]
   const navLink: NavLinkType[] = [
     { id: 1, label: t("nav.link3"), path: `/${activeLang?.value}/institut-haqida`, hover: true, item1: AboutInstitute, item2: AboutInstitute2 },
-    { id: 2, label: t("nav.link5"), path: `/${activeLang?.value}/bolimlar`, hover: false },
+    { id: 2, label: t("nav.link5"), path: `/${activeLang?.value}/bolimlar`, hover: true, item1: ScientificDirection },
     { id: 3, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, item1: Faculties },
-    { id: 4, label: t("nav.link1"), path: `/${activeLang?.value}/ilmiy-yonalish`, hover: true, item1: ScientificDirection, item2: ScientificDirection2 },
-    { id: 5, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
-    { id: 6, label: t("nav.link6"), path: `/${activeLang?.value}/interaktive-xizmatlar`, hover: true, item1:  InteractiveService},
+    { id: 4, label: t("nav.link1"), path: `/${activeLang?.value}/qabul`, hover: false },
+    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, item1:  [...InteractiveService, ...ScientificDirection2]},
+    { id: 6, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
   ];
 
   const Destinations = [
-    { label: t("path.link1"), href: "ilmiy-yonalish" },
+    { label: t("path.link1"), href: "qabul" },
     { label: t("path.link2"), href: "fakultetlar" },
     { label: t("path.link3"), href: "institut-haqida" },
     { label: t("path.link4"), href: "yangiliklar" },
@@ -329,7 +323,7 @@ const Navbar = () => {
                   ) : (
                     <Link href={item.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
                   )}
-                  <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
+                  <span className={`${item?.path === pathname ? "w-full" : "w-0 group-hover:w-full"} absolute inline-block h-[2px] ease-linear duration-200 bg-[#404B7C] bottom-0`}></span>
                 </div>
                 {item.hover && (
                   <HoverComponent id={item.id} HoverComponentEnter={HoverComponentEnter} HoverComponentLeave={HoverComponentLeave} hoverStatus={hoverStatus} item1={item?.item1} item2={item?.item2}/>

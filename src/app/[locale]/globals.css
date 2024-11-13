@@ -158,3 +158,18 @@
     --chart-5: 340 75% 55%;
   }
 }
+
+.table_open {
+  animation: openTable .3s linear;
+}
+
+@keyframes openTable {
+  from {
+    height: .1px;
+    overflow: hidden;
+  } to {
+    min-height: 120px;
+    overflow: visible;
+  }
+}
+
