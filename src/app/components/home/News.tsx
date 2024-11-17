@@ -1,10 +1,10 @@
 "use client"
 import React, { useEffect } from 'react'
-// import News1 from "@/assets/news1.webp"
-// import News2 from "@/assets/news2.webp"
-// import News3 from "@/assets/news3.webp"
-// import News4 from "@/assets/news4.webp"
-// import News5 from "@/assets/news5.webp"
+import News1 from "@/assets/news1.webp"
+import News2 from "@/assets/news2.webp"
+import News3 from "@/assets/news3.webp"
+import News4 from "@/assets/news4.webp"
+import News5 from "@/assets/news5.webp"
 import News8 from "@/assets/news8.webp"
 import News9 from "@/assets/news9.webp"
 import News10 from "@/assets/news10.webp"
@@ -49,36 +49,36 @@ const News = () => {
     // },
     // ];
     const data = [
-      // {
-      //     img: News1,
-      //     link: true, 
-      //     date: t("news.date1"),
-      //     desc: t("news.desc1"),
-      // },
-      // {
-      //     img: News2, 
-      //     link: true,
-      //     date: t("news.date2"),
-      //     desc: t("news.desc2")
-      // },
-      // {
-      //     img: News3, 
-      //     link: true,
-      //     date: t("news.date3"),
-      //     desc: t("news.desc3")
-      // },
-      // {
-      //     img: News4, 
-      //     link: true,
-      //     date: t("news.date4"),
-      //     desc: t("news.desc4")
-      // },
-      // {
-      //     img: News5, 
-      //     link: true,
-      //     date: t("news.date5"),
-      //     desc: t("news.desc5")
-      // },
+      {
+        img: News1,
+        link: "https://www.youtube.com/embed/6Wyx_WEi_Vs?si=NZ8CuMIhr5s2jg-U", 
+        date: t("news.date1"),
+        desc: t("news.desc1"),
+    },
+    {
+        img: News2, 
+        link: "https://www.youtube.com/embed/qGRnSOUn1EI?si=rIQvmJfNHDe_QjB8",
+        date: t("news.date2"),
+        desc: t("news.desc2")
+    },
+    {
+        img: News3, 
+        link: "https://www.youtube.com/embed/R8_3wRErfng?si=E9W1juWJjnUAAwqq",
+        date: t("news.date3"),
+        desc: t("news.desc3")
+    },
+    {
+        img: News4, 
+        link: "https://www.youtube.com/embed/Sc3Uz7834V4?si=FphIo8_n2_QyMYA6",
+        date: t("news.date4"),
+        desc: t("news.desc4")
+    },
+    {
+        img: News5, 
+        link: "https://www.youtube.com/embed/OKgWgCYlRnY?si=Io-WRYAGUlteQnKQ",
+        date: t("news.date5"),
+        desc: t("news.desc5")
+    },
       // {
       //     img: News5,
       //     link: "../../../video/video1.mp4", 

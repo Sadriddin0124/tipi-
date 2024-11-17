@@ -40,14 +40,23 @@ const Carousel = ({data}: {data: NewsType[]}) => {
             }
           ]
       };
-     
+
   return (
     <Slider {...settings}>
             {data.map((item, index) => (
                 <div className='px-[10px] py-[30px]' key={index}>
                     <div key={index} className='rounded-[10px] overflow-hidden shadow-lg flex flex-col'>
                       <div className='bg-[#D9D9D9] min-h-[180px] h-full flex justify-center items-center'>
-                      {<Image src={item?.img} alt={`Slide ${index + 1}`} className='w-full object-cover h-[180px]' width={500} height={400}/>}
+                      { item?.link  ? (
+                          <iframe
+                            height={180}
+                            src={item.link}
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                          ></iframe>
+                        ) : <Image src={item?.img} alt={`Slide ${index + 1}`} className='w-full object-cover h-[180px]' width={500} height={400}/>}
                         </div>
                         <div className='pt-[26px] px-[18px] pb-[40px] text_main flex flex-col gap-4 ease-linear duration-200 hover:text-white hover:bg-[#404B7C]'>
                             <span className='text-[20px] font-[600]'>{item?.date}</span>
