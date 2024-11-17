@@ -40,17 +40,18 @@ const Carousel = ({data}: {data: NewsType[]}) => {
             }
           ]
       };
+     
   return (
     <Slider {...settings}>
             {data.map((item, index) => (
                 <div className='px-[10px] py-[30px]' key={index}>
                     <div key={index} className='rounded-[10px] overflow-hidden shadow-lg flex flex-col'>
-                        <div className='bg-[#D9D9D9] min-h-[200px] h-full flex justify-center items-center'>
-                            <Image src={item?.img} alt={`Slide ${index + 1}`} className='w-full object-cover h-[200px]' width={500} height={400}/>
+                      <div className='bg-[#D9D9D9] min-h-[180px] h-full flex justify-center items-center'>
+                      {<Image src={item?.img} alt={`Slide ${index + 1}`} className='w-full object-cover h-[180px]' width={500} height={400}/>}
                         </div>
                         <div className='pt-[26px] px-[18px] pb-[40px] text_main flex flex-col gap-4 ease-linear duration-200 hover:text-white hover:bg-[#404B7C]'>
                             <span className='text-[20px] font-[600]'>{item?.date}</span>
-                            <p className='text-[17px] font-[600] text-center leading-5'>{item?.desc}</p>
+                            <p className='text-[17px] min-h-[135px] font-[600] line-clamp-5 text-center leading-5'>{item?.desc}</p>
                         </div>
                     </div>
                 </div>

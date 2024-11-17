@@ -10,6 +10,7 @@ export interface LangType  {
 
 export interface NewsType {
     img: StaticImageData;
+    link?: string
     date: string;
     desc: string
 }
@@ -64,7 +65,12 @@ export interface TBodyTYpe {
     tb5: string;
 }
 
-
-  
-
+export interface CategoryTypes {
+    id?: number | null;
+    title_uz: string;
+    title_ru: string;
+    title_en: string;
+    place: string;
+    status?: boolean;
+};
   

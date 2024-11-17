@@ -1,14 +1,20 @@
 "use client"
 import { useTranslations } from 'next-intl'
-import React from 'react'
+import React, { useState } from 'react'
 import HeroImg from "@/assets/hero.webp"
 import HeroCarousel from '../../ui/HeroCarousel'
 import BtnGradient from '../../ui/BtnGradient'
 import BtnWhite from '../../ui/BtnWhite'
+import { fetchFaculties } from '@/app/lib/actions'
+import { useRouter } from 'next/router'
 
 const SingleFacultyHero = () => {
   const t = useTranslations()
-  const btn = t("hero.btn")
+  const [title, setTitle] = useState<string>("")
+  const getData = async() => {
+    const res = await fetchFaculties()
+    let title = res?.find()
+  }
   const data = [
     {
       img: HeroImg

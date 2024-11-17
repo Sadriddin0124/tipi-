@@ -1,51 +1,133 @@
 "use client"
 import React, { useEffect } from 'react'
-import News1 from "@/assets/news1.webp"
-import News2 from "@/assets/news2.webp"
-import News3 from "@/assets/news3.webp"
-import News4 from "@/assets/news4.webp"
-import News5 from "@/assets/news5.webp"
-import News6 from "@/assets/news6.webp"
+// import News1 from "@/assets/news1.webp"
+// import News2 from "@/assets/news2.webp"
+// import News3 from "@/assets/news3.webp"
+// import News4 from "@/assets/news4.webp"
+// import News5 from "@/assets/news5.webp"
+import News8 from "@/assets/news8.webp"
+import News9 from "@/assets/news9.webp"
+import News10 from "@/assets/news10.webp"
 import { useTranslations } from 'next-intl';
 import Aos from 'aos';
 import 'aos/dist/aos.css'; 
 import Carousel from '../Carousel'
 import Link from 'next/link'
-import { IoIosArrowForward } from 'react-icons/io'
+// import Video1 from "../../../video/video1.mp4"
 const News = () => {
     const t = useTranslations()
+    // const data = [
+    // {
+    //     img: News1, 
+    //     date: t("news.date"),
+    //     desc: t("news.desc")
+    // },
+    // {
+    //     img: News2, 
+    //     date: t("news.date"),
+    //     desc: t("news.desc")
+    // },
+    // {
+    //     img: News3, 
+    //     date: t("news.date"),
+    //     desc: t("news.desc")
+    // },
+    // {
+    //     img: News4, 
+    //     date: t("news.date"),
+    //     desc: t("news.desc")
+    // },
+    // {
+    //     img: News5, 
+    //     date: t("news.date"),
+    //     desc: t("news.desc")
+    // },
+    // {
+    //     img: News6, 
+    //     date: t("news.date"),
+    //     desc: t("news.desc")
+    // },
+    // ];
     const data = [
-    {
-        img: News1, 
-        date: t("news.date"),
-        desc: t("news.desc")
-    },
-    {
-        img: News2, 
-        date: t("news.date"),
-        desc: t("news.desc")
-    },
-    {
-        img: News3, 
-        date: t("news.date"),
-        desc: t("news.desc")
-    },
-    {
-        img: News4, 
-        date: t("news.date"),
-        desc: t("news.desc")
-    },
-    {
-        img: News5, 
-        date: t("news.date"),
-        desc: t("news.desc")
-    },
-    {
-        img: News6, 
-        date: t("news.date"),
-        desc: t("news.desc")
-    },
-    ];
+      // {
+      //     img: News1,
+      //     link: true, 
+      //     date: t("news.date1"),
+      //     desc: t("news.desc1"),
+      // },
+      // {
+      //     img: News2, 
+      //     link: true,
+      //     date: t("news.date2"),
+      //     desc: t("news.desc2")
+      // },
+      // {
+      //     img: News3, 
+      //     link: true,
+      //     date: t("news.date3"),
+      //     desc: t("news.desc3")
+      // },
+      // {
+      //     img: News4, 
+      //     link: true,
+      //     date: t("news.date4"),
+      //     desc: t("news.desc4")
+      // },
+      // {
+      //     img: News5, 
+      //     link: true,
+      //     date: t("news.date5"),
+      //     desc: t("news.desc5")
+      // },
+      // {
+      //     img: News5,
+      //     link: "../../../video/video1.mp4", 
+      //     date: t("news.date6"),
+      //     desc: t("news.desc6")
+      // },
+      // {
+      //     img: News5,
+      //     link: "../../../video/video2.mp4", 
+      //     date: t("news.date6"),
+      //     desc: t("news.desc6")
+      // },
+      {
+          img: News8, 
+          link: "",
+          date: t("news.date8"),
+          desc: t("news.desc8")
+        },
+        {
+          img: News9, 
+          link: "",
+          date: t("news.date9"),
+          desc: t("news.desc9")
+        },
+        {
+          img: News10, 
+          link: "",
+          date: t("news.date10"),
+          desc: t("news.desc10")
+      },
+      {
+          img: News8, 
+          link: "",
+          date: t("news.date8"),
+          desc: t("news.desc8")
+        },
+        {
+          img: News9, 
+          link: "",
+          date: t("news.date9"),
+          desc: t("news.desc9")
+        },
+        {
+          img: News10, 
+          link: "",
+          date: t("news.date10"),
+          desc: t("news.desc10")
+      },
+      ];
     useEffect(() => {
       Aos.init({
           duration: 1000,

@@ -7,6 +7,8 @@ export interface NavLinkType {
     id?: number;
     href?: string;
     hover: boolean;
+    title1?: HoverItemType;
+    title2?: HoverItemType;
     item1?: HoverItemType[];
     item2?: HoverItemType[];
 }
