@@ -79,18 +79,6 @@ const News = () => {
         date: t("news.date5"),
         desc: t("news.desc5")
     },
-      // {
-      //     img: News5,
-      //     link: "../../../video/video1.mp4", 
-      //     date: t("news.date6"),
-      //     desc: t("news.desc6")
-      // },
-      // {
-      //     img: News5,
-      //     link: "../../../video/video2.mp4", 
-      //     date: t("news.date6"),
-      //     desc: t("news.desc6")
-      // },
       {
           img: News8, 
           link: "",

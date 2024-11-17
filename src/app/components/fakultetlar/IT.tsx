@@ -22,43 +22,25 @@ const IT = () => {
         },
         {
             id: 2,
-            title: "Ijtimoiy Fanlar",
+            title: "Pedagogika",
             img: ITImage,
             href: `/${lang}`
         },
         {
             id: 3,
-            title: "Fakultetlar",
+            title: "Iqtisodiyot",
             img: ITImage,
             href: `/${lang}`
         },
         {
             id: 4,
-            title: "Fakultetlar",
+            title: "Tillar va maktabgacha ta'lim",
             img: ITImage,
             href: `/${lang}`
         },
         {
             id: 5,
-            title: "Fakultetlar",
-            img: ITImage,
-            href: `/${lang}`
-        },
-        {
-            id: 6,
-            title: "Fakultetlar",
-            img: ITImage,
-            href: `/${lang}`
-        },
-        {
-            id: 7,
-            title: "Fakultetlar",
-            img: ITImage,
-            href: `/${lang}`
-        },
-        {
-            id: 8,
-            title: "Fakultetlar",
+            title: "Iltimoiy fanlar",
             img: ITImage,
             href: `/${lang}`
         },

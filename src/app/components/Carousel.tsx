@@ -51,6 +51,7 @@ const Carousel = ({data}: {data: NewsType[]}) => {
                           <iframe
                             height={180}
                             src={item.link}
+                            className='w-full'
                             title="YouTube video player"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerPolicy="strict-origin-when-cross-origin"
@@ -60,7 +61,7 @@ const Carousel = ({data}: {data: NewsType[]}) => {
                         </div>
                         <div className='pt-[26px] px-[18px] pb-[40px] text_main flex flex-col gap-4 ease-linear duration-200 hover:text-white hover:bg-[#404B7C]'>
                             <span className='text-[20px] font-[600]'>{item?.date}</span>
-                            <p className='text-[17px] min-h-[135px] font-[600] line-clamp-5 text-center leading-5'>{item?.desc}</p>
+                            <p className='text-[17px] min-h-[140px] font-[600] line-clamp-5 text-center leading-5'>{item?.desc}</p>
                         </div>
                     </div>
                 </div>

@@ -395,51 +395,46 @@ const Navbar = () => {
       id: 1,
       value: t("hover.title1"),
       status: "big",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`
     },
     {
       id: 2,
       value: t("hover.title2"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`
     },
     {
       id: 3,
       value: t("hover.title3"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/bolimlar/manaviyat`
     },
     {
       id: 4,
       value: t("hover.title4"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/bolimlar/reja`
     },
     {
       id: 5,
       value: t("hover.title5"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/bolimlar/devonxona`
     },
-    {
-      id: 6,
-      value: t("hover.title6"),
-      status: "small",
-      href: `/${activeLang?.value}`
-    },
+    // {
+    //   id: 6,
+    //   value: t("hover.title6"),
+    //   status: "small",
+    //   href: `/${activeLang?.value}`
+    // },
   ];
   const ScientificDirection2: HoverItemType[] = [
-    {
-      id: 7,
-      value: t("hover.title7"),
-      status: "small",
-      href: `/${activeLang?.value}/almashinuv-dasturi`
-    },
     {
       id: 9,
       value: t("hover.title9"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `https://tipi-journal.uz`,
+      target: "blank"
     },
   ];
   const Faculties: HoverItemType[] = [
@@ -490,15 +485,15 @@ const Navbar = () => {
     {
       id: 2,
       value: t("hover.about2"),
-      status: "small",
-      href: `/${activeLang?.value}`
+      status: "big",
+      href: `/${activeLang?.value}/institut-haqida`
     },
-    {
-      id: 3,
-      value: t("hover.about3"),
-      status: "small",
-      href: `/${activeLang?.value}`
-    },
+    // {
+    //   id: 3,
+    //   value: t("hover.about3"),
+    //   status: "small",
+    //   href: `/${activeLang?.value}`
+    // },
   ]
   const AboutInstitute2: HoverItemType[] = [
     {
@@ -536,12 +531,12 @@ const Navbar = () => {
     },
   ]
   const navLink: NavLinkType[] = [
-    { id: 1, label: t("nav.link3"), path: `/${activeLang?.value}/institut-haqida`, hover: true, item1: AboutInstitute, item2: AboutInstitute2 },
+    { id: 1, label: t("nav.link3"), path: `/${activeLang?.value}/institut-haqida`, hover: true, item1: AboutInstitute },
     { id: 2, label: t("nav.link5"), path: `/${activeLang?.value}/bolimlar`, hover: true, item1: ScientificDirection },
     { id: 3, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, item1: Faculties },
-    { id: 4, label: t("nav.link1"), path: `/${activeLang?.value}/pedagoglar`, hover: false },
-    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, item1:  [...InteractiveService, ...ScientificDirection2]},
     { id: 6, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
+    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, item1:  [...InteractiveService, ...ScientificDirection2]},
+    { id: 4, label: t("nav.link1"), path: `/${activeLang?.value}/qabul`, hover: false },
   ];
 
   // const Destinations = [

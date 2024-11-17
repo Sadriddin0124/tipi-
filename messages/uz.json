@@ -1,7 +1,7 @@
 {
   "nav": {
     "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA INSTITUTI",
-    "link1": "Kafedra",
+    "link1": "Qabul",
     "link2": "Fakultetlar",
     "link3": "Institut haqida",
     "link4": "Yangiliklar",
@@ -38,8 +38,8 @@
     "faculty4": "Axborot texnologiyalari",
     "faculty5": "Tillar va maktabgacha ta'lim",
     "faculty6": "Ijtimoiy fanlar",
-    "about1": "Institut haqida",
-    "about2": "TIPI tarixi",
+    "about1": "Raxbariyat",
+    "about2": "Lisenziya",
     "about3": "TIPI haqida",
     "about4": "Adminstratsiya",
     "title_in1": "Ilmiy kengash a`zolari",
@@ -89,7 +89,7 @@
     "more": "Barchasi"
   },
   "pedagogue": {
-    "title": "Pedagoglar",
+    "title": "Kafedra o'qituvchilari",
     "title1": "Islom Rustamov Bunyodovich",
     "desc": "Filologiya fanlar doktori (DSc) professor",
     "btn": "Batafsil",
@@ -125,7 +125,7 @@
     "num_t": "Telefon raqam",
     "mail_t": "E-mail",
     "address_t": "Manzil",
-    "address_v": "Feruza k., Chirchiq, Toshkent viloyati",
+    "address_v": "Toshkent v. Chirchiq sh. Metallurgchilar 13",
     "title1": "Xabar yuborish",
     "name_placeholder": "Ismingiz",
     "phone_placeholder": "Telefon Raqam",
@@ -135,7 +135,7 @@
   "footer": {
     "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA INSTITUTI",
     "address": "Toshkent v. Chirchiq sh. Metallurgchilar 13",
-    "phone": "Tel: +998 99 999 99 99",
+    "phone": "Tel: +998 70 200 70 07",
     "mail": "E-mail: tipiuniversity@mail.uz",
     "link1": "Kontaktlar",
     "link2": "Biz haqimizda",
@@ -168,10 +168,10 @@
   },
   "information": {
     "title": "Axborot texnologiyalari",
-    "statistics1": "Yo'nalishlar",
+    "statistics1": "Fakultetlar",
     "statistics2": "Kafedra",
     "statistics3": "Online qabul",
-    "th1": "Yo'nalish nomi",
+    "th1": "Fakultet nomi",
     "th2": "Ta'lim bosqichi",
     "th3": "Ta'lim yili",
     "th4": "Bo'lim",
@@ -180,7 +180,11 @@
     "th7": "Bog’lanish",
     "th8": "Ijtimoyi tarmoqlar",
     "th9": "Batafsil",
-    "tb1": "Axborot Texnologiyalari",
+    "faculty1": "Axborot Texnologiyalari",
+    "faculty2": "Pedagogika",
+    "faculty3": "Ijtimoy fanlar",
+    "faculty4": "Iqtisodiyot",
+    "faculty5": "Tillar va maktabgacha ta'lim",
     "tb2": "Bakalavr",
     "tb3": "4 yil",
     "tb4": "Ijtimoiy fanlar",
@@ -217,7 +221,7 @@
     "about_v2": "O`zbek filologiyasi",
     "about_t3": "Kafedra",
     "about_v3": "Adabiy manbashunoslik va matnshunoslik kafedrasi",
-    "media1": "O`quv-ilmiy faoliyat",
+    "media1": "O`quv adabiyotlari",
     "media2": "Sertifikat",
     "media3": "Multimedia",
     "data_t": "Ma`lumotlar",
@@ -235,5 +239,37 @@
     "social4": "Facebook",
     "social5": "Telegram",
     "social6": "Google Scholar"
+  },
+  "section1": {
+    "name": "Dustmurodov Ma'rufjon Mansur o‘g‘li",
+    "place": "Ilmiy bo'limi boshlig'i",
+    "address": "111709 Chirchiq shahar, Metallurgchilar koʻchasi 13-uy",
+    "duration": "Dushanba-Juma,",
+    "about_t": "TOSHKЕNT IQTISODIYOT VA PЕDAGOGIKA INSTITUTI ILMIY TADQIQOTLAR, INNOVATSIYALAR VA ILMIY-PЕDAGOGIK KADRLAR TAYYORLASH BO‘LIMI BOSHLIG‘INING VAZIFALARI"
+  },
+  "section2": {
+    "name1": "Mamatova Muxarram Xakimjanovna",
+    "place1": "Ma'naviyat va ma'rifat bo‘lim boshlig‘i",
+    "award1": "2021-yil O‘zbekiston Respublikasi mustaqilligining 30 yilligi esdalik nishoni",
+    "name2": "G‘afforov Kamoliddin Baxodir o‘g‘li",
+    "place2": "Institut matbuot kotibi",
+    "about1": "Ma'naviyat va ma'rifat bo‘limi",
+    "about2": "Bo‘limning asosiy vazifalari"
+  },
+  "section3": {
+    "name1": "Dusboyev Raxim Ramazanovich",
+    "place1": "Reja-moliya bo'limi boshlig'i",
+    "address1": "111709 Chirchiq shahar, Metallurgchilar koʻchasi 13-uy",
+    "duration1": "Dushanba-Juma,",
+    "name2": "Dusboyev Nomoz Mamanazar o‘g‘li",
+    "place2": "Reja-moliya bo‘limi bosh mutaxassisi",
+    "name3": "Jalilova Shaxnoza Xamro qizi",
+    "place": "Reja moliya-bo‘limi yetakchi mutaxassisi"
+  },
+  "section4": {
+    "name1": "Toxirov Shahzod Toxirovich",
+    "place1": "Devonxona va arxiv bo'limi boshlig'i",
+    "address1": "111709 Chirchiq shahar, Metallurgchilar koʻchasi 13-uy",
+    "duration1": "Dushanba-Juma,"
   }
 }

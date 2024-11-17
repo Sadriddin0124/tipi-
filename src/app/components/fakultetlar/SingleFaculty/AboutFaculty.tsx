@@ -5,7 +5,7 @@ import FileLogo from "@/assets/file_logo.webp"
 import Image from 'next/image'
 import FacultyMasonry from './FacultyMasonry'
 import Video from "@/assets/video.webp"
-const AboutFaculty = () => {
+const AboutFaculty = ({title}: {title: string}) => {
   const t = useTranslations()
   const files = [
     {
@@ -46,7 +46,7 @@ const AboutFaculty = () => {
         <div className='grid grid-cols-4 gap-3 2xl:gap-[65px]'>
         </div>
         <div className='w-full flex flex-col gap-10 mt-[29px]'>
-          <h2 className='text-[24px] md:text-[40px] font-[600]'>{t("aboutFaculty.title")}</h2>
+          <h2 className='text-[24px] md:text-[40px] font-[600]'>{title}</h2>
           <p className='text-[16px] md:text-[26px]'>{t("aboutFaculty.desc")}</p>
         </div>
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4'>

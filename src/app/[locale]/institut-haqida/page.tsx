@@ -1,9 +1,10 @@
 import React from 'react'
+import License from './lisenziya/page'
 
 const InstitutHaqida = () => {
   return (
     <section>
-      <h2>Institut haqida</h2>
+      <License/>
     </section>
   )
 }

@@ -11,6 +11,8 @@ import { FaFacebookF, FaTelegramPlane, FaYoutube } from 'react-icons/fa'
 import { RiInstagramFill } from 'react-icons/ri'
 import { usePathname } from 'next/navigation'
 import EducatorImg from "@/assets/educator.webp"
+import EducatorsCards from '../../educators/EducatorsCards'
+import AboutFaculty from './AboutFaculty'
 const Statistics = () => {
     const t = useTranslations()
     const [activeStatistic, setActiveStatistic] = useState<number>(1)
@@ -51,8 +53,8 @@ const Statistics = () => {
     }
     
     const components = [
-        {id: 1, component: <DirectionsTable/>},
-        {id: 2, component: <EducatorsTable/>},
+        {id: 1, component: <Faculties/>},
+        {id: 2, component: <Kafedra/>},
         {id: 3, component: <OnlineReception/>},
     ]
   return (
@@ -104,7 +106,7 @@ const OnlineReception = () => {
             href: "/"
         },
     ]
-    return <div className='max-w-[1240px] w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-[20px]'>
+    return <div data-aos="fade-up" className='max-w-[1240px] w-full grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-[20px]'>
         {
             OnlineReceptionData?.map((item,index)=> {
                 return <div key={index} className='w-full relative flex justify-center items-center rounded-[10px] overflow-hidden h-[160px]'>
@@ -126,58 +128,38 @@ const DirectionsTable = () => {
         t("information.th4"),
         t("information.th9"),
     ]
+    
     const DirectionTBodies = [
         {
-            tb1: t("information.tb1"),
+            tb1: t("information.faculty1"),
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
             href: `${pathname}/yonalishlar`
         },
         {
-            tb1: t("information.tb1"),
+            tb1: t("information.faculty2"),
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
             href: `${pathname}/yonalishlar`
         },
         {
-            tb1: t("information.tb1"),
+            tb1: t("information.faculty3"),
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
             href: `${pathname}/yonalishlar`
         },
         {
-            tb1: t("information.tb1"),
+            tb1: t("information.faculty4"),
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
             href: `${pathname}/yonalishlar`
         },
         {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
-        },
-        {
-            tb1: t("information.tb1"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
-        },
-        {
-            tb1: t("information.tb1"),
+            tb1: t("information.faculty5"),
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
@@ -217,260 +199,278 @@ const DirectionsTable = () => {
     )
 }
 
-const EducatorsTable = () => {
-    const t = useTranslations()
-    const EducatorTHeads = [
-        "",
-        t("information.th6"),
-        t("information.th5"),
-        t("information.th7"),
-        t("information.th8"),
-        t("information.th9"),
-    ]
-    const EducatorTBodies = [
-        {
-            id: 1,
-            tb1: t("information.tb5"),
-            tb2: t("information.tb6"),
-            tb3: "+998 90 123 4567",
-            tb4: [
-                {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com"
-                },
-                {
-                    icon:  <FaTelegramPlane />,
-                    link: "https://t.me"
-                },
-                {
-                    icon: <RiInstagramFill />,
-                    link: "https://instagram.com"
-                },
-                {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com"
-                },
-            ],
-            tb5: "Link",
-        },
-        {
-            id: 2,
-            tb1: t("information.tb5"),
-            tb2: t("information.tb6"),
-            tb3: "+998 90 123 4567",
-            tb4: [
-                {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com"
-                },
-                {
-                    icon:  <FaTelegramPlane />,
-                    link: "https://t.me"
-                },
-                {
-                    icon: <RiInstagramFill />,
-                    link: "https://instagram.com"
-                },
-                {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com"
-                },
-            ],
-            tb5: "Link",
-        },
-        {
-            id: 3,
-            tb1: t("information.tb5"),
-            tb2: t("information.tb6"),
-            tb3: "+998 90 123 4567",
-            tb4: [
-                {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com"
-                },
-                {
-                    icon:  <FaTelegramPlane />,
-                    link: "https://t.me"
-                },
-                {
-                    icon: <RiInstagramFill />,
-                    link: "https://instagram.com"
-                },
-                {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com"
-                },
-            ],
-            tb5: "Link",
-        },
-        {
-            id: 4,
-            tb1: t("information.tb5"),
-            tb2: t("information.tb6"),
-            tb3: "+998 90 123 4567",
-            tb4: [
-                {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com"
-                },
-                {
-                    icon:  <FaTelegramPlane />,
-                    link: "https://t.me"
-                },
-                {
-                    icon: <RiInstagramFill />,
-                    link: "https://instagram.com"
-                },
-                {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com"
-                },
-            ],
-            tb5: "Link",
-        },
-        {
-            id: 5,
-            tb1: t("information.tb5"),
-            tb2: t("information.tb6"),
-            tb3: "+998 90 123 4567",
-            tb4: [
-                {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com"
-                },
-                {
-                    icon:  <FaTelegramPlane />,
-                    link: "https://t.me"
-                },
-                {
-                    icon: <RiInstagramFill />,
-                    link: "https://instagram.com"
-                },
-                {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com"
-                },
-            ],
-            tb5: "Link",
-        },
-        {
-            id: 6,
-            tb1: t("information.tb5"),
-            tb2: t("information.tb6"),
-            tb3: "+998 90 123 4567",
-            tb4: [
-                {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com"
-                },
-                {
-                    icon:  <FaTelegramPlane />,
-                    link: "https://t.me"
-                },
-                {
-                    icon: <RiInstagramFill />,
-                    link: "https://instagram.com"
-                },
-                {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com"
-                },
-            ],
-            tb5: "Link",
-        },
-        {
-            id: 7,
-            tb1: t("information.tb5"),
-            tb2: t("information.tb6"),
-            tb3: "+998 90 123 4567",
-            tb4: [
-                {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com"
-                },
-                {
-                    icon:  <FaTelegramPlane />,
-                    link: "https://t.me"
-                },
-                {
-                    icon: <RiInstagramFill />,
-                    link: "https://instagram.com"
-                },
-                {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com"
-                },
-            ],
-        },
-        {
-            id: 8,
-            tb1: t("information.tb5"),
-            tb2: t("information.tb6"),
-            tb3: "+998 90 123 4567",
-            tb4: [
-                {
-                    icon: <FaFacebookF />,
-                    link: "https://facebook.com"
-                },
-                {
-                    icon:  <FaTelegramPlane />,
-                    link: "https://t.me"
-                },
-                {
-                    icon: <RiInstagramFill />,
-                    link: "https://instagram.com"
-                },
-                {
-                    icon: <FaYoutube />,
-                    link: "https://youtube.com"
-                },
-            ],
-            tb5: "Link",
-        },
-    ]
-    const [activeItem, setActiveItem] = useState<number>(0)
+// const EducatorsTable = () => {
+//     const t = useTranslations()
+//     const EducatorTHeads = [
+//         "",
+//         t("information.th6"),
+//         t("information.th5"),
+//         t("information.th7"),
+//         t("information.th8"),
+//         t("information.th9"),
+//     ]
+//     const EducatorTBodies = [
+//         {
+//             id: 1,
+//             tb1: t("information.tb5"),
+//             tb2: t("information.tb6"),
+//             tb3: "+998 90 123 4567",
+//             tb4: [
+//                 {
+//                     icon: <FaFacebookF />,
+//                     link: "https://facebook.com"
+//                 },
+//                 {
+//                     icon:  <FaTelegramPlane />,
+//                     link: "https://t.me"
+//                 },
+//                 {
+//                     icon: <RiInstagramFill />,
+//                     link: "https://instagram.com"
+//                 },
+//                 {
+//                     icon: <FaYoutube />,
+//                     link: "https://youtube.com"
+//                 },
+//             ],
+//             tb5: "Link",
+//         },
+//         {
+//             id: 2,
+//             tb1: t("information.tb5"),
+//             tb2: t("information.tb6"),
+//             tb3: "+998 90 123 4567",
+//             tb4: [
+//                 {
+//                     icon: <FaFacebookF />,
+//                     link: "https://facebook.com"
+//                 },
+//                 {
+//                     icon:  <FaTelegramPlane />,
+//                     link: "https://t.me"
+//                 },
+//                 {
+//                     icon: <RiInstagramFill />,
+//                     link: "https://instagram.com"
+//                 },
+//                 {
+//                     icon: <FaYoutube />,
+//                     link: "https://youtube.com"
+//                 },
+//             ],
+//             tb5: "Link",
+//         },
+//         {
+//             id: 3,
+//             tb1: t("information.tb5"),
+//             tb2: t("information.tb6"),
+//             tb3: "+998 90 123 4567",
+//             tb4: [
+//                 {
+//                     icon: <FaFacebookF />,
+//                     link: "https://facebook.com"
+//                 },
+//                 {
+//                     icon:  <FaTelegramPlane />,
+//                     link: "https://t.me"
+//                 },
+//                 {
+//                     icon: <RiInstagramFill />,
+//                     link: "https://instagram.com"
+//                 },
+//                 {
+//                     icon: <FaYoutube />,
+//                     link: "https://youtube.com"
+//                 },
+//             ],
+//             tb5: "Link",
+//         },
+//         {
+//             id: 4,
+//             tb1: t("information.tb5"),
+//             tb2: t("information.tb6"),
+//             tb3: "+998 90 123 4567",
+//             tb4: [
+//                 {
+//                     icon: <FaFacebookF />,
+//                     link: "https://facebook.com"
+//                 },
+//                 {
+//                     icon:  <FaTelegramPlane />,
+//                     link: "https://t.me"
+//                 },
+//                 {
+//                     icon: <RiInstagramFill />,
+//                     link: "https://instagram.com"
+//                 },
+//                 {
+//                     icon: <FaYoutube />,
+//                     link: "https://youtube.com"
+//                 },
+//             ],
+//             tb5: "Link",
+//         },
+//         {
+//             id: 5,
+//             tb1: t("information.tb5"),
+//             tb2: t("information.tb6"),
+//             tb3: "+998 90 123 4567",
+//             tb4: [
+//                 {
+//                     icon: <FaFacebookF />,
+//                     link: "https://facebook.com"
+//                 },
+//                 {
+//                     icon:  <FaTelegramPlane />,
+//                     link: "https://t.me"
+//                 },
+//                 {
+//                     icon: <RiInstagramFill />,
+//                     link: "https://instagram.com"
+//                 },
+//                 {
+//                     icon: <FaYoutube />,
+//                     link: "https://youtube.com"
+//                 },
+//             ],
+//             tb5: "Link",
+//         },
+//         {
+//             id: 6,
+//             tb1: t("information.tb5"),
+//             tb2: t("information.tb6"),
+//             tb3: "+998 90 123 4567",
+//             tb4: [
+//                 {
+//                     icon: <FaFacebookF />,
+//                     link: "https://facebook.com"
+//                 },
+//                 {
+//                     icon:  <FaTelegramPlane />,
+//                     link: "https://t.me"
+//                 },
+//                 {
+//                     icon: <RiInstagramFill />,
+//                     link: "https://instagram.com"
+//                 },
+//                 {
+//                     icon: <FaYoutube />,
+//                     link: "https://youtube.com"
+//                 },
+//             ],
+//             tb5: "Link",
+//         },
+//         {
+//             id: 7,
+//             tb1: t("information.tb5"),
+//             tb2: t("information.tb6"),
+//             tb3: "+998 90 123 4567",
+//             tb4: [
+//                 {
+//                     icon: <FaFacebookF />,
+//                     link: "https://facebook.com"
+//                 },
+//                 {
+//                     icon:  <FaTelegramPlane />,
+//                     link: "https://t.me"
+//                 },
+//                 {
+//                     icon: <RiInstagramFill />,
+//                     link: "https://instagram.com"
+//                 },
+//                 {
+//                     icon: <FaYoutube />,
+//                     link: "https://youtube.com"
+//                 },
+//             ],
+//         },
+//         {
+//             id: 8,
+//             tb1: t("information.tb5"),
+//             tb2: t("information.tb6"),
+//             tb3: "+998 90 123 4567",
+//             tb4: [
+//                 {
+//                     icon: <FaFacebookF />,
+//                     link: "https://facebook.com"
+//                 },
+//                 {
+//                     icon:  <FaTelegramPlane />,
+//                     link: "https://t.me"
+//                 },
+//                 {
+//                     icon: <RiInstagramFill />,
+//                     link: "https://instagram.com"
+//                 },
+//                 {
+//                     icon: <FaYoutube />,
+//                     link: "https://youtube.com"
+//                 },
+//             ],
+//             tb5: "Link",
+//         },
+//     ]
+//     const [activeItem, setActiveItem] = useState<number>(0)
+//     return (
+//         <div className='overflow-x-auto w-full md:flex justify-center'>
+//             <table className='w-full max-w-[1300px] bg-white'>
+//                 <tbody>
+//                         <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
+//                         {
+//                             EducatorTHeads?.map((item,index)=> (
+//                             <td key={index} className="py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]">{item}</td>
+//                             ))
+//                         }
+//                         </tr>
+//                     {
+//                         EducatorTBodies?.map((item,index)=> (
+//                         <>
+//                             <tr className='text-[16px] whitespace-nowrap relative lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
+//                                 <td className='py-3 px-3  lg:py-5'>
+//                                     <Image src={EducatorImg} alt='Educator' width={100} height={100} className='w-[50px] object-cover h-[50px] rounded-full'/>
+//                                 </td>
+//                                 <td className='py-3 px-2 lg:px-0 lg:py-5 '>{item?.tb2}</td>
+//                                 <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb1}</td>
+//                                 <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
+//                                 <td className='py-3 px-2 lg:px-0 lg:py-5'>
+//                                     <div className='flex items-center gap-3 text-[20px] lg:text-[30px]'>
+//                                         {item?.tb4?.map((el,index)=> <a href={el?.link} target='blank' key={index}>{el?.icon}</a>)}
+//                                     </div>
+//                                 </td>
+//                                 <td className='py-3 px-2 lg:px-0 lg:py-5'>
+//                                     <button onClick={()=>setActiveItem(item?.id === activeItem ? 0 : item?.id)} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn2")}</button>
+//                                 </td>
+//                             </tr>
+//                             <tr className={`${activeItem === item?.id ? "" : "hidden"} relative`}>
+//                                 <td colSpan={6} className='w-full'>
+//                                     <div className={`flex justify-center w-full`}>
+//                                         <h2>{item?.tb2}</h2>
+//                                     </div>
+//                                 </td>
+//                             </tr>
+//                         </>
+//                         ))
+//                     }
+//                 </tbody>
+//             </table>
+//         </div>
+//     )
+// }
+
+const Faculties = () => {
     return (
-        <div className='overflow-x-auto w-full md:flex justify-center'>
-            <table className='w-full max-w-[1300px] bg-white'>
-                <tbody>
-                        <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
-                        {
-                            EducatorTHeads?.map((item,index)=> (
-                            <td key={index} className="py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]">{item}</td>
-                            ))
-                        }
-                        </tr>
-                    {
-                        EducatorTBodies?.map((item,index)=> (
-                        <>
-                            <tr className='text-[16px] whitespace-nowrap relative lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
-                                <td className='py-3 px-3  lg:py-5'>
-                                    <Image src={EducatorImg} alt='Educator' width={100} height={100} className='w-[50px] object-cover h-[50px] rounded-full'/>
-                                </td>
-                                <td className='py-3 px-2 lg:px-0 lg:py-5 '>{item?.tb2}</td>
-                                <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb1}</td>
-                                <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
-                                <td className='py-3 px-2 lg:px-0 lg:py-5'>
-                                    <div className='flex items-center gap-3 text-[20px] lg:text-[30px]'>
-                                        {item?.tb4?.map((el,index)=> <a href={el?.link} target='blank' key={index}>{el?.icon}</a>)}
-                                    </div>
-                                </td>
-                                <td className='py-3 px-2 lg:px-0 lg:py-5'>
-                                    <button onClick={()=>setActiveItem(item?.id === activeItem ? 0 : item?.id)} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn2")}</button>
-                                </td>
-                            </tr>
-                            <tr className={`${activeItem === item?.id ? "" : "hidden"} relative`}>
-                                <td colSpan={6} className='w-full'>
-                                    <div className={`flex justify-center w-full`}>
-                                        <h2>{item?.tb2}</h2>
-                                    </div>
-                                </td>
-                            </tr>
-                        </>
-                        ))
-                    }
-                </tbody>
-            </table>
+        <div>
+        <DirectionsTable/>
+        <AboutFaculty title="Fakultet haqida"/>
+        </div>
+    )
+}
+
+const Kafedra = () => {
+    return (
+        <div>
+        <EducatorsCards/>
+        <AboutFaculty title="Kafedra haqida"/>
         </div>
     )
 }
