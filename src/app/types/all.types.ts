@@ -20,6 +20,7 @@ export interface PedagogueType {
     img: StaticImageData;
     name: string;
     desc: string;
+    faculty?: string
 }
 
 export interface ContactType {

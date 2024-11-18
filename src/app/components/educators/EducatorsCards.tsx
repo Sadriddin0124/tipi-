@@ -62,38 +62,54 @@ import EducatorImage8 from "@/assets/educator8.webp"
 import EducatorImage9 from "@/assets/educator9.webp"
 import EducatorImage10 from "@/assets/educator10.webp"
 import EducatorImage11 from "@/assets/educator11.webp"
+import EducatorImage12 from "@/assets/educator12.jpg"
+import EducatorImage13 from "@/assets/educator13.jpg"
+import EducatorImage14 from "@/assets/educator14.jpg"
+import EducatorImage15 from "@/assets/educator15.jpg"
 import { useTranslations } from 'next-intl'
 import { PedagogueType } from '@/app/types/all.types'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/router'
 
 const EducatorsCards = () => {
     const t = useTranslations()
     const data:PedagogueType[] = [
-        {id: "pedagog-1", img: EducatorImage1, name: t("pedagogue.name1"), desc: t("pedagogue.desc1")},
-        {id: "pedagog-2", img: EducatorImage2, name: t("pedagogue.name2"), desc: t("pedagogue.desc2")},
-        {id: "pedagog-3", img: EducatorImage3, name: t("pedagogue.name3"), desc: t("pedagogue.desc3")},
-        {id: "pedagog-4", img: EducatorImage4, name: t("pedagogue.name4"), desc: t("pedagogue.desc4")},
-        {id: "pedagog-5", img: EducatorImage5, name: t("pedagogue.name5"), desc: t("pedagogue.desc5")},
-        {id: "pedagog-6", img: EducatorImage6, name: t("pedagogue.name6"), desc: t("pedagogue.desc6")},
-        {id: "pedagog-7", img: EducatorImage7, name: t("pedagogue.name7"), desc: t("pedagogue.desc7")},
-        {id: "pedagog-8", img: EducatorImage8, name: t("pedagogue.name8"), desc: t("pedagogue.desc8")},
-        {id: "pedagog-9", img: EducatorImage9, name: t("pedagogue.name9"), desc: t("pedagogue.desc9")},
-        {id: "pedagog-10", img: EducatorImage10, name: t("pedagogue.name10"), desc: t("pedagogue.desc10")},
-        {id: "pedagog-11", img: EducatorImage11, name: t("pedagogue.name11"), desc: t("pedagogue.desc11")},
+        {id: "pedagog-1", img: EducatorImage1, name: t("pedagogue.name1"), desc: t("pedagogue.desc1"), faculty: "3"},
+      {id: "pedagog-2", img: EducatorImage2, name: t("pedagogue.name2"), desc: t("pedagogue.desc2"), faculty: "3"},
+      {id: "pedagog-3", img: EducatorImage3, name: t("pedagogue.name3"), desc: t("pedagogue.desc3"), faculty: "3"},
+      {id: "pedagog-4", img: EducatorImage4, name: t("pedagogue.name4"), desc: t("pedagogue.desc4"), faculty: "3"},
+      {id: "pedagog-5", img: EducatorImage5, name: t("pedagogue.name5"), desc: t("pedagogue.desc5"), faculty: "3"},
+      {id: "pedagog-6", img: EducatorImage6, name: t("pedagogue.name6"), desc: t("pedagogue.desc6"), faculty: "3"},
+      {id: "pedagog-7", img: EducatorImage7, name: t("pedagogue.name7"), desc: t("pedagogue.desc7"), faculty: "3"},
+      {id: "pedagog-8", img: EducatorImage8, name: t("pedagogue.name8"), desc: t("pedagogue.desc8"), faculty: "3"},
+      {id: "pedagog-9", img: EducatorImage9, name: t("pedagogue.name9"), desc: t("pedagogue.desc9"), faculty: "3"},
+      {id: "pedagog-10", img: EducatorImage10, name: t("pedagogue.name10"), desc: t("pedagogue.desc10"), faculty: "3"},
+      {id: "pedagog-11", img: EducatorImage11, name: t("pedagogue.name11"), desc: t("pedagogue.desc11"), faculty: "3"},
+      {id: "pedagog-12", img: EducatorImage12, name: "Fayziyev Adham", desc: t("pedagogue.desc11"), faculty: "1"},
+      {id: "pedagog-13", img: EducatorImage13, name: "Rustamov Umid", desc: t("pedagogue.desc11"), faculty: "1"},
+      {id: "pedagog-14", img: EducatorImage14, name: "Sattikulov Muzaffar", desc: t("pedagogue.desc11"), faculty: "1"},
+      {id: "pedagog-15", img: EducatorImage15, name: "Kusharov Zoxid", desc: t("pedagogue.desc11"), faculty: "1"},
     ]
-    const activeLang = usePathname().split("/")[1]
+    const pathname = usePathname()
+    const activeLang = pathname.split("/")[1]
+    const id = pathname.split("/")[3]
+    console.log(id);
     
   return (
     <section className='flex justify-center flex-col items-center gap-10 w-full' data-aos="fade-up">
         <h2 className='text-[24px] md:text-[40px] font-[500]'>{t("pedagogue.title")}</h2>
         <div className='max-w-[1100px] w-full grid grid-cols-3 gap-[60px]'>
             {
-                data?.map((item,index)=> {
+                data?.filter((educator) => {
+
+                    console.log(educator, id);
+                    return educator.faculty == id;
+                }).map((item,index)=> {
                     return <div key={index} className='max-w-[350px] px-3 lg:px-5'>
                         <div className='shadow-md rounded-[10px] overflow-hidden'>
-                            <Image src={item?.img} alt={item?.name} width={350} height={300} className='w-full'/>
+                            <Image src={item?.img} alt={item?.name} width={350} height={300} className='w-full h-[300px] object-cover'/>
                             <div className='p-5 flex flex-col items-start gap-[10px]'>
                                 <h5 className='text-[20px] font-[600] '>{item?.name}</h5>
                                 <p className='text_main text-[18px] font-[600]'>{item?.desc}</p>

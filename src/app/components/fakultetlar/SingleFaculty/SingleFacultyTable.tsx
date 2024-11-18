@@ -139,32 +139,11 @@ const DirectionsTable = () => {
         },
         {
             tb1: t("information.faculty2"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
+            tb2: t("information.tb2a"),
+            tb3: t("information.tb3a"),
             tb4: t("information.tb4"),
             href: `${pathname}/yonalishlar`
-        },
-        {
-            tb1: t("information.faculty3"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
-        },
-        {
-            tb1: t("information.faculty4"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
-        },
-        {
-            tb1: t("information.faculty5"),
-            tb2: t("information.tb2"),
-            tb3: t("information.tb3"),
-            tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
-        },
+        }
         
     ]
     return (

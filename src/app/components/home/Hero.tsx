@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect } from 'react'
-import HeroImg from "@/assets/hero.webp"
+import HeroImg from "@/assets/faculty_hero1.webp"
+import HeroImg2 from "@/assets/faculty_hero2.webp"
 import HeroImgBlur from "@/assets/hero1.webp"
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
@@ -25,13 +26,13 @@ const Hero = () => {
       img: HeroImg
     },
     {
-      img: HeroImg
+      img: HeroImg2
     },
     {
       img: HeroImg
     },
     {
-      img: HeroImg
+      img: HeroImg2
     },
     {
       img: HeroImg

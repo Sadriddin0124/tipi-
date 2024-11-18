@@ -1,10 +1,10 @@
 "use client"
 import { useTranslations } from 'next-intl'
 import React, { useState } from 'react'
-import HeroImg1 from "@/assets/faculty_hero1.webp"
-import HeroImg2 from "@/assets/faculty_hero2.webp"
-import HeroImg3 from "@/assets/faculty_hero3.webp"
-import HeroImg4 from "@/assets/faculty_hero4.webp"
+import HeroImg1 from "@/assets/hero.webp"
+// import HeroImg2 from "@/assets/faculty_hero2.webp"
+// import HeroImg3 from "@/assets/faculty_hero3.webp"
+// import HeroImg4 from "@/assets/faculty_hero4.webp"
 import HeroCarousel from '../../ui/HeroCarousel'
 import BtnWhite from '../../ui/BtnWhite'
 import { usePathname } from 'next/navigation'
@@ -19,19 +19,19 @@ const SingleFacultyHero = () => {
       img: HeroImg1
     },
     {
-      img: HeroImg2
+      img: HeroImg1
     },
     {
-      img: HeroImg3
+      img: HeroImg1
     },
     {
-      img: HeroImg4
+      img: HeroImg1
     },
     {
-      img: HeroImg2
+      img: HeroImg1
     },
     {
-      img: HeroImg3
+      img: HeroImg1
     },
   ]
   const faculties = [
