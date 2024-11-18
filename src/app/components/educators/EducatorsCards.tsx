@@ -87,10 +87,10 @@ const EducatorsCards = () => {
       {id: "pedagog-9", img: EducatorImage9, name: t("pedagogue.name9"), desc: t("pedagogue.desc9"), faculty: "3"},
       {id: "pedagog-10", img: EducatorImage10, name: t("pedagogue.name10"), desc: t("pedagogue.desc10"), faculty: "3"},
       {id: "pedagog-11", img: EducatorImage11, name: t("pedagogue.name11"), desc: t("pedagogue.desc11"), faculty: "3"},
-      {id: "pedagog-12", img: EducatorImage12, name: "Fayziyev Adham", desc: t("pedagogue.desc11"), faculty: "1"},
-      {id: "pedagog-13", img: EducatorImage13, name: "Rustamov Umid", desc: t("pedagogue.desc11"), faculty: "1"},
-      {id: "pedagog-14", img: EducatorImage14, name: "Sattikulov Muzaffar", desc: t("pedagogue.desc11"), faculty: "1"},
-      {id: "pedagog-15", img: EducatorImage15, name: "Kusharov Zoxid", desc: t("pedagogue.desc11"), faculty: "1"},
+      {id: "pedagog-12", img: EducatorImage12, name: "Fayziyev Adham", desc: "Doktor (DSc) Filologiya fanlari doktori", faculty: "1"},
+      {id: "pedagog-13", img: EducatorImage13, name: "Rustamov Umid", desc: "Professor Iqtisodiyot fanlari bo'yicha mutaxassis", faculty: "1"},
+      {id: "pedagog-14", img: EducatorImage14, name: "Sattikulov Muzaffar", desc: "Dotsent Iqtisodiyot fanlari nomzodi", faculty: "1"},
+      {id: "pedagog-15", img: EducatorImage15, name: "Kusharov Zoxid", desc: "Informatika bo'yicha mutaxassis", faculty: "1"},
     ]
     const pathname = usePathname()
     const activeLang = pathname.split("/")[1]
