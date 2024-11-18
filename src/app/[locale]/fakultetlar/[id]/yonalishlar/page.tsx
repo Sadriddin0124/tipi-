@@ -8,7 +8,7 @@ const Yonalishlar = () => {
   return (
     <section>
         <DirectionsHero/>
-        <AboutFaculty title="Yo'nalish haqida"/>
+        <AboutFaculty data={[]}/>
         <Contact/>
     </section>
   )
