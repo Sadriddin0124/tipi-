@@ -448,31 +448,31 @@ const Navbar = () => {
       id: 2,
       value: t("hover.faculty2"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/fakultetlar/3`
     },
     {
       id: 3,
       value: t("hover.faculty3"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/fakultetlar/2`
     },
     {
       id: 4,
       value: t("hover.faculty4"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/fakultetlar/1`
     },
     {
       id: 5,
       value: t("hover.faculty5"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/fakultetlar/4`
     },
     {
       id: 6,
       value: t("hover.faculty6"),
       status: "small",
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}/fakultetlar/5`
     },
   ]
   const AboutInstitute: HoverItemType[] = [

@@ -5,7 +5,13 @@ import FileLogo from "@/assets/file_logo.webp"
 import Image from 'next/image'
 import FacultyMasonry from './FacultyMasonry'
 import Video from "@/assets/video.webp"
-const AboutFaculty = ({title}: {title: string}) => {
+import { usePathname } from 'next/navigation'
+type AboutDataType = {
+  id: number;
+  title: string;
+  desc: string;
+}
+const AboutFaculty = ({data}: {data: AboutDataType[]}) => {
   const t = useTranslations()
   const files = [
     {
@@ -39,6 +45,10 @@ const AboutFaculty = ({title}: {title: string}) => {
       desc: t("aboutFaculty.fileDesc")
     },
   ]
+  const id = Number(usePathname().split("/")[3])
+  const item = data?.find(item=> item?.id === id)
+  console.log(item);
+    
   return (
     <section className='flex justify-center px-3 py-4 md:py-[100px]' data-aos="fade-up">
       <div className='max-w-[1300px] w-full flex flex-col gap-4 md:gap-[96px]'>
@@ -46,8 +56,9 @@ const AboutFaculty = ({title}: {title: string}) => {
         <div className='grid grid-cols-4 gap-3 2xl:gap-[65px]'>
         </div>
         <div className='w-full flex flex-col gap-10 mt-[29px]'>
-          <h2 className='text-[24px] md:text-[40px] font-[600]'>{title}</h2>
-          <p className='text-[16px] md:text-[26px]'>{t("aboutFaculty.desc")}</p>
+          <h2 className='text-[24px] md:text-[40px] font-[600]'>{item?.title}</h2>
+          <p className='text-[16px] md:text-[26px]'>{item?.desc}</p>
+          {/* <p className='text-[16px] md:text-[26px]'>{t("aboutFaculty.desc")}</p> */}
         </div>
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4'>
           {
