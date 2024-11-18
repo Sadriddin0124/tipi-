@@ -51,13 +51,13 @@ const AboutFaculty = ({data}: {data: AboutDataType[]}) => {
     
   return (
     <section className='flex justify-center px-3 py-4 md:py-[100px]' data-aos="fade-up">
-      <div className='max-w-[1300px] w-full flex flex-col gap-4 md:gap-[96px]'>
+      <div className='max-w-[1200px] w-full flex flex-col gap-4 md:gap-[40px]'>
         <FacultyMasonry/>
         <div className='grid grid-cols-4 gap-3 2xl:gap-[65px]'>
         </div>
         <div className='w-full flex flex-col gap-10 mt-[29px]'>
           <h2 className='text-[24px] md:text-[40px] font-[600]'>{item?.title}</h2>
-          <p className='text-[16px] md:text-[26px]'>{item?.desc}</p>
+          <p className='text-[16px] md:text-[24px]'>{item?.desc}</p>
           {/* <p className='text-[16px] md:text-[26px]'>{t("aboutFaculty.desc")}</p> */}
         </div>
         <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4'>

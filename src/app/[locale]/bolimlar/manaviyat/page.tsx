@@ -68,7 +68,7 @@ const Manaviyat = () => {
     <div>
       <div className='flex flex-col items-center gap-10 justify-center py-16'>
       <div className='flex items-center max-w-[1100px] w-full gap-[40px]'>
-        <Image src={Manaviyat1} alt='image' width={500} height={500} className='min-w-[240px] h-[280px] object-cover'/>
+        <Image src={Manaviyat1} alt='image' width={500} height={500} className='min-w-[240px] h-[320px] object-cover'/>
         <div className='w-full flex items-center h-full'>
             <div className='flex flex-col w-full gap-3 justify-between'>
                 <h3 className='text-[26px] font-[600]'>{t("section2.name1")}</h3>
@@ -80,7 +80,7 @@ const Manaviyat = () => {
         </div>
       </div>
       <div className='flex items-center max-w-[1100px] w-full gap-[40px]'>
-        <Image src={Manaviyat2} alt='image' width={500} height={500} className='min-w-[240px] h-[280px] object-cover'/>
+        <Image src={Manaviyat2} alt='image' width={500} height={500} className='min-w-[240px] h-[320px] object-cover'/>
         <div className='w-full flex items-center'>
             <div className='flex flex-col w-full gap-3 justify-between items-start'>
                 <h3 className='text-[26px] font-[600]'>{t("section2.name2")}</h3>
@@ -108,7 +108,7 @@ const Manaviyat = () => {
             </ul>
           )}
         </div>
-        <div className='max-w-[750px]'>
+        <div className='max-w-[1200px]'>
           <div className='flex gap-2 items-start justify-between w-full py-3 border-b '>
             <h2 className='text-[26px] font-bold'>{t("section2.about2")}</h2>
             <button onClick={()=>handleItemClick(2)} className={`hover:bg-slate-200 p-2 rounded-full transition-all`}><IoCloseSharp size={30} className={`ease-linear duration-200 ${active === 2 ? "" : "rotate-[-45deg]"}`}/></button>

@@ -76,18 +76,6 @@ const Plan = () => {
                 </div>
             </div>
         </div>
-        <div className='flex items-start max-w-[1100px] w-full gap-[40px]'>
-            <Image src={Plan2} alt='image' width={500} height={500} className='w-[260px] h-[260px] object-contain'/>
-            <div className='w-full'>
-                <div className='flex w-full gap-3 justify-between'>
-                    <div>
-                        <h3 className='text-[26px] font-[600]'>{t("section3.name3")}</h3>
-                        <span>{t("section3.place3")}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
       <div className=' max-w-[1200px] w-full mt-[50px]'>
         <div className='w-full'>
             <ul style={{ padding: "10px", background: "#fff" }}>
