@@ -71,20 +71,20 @@ const AboutFaculty = ({data}: {data: AboutDataType[]}) => {
             })
           }
         </div>
-        <div className='flex flex-col items-center justify-center md:flex-row gap-5'>
+        {/* <div className='flex flex-col items-center justify-center md:flex-row gap-5'>
           <div className='max-w-[650px]'>
             <Image src={Video} alt='Video 1' width={500} height={300} className='w-full h-auto'/>
-            {/* <video controls className='w-full h-auto'>
+            <video controls className='w-full h-auto'>
               <source src='/bmw.mp4' type='video/mp4'/>
-              </video> */}
+              </video>
           </div>
           <div className='max-w-[650px]'>
             <Image src={Video} alt='Video 1' width={500} height={300} className='w-full h-auto'/>
-            {/* <video controls className='w-full h-auto'>
+            <video controls className='w-full h-auto'>
               <source src='/bmw.mp4' type='video/mp4'/>
-            </video> */}
+            </video>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

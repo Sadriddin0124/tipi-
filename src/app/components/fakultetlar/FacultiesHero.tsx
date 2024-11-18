@@ -1,26 +1,31 @@
 "use client"
 import { useTranslations } from 'next-intl'
 import React from 'react'
-import HeroImg from "@/assets/hero.webp"
+import HeroImg1 from "@/assets/faculty_hero1.webp"
+import HeroImg2 from "@/assets/faculty_hero2.webp"
+import HeroImg3 from "@/assets/faculty_hero3.webp"
 import HeroCarousel from '../ui/HeroCarousel'
 
 const FacultiesHero = () => {
   const t = useTranslations()
   const data = [
     {
-      img: HeroImg
+      img: HeroImg1
     },
     {
-      img: HeroImg
+      img: HeroImg2
     },
     {
-      img: HeroImg
+      img: HeroImg3
     },
     {
-      img: HeroImg
+      img: HeroImg1
     },
     {
-      img: HeroImg
+      img: HeroImg2
+    },
+    {
+      img: HeroImg3
     },
   ]
   const FixedItem = () => {

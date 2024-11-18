@@ -36,7 +36,7 @@ const HeroCarousel = ({data, FixedItem}: {data: FakultetlarType[]; FixedItem: ()
         <Slider {...settings}>
             {data.map((item, index) => (
                 <header key={index} className=' w-full relative'>
-                  <Image src={item?.img} alt='Hero Image' className='w-[100%] object-cover h-[300px] md:h-[447px]' width={1400} height={600}/>
+                  <Image src={item?.img} alt='Hero Image' className='w-[100%] object-cover h-[300px] md:h-[447px]' width={2400} height={1000}/>
                 </header>
             ))}
         </Slider>
