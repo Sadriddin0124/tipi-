@@ -24,6 +24,11 @@ import EducatorImage9 from "@/assets/educator9.webp"
 import EducatorImage10 from "@/assets/educator10.webp"
 import EducatorImage11 from "@/assets/educator11.webp"
 import { PedagogueType } from '@/app/types/all.types'
+import EducatorImage12 from "@/assets/educator12.jpg"
+import EducatorImage13 from "@/assets/educator13.jpg"
+import EducatorImage14 from "@/assets/educator14.jpg"
+import EducatorImage15 from "@/assets/educator15.jpg"
+// import jjn from "../../../../files/books/kusharov.pdf"
 // import Certificate1 from "@/app/files/certificate/Сертификат(скопус).pdf"
 import Link from 'next/link'
 const SingleEducator = () => {
@@ -41,6 +46,10 @@ const SingleEducator = () => {
       {id: "pedagog-9", img: EducatorImage9, name: t("pedagogue.name9"), desc: t("pedagogue.desc9")},
       {id: "pedagog-10", img: EducatorImage10, name: t("pedagogue.name10"), desc: t("pedagogue.desc10")},
       {id: "pedagog-11", img: EducatorImage11, name: t("pedagogue.name11"), desc: t("pedagogue.desc11")},
+      {id: "pedagog-12", img: EducatorImage12, name: "Fayziyev Adham", desc: "Doktor (DSc) Filologiya fanlari doktori", faculty: "1"},
+      {id: "pedagog-13", img: EducatorImage13, name: "Rustamov Umid", desc: "Professor Iqtisodiyot fanlari bo'yicha mutaxassis", faculty: "1"},
+      {id: "pedagog-14", img: EducatorImage14, name: "Sattikulov Muzaffar", desc: "Dotsent Iqtisodiyot fanlari nomzodi", faculty: "1"},
+      {id: "pedagog-15", img: EducatorImage15, name: "Kusharov Zoxid", desc: "Informatika bo'yicha mutaxassis", faculty: "1"},
   ]
     const item = educators?.filter(item=> item?.id === id)
     console.log(item);
@@ -143,13 +152,18 @@ const SingleEducator = () => {
         {id: "pedagog-3", img: PedagogueImg3, name: t("pedagogue.title1"), desc: t("pedagogue.desc1")},
     ]
 
-    
+    const books = [
+      {
+        title: "Kitob",
+        link: "../../../../files/books/kusharov.pdf"
+      }
+    ]
   return (
     <section className='px-3 w-full flex justify-center py-[70px]'>
       <div className='max-w-[1320px] w-full'>
         <div className='flex gap-5 mb-2'>
           <div className='max-w-[400px] h-full flex flex-col gap-3 justify-between items-center'>
-            <Image src={item[0]?.img} alt={item[0]?.name} width={400} height={700} className=' rounded-[10px] mb-[10px] h-[515px] w-full object-cover'/>
+            <Image src={item[0]?.img} alt={item[0]?.name} width={400} height={700} className=' rounded-[10px] mb-[10px] min-w-[400px] h-[515px] w-full object-cover'/>
             <h4 className='text-[24px] font-[500] text-center'>{item[0]?.name}</h4>
           </div>
           <div className='flex flex-col items-start border border-[#404B7C] p-[30px] rounded-[10px] gap-5'>
@@ -193,13 +207,16 @@ const SingleEducator = () => {
             </div>
           </div>
           <div className='grid grid-cols-3 gap-10 w-[65%]'>
-            {/* {
+            {
               data[0]?.media?.map((item,index)=> {
                 return <button key={index} className='text-[24px] p-4 rounded-[10px] bg-[#404B7C] text-white'>
                   {item}
                   </button>
               })
-            } */}
+            }
+            <div>
+
+            </div>
             {
               data[0]?.social?.map((item,index)=> {
                 return <button key={index} className='text-[24px] flex items-center justify-center gap-[10px] p-4 rounded-[10px] border border-[#404B7C] text-[#404B7C]'>
