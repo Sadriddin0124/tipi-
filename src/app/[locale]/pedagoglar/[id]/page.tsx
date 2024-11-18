@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import PedagogueImg1 from "@/assets/pedagogue1.webp"
 import PedagogueImg2 from "@/assets/pedagogue2.webp"
 import PedagogueImg3 from "@/assets/pedagogue3.webp"
@@ -154,10 +154,21 @@ const SingleEducator = () => {
 
     const books = [
       {
-        title: "Kitob",
-        link: "../../../../files/books/kusharov.pdf"
-      }
+        title: "Adabiyot va milliy ma'naviyat",
+      },
+      {
+        title: "Furqat",
+      },
+      {
+        title: "Zamonamiz xotamtoyi",
+      },
     ]
+    const [bookStatus, setBookStatus] = useState<boolean>(false)
+    const changeBookStatus = (index: number) => {
+      if (index === 0) {
+        setBookStatus(!bookStatus)
+      }
+    }
   return (
     <section className='px-3 w-full flex justify-center py-[70px]'>
       <div className='max-w-[1320px] w-full'>
@@ -209,22 +220,35 @@ const SingleEducator = () => {
           <div className='grid grid-cols-3 gap-10 w-[65%]'>
             {
               data[0]?.media?.map((item,index)=> {
-                return <button key={index} className='text-[24px] p-4 rounded-[10px] bg-[#404B7C] text-white'>
+                return <button key={index} className='text-[24px] p-4 rounded-[10px] bg-[#404B7C] text-white' onClick={()=>changeBookStatus(index)}>
                   {item}
                   </button>
               })
             }
-            <div>
-
-            </div>
+            <div className={`${bookStatus ? "opacity-[1]" : "opacity-[0]"} ease-linear duration-200 flex flex-col gap-2 col-span-3`}>
             {
+              books?.map((item,index)=> {
+                return (
+                  <a
+                    href={"/files/books/kusharov1.pdf"}
+                    key={index}
+                    download={`${item?.title}.pdf`}
+                    className='underline text-blue-600 text-[18px]'
+                  >
+                    {item?.title}
+                  </a>
+                )
+              })
+            }
+            </div>
+            {/* {
               data[0]?.social?.map((item,index)=> {
                 return <button key={index} className='text-[24px] flex items-center justify-center gap-[10px] p-4 rounded-[10px] border border-[#404B7C] text-[#404B7C]'>
                   {item?.text}
                   <Image src={item?.icon} alt={item?.text} width={100} height={200} className='w-6 h-6'/>
                 </button>
               })
-            }
+            } */}
           </div>
         </div>
       </div>
