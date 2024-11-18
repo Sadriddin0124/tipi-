@@ -30,6 +30,7 @@ import EducatorImage14 from "@/assets/educator14.jpg"
 import EducatorImage15 from "@/assets/educator15.jpg"
 // import jjn from "../../../../files/books/kusharov.pdf"
 // import Certificate1 from "@/app/files/certificate/Сертификат(скопус).pdf"
+import Certificate from "@/assets/certificate.jpg"
 import Link from 'next/link'
 const SingleEducator = () => {
     const t = useTranslations()
@@ -167,8 +168,11 @@ const SingleEducator = () => {
     const changeBookStatus = (index: number) => {
       if (index === 0) {
         setBookStatus(!bookStatus)
+      } else if (index === 1) {
+        setCertificate(!certificate)
       }
     }
+    const [certificate, setCertificate] = useState<boolean>(false)
   return (
     <section className='px-3 w-full flex justify-center py-[70px]'>
       <div className='max-w-[1320px] w-full'>
@@ -191,7 +195,7 @@ const SingleEducator = () => {
             </div>
           </div>
         </div>
-        <div className='flex gap-8 items-center'>
+        <div className='flex gap-8 items-start mt-10'>
           <div className='flex flex-col'>
               <div className='flex flex-col gap-5 p-5 border border-[#404B7C] rounded-[10px] max-w-[400px]'>
               {
@@ -225,7 +229,7 @@ const SingleEducator = () => {
                   </button>
               })
             }
-            <div className={`${bookStatus ? "opacity-[1]" : "opacity-[0]"} ease-linear duration-200 flex flex-col gap-2 col-span-3`}>
+            <div className={`${bookStatus ? "opacity-[1]" : "opacity-[0]"} ease-linear duration-200 flex flex-col gap-2`}>
             {
               books?.map((item,index)=> {
                 return (
@@ -241,6 +245,7 @@ const SingleEducator = () => {
               })
             }
             </div>
+            <Image src={Certificate} alt='Sertifikat' width={300} height={500} className={`ease-linear duration-200 ${certificate ? "opacity-[1]" : "opacity-[0]"}`}/>
             {/* {
               data[0]?.social?.map((item,index)=> {
                 return <button key={index} className='text-[24px] flex items-center justify-center gap-[10px] p-4 rounded-[10px] border border-[#404B7C] text-[#404B7C]'>

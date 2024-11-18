@@ -19,7 +19,7 @@ const Statistics = () => {
     const data = [
         {
             id: 1
-,           title: t("information.statistics1"),
+,           title: `${t("information.statistics1")} haqida`,
             icon: IT1,
             line: false
         },
@@ -135,45 +135,58 @@ const DirectionsTable = () => {
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
+            href: `${pathname}/yonalishlar`,
+            faculty: "1"
         },
         {
             tb1: t("information.faculty2"),
             tb2: t("information.tb2a"),
             tb3: t("information.tb3a"),
             tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
+            href: `${pathname}/yonalishlar`,
+            faculty: "1"
+        },
+        {
+            tb1: "",
+            tb2: "",
+            tb3: "",
+            tb4: "",
+            href: `${pathname}/yonalishlar`,
+            faculty: "3"
         }
         
     ]
     return (
-        <div className='overflow-x-auto w-full md:flex justify-center'>
-            <table className='w-full max-w-[1300px]'>
-                <thead>
-                    <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
+        <div data-aos="fade-up">
+            <h3 className='mx-auto text-[40px] text-center mb-10'>Yo`nalishlar</h3>
+            <div className='overflow-x-auto lg:overflow-visible w-full md:flex justify-center'>
+                <table className='w-full max-w-[1300px]'>
+                    <thead>
+                        <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
+                            {
+                                DirectionTHeads?.map((item,index)=> (
+                                <td key={index} className="py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]">{item}</td>
+                                ))
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
                         {
-                            DirectionTHeads?.map((item,index)=> (
-                            <td key={index} className="py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]">{item}</td>
+                            DirectionTBodies?.map((item,index)=> (
+                            <tr className='text-[16px] whitespace-nowrap lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
+                                <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb1}</td>
+                                <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb2}</td>
+                                <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
+                                <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb4}</td>
+                                <td className='px-2 lg:px-0'>
+                                    <Link href={item?.href} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
+                                </td>
+                            </tr>
                             ))
                         }
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        DirectionTBodies?.map((item,index)=> (
-                        <tr className='text-[16px] whitespace-nowrap lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]' key={index}>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb1}</td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb2}</td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
-                            <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb4}</td>
-                            <td className='px-2 lg:px-0'>
-                                <Link href={item?.href} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
-                            </td>
-                        </tr>
-                        ))
-                    }
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

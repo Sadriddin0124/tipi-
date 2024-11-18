@@ -99,7 +99,7 @@ const EducatorsCards = () => {
     
   return (
     <section className='flex justify-center flex-col items-center gap-10 w-full' data-aos="fade-up">
-        <h2 className='text-[24px] md:text-[40px] font-[500]'>{t("pedagogue.title")}</h2>
+        { data?.filter(item=> item?.faculty == id).length && <h2 className='text-[24px] md:text-[40px] font-[500]'>{t("pedagogue.title")}</h2>}
         <div className='max-w-[1100px] w-full grid grid-cols-3 gap-[60px]'>
             {
                 data?.filter((educator) => {
