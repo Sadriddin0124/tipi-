@@ -146,14 +146,14 @@ const DirectionsTable = () => {
             href: `${pathname}/yonalishlar`,
             faculty: "1"
         },
-        {
-            tb1: "",
-            tb2: "",
-            tb3: "",
-            tb4: "",
-            href: `${pathname}/yonalishlar`,
-            faculty: "3"
-        }
+        // {
+        //     tb1: "",
+        //     tb2: "",
+        //     tb3: "",
+        //     tb4: "",
+        //     href: `${pathname}/yonalishlar`,
+        //     faculty: "3"
+        // }
         
     ]
     return (
