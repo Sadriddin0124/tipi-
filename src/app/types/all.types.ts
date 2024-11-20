@@ -46,8 +46,12 @@ export interface BreadcrumbItem {
   }
 export interface HoverItemType {
     id: number;
-    value: string;
-    status: string;
+    value?: string;
+    title_uz?: string
+    title_ru?: string
+    title_en?: string
+    status?: string;
+    is_active?: boolean;
     href: string;
     target?: string
 }
@@ -74,3 +78,14 @@ export interface CategoryTypes {
     status?: boolean;
 };
   
+export interface LinkType {
+    id?: number | null;
+    title_uz: string;
+    title_ru: string;
+    title_en: string;
+    created_at?: string;
+    is_active: boolean;
+    href?: string
+    target?: string
+    status?: string
+  };

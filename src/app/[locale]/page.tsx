@@ -13,9 +13,11 @@ const Home = () => {
       <Hero/>
       <Statistics/>
       <Campus/>
-      <News/>
-      <Pedagogue/>
-      <Events/>
+      {/* <News/> */}
+      <div className='pt-[100px]'>
+        <Pedagogue/>
+      </div>
+      {/* <Events/> */}
       <Contact/>
     </div>
   )

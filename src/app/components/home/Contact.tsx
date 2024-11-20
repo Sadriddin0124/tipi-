@@ -7,6 +7,7 @@ import { IoCloseSharp } from 'react-icons/io5';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Aos from 'aos';
+import apiClient from '@/app/lib/apiClient';
 const Contact = () => {
     const t = useTranslations()
     const data = [
@@ -34,18 +35,17 @@ const Contact = () => {
         e.preventDefault()
         const token = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
         const chatId = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID;
-        const data = `
-        ${number}
-        ${message}
-        ${name}
-        `;
+        const data = {
+            name: name,
+            description_uz: message,
+            description_ru: message,
+            description_en: message,
+            phone: number
+        }
         try {
-            const res = await axios.post(`https://api.telegram.org/bot${token}/sendMessage`, {
-                chat_id: chatId,
-                text: data,
-            })
-            console.log('Xabar yuborildi:', res.data);
-            if (res?.data?.ok) {
+            const res = await apiClient.post(`/murojat/`, data)
+            console.log('Xabar yuborildi:', res);
+            if (res?.status === 201) {
                     setNotify(true)
                 }
             } catch (error) {

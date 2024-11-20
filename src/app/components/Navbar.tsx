@@ -330,12 +330,13 @@ import Logo from "@/assets/logo.webp";
 import UzFlag from "@/assets/uz.webp";
 import RuFlag from "@/assets/ru.webp";
 import EnFlag from "@/assets/en.webp";
-import { BreadcrumbItem, HoverItemType, LangType } from "../types/all.types";
+import { BreadcrumbItem, HoverItemType, LangType, LinkType } from "../types/all.types";
 import HoverComponent from "./HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
 // import Breadcrumb from "./ui/Breadcrumb";
 import Dropdown from "./ui/Dropdown";
+import { fetchAboutTipi, fetchAdmin, fetchFaculties, fetchSections } from "../lib/actions";
 
 const Navbar = () => {
   const t = useTranslations();
@@ -428,116 +429,106 @@ const Navbar = () => {
     //   href: `/${activeLang?.value}`
     // },
   ];
-  const ScientificDirection2: HoverItemType[] = [
-    {
-      id: 9,
-      value: t("hover.title9"),
-      status: "small",
-      href: `https://tipi-journal.uz`,
-      target: "blank"
-    },
-  ];
-  const Faculties: HoverItemType[] = [
+  const Faculties: any = [
     {
       id: 1,
-      value: t("hover.faculty1"),
-      status: "big",
+      title_uz: t("hover.faculty1"),
+      title_ru: t("hover.faculty1"),
+      title_en: t("hover.faculty1"),
       href: `/${activeLang?.value}/fakultetlar`
     },
     {
       id: 2,
-      value: t("hover.faculty2"),
-      status: "small",
+      title_uz: t("hover.faculty2"),
+      title_ru: t("hover.faculty2"),
+      title_en: t("hover.faculty2"),
       href: `/${activeLang?.value}`
     },
     {
       id: 3,
-      value: t("hover.faculty3"),
-      status: "small",
+      title_uz: t("hover.faculty3"),
+      title_ru: t("hover.faculty3"),
+      title_en: t("hover.faculty3"),
       href: `/${activeLang?.value}`
     },
     {
       id: 4,
-      value: t("hover.faculty4"),
-      status: "small",
+      title_uz: t("hover.faculty4"),
+      title_ru: t("hover.faculty4"),
+      title_en: t("hover.faculty4"),
       href: `/${activeLang?.value}`
     },
     {
       id: 5,
-      value: t("hover.faculty5"),
-      status: "small",
+      title_uz: t("hover.faculty5"),
+      title_ru: t("hover.faculty5"),
+      title_en: t("hover.faculty5"),
       href: `/${activeLang?.value}`
     },
     {
       id: 6,
-      value: t("hover.faculty6"),
-      status: "small",
+      title_uz: t("hover.faculty6"),
+      title_ru: t("hover.faculty6"),
+      title_en: t("hover.faculty6"),
       href: `/${activeLang?.value}`
     },
   ]
-  const AboutInstitute: HoverItemType[] = [
-    {
-      id: 1,
-      value: t("hover.about1"),
-      status: "big",
-      href: `/${activeLang?.value}`
-    },
-    {
-      id: 2,
-      value: t("hover.about2"),
-      status: "big",
-      href: `/${activeLang?.value}/institut-haqida`
-    },
+  const InteractiveService: any = [
     // {
-    //   id: 3,
-    //   value: t("hover.about3"),
-    //   status: "small",
-    //   href: `/${activeLang?.value}`
+    //   id: 1,
+    //   title_uz: t("hover.title10"),
+    //   title_ru: t("hover.title10"),
+    //   title_en: t("hover.title10"),
+    //   href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`
     // },
-  ]
-  const AboutInstitute2: HoverItemType[] = [
-    {
-      id: 1,
-      value: t("hover.about4"),
-      status: "big",
-      href: `/${activeLang?.value}`
-    },
-    {
-      id: 2,
-      value: t("hover.about2"),
-      status: "small",
-      href: `/${activeLang?.value}`
-    },
-    {
-      id: 3,
-      value: t("hover.about3"),
-      status: "small",
-      href: `/${activeLang?.value}`
-    },
-  ]
-  const InteractiveService: HoverItemType[] = [
-    {
-      id: 1,
-      value: t("hover.title10"),
-      status: "big",
-      href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`
-    },
     {
       id: 8,
-      value: t("hover.title8"),
-      status: "small",
+      title_uz: t("hover.title8"),
+      title_ru: t("hover.title8"),
+      title_en: t("hover.title8"),
       href: `https://www.online-library.uz/`,
       target: "blank"
     },
+    {
+      id: 9,
+      title_uz: t("hover.title9"),
+      title_ru: t("hover.title9"),
+      title_en: t("hover.title9"),
+      href: `https://tipi-journal.uz`,
+      target: "blank"
+    },
   ]
+  // href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`
+  const faculty = {
+    title: "Fakultetlar",
+    href: `/${activeLang?.value}/`
+  }
+  const [aboutTipi, setAboutTipi] = useState([])
+  const [administration, setAdministration] = useState([])
+  const [sections, setSections] = useState([])
+  const [faculties, setFaculties] = useState([])
   const navLink: NavLinkType[] = [
-    { id: 1, label: t("nav.link3"), path: `/${activeLang?.value}/institut-haqida`, hover: true, item1: AboutInstitute },
-    { id: 2, label: t("nav.link5"), path: `/${activeLang?.value}/bolimlar`, hover: true, item1: ScientificDirection },
-    { id: 3, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, item1: Faculties },
+    { id: 1, label: t("nav.link3"), path: `${pathname}/`, hover: true, title1: "Institut haqida", title2: "Administratsiya", item1: aboutTipi, item2: administration },
+    { id: 2, label: t("nav.link5"), path: `${pathname}/`, hover: true, title1: "Bo`limlar", item1: sections },
+    { id: 3, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, title1: "Fakultetlar", item1: faculties },
     { id: 6, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
-    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, item1:  [...InteractiveService, ...ScientificDirection2]},
+    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, title1: t("hover.title10"), item1: InteractiveService},
     { id: 4, label: t("nav.link1"), path: `/${activeLang?.value}/qabul`, hover: false },
   ];
+  
+  useEffect(()=> {
+    const getData = async() => {
+      const about = await fetchAboutTipi()
+      setAboutTipi(about)
+      const admin = await fetchAdmin()
+      setAdministration(admin)
+      const sections = await fetchSections()
+      setSections(sections)
+      const faculties = await fetchFaculties()
+      setFaculties(faculties)
+    }
+    getData()
+  },[])
 
   // const Destinations = [
   //   { label: t("path.link1"), href: "qabul" },
@@ -642,7 +633,7 @@ const Navbar = () => {
                   <span className={`${item?.path === pathname ? "w-full" : "w-0 group-hover:w-full"} absolute inline-block h-[2px] ease-linear duration-200 bg-[#404B7C] bottom-0`}></span>
                 </div>
                 {item.hover && (
-                  <HoverComponent id={item.id} HoverComponentEnter={HoverComponentEnter} HoverComponentLeave={HoverComponentLeave} hoverStatus={hoverStatus} item1={item?.item1} item2={item?.item2}/>
+                  <HoverComponent id={item.id} HoverComponentEnter={HoverComponentEnter} HoverComponentLeave={HoverComponentLeave} title1={item?.title1} title2={item?.title2} hoverStatus={hoverStatus} item1={item?.item1} item2={item?.item2}/>
                 )}
               </li>
             ))}
