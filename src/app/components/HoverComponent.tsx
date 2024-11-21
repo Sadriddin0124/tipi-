@@ -141,8 +141,6 @@ const HoverComponent = ({
   const [hoverElementActive, setHoverElementActive] = useState(0);
   const pathname = usePathname().length;
   const locale = usePathname()?.split("/")[1];
-  console.log(locale);
-
   const openElement = (id: number) => {
     setHoverElementActive(hoverElementActive === id ? 0 : id);
   };

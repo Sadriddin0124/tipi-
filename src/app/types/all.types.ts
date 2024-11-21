@@ -111,3 +111,10 @@ export interface LinkType {
     updated_at: string
     youtube: string
 }
+
+export interface AboutSliderType {
+    active: boolean;
+    file: {
+        file: string
+    }
+}

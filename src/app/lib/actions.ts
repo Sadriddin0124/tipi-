@@ -25,12 +25,12 @@ export const fetchStudents = async () => {
   return response.data; // Faqat `data` ni qaytarish
 };
 
-export const fetchVideoSlider = async () => {
-  const response = await apiClient.get(`/students`); // `/users` endpoint
+export const fetchVideoSlider = async (id: string | null) => {
+  const response = await apiClient.get(`/about_tipi/${id}`); // `/users` endpoint
   return response.data; // Faqat `data` ni qaytarish
 };
 
 export const fetchBlog = async () => {
-  const response = await apiClient.get(`/students`); // `/users` endpoint
+  const response = await apiClient.get(`/constructor/block`); // `/users` endpoint
   return response.data; // Faqat `data` ni qaytarish
 };
