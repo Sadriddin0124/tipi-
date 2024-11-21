@@ -390,6 +390,7 @@ const Navbar = () => {
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
   const [isPending, startTransition] = useTransition();
   const [breadcrumbItems, setBreadcrumbItems] = useState<BreadcrumbItem[]>([]);
+  const locale = pathname?.split("/")[1]
   
   const ScientificDirection: HoverItemType[] = [
     {
@@ -432,68 +433,71 @@ const Navbar = () => {
   const Faculties: any = [
     {
       id: 1,
-      title_uz: t("hover.faculty1"),
-      title_ru: t("hover.faculty1"),
-      title_en: t("hover.faculty1"),
+      name_uz: t("hover.faculty1"),
+      name_ru: t("hover.faculty1"),
+      name_en: t("hover.faculty1"),
       href: `/${activeLang?.value}/fakultetlar`
     },
     {
       id: 2,
-      title_uz: t("hover.faculty2"),
-      title_ru: t("hover.faculty2"),
-      title_en: t("hover.faculty2"),
+      name_uz: t("hover.faculty2"),
+      name_ru: t("hover.faculty2"),
+      name_en: t("hover.faculty2"),
       href: `/${activeLang?.value}`
     },
     {
       id: 3,
-      title_uz: t("hover.faculty3"),
-      title_ru: t("hover.faculty3"),
-      title_en: t("hover.faculty3"),
+      name_uz: t("hover.faculty3"),
+      name_ru: t("hover.faculty3"),
+      name_en: t("hover.faculty3"),
       href: `/${activeLang?.value}`
     },
     {
       id: 4,
-      title_uz: t("hover.faculty4"),
-      title_ru: t("hover.faculty4"),
-      title_en: t("hover.faculty4"),
+      name_uz: t("hover.faculty4"),
+      name_ru: t("hover.faculty4"),
+      name_en: t("hover.faculty4"),
       href: `/${activeLang?.value}`
     },
     {
       id: 5,
-      title_uz: t("hover.faculty5"),
-      title_ru: t("hover.faculty5"),
-      title_en: t("hover.faculty5"),
+      name_uz: t("hover.faculty5"),
+      name_ru: t("hover.faculty5"),
+      name_en: t("hover.faculty5"),
       href: `/${activeLang?.value}`
     },
     {
       id: 6,
-      title_uz: t("hover.faculty6"),
-      title_ru: t("hover.faculty6"),
-      title_en: t("hover.faculty6"),
+      name_uz: t("hover.faculty6"),
+      name_ru: t("hover.faculty6"),
+      name_en: t("hover.faculty6"),
       href: `/${activeLang?.value}`
     },
   ]
   const InteractiveService: any = [
-    // {
-    //   id: 1,
-    //   title_uz: t("hover.title10"),
-    //   title_ru: t("hover.title10"),
-    //   title_en: t("hover.title10"),
-    //   href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`
-    // },
+    {
+      id: 1,
+      name_uz: t("hover.title10"),
+      name_ru: t("hover.title10"),
+      name_en: t("hover.title10"),
+      is_active: true,
+      href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`
+    },
     {
       id: 8,
-      title_uz: t("hover.title8"),
-      title_ru: t("hover.title8"),
-      title_en: t("hover.title8"),
+      name_uz: t("hover.title8"),
+      name_ru: t("hover.title8"),
+      name_en: t("hover.title8"),
+      is_active: true,
       href: `https://www.online-library.uz/`,
       target: "blank"
     },
     {
       id: 9,
-      title_uz: t("hover.title9"),
-      title_ru: t("hover.title9"),
-      title_en: t("hover.title9"),
+      name_uz: t("hover.title9"),
+      name_ru: t("hover.title9"),
+      name_en: t("hover.title9"),
+      is_active: true,
       href: `https://tipi-journal.uz`,
       target: "blank"
     },
@@ -508,40 +512,29 @@ const Navbar = () => {
   const [sections, setSections] = useState([])
   const [faculties, setFaculties] = useState([])
   const navLink: NavLinkType[] = [
-    { id: 1, label: t("nav.link3"), path: `${pathname}/`, hover: true, title1: "Institut haqida", title2: "Administratsiya", item1: aboutTipi, item2: administration },
+    { id: 1, label: t("nav.link3"), path: `${pathname}/`, hover: true, title1: t("hover.about1"), title2: t("hover.about4"), item1: aboutTipi, item2: administration },
     { id: 2, label: t("nav.link5"), path: `${pathname}/`, hover: true, title1: "Bo`limlar", item1: sections },
     { id: 3, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, title1: "Fakultetlar", item1: faculties },
     { id: 6, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
-    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, title1: t("hover.title10"), item1: InteractiveService},
+    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, title1: t("nav.link6"), item1: InteractiveService},
     { id: 4, label: t("nav.link1"), path: `/${activeLang?.value}/qabul`, hover: false },
   ];
   
   useEffect(()=> {
     const getData = async() => {
-      const about = await fetchAboutTipi()
-      setAboutTipi(about)
-      const admin = await fetchAdmin()
-      setAdministration(admin)
-      const sections = await fetchSections()
-      setSections(sections)
       const faculties = await fetchFaculties()
       setFaculties(faculties)
+      console.log(faculties);
+      // const about = await fetchAboutTipi()
+      // setAboutTipi(about)
+      // const admin = await fetchAdmin()
+      // setAdministration(admin)
+      // const sections = await fetchSections()
+      // setSections(sections)
+      
     }
     getData()
   },[])
-
-  // const Destinations = [
-  //   { label: t("path.link1"), href: "qabul" },
-  //   { label: t("path.link2"), href: "fakultetlar" },
-  //   { label: t("path.link3"), href: "institut-haqida" },
-  //   { label: t("path.link4"), href: "yangiliklar" },
-  //   { label: t("path.link5"), href: "iqtidorli-talabalar" },
-  //   { label: t("path.link6"), href: "bolimlar" },
-  //   { label: t("path.link7"), href: "1" },
-  //   { label: t("path.link8"), href: "almashinuv-dasturi" },
-  //   { label: t("path.link9"), href: "pedagoglar" },
-  //   { label: t("path.link10"), href: "pedagog-1" },
-  // ];
 
   const SwitchLang = (value: string) => {
     const path = sessionStorage.getItem("path") || "";
@@ -667,7 +660,7 @@ const Navbar = () => {
                 <Link href={item?.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
               )}
               <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
-              {item?.hover && item?.id === dropDown && <Dropdown id={item?.id} closeDropDown={closeDropDown} item1={item?.item1} item2={item?.item2}/>}
+              {item?.hover && item?.id === dropDown && <Dropdown id={item?.id} closeDropDown={closeDropDown} title1={item?.title1} title2={item?.title2} item1={item?.item1} item2={item?.item2}/>}
             </li>
           ))}
           <div className="min-w-[65px] flex items-center flex-col justify-center relative mt-[20px]">

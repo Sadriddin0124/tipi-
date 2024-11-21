@@ -47,9 +47,9 @@ export interface BreadcrumbItem {
 export interface HoverItemType {
     id: number;
     value?: string;
-    title_uz?: string
-    title_ru?: string
-    title_en?: string
+    name_uz?: string
+    name_ru?: string
+    name_en?: string
     status?: string;
     is_active?: boolean;
     href: string;
@@ -80,12 +80,28 @@ export interface CategoryTypes {
   
 export interface LinkType {
     id?: number | null;
-    title_uz: string;
-    title_ru: string;
-    title_en: string;
+    name_uz: string;
+    name_ru: string;
+    name_en: string;
     created_at?: string;
     is_active: boolean;
     href?: string
     target?: string
     status?: string
   };
+
+  export interface StudentsType {
+    active?: boolean
+    created_at: string
+    description_en: string
+    description_ru: string
+    description_uz: string
+    facebook: string
+    id: string
+    image: {file: string}
+    instagram: string
+    name: string
+    telegram: string
+    updated_at: string
+    youtube: string
+}

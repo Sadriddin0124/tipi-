@@ -11,11 +11,26 @@ export const fetchAdmin = async () => {
 };
 
 export const fetchFaculties = async () => {
-  const response = await apiClient.get(`/faculty/all/`); // `/users` endpoint
+  const response = await apiClient.get(`/faculties`); // `/users` endpoint
   return response.data; // Faqat `data` ni qaytarish
 };
 
 export const fetchSections = async () => {
   const response = await apiClient.get(`/department/`); // `/users` endpoint
+  return response.data; // Faqat `data` ni qaytarish
+};
+
+export const fetchStudents = async () => {
+  const response = await apiClient.get(`/students`); // `/users` endpoint
+  return response.data; // Faqat `data` ni qaytarish
+};
+
+export const fetchVideoSlider = async () => {
+  const response = await apiClient.get(`/students`); // `/users` endpoint
+  return response.data; // Faqat `data` ni qaytarish
+};
+
+export const fetchBlog = async () => {
+  const response = await apiClient.get(`/students`); // `/users` endpoint
   return response.data; // Faqat `data` ni qaytarish
 };

@@ -12,6 +12,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'; 
 import Link from 'next/link'
 import { IoIosArrowForward } from 'react-icons/io'
+import { usePathname } from 'next/navigation'
 const Events = () => {
     const t = useTranslations()
     const data = [
@@ -53,13 +54,14 @@ const Events = () => {
           easing: 'linear',
       });
   }, []);
+  const locale = usePathname()?.split("/")[1]
   return (
     <section className='px-2 py-12 md:py-[100px]' data-aos="fade-up">
       <div className='max-w-[1320px] mx-auto'>
         <h2 className='pl-[20px] text-[32px] md:text-[40px] font-[600] mb-[20px]'>{t('events.title')}</h2>
         <Carousel data={data}/>
         <div className='w-full flex justify-end px-2'>
-          <Link href={"/"} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
+          <Link href={`${locale}/yangiliklar/events`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
             {t("events.more")}
             <span className='group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]'></span>
           </Link>        

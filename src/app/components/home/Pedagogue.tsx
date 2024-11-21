@@ -24,7 +24,7 @@ import UzFlag from "@/assets/uz.webp";
 import RuFlag from "@/assets/ru.webp";
 import EnFlag from "@/assets/en.webp";
 import { usePathname } from 'next/navigation'
-const Pedagogue = () => {
+const Pedagogue = ({ title }: { title: string }) => {
     const t = useTranslations()
     const data:PedagogueType[] = [
       {id: "pedagog-1", img: EducatorImage1, name: t("pedagogue.name1"), desc: t("pedagogue.desc1")},
@@ -87,7 +87,7 @@ const Pedagogue = () => {
   return (
     <section className='px-2' data-aos="fade-up">
       <div className='max-w-[1130px] mx-auto w-full'>
-        <h2 className='text-[32px] text-center mb-10 md:mb-12 md:text-[40px] font-[600]'>{t("pedagogue.title")}</h2>
+        <h2 className='text-[32px] text-center mb-10 md:mb-12 md:text-[40px] font-[600]'>{title}</h2>
         <Slider {...settings}>
             {
                 data?.map((item,index)=> {

@@ -5,19 +5,21 @@ import Hero from '@/app/components/home/Hero'
 import News from '@/app/components/home/News'
 import Pedagogue from '@/app/components/home/Pedagogue'
 import Statistics from '@/app/components/home/Statistics'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 
 const Home = () => {
+  const t = useTranslations()
   return (
     <div>
       <Hero/>
       <Statistics/>
       <Campus/>
-      {/* <News/> */}
+      <News/>
       <div className='pt-[100px]'>
-        <Pedagogue/>
+        <Pedagogue title={t("pedagogue.title")}/>
       </div>
-      {/* <Events/> */}
+      <Events/>
       <Contact/>
     </div>
   )

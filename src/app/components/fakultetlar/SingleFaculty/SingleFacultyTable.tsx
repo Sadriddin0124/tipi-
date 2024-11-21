@@ -459,7 +459,7 @@ const DirectionsTable = () => {
 
 const Faculties = () => {
     return (
-        <div>
+        <div data-aos="fade-up">
         <DirectionsTable/>
         <AboutFaculty title="Fakultet haqida"/>
         </div>
