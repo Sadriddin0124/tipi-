@@ -8,7 +8,11 @@ import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AboutSliderType } from "@/app/types/all.types";
-import { BASE_URL } from "@/app/lib/apiClient";
+
+
+
+
+
 const ConstructorSlider = ({ data }: { data: AboutSliderType | null }) => {
   const t = useTranslations();
   useEffect(() => {
