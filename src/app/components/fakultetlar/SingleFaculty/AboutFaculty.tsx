@@ -101,7 +101,7 @@ const AboutFaculty = ({ title }: { title: string }) => {
     },
   ];
 
-console.log(blog);
+  console.log(blog);
 
 
 
@@ -145,9 +145,8 @@ console.log(blog);
                 className="flex gap-6 items-center max-w-[250px] relative"
               >
                 <span
-                  className={`${
-                    item?.type === "doc" ? "bg-blue-600" : "bg-red-600"
-                  } uppercase px-1 text-white rounded-sm text-[10px] absolute top-4 left-[-12px]`}
+                  className={`${item?.type === "doc" ? "bg-blue-600" : "bg-red-600"
+                    } uppercase px-1 text-white rounded-sm text-[10px] absolute top-4 left-[-12px]`}
                 >
                   {item?.type}
                 </span>

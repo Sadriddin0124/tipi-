@@ -1,19 +1,16 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import HeroImg from "@/assets/hero.webp";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 // import { FaArrowRightLong } from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AboutSliderType } from "@/app/types/all.types";
 import { BASE_URL } from "@/app/lib/apiClient";
 const ConstructorSlider = ({ data }: { data: AboutSliderType | null }) => {
   const t = useTranslations();
-  const btn = t("hero.btn");
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
@@ -22,7 +19,7 @@ const ConstructorSlider = ({ data }: { data: AboutSliderType | null }) => {
     });
   }, []);
 
-  console.log(`${BASE_URL}${data?.file?.file}`);
+  // console.log(`${BASE_URL}${data?.file?.file}`);
 
   return (
     <div className="pb-4 relative">

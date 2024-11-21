@@ -3,7 +3,7 @@ import ConstructorSlider from "@/app/components/contstructor/Slider";
 import AboutFaculty from "@/app/components/fakultetlar/SingleFaculty/AboutFaculty";
 import { fetchBlog, fetchVideoSlider } from "@/app/lib/actions";
 import { AboutSliderType } from "@/app/types/all.types";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Constructor = () => {
@@ -20,13 +20,14 @@ const Constructor = () => {
       setSlider(slider);
       const blog = await fetchBlog();
       setBlog(blog);
+
     };
     getData();
   }, [id]);
   return (
     <div>
       {slider?.file && <ConstructorSlider data={slider} />}
-      <AboutFaculty title="sdfsfsdf" blog={blog} />
+      <AboutFaculty title="sdfsfsdf" />
     </div>
   );
 };
