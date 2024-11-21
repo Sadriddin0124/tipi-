@@ -12,15 +12,15 @@ const Home = () => {
   const t = useTranslations()
   return (
     <div>
-      <Hero/>
-      <Statistics/>
-      <Campus/>
-      <News/>
+      <Hero />
+      <Statistics />
+      <Campus />
+      <News />
       <div className='pt-[100px]'>
-        <Pedagogue title={t("pedagogue.title")}/>
+        <Pedagogue title={t("pedagogue.title")} />
       </div>
-      <Events/>
-      <Contact/>
+      <Events />
+      <Contact />
     </div>
   )
 }
