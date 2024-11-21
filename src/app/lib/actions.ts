@@ -1,7 +1,7 @@
 import apiClient from "./apiClient";
 
 export const fetchAboutTipi = async () => {
-  const response = await apiClient.get(`/about-university/`); // `/users` endpoint
+  const response = await apiClient.get(`/about_tipi/`); // `/users` endpoint
   return response.data; // Faqat `data` ni qaytarish
 };
 

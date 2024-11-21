@@ -1,3 +1,4 @@
+"use client"
 import ConstructorSlider from '@/app/components/contstructor/Slider'
 import AboutFaculty from '@/app/components/fakultetlar/SingleFaculty/AboutFaculty'
 import { fetchBlog, fetchVideoSlider } from '@/app/lib/actions'
@@ -18,7 +19,7 @@ const Constructor = () => {
   return (
     <div>
       <ConstructorSlider/>
-      <AboutFaculty title='title'/>
+      <AboutFaculty/>
     </div>
   )
 }

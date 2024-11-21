@@ -525,8 +525,8 @@ const Navbar = () => {
       const faculties = await fetchFaculties()
       setFaculties(faculties)
       console.log(faculties);
-      // const about = await fetchAboutTipi()
-      // setAboutTipi(about)
+      const about = await fetchAboutTipi()
+      setAboutTipi(about)
       // const admin = await fetchAdmin()
       // setAdministration(admin)
       // const sections = await fetchSections()
