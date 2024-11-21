@@ -44,7 +44,7 @@
 //       window.removeEventListener('scroll', handleScroll);
 //     };
 //   }, [scrollTop]);
-  
+
 //   const [languages, setLanguages] = useState<LangType[]>([
 //     { value: "uz", title: "Uz", icon: UzFlag },
 //     { value: "en", title: "En", icon: EnFlag },
@@ -236,7 +236,7 @@
 //   const closeDropDown = (id: number | undefined) => {
 //     setDropDown(dropDown === id ? 0 : id)
 //   }
-  
+
 //   return (
 //     <nav className="flex justify-center flex-col items-center px-3 bg-white">
 //       <div className="py-[10px] w-full max-w-[1400px] flex items-center justify-between">
@@ -320,7 +320,7 @@
 // export default Navbar;
 
 "use client";
-import React, { useEffect, useState, useTransition, useMemo } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -330,13 +330,13 @@ import Logo from "@/assets/logo.webp";
 import UzFlag from "@/assets/uz.webp";
 import RuFlag from "@/assets/ru.webp";
 import EnFlag from "@/assets/en.webp";
-import { BreadcrumbItem, HoverItemType, LangType, LinkType } from "../types/all.types";
+import { BreadcrumbItem, HoverItemType, LangType } from "../types/all.types";
 import HoverComponent from "./HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
 // import Breadcrumb from "./ui/Breadcrumb";
 import Dropdown from "./ui/Dropdown";
-import { fetchAboutTipi, fetchAdmin, fetchFaculties, fetchSections } from "../lib/actions";
+import { fetchFaculties } from "../lib/actions";
 
 const Navbar = () => {
   const t = useTranslations();
@@ -358,7 +358,7 @@ const Navbar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrollTop]);
-  
+
   const [languages, setLanguages] = useState<LangType[]>([
     { value: "uz", title: "Uz", icon: UzFlag },
     { value: "en", title: "En", icon: EnFlag },
@@ -389,9 +389,7 @@ const Navbar = () => {
   const [appBar, setAppBar] = useState(false);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
   const [isPending, startTransition] = useTransition();
-  const [breadcrumbItems, setBreadcrumbItems] = useState<BreadcrumbItem[]>([]);
-  const locale = pathname?.split("/")[1]
-  
+
   const ScientificDirection: HoverItemType[] = [
     {
       id: 1,
@@ -511,17 +509,19 @@ const Navbar = () => {
   const [administration, setAdministration] = useState([])
   const [sections, setSections] = useState([])
   const [faculties, setFaculties] = useState([])
+
+
   const navLink: NavLinkType[] = [
     { id: 1, label: t("nav.link3"), path: `${pathname}/`, hover: true, title1: t("hover.about1"), title2: t("hover.about4"), item1: aboutTipi, item2: administration },
     { id: 2, label: t("nav.link5"), path: `${pathname}/`, hover: true, title1: "Bo`limlar", item1: sections },
     { id: 3, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, title1: "Fakultetlar", item1: faculties },
     { id: 6, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
-    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, title1: t("nav.link6"), item1: InteractiveService},
+    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, title1: t("nav.link6"), item1: InteractiveService },
     { id: 4, label: t("nav.link1"), path: `/${activeLang?.value}/qabul`, hover: false },
   ];
-  
-  useEffect(()=> {
-    const getData = async() => {
+
+  useEffect(() => {
+    const getData = async () => {
       const faculties = await fetchFaculties()
       setFaculties(faculties)
       console.log(faculties);
@@ -531,10 +531,10 @@ const Navbar = () => {
       // setAdministration(admin)
       // const sections = await fetchSections()
       // setSections(sections)
-      
+
     }
     getData()
-  },[])
+  }, [])
 
   const SwitchLang = (value: string) => {
     const path = sessionStorage.getItem("path") || "";
@@ -603,7 +603,7 @@ const Navbar = () => {
   const closeDropDown = (id: number | undefined) => {
     setDropDown(dropDown === id ? 0 : id)
   }
-  
+
   return (
     <nav className="flex justify-center flex-col items-center px-3 bg-white">
       <div className="py-[10px] w-full max-w-[1400px] flex items-center justify-between">
@@ -626,11 +626,13 @@ const Navbar = () => {
                   <span className={`${item?.path === pathname ? "w-full" : "w-0 group-hover:w-full"} absolute inline-block h-[2px] ease-linear duration-200 bg-[#404B7C] bottom-0`}></span>
                 </div>
                 {item.hover && (
-                  <HoverComponent id={item.id} HoverComponentEnter={HoverComponentEnter} HoverComponentLeave={HoverComponentLeave} title1={item?.title1} title2={item?.title2} hoverStatus={hoverStatus} item1={item?.item1} item2={item?.item2}/>
+                  <HoverComponent id={item.id} HoverComponentEnter={HoverComponentEnter} HoverComponentLeave={HoverComponentLeave} title1={item?.title1} title2={item?.title2} hoverStatus={hoverStatus} item1={item?.item1} item2={item?.item2} />
                 )}
               </li>
             ))}
           </ul>
+
+          
           <div className="relative min-w-[65px]">
             <button onClick={changeLangStatus} className="flex items-center gap-1 border border-[#404B7C] rounded-md px-2 py-1 bg-white relative z-10 text-[20px]">
               {activeLang?.title}
@@ -651,16 +653,16 @@ const Navbar = () => {
       <div className={`${appBar ? "h-[450px] bg-white" : "h-0"} w-full overflow-hidden xl:hidden transition-all ease-linear duration-200`}>
         <ul className="flex flex-col items-center gap-[10px] mt-[25px]">
           {navLink.map(item => (
-            <li key={item.id} className="text-[18px] relative flex justify-center group whitespace-nowrap" onMouseEnter={()=>openDropDown(item?.id)} onMouseLeave={()=>openDropDown(item?.id)}>
+            <li key={item.id} className="text-[18px] relative flex justify-center group whitespace-nowrap" onMouseEnter={() => openDropDown(item?.id)} onMouseLeave={() => openDropDown(item?.id)}>
               {item.href && !item?.hover ? (
                 <a target="blank" href={item.href}>{item.label}</a>
               ) : item?.hover && !item?.href ? (
                 <button onClick={() => handleNavigate(item.path)}>{item.label}</button>
               ) : (
-                <Link href={item?.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
+                <Link href={item?.path} onClick={() => handleNavigate(item.path)}>{item.label} фф</Link>
               )}
               <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
-              {item?.hover && item?.id === dropDown && <Dropdown id={item?.id} closeDropDown={closeDropDown} title1={item?.title1} title2={item?.title2} item1={item?.item1} item2={item?.item2}/>}
+              {item?.hover && item?.id === dropDown && <Dropdown id={item?.id} closeDropDown={closeDropDown} title1={item?.title1} title2={item?.title2} item1={item?.item1} item2={item?.item2} />}
             </li>
           ))}
           <div className="min-w-[65px] flex items-center flex-col justify-center relative mt-[20px]">
