@@ -193,7 +193,7 @@ const AboutFaculty = ({
           {item?.images?.map(
             (item, index) =>
               item?.file?.endsWith(".mov") && (
-                <div className="max-w-[650px]" key={index}>
+                <div className="max-w-[800px]" key={index}>
                   <video controls className="w-full h-auto">
                     <source src={item?.file} type="video/mp4" />
                   </video>

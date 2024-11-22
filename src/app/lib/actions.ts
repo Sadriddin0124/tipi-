@@ -15,6 +15,11 @@ export const fetchFaculties = async () => {
   return response.data; // Faqat `data` ni qaytarish
 };
 
+export const fetchFaculty = async (id: string) => {
+  const response = await apiClient.get(`/faculties/${id}`); // `/users` endpoint
+  return response.data; // Faqat `data` ni qaytarish
+};
+
 export const fetchSections = async () => {
   const response = await apiClient.get(`/department/`); // `/users` endpoint
   return response.data; // Faqat `data` ni qaytarish
