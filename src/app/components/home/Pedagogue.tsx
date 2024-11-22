@@ -108,7 +108,7 @@ const Pedagogue = ({ title }: { title: string }) => {
 
 
 
-
+  const locale = usePathname().split("/")[1]
   return (
     <section className='px-2' data-aos="fade-up">
       <div className='max-w-[1130px] mx-auto w-full'>
@@ -118,11 +118,11 @@ const Pedagogue = ({ title }: { title: string }) => {
             teachers?.map((teacher, index) => {
               return <div key={index} className='px-3 lg:px-5'>
                 <div className='shadow-md rounded-[10px] overflow-hidden'>
-                  <Image src={teacher?.image.file} alt={teacher?.name} width={350} height={300} className='w-full' />
+                  <Image src={teacher?.image.file} alt={teacher?.name_uz} width={350} height={300} className='w-full h-[250px] object-cover' />
                   <div className='p-5 flex flex-col items-start justify-between gap-[10px] min-h-[220px]'>
                     <div>
-                      <h5 className='text-[20px] font-[600]'>{teacher?.name}</h5>
-                      <p className='text_main text-[18px] font-[600]'>{teacher?.nationality}</p>
+                      <h5 className='text-[20px] font-[600]'>{locale === "uz" ? teacher?.name_uz : locale === "en" ? teacher?.name_en : teacher?.name_ru }</h5>
+                      <p className='text_main text-[18px] font-[600]'>{locale === "uz" ? teacher?.description_uz : locale === "en" ? teacher?.description_en : teacher?.description_ru}</p>
                     </div>
                     <Link href={`/${activeLang?.value}/pedagoglar/${teacher?.id}`} className='hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]'>{t("pedagogue.btn")}</Link>
                   </div>

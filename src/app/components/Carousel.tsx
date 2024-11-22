@@ -55,7 +55,7 @@ const Carousel = ({ data }: { data: NewsType[] }) => {
               <Image src={item.image.file} alt={`Slide ${index + 1}`} className='w-full object-cover h-[180px]' width={500} height={400} />
             </div>
             <div className='pt-[26px] px-[18px] pb-[40px] text_main flex flex-col gap-4 ease-linear duration-200 hover:text-white hover:bg-[#404B7C]'>
-              <span className='text-[20px] font-[600]'>{item?.created_at}</span>
+              <span className='text-[20px] font-[600]'>{item?.created_at?.slice(0,10)}</span>
               <p className='text-[17px] min-h-[140px] font-[600] line-clamp-5 text-center leading-5'>{item?.name_ru}</p>
             </div>
           </div>

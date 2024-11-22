@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PedagogueImg1 from "@/assets/pedagogue1.webp";
 import PedagogueImg2 from "@/assets/pedagogue2.webp";
 import PedagogueImg3 from "@/assets/pedagogue3.webp";
@@ -29,6 +29,9 @@ import FileLogo from "@/assets/file_logo.webp";
 import Link from "next/link";
 import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
+import { fetchTeachers } from "@/app/lib/fetchers";
+import { ITeacher } from "@/app/lib/types";
+import { fetchEducators } from "@/app/lib/actions";
 const SingleEducator = () => {
   const t = useTranslations();
   const id = usePathname().split("/")[3];
@@ -238,46 +241,59 @@ const SingleEducator = () => {
       desc: t("aboutFaculty.fileDesc"),
     },
   ];
-
+  const [teachers, setTeachers] = useState<ITeacher[]>([])
+  useEffect(()=> {
+    const getData = async() => {
+      const res = await fetchEducators()
+      setTeachers(res)
+    }
+    getData()
+  },[])
+  const educator = teachers?.find(item=> item?.id === id)
+  console.log(educator);
+  console.log(id);
+  console.log(teachers);
+  
+  const locale = usePathname().split("/")[1]
   return (
     <section className="px-3 w-full flex justify-center py-[70px]">
       <div className="max-w-[1320px] w-full">
         <div className="flex gap-5 mb-2">
           <div className="max-w-[400px] h-full flex flex-col gap-3 justify-between items-center">
             <Image
-              src={item[0]?.img}
-              alt={item[0]?.name}
+              src={educator?.image?.file as string}
+              alt={educator?.name_uz as string}
               width={400}
               height={700}
               className=" rounded-[10px] mb-[10px] h-[515px] w-full object-cover"
             />
             <h4 className="text-[34px] font-[500] text-center">
-              {item[0]?.name}
+              {locale === "en" ? educator?.name_en : locale === "uz" ? educator?.name_uz : educator?.description_ru}
             </h4>
           </div>
           <div className="flex flex-col items-start border border-[#404B7C] p-[30px] rounded-[10px] gap-5">
             <h3 className="text-[40px] font-[400]">{data[0]?.title}</h3>
             <div className="flex flex-col gap-5 max-w-[900px]">
-              {data[0]?.edu?.map((item, index) => {
-                return (
-                  <div key={index} className="flex flex-col items-start ">
+              {/* {educator?.map((item, index) => {
+                return ( */}
+                  <div  className="flex flex-col items-start ">
                     <span className="text-[20px] text-[#404B7C] font-[500]">
-                      {item?.key}
+                     {locale === "en" ? educator?.description_en : locale === "uz" ? educator?.description_uz : educator?.description_ru}
                     </span>
                     <span className="text-[24px] font-[500]">
-                      {item?.value}
+                      {locale === "en" ? educator?.description_en : locale === "uz" ? educator?.description_uz : educator?.description_ru}
                     </span>
                   </div>
-                );
-              })}
+                {/* );
+              })} */}
             </div>
             <div>
               <h5 className="text-[20px]">Bog`lanish uchun:</h5>
               <div className="flex">
                 <div className="flex gap-10">
                   <div className="mt-2 flex flex-col gap-2">
-                    <Link href={""} className="text-[20px] block">
-                      +998 99 876 6522
+                    <Link href={`tel:${educator?.contact}`} className="text-[20px] block">
+                      {educator?.contact}
                     </Link>
                     <Link href={""} className="text-[20px] block">
                       +998 99 876 6522
@@ -311,7 +327,7 @@ const SingleEducator = () => {
             {/* <div className='flex flex-col gap-5 p-5 border border-[#404B7C] rounded-[10px] max-w-[400px]'>
               {
                 data[0]?.about?.map((item,index)=> {
-                  return <div key={index} className='flex flex-col'>
+                  return <div  className='flex flex-col'>
                     <span className='text-[20px] text-[#404B7C] font-[500]'>{item?.key}</span>
                     <span className='text-[24px] font-[500]'>{item?.value}</span>
                   </div>

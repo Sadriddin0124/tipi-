@@ -31,7 +31,7 @@ const Constructor = () => {
         {
           blog?.map((item,index)=> (
             <div className="py-[60px]" key={index}>
-            <AboutFaculty title="sdfsfsdf" item={item} index={index}/>
+            <AboutFaculty item={item} />
             </div>
           ))
         }

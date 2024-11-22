@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import IT1 from "@/assets/it1.webp"
 import IT2 from "@/assets/it2.webp"
 import IT3 from "@/assets/it3.webp"
@@ -9,7 +9,8 @@ import Link from 'next/link'
 import ITImage from "@/assets/it.webp"
 import { usePathname } from 'next/navigation'
 import EducatorsCards from '../../educators/EducatorsCards'
-import AboutFaculty from './AboutFaculty'
+import AboutFaculty, { NewsItem } from './AboutFaculty'
+import { fetchBlog } from '@/app/lib/actions'
 
 
 
@@ -141,7 +142,7 @@ const DirectionsTable = ({ id }: { id: string }) => {
         t("information.th2"),
         t("information.th3"),
         t("information.th4"),
-        t("information.th9"),
+        // t("information.th9"),
     ]
 
     const DirectionTBodies = [
@@ -150,41 +151,41 @@ const DirectionsTable = ({ id }: { id: string }) => {
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
+            // href: `${pathname}/yonalishlar`
         },
         {
             tb1: t("information.faculty2"),
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
+            // href: `${pathname}/yonalishlar`
         },
         {
             tb1: t("information.faculty3"),
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
+            // href: `${pathname}/yonalishlar`
         },
         {
             tb1: t("information.faculty4"),
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
+            // href: `${pathname}/yonalishlar`
         },
         {
             tb1: t("information.faculty5"),
             tb2: t("information.tb2"),
             tb3: t("information.tb3"),
             tb4: t("information.tb4"),
-            href: `${pathname}/yonalishlar`
+            // href: `${pathname}/yonalishlar`
         },
 
     ]
     return (
-        <div className='overflow-x-auto w-full md:flex justify-center'>
-            <table className='w-full max-w-[1300px]'>
+        <div className='overflow-x-auto w-full mx-auto'>
+            <table className='w-full max-w-[1300px] mx-auto'>
                 <thead>
                     <tr className='w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]'>
                         {
@@ -202,9 +203,9 @@ const DirectionsTable = ({ id }: { id: string }) => {
                                 <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb2}</td>
                                 <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb3}</td>
                                 <td className='py-3 px-2 lg:px-0 lg:py-5'>{item?.tb4}</td>
-                                <td className='px-2 lg:px-0'>
+                                {/* <td className='px-2 lg:px-0'>
                                     <Link href={item?.href} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
-                                </td>
+                                </td> */}
                             </tr>
                         ))
                     }
@@ -473,19 +474,51 @@ const DirectionsTable = ({ id }: { id: string }) => {
 // }
 
 const Faculties = ({ id }: { id: string }) => {
+    const [blog, setBlog] = useState<NewsItem[]>([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const blog = await fetchBlog();
+      setBlog(blog);
+
+    };
+    getData();
+  }, [id]);
     return (
-        <div data-aos="fade-up">
+        <div data-aos="fade-up" className='w-full mx-auto'>
             <DirectionsTable id={id} />
-            <AboutFaculty title="Fakultet haqida" />
+            {
+            blog?.map((item,index)=> (
+            <div className="py-[60px]" key={index}>
+            <AboutFaculty item={item} />
+            </div>
+          ))
+        }
         </div>
     )
 }
 
 const Kafedra = () => {
+    const [blog, setBlog] = useState<NewsItem[]>([]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const blog = await fetchBlog();
+      setBlog(blog);
+
+    };
+    getData();
+  }, []);
     return (
         <div>
             <EducatorsCards />
-            <AboutFaculty title="Kafedra haqida" />
+            {
+            blog?.map((item,index)=> (
+            <div className="py-[60px]" key={index}>
+            <AboutFaculty item={item} />
+            </div>
+          ))
+        }
         </div>
     )
 }

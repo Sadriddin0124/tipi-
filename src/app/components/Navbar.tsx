@@ -503,7 +503,7 @@ const Navbar = () => {
   };
   const [aboutTipi, setAboutTipi] = useState<HoverItemType[]>([]);
   const [administration, setAdministration] = useState<HoverItemType[]>([]);
-  const [sections, setSections] = useState([]);
+  const [sections, setSections] = useState<HoverItemType[]>([]);
   const [faculties, setFaculties] = useState([]);
   const navLink: NavLinkType[] = [
     {
@@ -570,9 +570,12 @@ const Navbar = () => {
       const about_tipi = (about as Array<HoverItemType>)?.filter(
         (item) => item?.page !== "ADMINISTRATION"
       );
+      const department = (about as Array<HoverItemType>)?.filter(
+        (item) => item?.page === "DEPARTMENT"
+      );
       console.log(admin);
       setAboutTipi(about_tipi);
-      
+      setSections(department)
       setAdministration(admin)
     };
     getData();

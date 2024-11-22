@@ -32,13 +32,9 @@ export interface NewsItem {
 }
 
 const AboutFaculty = ({
-  title,
   item,
-  index,
 }: {
-  title: string;
   item: NewsItem;
-  index: number;
 }) => {
   const t = useTranslations();
 
@@ -116,7 +112,6 @@ const AboutFaculty = ({
     },
   ];
 
-  console.log(item.images[0]?.file.split("/")[5]);
 
   const locale = usePathname().split(" ")[0];
   return (
