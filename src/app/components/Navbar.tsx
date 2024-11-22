@@ -44,7 +44,7 @@
 //       window.removeEventListener('scroll', handleScroll);
 //     };
 //   }, [scrollTop]);
-  
+
 //   const [languages, setLanguages] = useState<LangType[]>([
 //     { value: "uz", title: "Uz", icon: UzFlag },
 //     { value: "en", title: "En", icon: EnFlag },
@@ -60,7 +60,7 @@
 //   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
 //   const [isPending, startTransition] = useTransition();
 //   const [breadcrumbItems, setBreadcrumbItems] = useState<BreadcrumbItem[]>([]);
-//   const ScientificDirection: HoverItemType = 
+//   const ScientificDirection: HoverItemType =
 //     {
 //       id: 1,
 //       value: t("hover.title1"),
@@ -81,7 +81,7 @@
 //       href: `/${activeLang?.value}`
 //     },
 //   ];
-//   const Faculties: HoverItemType = 
+//   const Faculties: HoverItemType =
 //     {
 //       id: 1,
 //       value: t("hover.faculty1"),
@@ -95,7 +95,7 @@
 //       status: "about_tipi",
 //       href: `/${activeLang?.value}`
 //     }
-//   const AboutInstitute2: HoverItemType = 
+//   const AboutInstitute2: HoverItemType =
 //     {
 //       id: 1,
 //       value: t("hover.about4"),
@@ -236,7 +236,7 @@
 //   const closeDropDown = (id: number | undefined) => {
 //     setDropDown(dropDown === id ? 0 : id)
 //   }
-  
+
 //   return (
 //     <nav className="flex justify-center flex-col items-center px-3 bg-white">
 //       <div className="py-[10px] w-full max-w-[1400px] flex items-center justify-between">
@@ -330,13 +330,23 @@ import Logo from "@/assets/logo.webp";
 import UzFlag from "@/assets/uz.webp";
 import RuFlag from "@/assets/ru.webp";
 import EnFlag from "@/assets/en.webp";
-import { BreadcrumbItem, HoverItemType, LangType, LinkType } from "../types/all.types";
+import {
+  BreadcrumbItem,
+  HoverItemType,
+  LangType,
+  LinkType,
+} from "../types/all.types";
 import HoverComponent from "./HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
 // import Breadcrumb from "./ui/Breadcrumb";
 import Dropdown from "./ui/Dropdown";
-import { fetchAboutTipi, fetchAdmin, fetchFaculties, fetchSections } from "../lib/actions";
+import {
+  fetchAboutTipi,
+  fetchAdmin,
+  fetchFaculties,
+  fetchSections,
+} from "../lib/actions";
 
 const Navbar = () => {
   const t = useTranslations();
@@ -350,26 +360,29 @@ const Navbar = () => {
       setScrollTop(window.scrollY); // or window.pageYOffset
     };
     if (scrollTop > 20) {
-      setHoverStatus(0)
+      setHoverStatus(0);
     }
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [scrollTop]);
-  
+
   const [languages, setLanguages] = useState<LangType[]>([
     { value: "uz", title: "Uz", icon: UzFlag },
     { value: "en", title: "En", icon: EnFlag },
     { value: "ru", title: "Ru", icon: RuFlag },
-  ])
+  ]);
   useEffect(() => {
     const storedLang = localStorage.getItem("language");
     if (storedLang) {
       try {
         const parsedLang = JSON.parse(storedLang);
-        if (parsedLang && languages.some(lang => lang.value === parsedLang.value)) {
+        if (
+          parsedLang &&
+          languages.some((lang) => lang.value === parsedLang.value)
+        ) {
           setActiveLang(parsedLang);
         } else {
           setActiveLang(languages[1]);
@@ -382,7 +395,8 @@ const Navbar = () => {
     // findBreadcrumbItems();
   }, [pathname, languages]);
   const currentLanguage = pathname.split("/")[1];
-  const filterLang = languages.find(item => item.value === currentLanguage) || languages[0];
+  const filterLang =
+    languages.find((item) => item.value === currentLanguage) || languages[0];
   const [activeLang, setActiveLang] = useState<LangType>(filterLang);
   const [hoverStatus, setHoverStatus] = useState<number | undefined>(0);
   const [langStatus, setLangStatus] = useState<boolean>(false);
@@ -390,38 +404,38 @@ const Navbar = () => {
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
   const [isPending, startTransition] = useTransition();
   const [breadcrumbItems, setBreadcrumbItems] = useState<BreadcrumbItem[]>([]);
-  const locale = pathname?.split("/")[1]
-  
+  const locale = pathname?.split("/")[1];
+
   const ScientificDirection: HoverItemType[] = [
     {
       id: 1,
       value: t("hover.title1"),
       status: "big",
-      href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`
+      href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`,
     },
     {
       id: 2,
       value: t("hover.title2"),
       status: "small",
-      href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`
+      href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`,
     },
     {
       id: 3,
       value: t("hover.title3"),
       status: "small",
-      href: `/${activeLang?.value}/bolimlar/manaviyat`
+      href: `/${activeLang?.value}/bolimlar/manaviyat`,
     },
     {
       id: 4,
       value: t("hover.title4"),
       status: "small",
-      href: `/${activeLang?.value}/bolimlar/reja`
+      href: `/${activeLang?.value}/bolimlar/reja`,
     },
     {
       id: 5,
       value: t("hover.title5"),
       status: "small",
-      href: `/${activeLang?.value}/bolimlar/devonxona`
+      href: `/${activeLang?.value}/bolimlar/devonxona`,
     },
     // {
     //   id: 6,
@@ -436,44 +450,44 @@ const Navbar = () => {
       name_uz: t("hover.faculty1"),
       name_ru: t("hover.faculty1"),
       name_en: t("hover.faculty1"),
-      href: `/${activeLang?.value}/fakultetlar`
+      href: `/${activeLang?.value}/fakultetlar`,
     },
     {
       id: 2,
       name_uz: t("hover.faculty2"),
       name_ru: t("hover.faculty2"),
       name_en: t("hover.faculty2"),
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}`,
     },
     {
       id: 3,
       name_uz: t("hover.faculty3"),
       name_ru: t("hover.faculty3"),
       name_en: t("hover.faculty3"),
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}`,
     },
     {
       id: 4,
       name_uz: t("hover.faculty4"),
       name_ru: t("hover.faculty4"),
       name_en: t("hover.faculty4"),
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}`,
     },
     {
       id: 5,
       name_uz: t("hover.faculty5"),
       name_ru: t("hover.faculty5"),
       name_en: t("hover.faculty5"),
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}`,
     },
     {
       id: 6,
       name_uz: t("hover.faculty6"),
       name_ru: t("hover.faculty6"),
       name_en: t("hover.faculty6"),
-      href: `/${activeLang?.value}`
+      href: `/${activeLang?.value}`,
     },
-  ]
+  ];
   const InteractiveService: any = [
     {
       id: 1,
@@ -481,7 +495,7 @@ const Navbar = () => {
       name_ru: t("hover.title10"),
       name_en: t("hover.title10"),
       is_active: true,
-      href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`
+      href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`,
     },
     {
       id: 8,
@@ -490,7 +504,7 @@ const Navbar = () => {
       name_en: t("hover.title8"),
       is_active: true,
       href: `https://www.online-library.uz/`,
-      target: "blank"
+      target: "blank",
     },
     {
       id: 9,
@@ -499,42 +513,90 @@ const Navbar = () => {
       name_en: t("hover.title9"),
       is_active: true,
       href: `https://tipi-journal.uz`,
-      target: "blank"
+      target: "blank",
     },
-  ]
+  ];
   // href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`
   const faculty = {
     title: "Fakultetlar",
-    href: `/${activeLang?.value}/`
-  }
-  const [aboutTipi, setAboutTipi] = useState([])
-  const [administration, setAdministration] = useState([])
-  const [sections, setSections] = useState([])
-  const [faculties, setFaculties] = useState([])
+    href: `/${activeLang?.value}/`,
+  };
+  const [aboutTipi, setAboutTipi] = useState<HoverItemType[]>([]);
+  const [administration, setAdministration] = useState<HoverItemType[]>([]);
+  const [sections, setSections] = useState([]);
+  const [faculties, setFaculties] = useState([]);
   const navLink: NavLinkType[] = [
-    { id: 1, label: t("nav.link3"), path: `${pathname}/`, hover: true, title1: t("hover.about1"), title2: t("hover.about4"), item1: aboutTipi, item2: administration },
-    { id: 2, label: t("nav.link5"), path: `${pathname}/`, hover: true, title1: "Bo`limlar", item1: sections },
-    { id: 3, label: t("nav.link2"), path: `/${activeLang?.value}/fakultetlar`, hover: true, title1: "Fakultetlar", item1: faculties },
-    { id: 6, label: t("nav.link4"), path: `/${activeLang?.value}/yangiliklar`, hover: false },
-    { id: 5, label: t("nav.link6"), path: `/${activeLang?.value}/interaktiv-xizmatlar`, hover: true, title1: t("nav.link6"), item1: InteractiveService},
-    { id: 4, label: t("nav.link1"), path: `/${activeLang?.value}/qabul`, hover: false },
+    {
+      id: 1,
+      label: t("nav.link3"),
+      path: `${pathname}/`,
+      hover: true,
+      title1: t("hover.about1"),
+      title2: t("hover.about4"),
+      item1: aboutTipi,
+      item2: administration,
+    },
+    {
+      id: 2,
+      label: t("nav.link5"),
+      path: `${pathname}/`,
+      hover: true,
+      title1: "Bo`limlar",
+      item1: sections,
+    },
+    {
+      id: 3,
+      label: t("nav.link2"),
+      path: `/${activeLang?.value}/fakultetlar`,
+      hover: true,
+      title1: "Fakultetlar",
+      item1: faculties,
+    },
+    {
+      id: 6,
+      label: t("nav.link4"),
+      path: `/${activeLang?.value}/yangiliklar`,
+      hover: false,
+    },
+    {
+      id: 5,
+      label: t("nav.link6"),
+      path: `/${activeLang?.value}/interaktiv-xizmatlar`,
+      hover: true,
+      title1: t("nav.link6"),
+      item1: InteractiveService,
+    },
+    {
+      id: 4,
+      label: t("nav.link1"),
+      path: `/${activeLang?.value}/qabul`,
+      hover: false,
+    },
   ];
-  
-  useEffect(()=> {
-    const getData = async() => {
-      const faculties = await fetchFaculties()
-      setFaculties(faculties)
-      console.log(faculties);
-      const about = await fetchAboutTipi()
-      setAboutTipi(about)
+
+  useEffect(() => {
+    const getData = async () => {
+      const faculties = await fetchFaculties();
+      setFaculties(faculties);
+      const about = await fetchAboutTipi();
       // const admin = await fetchAdmin()
       // setAdministration(admin)
       // const sections = await fetchSections()
       // setSections(sections)
       
-    }
-    getData()
-  },[])
+      const admin = (about as Array<HoverItemType>)?.filter(
+        (item) => item?.page === "ADMINISTRATION"
+      );
+      const about_tipi = (about as Array<HoverItemType>)?.filter(
+        (item) => item?.page !== "ADMINISTRATION"
+      );
+      console.log(admin);
+      setAboutTipi(about_tipi);
+      
+      setAdministration(admin)
+    };
+    getData();
+  }, []);
 
   const SwitchLang = (value: string) => {
     const path = sessionStorage.getItem("path") || "";
@@ -552,7 +614,8 @@ const Navbar = () => {
 
   const changeLangStatus = () => {
     setLangStatus(!langStatus);
-    const path = pathname.split(`/${activeLang?.value}`).slice(1).join("") || "/";
+    const path =
+      pathname.split(`/${activeLang?.value}`).slice(1).join("") || "/";
     sessionStorage.setItem("path", path);
   };
 
@@ -568,8 +631,6 @@ const Navbar = () => {
   //   );
   //   setBreadcrumbItems(filteredPath);
   // };
-
-
 
   const HoverEnter = (id: number | undefined) => {
     if (timer) {
@@ -596,85 +657,192 @@ const Navbar = () => {
   const HoverComponentLeave = () => {
     setHoverStatus(0);
   };
-  const [dropDown, setDropDown] = useState<number | undefined>(0)
+  const [dropDown, setDropDown] = useState<number | undefined>(0);
   const openDropDown = (id: number | undefined) => {
-    setDropDown(dropDown === id ? 0 : id)
-  }
+    setDropDown(dropDown === id ? 0 : id);
+  };
   const closeDropDown = (id: number | undefined) => {
-    setDropDown(dropDown === id ? 0 : id)
-  }
-  
+    setDropDown(dropDown === id ? 0 : id);
+  };
+
   return (
     <nav className="flex justify-center flex-col items-center px-3 bg-white">
       <div className="py-[10px] w-full max-w-[1400px] flex items-center justify-between">
         <Link href="/" className="flex items-center max-w-[400px] gap-[20px]">
-          <Image src={Logo} alt="Logo" width={100} height={100} className="w-[50px] sm:w-[90px] h-[50px] sm:h-[90px]" />
-          <span className="hidden sm:inline-block text-[18px] font-bold">{t("nav.logo")}</span>
+          <Image
+            src={Logo}
+            alt="Logo"
+            width={100}
+            height={100}
+            className="w-[50px] sm:w-[90px] h-[50px] sm:h-[90px]"
+          />
+          <span className="hidden sm:inline-block text-[18px] font-bold">
+            {t("nav.logo")}
+          </span>
         </Link>
         <div className="hidden xl:flex items-center gap-[22px]">
           <ul className="flex items-center gap-[22px]">
-            {navLink.map(item => (
-              <li key={item.id} className="text-[20px] whitespace-nowrap flex flex-col items-center" onMouseLeave={() => HoverLeave()} onMouseEnter={() => HoverEnter(item.id)}>
+            {navLink.map((item) => (
+              <li
+                key={item.id}
+                className="text-[20px] whitespace-nowrap flex flex-col items-center"
+                onMouseLeave={() => HoverLeave()}
+                onMouseEnter={() => HoverEnter(item.id)}
+              >
                 <div className="relative group flex justify-center">
                   {item.href ? (
                     <a target="blank" href={item.href}>
                       {item.label}
                     </a>
                   ) : (
-                    <Link href={item.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
+                    <Link
+                      href={item.path}
+                      onClick={() => handleNavigate(item.path)}
+                    >
+                      {item.label}
+                    </Link>
                   )}
-                  <span className={`${item?.path === pathname ? "w-full" : "w-0 group-hover:w-full"} absolute inline-block h-[2px] ease-linear duration-200 bg-[#404B7C] bottom-0`}></span>
+                  <span
+                    className={`${
+                      item?.path === pathname
+                        ? "w-full"
+                        : "w-0 group-hover:w-full"
+                    } absolute inline-block h-[2px] ease-linear duration-200 bg-[#404B7C] bottom-0`}
+                  ></span>
                 </div>
                 {item.hover && (
-                  <HoverComponent id={item.id} HoverComponentEnter={HoverComponentEnter} HoverComponentLeave={HoverComponentLeave} title1={item?.title1} title2={item?.title2} hoverStatus={hoverStatus} item1={item?.item1} item2={item?.item2}/>
+                  <HoverComponent
+                    id={item.id}
+                    HoverComponentEnter={HoverComponentEnter}
+                    HoverComponentLeave={HoverComponentLeave}
+                    title1={item?.title1}
+                    title2={item?.title2}
+                    hoverStatus={hoverStatus}
+                    item1={item?.item1}
+                    item2={item?.item2}
+                  />
                 )}
               </li>
             ))}
           </ul>
           <div className="relative min-w-[65px]">
-            <button onClick={changeLangStatus} className="flex items-center gap-1 border border-[#404B7C] rounded-md px-2 py-1 bg-white relative z-10 text-[20px]">
+            <button
+              onClick={changeLangStatus}
+              className="flex items-center gap-1 border border-[#404B7C] rounded-md px-2 py-1 bg-white relative z-10 text-[20px]"
+            >
               {activeLang?.title}
-              <Image src={activeLang.icon} alt={activeLang.title} className="w-[20px] h-[20px] rounded-full" />
+              <Image
+                src={activeLang.icon}
+                alt={activeLang.title}
+                className="w-[20px] h-[20px] rounded-full"
+              />
             </button>
-            <div className={`${langStatus ? "top-[40px] z-[20] bg-white" : "top-0 hidden"} ease-linear duration-200 flex flex-col justify-center border border-[#404B7C] p-1 rounded-md absolute`}>
-              {languages.filter(item => item.value !== activeLang?.value).map(item => (
-                <button onClick={() => changeLang(item)} key={item.value} className="hover:text-blue-600 transition-all py-1 px-1 flex items-center gap-1 text-[20px]">
-                  {item.title}
-                  <Image src={item.icon} alt={item.title} className="w-[20px] h-[20px] rounded-full" />
-                </button>
-              ))}
+            <div
+              className={`${
+                langStatus ? "top-[40px] z-[20] bg-white" : "top-0 hidden"
+              } ease-linear duration-200 flex flex-col justify-center border border-[#404B7C] p-1 rounded-md absolute`}
+            >
+              {languages
+                .filter((item) => item.value !== activeLang?.value)
+                .map((item) => (
+                  <button
+                    onClick={() => changeLang(item)}
+                    key={item.value}
+                    className="hover:text-blue-600 transition-all py-1 px-1 flex items-center gap-1 text-[20px]"
+                  >
+                    {item.title}
+                    <Image
+                      src={item.icon}
+                      alt={item.title}
+                      className="w-[20px] h-[20px] rounded-full"
+                    />
+                  </button>
+                ))}
             </div>
           </div>
         </div>
-        <button className="block xl:hidden text-[30px] p-2" onClick={() => setAppBar(!appBar)}>{appBar ? <RiCloseLargeFill /> : <HiMiniBars3BottomRight />}</button>
+        <button
+          className="block xl:hidden text-[30px] p-2"
+          onClick={() => setAppBar(!appBar)}
+        >
+          {appBar ? <RiCloseLargeFill /> : <HiMiniBars3BottomRight />}
+        </button>
       </div>
-      <div className={`${appBar ? "h-[450px] bg-white" : "h-0"} w-full overflow-hidden xl:hidden transition-all ease-linear duration-200`}>
+      <div
+        className={`${
+          appBar ? "h-[450px] bg-white" : "h-0"
+        } w-full overflow-hidden xl:hidden transition-all ease-linear duration-200`}
+      >
         <ul className="flex flex-col items-center gap-[10px] mt-[25px]">
-          {navLink.map(item => (
-            <li key={item.id} className="text-[18px] relative flex justify-center group whitespace-nowrap" onMouseEnter={()=>openDropDown(item?.id)} onMouseLeave={()=>openDropDown(item?.id)}>
+          {navLink.map((item) => (
+            <li
+              key={item.id}
+              className="text-[18px] relative flex justify-center group whitespace-nowrap"
+              onMouseEnter={() => openDropDown(item?.id)}
+              onMouseLeave={() => openDropDown(item?.id)}
+            >
               {item.href && !item?.hover ? (
-                <a target="blank" href={item.href}>{item.label}</a>
+                <a target="blank" href={item.href}>
+                  {item.label}
+                </a>
               ) : item?.hover && !item?.href ? (
-                <button onClick={() => handleNavigate(item.path)}>{item.label}</button>
+                <button onClick={() => handleNavigate(item.path)}>
+                  {item.label}
+                </button>
               ) : (
-                <Link href={item?.path} onClick={() => handleNavigate(item.path)}>{item.label}</Link>
+                <Link
+                  href={item?.path}
+                  onClick={() => handleNavigate(item.path)}
+                >
+                  {item.label}
+                </Link>
               )}
               <span className="absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0"></span>
-              {item?.hover && item?.id === dropDown && <Dropdown id={item?.id} closeDropDown={closeDropDown} title1={item?.title1} title2={item?.title2} item1={item?.item1} item2={item?.item2}/>}
+              {item?.hover && item?.id === dropDown && (
+                <Dropdown
+                  id={item?.id}
+                  closeDropDown={closeDropDown}
+                  title1={item?.title1}
+                  title2={item?.title2}
+                  item1={item?.item1}
+                  item2={item?.item2}
+                />
+              )}
             </li>
           ))}
           <div className="min-w-[65px] flex items-center flex-col justify-center relative mt-[20px]">
-            <button onClick={changeLangStatus} className="flex items-center gap-1 border border-[#404B7C] rounded-md px-2 py-1 bg-white relative z-10 text-[20px]">
+            <button
+              onClick={changeLangStatus}
+              className="flex items-center gap-1 border border-[#404B7C] rounded-md px-2 py-1 bg-white relative z-10 text-[20px]"
+            >
               {activeLang?.title}
-              <Image src={activeLang.icon} alt={activeLang.title} className="w-[20px] h-[20px] rounded-full" />
+              <Image
+                src={activeLang.icon}
+                alt={activeLang.title}
+                className="w-[20px] h-[20px] rounded-full"
+              />
             </button>
-            <div className={`${langStatus ? "top-[40px] z-[20] bg-white" : "top-0 hidden"} z-[60] ease-linear duration-200 flex flex-col justify-center border border-[#404B7C] p-1 rounded-md`}>
-              {languages.filter(item => item.value !== activeLang?.value).map(item => (
-                <button onClick={() => changeLang(item)} key={item.value} className="hover:text-blue-600 transition-all py-1 px-1 flex items-center gap-1 text-[20px]">
-                  {item.title}
-                  <Image src={item.icon} alt={item.title} className="w-[20px] h-[20px] rounded-full" />
-                </button>
-              ))}
+            <div
+              className={`${
+                langStatus ? "top-[40px] z-[20] bg-white" : "top-0 hidden"
+              } z-[60] ease-linear duration-200 flex flex-col justify-center border border-[#404B7C] p-1 rounded-md`}
+            >
+              {languages
+                .filter((item) => item.value !== activeLang?.value)
+                .map((item) => (
+                  <button
+                    onClick={() => changeLang(item)}
+                    key={item.value}
+                    className="hover:text-blue-600 transition-all py-1 px-1 flex items-center gap-1 text-[20px]"
+                  >
+                    {item.title}
+                    <Image
+                      src={item.icon}
+                      alt={item.title}
+                      className="w-[20px] h-[20px] rounded-full"
+                    />
+                  </button>
+                ))}
             </div>
           </div>
         </ul>

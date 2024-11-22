@@ -214,7 +214,7 @@ const HoverComponent = ({
             </h5>
             {item2?.map((item, index) => {
               return (
-                item?.is_active && (
+                item?.active && (
                   <Link
                     href={"item?.href"}
                     // target={item?.target ? "_blank" : ""}

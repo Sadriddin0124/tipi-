@@ -54,9 +54,10 @@ export interface HoverItemType {
     name_ru?: string
     name_en?: string
     status?: string;
-    is_active?: boolean;
+    active?: boolean;
     href: string;
-    target?: string
+    target?: string;
+    page: string
 }
 
 interface MediaType {
@@ -90,7 +91,7 @@ export interface LinkType {
     title_ru?: string;
     title_en?: string;
     created_at?: string;
-    is_active: boolean;
+    active: boolean;
     href?: string
     target?: string
     status?: string

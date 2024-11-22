@@ -34,3 +34,8 @@ export const fetchBlog = async () => {
   const response = await apiClient.get(`/constructor/block`); // `/users` endpoint
   return response.data; // Faqat `data` ni qaytarish
 };
+
+export const fetchEducators = async () => {
+  const response = await apiClient.get(`/teachers/`); // `/users` endpoint
+  return response.data; // Faqat `data` ni qaytarish
+};

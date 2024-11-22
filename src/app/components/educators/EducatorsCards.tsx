@@ -50,7 +50,7 @@
 // export default EducatorsCards
 
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import EducatorImage1 from "@/assets/educator1.webp";
 import EducatorImage2 from "@/assets/educator2.webp";
 import EducatorImage3 from "@/assets/educator3.webp";
@@ -67,6 +67,7 @@ import { PedagogueType } from "@/app/types/all.types";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { fetchEducators } from "@/app/lib/actions";
 
 const EducatorsCards = () => {
   const t = useTranslations();
@@ -138,6 +139,14 @@ const EducatorsCards = () => {
       desc: t("pedagogue.desc11"),
     },
   ];
+  useEffect(()=> {
+    const getData = async () => {
+      const res = await fetchEducators()
+      console.log(res);
+    }
+    getData()
+    
+  },[])
   const activeLang = usePathname().split("/")[1];
 
   return (

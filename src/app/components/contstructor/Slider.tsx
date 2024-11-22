@@ -26,14 +26,14 @@ const ConstructorSlider = ({ data }: { data: AboutSliderType | null }) => {
 
   return (
     <div className="pb-4 relative">
-      <header className=" w-full relative h-[577px]">
+      <header className=" w-full relative h-[377px] rounded-b-[20px] overflow-hidden">
         {data?.file?.file.split(".").pop() === "mov" ? (
           <video
             // controls
             autoPlay
             muted
             loop
-            className="w-[100%] object-cover h-[300px] md:h-[577px]"
+            className="w-[100%] object-cover h-[300px] md:h-[377px]"
           >
             <source type="video/mp4" src={data?.file?.file} />
           </video>
@@ -41,7 +41,7 @@ const ConstructorSlider = ({ data }: { data: AboutSliderType | null }) => {
           <Image
             src={data?.file?.file as string}
             alt="Hero Image"
-            className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
+            className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[377px]"
             width={1400}
             height={600}
           />
