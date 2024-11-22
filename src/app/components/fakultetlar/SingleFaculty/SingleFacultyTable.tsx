@@ -12,6 +12,7 @@ import EducatorsCards from "../../educators/EducatorsCards";
 import AboutFaculty, { NewsItem } from "./AboutFaculty";
 import { fetchBlog, fetchFaculty } from "@/app/lib/actions";
 import FacultyKafedra from "./FacultyKafedra";
+import Constructor from "../../contstructor/Constructor";
 
 const Statistics = ({ id }: { id: string }) => {
   const t = useTranslations();
@@ -56,7 +57,7 @@ const Statistics = ({ id }: { id: string }) => {
 
   const components = [
     { id: 1, component: <Faculties id={id} /> },
-    { id: 2, component: <Kafedra /> },
+    { id: 2, component: <Kafedra id={id}/> },
     { id: 3, component: <OnlineReception /> },
   ];
   return (
@@ -560,35 +561,18 @@ const DirectionsTable = () => {
 // }
 
 const Faculties = ({ id }: { id: string }) => {
-  const [blog, setBlog] = useState<NewsItem[]>([]);
-
-  useEffect(() => {
-    const getData = async () => {
-      const blog = await fetchBlog();
-      setBlog(blog);
-    };
-    getData();
-  }, [id]);
   return (
     <div data-aos="fade-up" className="w-full mx-auto">
       <DirectionsTable />
-      {blog?.map((item, index) => (
-        <div className="py-[60px]" key={index}>
-          <AboutFaculty item={item} />
-        </div>
-      ))}
+      <Constructor page={`faculty-${id}-about`}/>
     </div>
   );
 };
 
-const Kafedra = () => {
-  const [blog, setBlog] = useState<NewsItem[]>([]);
-  const id = usePathname()?.split("/")[3];
+const Kafedra = ({id}: {id: string}) => {
     const [teachers, setTeachers] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const blog = await fetchBlog();
-      setBlog(blog);
       const item = await fetchFaculty(id);
       setTeachers(item.teachers);
     };
@@ -597,11 +581,7 @@ const Kafedra = () => {
   return (
     <div>
       <FacultyKafedra data={teachers}/>
-      {blog?.map((item, index) => (
-        <div className="py-[60px]" key={index}>
-          <AboutFaculty item={item} />
-        </div>
-      ))}
+      <Constructor page={`faculty-${id}-kafedra`}/>
     </div>
   );
 };

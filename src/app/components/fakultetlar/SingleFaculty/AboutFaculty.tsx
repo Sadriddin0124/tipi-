@@ -1,14 +1,8 @@
 "use client";
-import { useTranslations } from "next-intl";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import FileLogo from "@/assets/file_logo.webp";
 import Image from "next/image";
-import FacultyMasonry from "./FacultyMasonry";
-import Video from "@/assets/video.webp";
-import ImgLogo from "@/assets/img_logo.webp";
-import { usePathname, useSearchParams } from "next/navigation";
-import { fetchBlog } from "@/app/lib/actions";
-import { NewsType } from "@/app/types/all.types";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export interface NewsItem {
@@ -36,82 +30,6 @@ const AboutFaculty = ({
 }: {
   item: NewsItem;
 }) => {
-  const t = useTranslations();
-
-  const [blog, setBlog] = useState<NewsItem[]>([]);
-
-  const searchparams = useSearchParams();
-
-  const id = searchparams.get("id");
-
-  useEffect(() => {
-    const getData = async () => {
-      const blog = await fetchBlog();
-      setBlog(blog);
-    };
-    getData();
-  }, [id]);
-
-  const files = [
-    {
-      img: FileLogo,
-      type: "doc",
-      desc: t("aboutFaculty.fileDesc"),
-    },
-    {
-      img: FileLogo,
-      type: "pdf",
-      desc: t("aboutFaculty.fileDesc"),
-    },
-    {
-      img: FileLogo,
-      type: "pdf",
-      desc: t("aboutFaculty.fileDesc"),
-    },
-    {
-      img: FileLogo,
-      type: "doc",
-      desc: t("aboutFaculty.fileDesc"),
-    },
-    {
-      img: FileLogo,
-      type: "pdf",
-      desc: t("aboutFaculty.fileDesc"),
-    },
-    {
-      img: FileLogo,
-      type: "pdf",
-      desc: t("aboutFaculty.fileDesc"),
-    },
-  ];
-  const images = [
-    {
-      id: 1,
-      src: ImgLogo,
-      alt: "Photo 1",
-    },
-    {
-      id: 2,
-      src: ImgLogo,
-      alt: "Photo 2",
-    },
-    {
-      id: 3,
-      src: ImgLogo,
-      alt: "Photo 3",
-    },
-    {
-      id: 4,
-      src: ImgLogo,
-      alt: "Photo 4",
-    },
-    {
-      id: 5,
-      src: ImgLogo,
-      alt: "Photo 5",
-    },
-  ];
-
 
   const locale = usePathname().split(" ")[0];
   return (

@@ -216,7 +216,7 @@ const HoverComponent = ({
               return (
                 item?.active && (
                   <Link
-                    href={"item?.href"}
+                  href={item?.href ? item?.href : `/${locale}/about?id=${item?.id}`}
                     // target={item?.target ? "_blank" : ""}
                     key={index}
                     className={
@@ -226,7 +226,11 @@ const HoverComponent = ({
                   >
                     <IoIosArrowForward className="text-[18px]" />
                     <span className="max-w-[250px] w-full relative flex justify-start group">
-                      {item?.title_uz}
+                    {locale === "uz"
+                      ? item?.name_uz || item?.title_uz
+                      : locale === "en"
+                      ? item?.name_en || item?.title_en
+                      : item?.name_ru || item?.title_ru}
                       <span
                         className={`absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C] bottom-0`}
                       ></span>

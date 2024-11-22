@@ -35,8 +35,8 @@ export const fetchVideoSlider = async (id: string | null) => {
   return response.data; // Faqat `data` ni qaytarish
 };
 
-export const fetchBlog = async () => {
-  const response = await apiClient.get(`/constructor/block`); // `/users` endpoint
+export const fetchBlog = async (page: string) => {
+  const response = await apiClient.get(`/constructor/block?page=${page}`); // `/users` endpoint
   return response.data; // Faqat `data` ni qaytarish
 };
 

@@ -16,7 +16,7 @@ const Constructor = () => {
     const getData = async () => {
       const slider = await fetchVideoSlider(id);
       setSlider(slider);
-      const blog = await fetchBlog();
+      const blog = await fetchBlog(`about-${id}`);
       setBlog(blog);
 
     };
