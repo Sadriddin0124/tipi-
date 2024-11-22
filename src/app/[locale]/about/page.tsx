@@ -18,6 +18,7 @@ const Constructor = () => {
       setSlider(slider);
       const blog = await fetchBlog();
       setBlog(blog);
+
     };
     getData();
   }, [id]);

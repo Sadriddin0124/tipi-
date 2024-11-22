@@ -1,18 +1,21 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { StaticImageData } from "next/image";
 import { ReactNode } from "react";
+import { IFile } from "../lib/types";
 
-export interface LangType  {
+export interface LangType {
     value: string;
     title: string;
     icon: StaticImageData | StaticImport;
 }
 
 export interface NewsType {
-    img: StaticImageData;
-    link?: string
-    date: string;
-    desc: string
+    id: string;
+    name_uz: string;
+    name_ru: string;
+    name_en: string;
+    image: IFile;
+    created_at: string;
 }
 
 export interface PedagogueType {
@@ -43,7 +46,7 @@ export interface CounterType {
 export interface BreadcrumbItem {
     label: string;
     href: string;
-  }
+}
 export interface HoverItemType {
     id: number;
     value?: string;
@@ -64,7 +67,7 @@ interface MediaType {
     icons: ReactNode;
     link: string
 }
-  
+
 export interface TBodyTYpe {
     tb1: string;
     tb2: string;
@@ -81,7 +84,7 @@ export interface CategoryTypes {
     place: string;
     status?: boolean;
 };
-  
+
 export interface LinkType {
     id?: number | null;
     name_uz?: string;
@@ -95,9 +98,9 @@ export interface LinkType {
     href?: string
     target?: string
     status?: string
-  };
+};
 
-  export interface StudentsType {
+export interface StudentsType {
     active?: boolean
     created_at: string
     description_en: string
@@ -105,7 +108,7 @@ export interface LinkType {
     description_uz: string
     facebook: string
     id: string
-    image: {file: string}
+    image: { file: string }
     instagram: string
     name: string
     telegram: string

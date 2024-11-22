@@ -4,12 +4,29 @@ import SingleFacultyHero from '@/app/components/fakultetlar/SingleFaculty/Single
 import Statistics from '@/app/components/fakultetlar/SingleFaculty/SingleFacultyTable'
 import React from 'react'
 
-const SingleFaculty = () => {
+
+
+
+interface PageProps {
+  params: {
+    locale: string;
+    id: string;
+  };
+}
+
+const SingleFaculty = ({ params }: PageProps) => {
+
+
+
+  console.log(params.id);
+
+
+
   return (
     <div>
-      <SingleFacultyHero/>
-      <Statistics/>
-      <Contact/>
+      <SingleFacultyHero />
+      <Statistics id={params.id} />
+      <Contact />
     </div>
   )
 }

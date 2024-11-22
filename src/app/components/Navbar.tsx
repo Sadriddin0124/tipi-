@@ -1,23 +1,3 @@
-// "use client";
-// import React, { useEffect, useState, useTransition, useMemo } from "react";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { useTranslations } from "next-intl";
-// import { usePathname, useRouter } from "next/navigation";
-// import { NavLinkType } from "../types/navbar.types";
-// import Logo from "@/assets/logo.webp";
-// import UzFlag from "@/assets/uz.webp";
-// import RuFlag from "@/assets/ru.webp";
-// import EnFlag from "@/assets/en.webp";
-// import { BreadcrumbItem, HoverItemType, LangType } from "../types/all.types";
-// import HoverComponent from "./HoverComponent";
-// import { HiMiniBars3BottomRight } from "react-icons/hi2";
-// import { RiCloseLargeFill } from "react-icons/ri";
-// // import Breadcrumb from "./ui/Breadcrumb";
-// import Dropdown from "./ui/Dropdown";
-// import { useQuery } from "@tanstack/react-query";
-// import { fetchFaculties } from "../lib/actions";
-// import { title } from "process";
 
 // const Navbar = () => {
 //   // const { data, isLoading, isError } = useQuery({
@@ -320,7 +300,7 @@
 // export default Navbar;
 
 "use client";
-import React, { useEffect, useState, useTransition, useMemo } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -331,11 +311,12 @@ import UzFlag from "@/assets/uz.webp";
 import RuFlag from "@/assets/ru.webp";
 import EnFlag from "@/assets/en.webp";
 import {
-  BreadcrumbItem,
+  // BreadcrumbItem,
   HoverItemType,
   LangType,
-  LinkType,
+  // LinkType,
 } from "../types/all.types";
+// import { HoverItemType, LangType } from "../types/all.types";
 import HoverComponent from "./HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
@@ -343,10 +324,11 @@ import { RiCloseLargeFill } from "react-icons/ri";
 import Dropdown from "./ui/Dropdown";
 import {
   fetchAboutTipi,
-  fetchAdmin,
+  // fetchAdmin,
   fetchFaculties,
-  fetchSections,
+  // fetchSections,
 } from "../lib/actions";
+// import { fetchAboutTipi, fetchFaculties } from "../lib/actions";
 
 const Navbar = () => {
   const t = useTranslations();
@@ -369,7 +351,7 @@ const Navbar = () => {
     };
   }, [scrollTop]);
 
-  const [languages, setLanguages] = useState<LangType[]>([
+  const [languages] = useState<LangType[]>([
     { value: "uz", title: "Uz", icon: UzFlag },
     { value: "en", title: "En", icon: EnFlag },
     { value: "ru", title: "Ru", icon: RuFlag },
@@ -403,91 +385,89 @@ const Navbar = () => {
   const [appBar, setAppBar] = useState(false);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
   const [isPending, startTransition] = useTransition();
-  const [breadcrumbItems, setBreadcrumbItems] = useState<BreadcrumbItem[]>([]);
-  const locale = pathname?.split("/")[1];
 
-  const ScientificDirection: HoverItemType[] = [
-    {
-      id: 1,
-      value: t("hover.title1"),
-      status: "big",
-      href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`,
-    },
-    {
-      id: 2,
-      value: t("hover.title2"),
-      status: "small",
-      href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`,
-    },
-    {
-      id: 3,
-      value: t("hover.title3"),
-      status: "small",
-      href: `/${activeLang?.value}/bolimlar/manaviyat`,
-    },
-    {
-      id: 4,
-      value: t("hover.title4"),
-      status: "small",
-      href: `/${activeLang?.value}/bolimlar/reja`,
-    },
-    {
-      id: 5,
-      value: t("hover.title5"),
-      status: "small",
-      href: `/${activeLang?.value}/bolimlar/devonxona`,
-    },
-    // {
-    //   id: 6,
-    //   value: t("hover.title6"),
-    //   status: "small",
-    //   href: `/${activeLang?.value}`
-    // },
-  ];
-  const Faculties: any = [
-    {
-      id: 1,
-      name_uz: t("hover.faculty1"),
-      name_ru: t("hover.faculty1"),
-      name_en: t("hover.faculty1"),
-      href: `/${activeLang?.value}/fakultetlar`,
-    },
-    {
-      id: 2,
-      name_uz: t("hover.faculty2"),
-      name_ru: t("hover.faculty2"),
-      name_en: t("hover.faculty2"),
-      href: `/${activeLang?.value}`,
-    },
-    {
-      id: 3,
-      name_uz: t("hover.faculty3"),
-      name_ru: t("hover.faculty3"),
-      name_en: t("hover.faculty3"),
-      href: `/${activeLang?.value}`,
-    },
-    {
-      id: 4,
-      name_uz: t("hover.faculty4"),
-      name_ru: t("hover.faculty4"),
-      name_en: t("hover.faculty4"),
-      href: `/${activeLang?.value}`,
-    },
-    {
-      id: 5,
-      name_uz: t("hover.faculty5"),
-      name_ru: t("hover.faculty5"),
-      name_en: t("hover.faculty5"),
-      href: `/${activeLang?.value}`,
-    },
-    {
-      id: 6,
-      name_uz: t("hover.faculty6"),
-      name_ru: t("hover.faculty6"),
-      name_en: t("hover.faculty6"),
-      href: `/${activeLang?.value}`,
-    },
-  ];
+  // const ScientificDirection: HoverItemType[] = [
+  //   {
+  //     id: 1,
+  //     value: t("hover.title1"),
+  //     status: "big",
+  //     href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`,
+  //   },
+  //   {
+  //     id: 2,
+  //     value: t("hover.title2"),
+  //     status: "small",
+  //     href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`,
+  //   },
+  //   {
+  //     id: 3,
+  //     value: t("hover.title3"),
+  //     status: "small",
+  //     href: `/${activeLang?.value}/bolimlar/manaviyat`,
+  //   },
+  //   {
+  //     id: 4,
+  //     value: t("hover.title4"),
+  //     status: "small",
+  //     href: `/${activeLang?.value}/bolimlar/reja`,
+  //   },
+  //   {
+  //     id: 5,
+  //     value: t("hover.title5"),
+  //     status: "small",
+  //     href: `/${activeLang?.value}/bolimlar/devonxona`,
+  //   },
+  //   // {
+  //   //   id: 6,
+  //   //   value: t("hover.title6"),
+  //   //   status: "small",
+  //   //   href: `/${activeLang?.value}`
+  //   // },
+  // ];
+  // const Faculties: any = [
+  //   {
+  //     id: 1,
+  //     name_uz: t("hover.faculty1"),
+  //     name_ru: t("hover.faculty1"),
+  //     name_en: t("hover.faculty1"),
+  //     href: `/${activeLang?.value}/fakultetlar`,
+  //   },
+  //   {
+  //     id: 2,
+  //     name_uz: t("hover.faculty2"),
+  //     name_ru: t("hover.faculty2"),
+  //     name_en: t("hover.faculty2"),
+  //     href: `/${activeLang?.value}`,
+  //   },
+  //   {
+  //     id: 3,
+  //     name_uz: t("hover.faculty3"),
+  //     name_ru: t("hover.faculty3"),
+  //     name_en: t("hover.faculty3"),
+  //     href: `/${activeLang?.value}`,
+  //   },
+  //   {
+  //     id: 4,
+  //     name_uz: t("hover.faculty4"),
+  //     name_ru: t("hover.faculty4"),
+  //     name_en: t("hover.faculty4"),
+  //     href: `/${activeLang?.value}`,
+  //   },
+  //   {
+  //     id: 5,
+  //     name_uz: t("hover.faculty5"),
+  //     name_ru: t("hover.faculty5"),
+  //     name_en: t("hover.faculty5"),
+  //     href: `/${activeLang?.value}`,
+  //   },
+  //   {
+  //     id: 6,
+  //     name_uz: t("hover.faculty6"),
+  //     name_ru: t("hover.faculty6"),
+  //     name_en: t("hover.faculty6"),
+  //     href: `/${activeLang?.value}`,
+  //   },
+  // ];
   const InteractiveService: any = [
     {
       id: 1,
@@ -621,7 +601,6 @@ const Navbar = () => {
 
   const handleNavigate = (path: string) => {
     sessionStorage.setItem("path", path);
-    // findBreadcrumbItems();
   };
 
   // const findBreadcrumbItems = () => {
@@ -725,6 +704,8 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+
+
           <div className="relative min-w-[65px]">
             <button
               onClick={changeLangStatus}
@@ -847,7 +828,6 @@ const Navbar = () => {
           </div>
         </ul>
       </div>
-      {/* {breadcrumbItems.length ? <Breadcrumb items={breadcrumbItems} activeLang={activeLang}/> : ""} */}
     </nav>
   );
 };
