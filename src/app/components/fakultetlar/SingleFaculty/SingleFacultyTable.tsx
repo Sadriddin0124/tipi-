@@ -579,7 +579,7 @@ const Kafedra = ({id}: {id: string}) => {
     getData();
   }, []);
   return (
-    <div>
+    <div className="w-full">
       <FacultyKafedra data={teachers}/>
       <Constructor page={`faculty-${id}-kafedra`}/>
     </div>

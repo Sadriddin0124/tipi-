@@ -61,6 +61,7 @@ export interface HoverItemType {
     href: string;
     target?: string;
     page: string
+    teachers: string
 }
 
 interface MediaType {
@@ -98,6 +99,8 @@ export interface LinkType {
     href?: string
     target?: string
     status?: string
+    teachers: string
+
 };
 
 export interface StudentsType {

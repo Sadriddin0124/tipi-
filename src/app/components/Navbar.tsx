@@ -568,7 +568,7 @@ const Navbar = () => {
         (item) => item?.page === "ADMINISTRATION"
       );
       const about_tipi = (about as Array<HoverItemType>)?.filter(
-        (item) => item?.page !== "ADMINISTRATION"
+        (item) => item?.page === "ABOUT_INSTITUTE"
       );
       const department = (about as Array<HoverItemType>)?.filter(
         (item) => item?.page === "DEPARTMENT"

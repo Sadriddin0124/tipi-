@@ -124,7 +124,7 @@ const Pedagogue = ({ title }: { title: string }) => {
                       <h5 className='text-[20px] font-[600]'>{locale === "uz" ? teacher?.name_uz : locale === "en" ? teacher?.name_en : teacher?.name_ru }</h5>
                       <p className='text_main text-[18px] font-[600]'>{locale === "uz" ? teacher?.description_uz : locale === "en" ? teacher?.description_en : teacher?.description_ru}</p>
                     </div>
-                    <Link href={`/${activeLang?.value}/pedagoglar/${teacher?.id}`} className='hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]'>{t("pedagogue.btn")}</Link>
+                    <Link href={`/${activeLang?.value}/pedagoglar`} className='hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]'>{t("pedagogue.btn")}</Link>
                   </div>
                 </div>
               </div>
