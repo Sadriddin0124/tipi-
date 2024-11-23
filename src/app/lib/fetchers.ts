@@ -12,8 +12,8 @@ const fetchTeachers = async (): Promise<ITeacher[]> => {
 
 
 
-const fetchNews = async (): Promise<NewsType[]> => {
-    const { data } = await apiClient.get('/news');
+const fetchNews = async (category: string): Promise<NewsType[]> => {
+    const { data } = await apiClient.get(`/news/?category=${category}`);
 
     return data;
 }

@@ -16,6 +16,7 @@ export interface NewsType {
     name_en: string;
     image: IFile;
     created_at: string;
+    category: string
 }
 
 export interface PedagogueType {
