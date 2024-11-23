@@ -10,6 +10,10 @@
 * {
   font-family: Inter, sans-serif;
 }
+
+.scroll_no {
+  scrollbar-width: none;
+}
 .btn_gradient {
   position: relative;
   display: inline-block;

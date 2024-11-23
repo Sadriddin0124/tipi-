@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useParams, usePathname } from "next/navigation";
 import { fetchNews } from "@/app/lib/fetchers";
 import { NewsType } from "@/app/types/all.types";
+import Link from "next/link";
 const SingleNews = () => {
   const t = useTranslations();
   const params = useParams();
@@ -32,7 +33,7 @@ const SingleNews = () => {
           alert("Nimadur noto'g'ri ketdi.");
         });
     }
-  }, []);
+  }, [slug]);
   const category = slug === "news" ? "SCIENCE" : "EVENT"
   return (
     <section className="px-3 overflow-hidden pb-6 pt-10 md:pt-[100px] md:pb-[80px]">
@@ -44,24 +45,24 @@ const SingleNews = () => {
             ? t("events.title")
             : ""}
         </h2>
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 gap-4 w-full">
           {newsData?.filter(item=> item?.category === category)?.map((item, index) => (
             item?.active &&
-            <div className="" key={index}>
-              <div
+              <Link
+              href={`/${locale}/news?id=${item?.id}`}
                 key={index}
-                className="rounded-[10px] overflow-hidden shadow-lg flex flex-col"
+                className="rounded-[10px] w-full overflow-hidden shadow-lg flex flex-col"
               >
-                <div className="bg-[#D9D9D9] min-h-[180px] h-full flex justify-center items-center">
+                <div className="bg-[#D9D9D9] w-full min-h-[180px] h-full flex justify-center items-center">
                   <Image
                     src={item?.image?.file}
                     alt={`Slide ${index + 1}`}
-                    className="w-full object-cover h-[180px]"
+                    className=" object-cover w-full h-[180px]"
                     width={500}
                     height={400}
                   />
                 </div>
-                <div className="pt-[26px] px-[18px] pb-[40px] text_main flex flex-col gap-4 ease-linear duration-200 hover:text-white hover:bg-[#404B7C]">
+                <div className="pt-[26px] px-[18px] pb-[40px] text_main flex flex-col gap-4 ease-linear duration-200">
                   <span className="text-[20px] font-[600]">
                     {item?.created_at?.slice(0, 10)}
                   </span>
@@ -73,8 +74,7 @@ const SingleNews = () => {
                       : item?.name_ru}
                   </p>
                 </div>
-              </div>
-            </div>
+              </Link>
           ))}
         </div>
       </div>

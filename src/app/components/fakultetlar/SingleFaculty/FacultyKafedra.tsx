@@ -86,7 +86,7 @@ const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
     >
       {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
         <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
-        <div className="max-w-[1100px] h-[600px] bg-white overflow-y-auto relative z-10">
+        <div className="pl-[20px] max-w-[1100px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
           <SingleEducator/>
         </div>
       </div>}

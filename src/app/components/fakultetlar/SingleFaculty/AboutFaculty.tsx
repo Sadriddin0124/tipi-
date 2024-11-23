@@ -32,7 +32,7 @@ const AboutFaculty = ({
 }) => {
 
   const locale = usePathname().split("/")[1];
-  console.log(locale);
+  console.log(item);
   
   return (
     <section className={`flex justify-center px-3 `}>
@@ -59,11 +59,9 @@ const AboutFaculty = ({
           )}
         </div>}
         {item?.kind === "TEXT" && <div className="w-full flex flex-col gap-10 ">
-          {item?.title_uz && (
             <h2 className="text-[24px] md:text-[40px] mt-[29px] font-[600]">
               {locale === "uz" ? item?.title_uz : locale === "ru" ? item?.title_ru : item?.title_en}
             </h2>
-          )}
               <p className="text-[16px] md:text-[22px]"
                     dangerouslySetInnerHTML={{
                       __html: locale === "uz"
@@ -110,9 +108,9 @@ const AboutFaculty = ({
           </div>
         </div>}
         {item?.kind === "VIDEO" && <div className="flex flex-col items-center justify-center gap-5">
-          <h2 className="text-[24px] self-start mb-2 md:text-[40px] mt-[29px] font-[600]">
+          {/* <h2 className="text-[24px] self-start mb-2 md:text-[40px] mt-[29px] font-[600]">
               {locale === "uz" ? item?.title_uz : locale === "ru" ? item?.title_ru : item?.title_en}
-            </h2>
+            </h2> */}
           {item?.images?.map(
             (item, index) => (
                 <div className="max-w-[800px]" key={index}>

@@ -38,8 +38,8 @@ const Events = () => {
     <section className='px-2 py-12 md:py-[100px]' data-aos="fade-up">
       <div className='max-w-[1320px] mx-auto'>
         <h2 className='pl-[20px] text-[32px] md:text-[40px] font-[600] mb-[20px]'>{t('events.title')}</h2>
-        {data?.length > 3 ? <Carousel data={data} category='SCIENCE'/>
-        : <UnCarousel data={data} category='SCIENCE'/>}
+        {data?.length > 5 ? <Carousel data={data} category='EVENT'/>
+        : <UnCarousel data={data} category='EVENT'/>}
         <div className='w-full flex justify-end px-2'>
           {pathname !== "/uz/yangiliklar" && <Link href={`${locale}/yangiliklar/events`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
             {t("events.more")}

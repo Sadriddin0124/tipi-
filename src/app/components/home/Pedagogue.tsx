@@ -90,7 +90,7 @@ const Pedagogue = ({ title }: { title: string }) => {
     <section className="px-2" id="pedagog">
       {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
         <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
-        <div className="max-w-[1100px] h-[600px] bg-white overflow-y-auto relative z-10">
+        <div className="pl-[20px] max-w-[1100px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
           <SingleEducator/>
         </div>
       </div>}
@@ -98,7 +98,7 @@ const Pedagogue = ({ title }: { title: string }) => {
         <h2 className="text-[32px] text-center mb-10 md:mb-12 md:text-[40px] font-[600]">
           {title}
         </h2>
-        <Slider {...settings}>
+        {teachers?.length > 4 ? <Slider {...settings}>
           {teachers?.map((teacher, index) => {
             return (
               <div key={index} className="px-3 lg:px-5">
@@ -140,6 +140,48 @@ const Pedagogue = ({ title }: { title: string }) => {
             );
           })}
         </Slider>
+        : <div className="grid grid-cols-3">
+          {teachers?.map((teacher, index) => {
+            return (
+              <div key={index} className="px-3 lg:px-5">
+                <div className="shadow-md rounded-[10px] overflow-hidden">
+                  <Image
+                    src={teacher?.image.file}
+                    alt={teacher?.name_uz}
+                    width={350}
+                    height={300}
+                    className="w-full h-[250px] object-cover"
+                  />
+                  <div className="p-5 flex flex-col items-start justify-between gap-[10px] min-h-[220px]">
+                    <div>
+                      <h5 className="text-[20px] font-[600]">
+                        {locale === "uz"
+                          ? teacher?.name_uz
+                          : locale === "en"
+                          ? teacher?.name_en
+                          : teacher?.name_ru}
+                      </h5>
+                      <p className="text_main text-[18px] font-[600]">
+                        {locale === "uz"
+                          ? teacher?.description_uz
+                          : locale === "en"
+                          ? teacher?.description_en
+                          : teacher?.description_ru}
+                      </p>
+                    </div>
+                    <Link
+                    onClick={()=>scrollToBottom(teacher?.id)}
+                      href={`/${activeLang?.value}?id=${teacher?.id}`}
+                      className="hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]"
+                    >
+                      {t("pedagogue.btn")}
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>}
         <div className="w-full flex justify-end mt-4">
           <Link
             href={`${locale}/pedagoglar`}
