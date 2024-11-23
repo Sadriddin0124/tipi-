@@ -1,4 +1,3 @@
-
 // const Navbar = () => {
 //   // const { data, isLoading, isError } = useQuery({
 //   //   queryFn: fetchFaculties,
@@ -304,7 +303,7 @@ import React, { useEffect, useState, useTransition } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { NavLinkType } from "../types/navbar.types";
 import Logo from "@/assets/logo.webp";
 import UzFlag from "@/assets/uz.webp";
@@ -563,7 +562,7 @@ const Navbar = () => {
       // setAdministration(admin)
       // const sections = await fetchSections()
       // setSections(sections)
-      
+
       const admin = (about as Array<HoverItemType>)?.filter(
         (item) => item?.page === "ADMINISTRATION"
       );
@@ -575,16 +574,19 @@ const Navbar = () => {
       );
       console.log(admin);
       setAboutTipi(about_tipi);
-      setSections(department)
-      setAdministration(admin)
+      setSections(department);
+      setAdministration(admin);
     };
     getData();
   }, []);
-
+  const searchParams = useSearchParams()
+  
   const SwitchLang = (value: string) => {
     const path = sessionStorage.getItem("path") || "";
+    const id = searchParams.get("id") 
+
     startTransition(() => {
-      router.replace(`/${value}/${path}`);
+      router.replace(`/${value}/${path}?id=${id}`);
     });
   };
 
@@ -707,7 +709,6 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-
 
           <div className="relative min-w-[65px]">
             <button

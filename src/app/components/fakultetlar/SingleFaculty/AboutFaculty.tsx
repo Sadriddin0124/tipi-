@@ -31,15 +31,15 @@ const AboutFaculty = ({
   item: NewsItem;
 }) => {
 
-  const locale = usePathname().split(" ")[0];
+  const locale = usePathname().split("/")[1];
+  console.log(locale);
+  
   return (
     <section className={`flex justify-center px-3 `}>
       <div className="max-w-[1300px] w-full flex flex-col ">
-        <div className={`grid grid-cols-4 gap-3 md:gap-6`}>
+        {item?.kind === "IMAGE" && <div className={`grid grid-cols-4 gap-3 md:gap-6`}>
           {item?.images.map(
-            (item, index) =>
-              item?.file?.endsWith(".png") ||
-              (item?.file?.endsWith(".jpg") && (
+            (item, index) => (
                 <div
                   key={index}
                   className={`overflow-hidden rounded-[10px] max-h-[300px]  md:h-[400px] `}
@@ -52,17 +52,13 @@ const AboutFaculty = ({
                     className="hover:scale-105 transition-all w-full h-full object-cover"
                   />
                 </div>
-              ))
+              )
           )}
-        </div>
-        <div className="w-full flex flex-col gap-10 ">
+        </div>}
+        {item?.kind === "TEXT" && <div className="w-full flex flex-col gap-10 ">
           {item?.title_uz && (
             <h2 className="text-[24px] md:text-[40px] mt-[29px] font-[600]">
-              {locale === "uz"
-                ? item?.title_uz
-                : locale === "ru"
-                ? item?.title_ru
-                : item?.title_en}
+              {locale === "uz" ? item?.title_uz : locale === "ru" ? item?.title_ru : item?.title_en}
             </h2>
           )}
           <p className="text-[16px] md:text-[22px]">
@@ -72,13 +68,11 @@ const AboutFaculty = ({
               ? item?.content_ru
               : item?.content_en}
           </p>
-        </div>
-        <div className="flex justify-center">
+        </div>}
+        { item?.kind === "FILE" && <div className="flex justify-center">
           <div className="grid sm:grid-cols-2 max-w-[1200px] w-full lg:grid-cols-3 gap-6 px-4">
             {item?.images?.map(
-              (item, index) =>
-                item?.file?.endsWith(".docx") ||
-                (item?.file?.endsWith(".pdf") && (
+              (item, index) => (
                   <Link
                     href={item?.file}
                     target="_blank"
@@ -103,14 +97,13 @@ const AboutFaculty = ({
                       {item?.file?.split("/")[5]}
                     </span>
                   </Link>
-                ))
+                )
             )}
           </div>
-        </div>
-        <div className="flex flex-col items-center justify-center md:flex-row gap-5">
+        </div>}
+        {item?.kind === "VIDEO" && <div className="flex flex-col items-center justify-center md:flex-row gap-5">
           {item?.images?.map(
-            (item, index) =>
-              item?.file?.endsWith(".mov") && (
+            (item, index) => (
                 <div className="max-w-[800px]" key={index}>
                   <video controls className="w-full h-auto">
                     <source src={item?.file} type="video/mp4" />
@@ -118,7 +111,7 @@ const AboutFaculty = ({
                 </div>
               )
           )}
-        </div>
+        </div>}
       </div>
     </section>
   );
