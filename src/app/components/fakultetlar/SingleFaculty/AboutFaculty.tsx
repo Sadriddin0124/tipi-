@@ -37,9 +37,6 @@ const AboutFaculty = ({
   return (
     <section className={`flex justify-center px-3 `}>
       <div className="max-w-[1300px] w-full flex flex-col ">
-      <h2 className="text-[24px] mb-2 md:text-[40px] mt-[29px] font-[600]">
-              {locale === "uz" ? item?.title_uz : locale === "ru" ? item?.title_ru : item?.title_en}
-        </h2>
         {item?.kind === "IMAGE" && <div className={`grid grid-cols-4 gap-3 md:gap-6`}>
           {item?.images.map(
             (item, index) => (
@@ -108,9 +105,9 @@ const AboutFaculty = ({
           </div>
         </div>}
         {item?.kind === "VIDEO" && <div className="flex flex-col items-center justify-center gap-5">
-          {/* <h2 className="text-[24px] self-start mb-2 md:text-[40px] mt-[29px] font-[600]">
+          <h2 className="text-[24px] self-start mb-2 md:text-[40px] mt-[29px] font-[600]">
               {locale === "uz" ? item?.title_uz : locale === "ru" ? item?.title_ru : item?.title_en}
-            </h2> */}
+            </h2>
           {item?.images?.map(
             (item, index) => (
                 <div className="max-w-[800px]" key={index}>
