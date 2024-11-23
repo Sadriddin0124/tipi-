@@ -17,7 +17,7 @@ const Home = () => {
       <Campus />
       <News />
       <div className='pt-[100px]'>
-        <Pedagogue title={t("pedagogue.title")} />
+        <Pedagogue title={t("pedagogue.title_home")} />
       </div>
       <Events />
       <Contact />

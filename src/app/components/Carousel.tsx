@@ -50,6 +50,7 @@ const Carousel = ({ data, category }: { data: NewsType[], category: string }) =>
   return (
     <Slider {...settings}>
       {data?.filter(item=> item?.category === category)?.map((item, index) => (
+        item?.active &&
         <div className='px-[10px] py-[30px]' key={index}>
           <div key={index} className='rounded-[10px] overflow-hidden shadow-lg flex flex-col'>
             <div className='bg-[#D9D9D9] min-h-[180px] h-full flex justify-center items-center'>

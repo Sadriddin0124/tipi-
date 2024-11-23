@@ -4,6 +4,7 @@ import Aos from 'aos';
 import React, { useEffect, useState } from 'react'
 import 'aos/dist/aos.css'; 
 import { fetchEducators } from '@/app/lib/actions';
+import Contact from '@/app/components/home/Contact';
 
 const Educators = () => {
   const [teachers, setTeachers] = useState([]);
@@ -22,8 +23,9 @@ const Educators = () => {
 useEffect(() => {
 }, []);
   return (
-    <div>
+    <div className='py-[100px]'>
       <EducatorsCards data={teachers}/>
+      <Contact/>
     </div>
   )
 }

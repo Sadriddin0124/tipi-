@@ -22,7 +22,6 @@ const Constructor = () => {
     };
     getData();
   }, [id]);
-  console.log(slider);
   
   return (
     <div>

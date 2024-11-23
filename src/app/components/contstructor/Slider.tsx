@@ -45,6 +45,7 @@ const ConstructorSlider = ({ data }: { data: AboutSliderType | null }) => {
             className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[377px]"
             width={1400}
             height={600}
+            priority
           />
         )}
       </header>

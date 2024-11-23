@@ -17,6 +17,7 @@ export interface NewsType {
     image: IFile;
     created_at: string;
     category: string
+    active: boolean
 }
 
 export interface PedagogueType {

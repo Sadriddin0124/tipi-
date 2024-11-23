@@ -1,21 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import News1 from "@/assets/news1.webp";
-import News2 from "@/assets/news2.webp";
-import News3 from "@/assets/news3.webp";
-import News4 from "@/assets/news4.webp";
-import News5 from "@/assets/news5.webp";
-import News8 from "@/assets/news8.webp";
-import News9 from "@/assets/news9.webp";
-import News10 from "@/assets/news10.webp";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import Event1 from "@/assets/event1.webp";
-import Event2 from "@/assets/event2.webp";
-import Event3 from "@/assets/event3.webp";
-import Event4 from "@/assets/event4.webp";
-import Event5 from "@/assets/event5.webp";
-import Event6 from "@/assets/event6.webp";
 import { useParams, usePathname } from "next/navigation";
 import { fetchNews } from "@/app/lib/fetchers";
 import { NewsType } from "@/app/types/all.types";
@@ -60,6 +46,7 @@ const SingleNews = () => {
         </h2>
         <div className="grid grid-cols-4 gap-4">
           {newsData?.filter(item=> item?.category === category)?.map((item, index) => (
+            item?.active &&
             <div className="" key={index}>
               <div
                 key={index}
