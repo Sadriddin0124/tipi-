@@ -50,16 +50,18 @@
 // export default EducatorsCards
 
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { KafedraTypes, PedagogueType } from "@/app/types/all.types";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { fetchEducators } from "@/app/lib/actions";
+import SingleEducator from "@/app/[locale]/pedagoglar/[id]/page";
 
 const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
   const t = useTranslations();
+  const [id, setId] = useState<string>("")
   useEffect(() => {
     const getData = async () => {
       const res = await fetchEducators();
@@ -68,12 +70,26 @@ const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
     getData();
   }, []);
   const locale = usePathname().split("/")[1];
-
+  function scrollToBottom(id: string) {
+    setId(id)
+    setTimeout(() => {
+      window.scrollTo({
+        top: 1000, // Scroll to 1000px from the top
+        behavior: "smooth", // Smooth scrolling
+      });
+    }, 1000);
+  }
+  const pathname = usePathname()
   return (
     <section
       className="flex justify-center flex-col items-center px-1 gap-10 w-full"
-      data-aos="fade-up"
     >
+      {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
+        <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
+        <div className="max-w-[1100px] h-[600px] bg-white overflow-y-auto relative z-10">
+          <SingleEducator/>
+        </div>
+      </div>}
       <h2 className="text-[24px] md:text-[40px] font-[500]">
         {t("pedagogue.title")}
       </h2>
@@ -107,7 +123,8 @@ const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
                     </p>
                   </div>
                   <Link
-                    href={`/${locale}/pedagoglar/${item?.id}`}
+                  onClick={()=>scrollToBottom(item?.id)}
+                    href={`${pathname}?id=${item?.id}`}
                     className="hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]"
                   >
                     {t("pedagogue.btn")}

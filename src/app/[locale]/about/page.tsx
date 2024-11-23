@@ -26,10 +26,10 @@ const Constructor = () => {
   return (
     <div>
       {slider?.file && <ConstructorSlider data={slider} />}
-      <div className="pb-[100px]">
+      <div className="pb-[40px] md:pb-[80px]">
         {
           blog?.map((item,index)=> (
-            <div className="py-[60px]" key={index}>
+            <div className="py-[30px]" key={index}>
             <AboutFaculty item={item} />
             </div>
           ))

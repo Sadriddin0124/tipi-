@@ -1,7 +1,7 @@
 import axios from "axios";
-export const BASE_URL = "https://tipibackend.pythonanywhere.com/api"
+export const BASE_URL = "https://api.tipi.sectorsoft.uz/api/"
 const apiClient = axios.create({
-  baseURL: "https://tipibackend.pythonanywhere.com/api", // API asosiy URL
+  baseURL: "https://api.tipi.sectorsoft.uz/api/", // API asosiy URL
   headers: {
     "Content-Type": "application/json",
     

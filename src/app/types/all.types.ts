@@ -128,6 +128,7 @@ export interface AboutSliderType {
     }
 }
 
+
 export interface KafedraTypes {
     id: string
     name_uz: string
@@ -137,4 +138,10 @@ export interface KafedraTypes {
     description_ru: string
     description_en: string
     image: {file: string}
+    contact2: string
+    telegram: string
+    instagram: string
+    facebook: string
+    youtube: string
+    files: [{file: string}]
 }

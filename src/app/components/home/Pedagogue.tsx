@@ -1,16 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import EducatorImage1 from "@/assets/educator1.webp";
-import EducatorImage2 from "@/assets/educator2.webp";
-import EducatorImage3 from "@/assets/educator3.webp";
-import EducatorImage4 from "@/assets/educator4.webp";
-import EducatorImage5 from "@/assets/educator5.webp";
-import EducatorImage6 from "@/assets/educator6.webp";
-import EducatorImage7 from "@/assets/educator7.webp";
-import EducatorImage8 from "@/assets/educator8.webp";
-import EducatorImage9 from "@/assets/educator9.webp";
-import EducatorImage10 from "@/assets/educator10.webp";
-import EducatorImage11 from "@/assets/educator11.webp";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Slider from "react-slick";
@@ -26,11 +15,13 @@ import EnFlag from "@/assets/en.webp";
 import { usePathname } from "next/navigation";
 import { ITeacher } from "@/app/lib/types";
 import { fetchTeachers } from "@/app/lib/fetchers";
+import SingleEducator from "@/app/[locale]/pedagoglar/[id]/page";
 const Pedagogue = ({ title }: { title: string }) => {
   const t = useTranslations();
 
   const [teachers, setTeachers] = useState<ITeacher[]>([]);
   const pathname = usePathname();
+  const [id, setId] = useState<string>("")
 
   const languages: LangType[] = [
     { value: "uz", title: "Uz", icon: UzFlag },
@@ -86,8 +77,23 @@ const Pedagogue = ({ title }: { title: string }) => {
   }, []);
 
   const locale = usePathname().split("/")[1];
+  function scrollToBottom(id: string) {
+    setId(id)
+    setTimeout(() => {
+      window.scrollTo({
+        top: 2300, // Scroll to 1000px from the top
+        behavior: "smooth", // Smooth scrolling
+      });
+    }, 1000);
+  }
   return (
-    <section className="px-2" data-aos="fade-up">
+    <section className="px-2" id="pedagog">
+      {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
+        <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
+        <div className="max-w-[1100px] h-[600px] bg-white overflow-y-auto relative z-10">
+          <SingleEducator/>
+        </div>
+      </div>}
       <div className="max-w-[1130px] mx-auto w-full">
         <h2 className="text-[32px] text-center mb-10 md:mb-12 md:text-[40px] font-[600]">
           {title}
@@ -122,7 +128,8 @@ const Pedagogue = ({ title }: { title: string }) => {
                       </p>
                     </div>
                     <Link
-                      href={`/${activeLang?.value}/pedagoglar/${teacher?.id}`}
+                    onClick={()=>scrollToBottom(teacher?.id)}
+                      href={`/${activeLang?.value}?id=${teacher?.id}`}
                       className="hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]"
                     >
                       {t("pedagogue.btn")}

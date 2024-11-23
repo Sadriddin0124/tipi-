@@ -63,7 +63,6 @@ const Statistics = ({ id }: { id: string }) => {
   return (
     <section
       className="w-full flex flex-col items-center gap-3 md:gap-20 justify-center pt-[60px] lg:pt-[122px] pb-20 lg:pb-[100px] px-3"
-      data-aos="fade-up"
     >
       <div className="max-w-[1166px] w-full flex flex-row items-center md:border-0 border rounded-full justify-between md:justify-center lg:justify-between bg-slate-200 md:bg-transparent p-1 md:gap-3 lg:gap-8">
         {data?.map((item, index) => {
@@ -241,7 +240,7 @@ const DirectionsTable = () => {
       setDirections(item?.directions);
     };
     getData();
-  }, []);
+  }, [id]);
   return (
     <div className="overflow-x-auto w-full mx-auto">
       <table className="w-full max-w-[1300px] mx-auto">
@@ -291,9 +290,9 @@ const DirectionsTable = () => {
                   ? item?.department_ru
                   : item?.department_en}
               </td>
-              {/* <td className='px-2 lg:px-0'>
-                                    <Link href={item?.href} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
-                                </td> */}
+              <td className='px-2 lg:px-0'>
+                                    <Link href={`${locale}/about?=${item?.id}`} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
+                                </td>
             </tr>
           ))}
         </tbody>
@@ -577,7 +576,7 @@ const Kafedra = ({id}: {id: string}) => {
       setTeachers(item.teachers);
     };
     getData();
-  }, []);
+  }, [id]);
   return (
     <div className="w-full">
       <FacultyKafedra data={teachers}/>

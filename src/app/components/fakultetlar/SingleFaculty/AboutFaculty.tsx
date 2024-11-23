@@ -37,6 +37,9 @@ const AboutFaculty = ({
   return (
     <section className={`flex justify-center px-3 `}>
       <div className="max-w-[1300px] w-full flex flex-col ">
+      <h2 className="text-[24px] mb-2 md:text-[40px] mt-[29px] font-[600]">
+              {locale === "uz" ? item?.title_uz : locale === "ru" ? item?.title_ru : item?.title_en}
+        </h2>
         {item?.kind === "IMAGE" && <div className={`grid grid-cols-4 gap-3 md:gap-6`}>
           {item?.images.map(
             (item, index) => (
@@ -61,16 +64,21 @@ const AboutFaculty = ({
               {locale === "uz" ? item?.title_uz : locale === "ru" ? item?.title_ru : item?.title_en}
             </h2>
           )}
-          <p className="text-[16px] md:text-[22px]">
-            {locale === "uz"
-              ? item?.content_uz
-              : locale === "ru"
-              ? item?.content_ru
-              : item?.content_en}
-          </p>
+              <p className="text-[16px] md:text-[22px]"
+                    dangerouslySetInnerHTML={{
+                      __html: locale === "uz"
+                        ? item?.content_uz
+                        : locale === "ru"
+                        ? item?.content_ru
+                        : item?.content_en,
+                    }}
+                  />
         </div>}
         { item?.kind === "FILE" && <div className="flex justify-center">
           <div className="grid sm:grid-cols-2 max-w-[1200px] w-full lg:grid-cols-3 gap-6 px-4">
+          <h2 className="text-[24px] mb-2 md:text-[40px] mt-[29px] font-[600]">
+              {locale === "uz" ? item?.title_uz : locale === "ru" ? item?.title_ru : item?.title_en}
+            </h2>
             {item?.images?.map(
               (item, index) => (
                   <Link
@@ -101,7 +109,10 @@ const AboutFaculty = ({
             )}
           </div>
         </div>}
-        {item?.kind === "VIDEO" && <div className="flex flex-col items-center justify-center md:flex-row gap-5">
+        {item?.kind === "VIDEO" && <div className="flex flex-col items-center justify-center gap-5">
+          <h2 className="text-[24px] self-start mb-2 md:text-[40px] mt-[29px] font-[600]">
+              {locale === "uz" ? item?.title_uz : locale === "ru" ? item?.title_ru : item?.title_en}
+            </h2>
           {item?.images?.map(
             (item, index) => (
                 <div className="max-w-[800px]" key={index}>
