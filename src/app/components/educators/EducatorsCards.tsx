@@ -248,10 +248,10 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
           </div>
         </div>
       )}
-      <h2 className="text-[24px] md:text-[40px] font-medium">
+      <h2 className="text-[28px] font-[500] md:text-[40px] md:font-medium">
         {t("pedagogue.title")}
       </h2>
-      <div className="max-w-[1100px] w-full flex items-center flex-col sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px]">
+      <div className="max-w-[1300px] w-full flex items-center flex-col sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px]">
         {data?.map((item, index) => (
           <div key={index} className="max-w-[350px] w-full">
             <div className="shadow-md rounded-[10px] overflow-hidden">
@@ -260,18 +260,18 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
                 alt={item?.name_uz || "Educator"}
                 width={350}
                 height={300}
-                className="w-full h-[200px] object-cover"
+                className="w-full h-[250px] object-cover"
               />
               <div className="p-5 flex flex-col justify-between gap-[10px] sm:h-[240px]">
                 <div className="flex flex-col gap-[10px]">
-                  <h5 className="text-[20px] font-bold">
+                  <h5 className="text-[20px] font-bold line-clamp-2">
                     {locale === "uz"
                       ? item?.name_uz
                       : locale === "en"
                       ? item?.name_en
                       : item?.name_ru}
                   </h5>
-                  <p className="text-lg text_main">
+                  <p className="text-lg text_main line-clamp-2">
                     {locale === "uz"
                       ? item?.description_uz
                       : locale === "en"

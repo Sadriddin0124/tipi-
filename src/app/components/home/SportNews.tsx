@@ -45,7 +45,7 @@ const SportNews = () => {
         {data?.length > 5 ? <Carousel data={data} category='SPORT'/>
         : <UnCarousel data={data} category='SPORT'/>}
         <div className='w-full flex justify-end px-2'>
-          {pathname !== `/${locale}/yangiliklar/news` && <Link href={`/${locale}/yangiliklar/news`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
+          {pathname !== `/${locale}/yangiliklar/science` && <Link href={`/${locale}/yangiliklar/news`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
             {t("news.more")}
             <span className='group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]'></span>
           </Link>}

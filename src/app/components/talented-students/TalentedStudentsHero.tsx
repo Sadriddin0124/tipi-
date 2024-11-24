@@ -24,7 +24,7 @@ const TalentedStudentsHero = () => {
     <section className='w-full flex justify-center pt-[20px] pb-[150px] px-3'>
       <div className='max-w-[1340px] w-full flex flex-col items-center gap-[50px]'>
         <h2 className='text-[40px] font-[500]'>Iqtidorli talabalar</h2>
-        <div className='grid grid-cols-2 gap-[30px] w-full'>
+        <div className='grid xl:grid-cols-2 gap-[30px] w-full'>
           {
             students?.map((item,index)=> {
               return <div key={index} className='flex flex-col md:flex-row w-full items-start gap-[40px] border-2 border-black rounded-[10px] p-3'>
@@ -35,21 +35,21 @@ const TalentedStudentsHero = () => {
                   <div className='flex justify-between w-full'>
                     <h3 className='text-[24px] lg:text-[30px] font-[500]'>{item?.name}</h3>
                     <div className='flex gap-2 items-center text-[24px]'>
-                      <Link href={item?.telegram} className='text-blue-500'>
+                      {item?.telegram && <Link href={item?.telegram} className='text-blue-500'>
                         <FaTelegram />
-                      </Link>
-                      <Link href={item?.instagram} className='text-red-800'>
+                      </Link>}
+                      {item?.instagram && <Link href={item?.instagram} className='text-red-800'>
                         <IoLogoInstagram size={30}/>
-                      </Link>
-                      <Link href={item?.facebook} className='text-blue-500'>
+                      </Link>}
+                      {item?.facebook && <Link href={item?.facebook} className='text-blue-500'>
                         <FaFacebook />
-                      </Link>
-                      <Link href={item?.youtube} className='text-red-500'>
+                      </Link>}
+                      {item?.youtube && <Link href={item?.youtube} className='text-red-500'>
                         <FaYoutube size={30}/>
-                      </Link>
+                      </Link>}
                     </div>
                   </div>
-                  <div className='flex w-full flex-col gap-2 justify-between h-[120px]'>
+                  <div className='flex w-full flex-col gap-2 justify-between'>
                     <p className='text-[16px] lg:text-[20px]'>{locale === "uz" ? item?.description_uz : locale === "ru" ? item?.description_uz : item?.description_en }</p>
                     <span className='self-end text-[14px] italic'>{item?.created_at?.slice(0, 10)}</span>
                   </div>

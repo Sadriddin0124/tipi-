@@ -56,13 +56,13 @@ const Carousel = ({ data, category }: { data: NewsType[], category: string }) =>
         }
       }
     ]
-  };
+  }
   const t = useTranslations()
   return (
     <Slider {...settings}>
       {data?.filter(item=> item?.category === category)?.map((item, index) => (
         item?.active &&
-        <div className='px-[2px] py-[30px]' key={index}>
+        <div className='px-[6px] py-[30px]' key={index}>
           <Link href={`${locale}/about?id=${item?.id}`} key={index} className='rounded-[10px] overflow-hidden shadow-lg flex flex-col'>
             <div className='bg-[#D9D9D9] min-h-[180px] h-full flex justify-center items-center'>
               <Image src={item.image.file} alt={`Slide ${index + 1}`} className='w-full object-cover h-[180px]' width={500} height={400} />

@@ -40,7 +40,9 @@ const SingleNews = () => {
       <div className="max-w-[1320px] mx-auto flex flex-col gap-6 items-center">
         <h2 className="pl-[20px] text-[32px] self-start md:text-[40px] font-[600] mb-[20px]">
           {slug === "news"
-            ? t("news.title")
+            ? t("news.title3")
+            : slug === "science"
+            ? t("news.title2")
             : slug === "events"
             ? t("events.title")
             : ""}

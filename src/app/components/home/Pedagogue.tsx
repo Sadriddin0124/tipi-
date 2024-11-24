@@ -114,14 +114,14 @@ const Pedagogue = ({ title }: { title: string }) => {
                   />
                   <div className="p-5 flex flex-col items-start justify-between gap-[10px] min-h-[220px]">
                     <div>
-                      <h5 className="text-[20px] font-[600]">
+                      <h5 className="text-[20px] font-[600] line-clamp-2">
                         {locale === "uz"
                           ? teacher?.name_uz
                           : locale === "en"
                           ? teacher?.name_en
                           : teacher?.name_ru}
                       </h5>
-                      <p className="text_main text-[18px] font-[600]">
+                      <p className="text_main text-[18px] font-[600] line-clamp-2">
                         {locale === "uz"
                           ? teacher?.description_uz
                           : locale === "en"
