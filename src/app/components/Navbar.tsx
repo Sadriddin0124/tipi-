@@ -548,7 +548,7 @@ const Navbar = () => {
           </div>
         </ul>
         </div>
-        {breadcrumbItems.length ? <Breadcrumb items={breadcrumbItems} activeLang={activeLang}/> : ""}
+        {pathname.length > 3 ? <Breadcrumb items={breadcrumbItems} activeLang={activeLang}/> : ""}
     </nav>
   );
 };

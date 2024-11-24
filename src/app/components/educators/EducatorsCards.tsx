@@ -236,18 +236,13 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
       className="flex flex-col items-center px-4 gap-10 w-full"
       // data-aos="fade-up"
     >
-      {id && (
-        <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
-        <button className="absolute right-3 top-3 text-white z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
-        <div
-            className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]"
-            onClick={() => setId("")}
-          ></div>
-          <div className="pl-[20px] max-w-[1300px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
-            <SingleEducator />
-          </div>
+      {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
+        <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
+        <div className="pl-[20px] max-w-[1200px] w-full flex justify-center rounded-lg h-[600px] bg-white relative z-10">
+        <button className="absolute right-5 top-5 text_main z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
+          <SingleEducator/>
         </div>
-      )}
+      </div>}
       <h2 className="text-[28px] font-[500] md:text-[40px] md:font-medium">
         {t("pedagogue.title")}
       </h2>
@@ -260,7 +255,7 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
                 alt={item?.name_uz || "Educator"}
                 width={350}
                 height={300}
-                className="w-full h-[250px] object-cover"
+                className="w-full h-[300px] object-cover"
               />
               <div className="p-5 flex flex-col justify-between gap-[10px] sm:h-[240px]">
                 <div className="flex flex-col gap-[10px]">

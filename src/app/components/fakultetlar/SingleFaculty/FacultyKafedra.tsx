@@ -83,19 +83,19 @@ const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
   const pathname = usePathname()
   return (
     <section
-      className="flex justify-center flex-col items-center px-1 gap-10 w-full"
+      className="flex justify-center flex-col item items-center px-1 gap-10 w-full"
     >
       {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
-        <button className="absolute right-3 top-3 text-white z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
         <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
-        <div className="pl-[20px] max-w-[1300px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
+        <div className="pl-[20px] max-w-[1200px] w-full flex justify-center rounded-lg h-[600px] bg-white relative z-10">
+        <button className="absolute right-5 top-5 text_main z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
           <SingleEducator/>
         </div>
       </div>}
       <h2 className="text-[24px] md:text-[40px] font-[500]">
         {t("pedagogue.title_direct")}
       </h2>
-      <div className=" max-w-[400px] sm:max-w-[1100px] w-full grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-[60px]">
+      <div className=" max-w-[400px] sm:max-w-[1300px] w-full grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">
         {data?.map((item, index) => {
           return (
             <div key={index} className="max-w-[350px]">
@@ -105,7 +105,7 @@ const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
                   alt={item?.name_uz}
                   width={350}
                   height={300}
-                  className="w-full h-[220px] object-cover"
+                  className="w-full h-[300px] object-cover"
                 />
                 <div className="p-5 flex flex-col items-start justify-between gap-[10px] sm:h-[240px]">
                   <div>

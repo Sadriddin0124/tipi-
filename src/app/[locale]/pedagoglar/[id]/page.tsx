@@ -253,7 +253,7 @@
 //   console.log(educator);
 //   console.log(id);
 //   console.log(teachers);
-  
+
 //   const locale = usePathname().split("/")[1]
 //   return (
 //     <section className="px-3 w-full flex justify-center py-[70px]">
@@ -438,8 +438,9 @@ const SingleEducator = () => {
   // const educator = teachers?.find(item=> item?.id === id)
 
   const locale = usePathname().split("/")[1];
+  // const decodedURL = 
   return (
-    <section className="px-3 w-full flex h-[600px] overflow-y-auto justify-center py-[70px]">
+    <section className="px-3 w-full flex h-[600px] justify-center py-[70px]">
       <div className="max-w-[1320px] w-full">
         <div className="flex justify-center gap-5 mb-2">
           <div className="max-w-[400px] h-full flex flex-col gap-3 justify-between items-center">
@@ -448,9 +449,9 @@ const SingleEducator = () => {
               alt={data?.name_uz as string}
               width={400}
               height={700}
-              className=" rounded-[10px] mb-[10px] h-[515px] w-full object-cover"
+              className=" rounded-[10px] mb-[10px] h-[415px] w-full object-cover"
             />
-            <h4 className="text-[34px] font-[500] text-center">
+            <h4 className="text-[24px] font-[500] text-center">
               {locale === "en"
                 ? data?.name_en
                 : locale === "uz"
@@ -458,23 +459,23 @@ const SingleEducator = () => {
                 : data?.description_ru}
             </h4>
           </div>
-          <div className="flex flex-col items-start border border-[#404B7C] p-[30px] rounded-[10px] gap-5">
-            <h3 className="text-[40px] font-[400]">
+          <div className="flex flex-col items-start border h-[500px] overflow-y-auto border-[#404B7C] p-[30px] rounded-[10px] gap-1">
+            <h3 className="text-[20px] font-[400]">
               {locale === "en"
                 ? data?.name_en
                 : locale === "uz"
                 ? data?.name_uz
                 : data?.name_ru}
             </h3>
-            <div className="flex flex-col gap-5 max-w-[900px]">
+            <div className="flex flex-col gap-2 max-w-[900px]">
               {/* {data?.map((item, index) => {
                 return ( */}
               <div className="flex flex-col items-start ">
                 {/* <span className="text-[20px] text-[#404B7C] font-[500]">
                      {locale === "en" ? data?.description_en : locale === "uz" ? data?.description_uz : data?.description_ru}
                     </span> */}
-               <span
-                  className="text-[24px] font-[500]"
+                <span
+                  className="text-[20px] font-[500]"
                   dangerouslySetInnerHTML={{
                     __html:
                       l(
@@ -488,63 +489,95 @@ const SingleEducator = () => {
               </div>
               {/* );
               })} */}
-            </div>
-            <div>
-              <h5 className="text-[20px]">Bog`lanish uchun:</h5>
-              <div className="flex">
-                <div className="flex items-start gap-10">
-                  <div className="mt-2 flex flex-col gap-2">
-                    {data?.contact2 && (
-                      <Link
-                        href={`tel:${data?.contact2}`}
-                        className="text-[20px] block"
-                      >
-                        {data?.contact2}
-                      </Link>
-                    )}
-                    {/* <Link href={""} className="text-[20px] block">
+              <div>
+                <h5 className="text-[20px]">Bog`lanish uchun:</h5>
+                <div className="flex">
+                  <div className="flex items-start gap-10">
+                    <div className="mt-2 flex flex-col gap-2">
+                      {data?.contact2 && (
+                        <Link
+                          href={`tel:${data?.contact2}`}
+                          className="text-[20px] block"
+                        >
+                          {data?.contact2}
+                        </Link>
+                      )}
+                      {/* <Link href={""} className="text-[20px] block">
                       +998 99 876 6522
                     </Link> */}
-                  </div>
-                  <div className="grid grid-cols-2 items-center text-[22px]">
-                    {data?.telegram && (
-                      <Link
-                        href={data?.telegram}
-                        className=" flex items-center gap-2 mr-10"
-                      >
-                        Telegram
-                        <FaTelegram />
-                      </Link>
-                    )}
-                    {data?.instagram && (
-                      <Link
-                        href={data?.instagram}
-                        className="flex items-center gap-2 "
-                      >
-                        Instagram
-                        <IoLogoInstagram size={30} />
-                      </Link>
-                    )}
-                    {data?.facebook && (
-                      <Link
-                        href={data?.facebook}
-                        className=" flex items-center gap-2 mr-10"
-                      >
-                        Facebook
-                        <FaFacebook />
-                      </Link>
-                    )}
-                    {data?.youtube && (
-                      <Link
-                        href={data?.youtube}
-                        className="flex items-center gap-2 "
-                      >
-                        YouTube
-                        <FaYoutube size={30} />
-                      </Link>
-                    )}
+                    </div>
+                    <div className="grid grid-cols-2 items-center text-[22px]">
+                      {data?.telegram && (
+                        <Link
+                          href={data?.telegram}
+                          className=" flex items-center gap-2 mr-10"
+                        >
+                          Telegram
+                          <FaTelegram />
+                        </Link>
+                      )}
+                      {data?.instagram && (
+                        <Link
+                          href={data?.instagram}
+                          className="flex items-center gap-2 "
+                        >
+                          Instagram
+                          <IoLogoInstagram size={30} />
+                        </Link>
+                      )}
+                      {data?.facebook && (
+                        <Link
+                          href={data?.facebook}
+                          className=" flex items-center gap-2 mr-10"
+                        >
+                          Facebook
+                          <FaFacebook />
+                        </Link>
+                      )}
+                      {data?.youtube && (
+                        <Link
+                          href={data?.youtube}
+                          className="flex items-center gap-2 "
+                        >
+                          YouTube
+                          <FaYoutube size={30} />
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </div>
+              </div>
+              <div className="w-full grid grid-cols-2 gap-4 my-3">
+                <button className="px-3 py-2 bg-[#404b7c] text-white hover:bg-[#404b7c] hover:text-white">{t("book")}</button>
+                <button className="px-3 py-2 border-[#404b7c] hover:bg-[#404b7c] hover:text-white border text_main text-white">{t("cert")}</button>
+              </div>
+              <div className="flex flex-col items-start mt-1 gap-3 w-[80%]">
+                {data?.files?.map((item, index) => {
+                  return (
+                    <Link
+                      href={item?.file}
+                      target="_blank"
+                      key={index}
+                      className="flex gap-3 items-center overflow-hidden  w-full relative"
+                    >
+                      {/* <span
+                    className={`${
+                      !item ? "bg-blue-600" : "bg-red-600"
+                    } uppercase px-1 text-white rounded-sm text-[10px] absolute top-4 left-[0]`}
+                  >
+                    {"PDF"}
+                  </span> */}
+                      <Image
+                        src={FileLogo}
+                        alt={`File ${index + 1}`}
+                        className="w-[25px] h-[30px]"
+                      />
+                      <span className="font-[500] text-[16px] max-w-[500px] w-full line-clamp-1">
+                      {decodeURIComponent(item?.file?.split("/")[5])}
+                      </span>
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -593,36 +626,7 @@ const SingleEducator = () => {
             } */}
           </div>
         </div>
-        <div className=" flex justify-center py-[70px]">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-3 px-4 w-[80%]">
-            {data?.files?.map((item, index) => {
-              return (
-                <Link
-                  href={item?.file}
-                  target="_blank"
-                  key={index}
-                  className="flex gap-3 items-center overflow-hidden px-4 relative"
-                >
-                  {/* <span
-                    className={`${
-                      !item ? "bg-blue-600" : "bg-red-600"
-                    } uppercase px-1 text-white rounded-sm text-[10px] absolute top-4 left-[0]`}
-                  >
-                    {"PDF"}
-                  </span> */}
-                  <Image
-                    src={FileLogo}
-                    alt={`File ${index + 1}`}
-                    className="w-[25px] h-[30px]"
-                  />
-                  <span className="font-[500] text-[16px] line-clamp-1">
-                    {item?.file?.split("/")[5]}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
+        <div className=" flex justify-center py-[70px]"></div>
       </div>
     </section>
   );

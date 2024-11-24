@@ -29,6 +29,16 @@ export interface NewsItem {
 }
 
 const AboutFaculty = ({ item }: { item: NewsItem }) => {
+  function l(
+    locale: string | null | undefined,
+    uz: string | null | undefined,
+    ru: string | null | undefined,
+    en: string | null | undefined
+  ) {
+    if (locale == "uz") return uz;
+    if (locale == "ru") return ru;
+    if (locale == "en") return en;
+  }
   const locale = usePathname().split("/")[1];
   console.log(item);
 
@@ -70,14 +80,15 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                 : item?.title_en}
             </h2>
             <p
-              className="text-[16px] md:text-[22px]"
+              className="text-[16px] md:text-[22px] text-justify"
               dangerouslySetInnerHTML={{
                 __html:
-                  locale === "uz"
-                    ? item?.content_uz
-                    : locale === "ru"
-                    ? item?.content_ru
-                    : item?.content_en,
+                  l(
+                    locale,
+                    item?.content_uz,
+                    item?.content_ru,
+                    item?.content_en
+                  )?.replace(/\n/g, "<br>") || "",
               }}
             />
           </div>

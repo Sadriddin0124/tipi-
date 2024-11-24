@@ -90,9 +90,9 @@ const Pedagogue = ({ title }: { title: string }) => {
   return (
     <section className="px-2" id="pedagog">
       {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
-        <button className="absolute right-3 top-3 text-white z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
         <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
-        <div className="pl-[20px] max-w-[1400px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
+        <div className="pl-[20px] max-w-[1200px] w-full flex justify-center rounded-lg h-[600px] bg-white relative z-10">
+        <button className="absolute right-5 top-5 text_main z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
           <SingleEducator/>
         </div>
       </div>}
@@ -110,7 +110,7 @@ const Pedagogue = ({ title }: { title: string }) => {
                     alt={teacher?.name_uz}
                     width={350}
                     height={300}
-                    className="w-full h-[250px] object-cover"
+                    className="w-full h-[300px] object-cover"
                   />
                   <div className="p-5 flex flex-col items-start justify-between gap-[10px] min-h-[220px]">
                     <div>
