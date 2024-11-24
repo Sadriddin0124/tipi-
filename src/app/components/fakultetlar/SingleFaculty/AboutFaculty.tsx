@@ -134,33 +134,49 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "TEACHERS" && (
           <div className="flex flex-col items-center justify-center gap-5">
-            <h2 className="text-[24px] self-start mb-2 md:text-[40px] mt-[29px] font-[600]">
+            {/* <h2 className="text-[24px] self-start mb-2 md:text-[40px] mt-[29px] font-[600]">
               {locale === "uz"
                 ? item?.title_uz
                 : locale === "ru"
                 ? item?.title_ru
                 : item?.title_en}
-            </h2>
+            </h2> */}
             <div className="flex gap-[40px] w-full h-[390px] px-8 py-5 rounded-xl border-[2px] border-[#404B7C]">
               <div className="max-w-[350px]">
-                <Image src={item?.images[0]?.file} alt={item?.title_uz} width={500} height={500} className="rounded-xl h-full object-cover"/>
+                <Image
+                  src={item?.images[0]?.file}
+                  alt={item?.title_uz}
+                  width={500}
+                  height={500}
+                  className="rounded-xl h-full object-cover"
+                />
               </div>
               <div>
-                <h3 className="text-[30px] font-[500]">{locale === "uz"
-                ? item?.position_uz
-                : locale === "ru"
-                ? item?.position_ru
-                : item?.position_en}</h3>
-                <h3 className="text-[26px] mt-8 font-[700]">{locale === "uz"
-                ? item?.title_uz
-                : locale === "ru"
-                ? item?.title_ru
-                : item?.title_en}</h3>
-                <p className="text-[20px] mt-3">{locale === "uz"
-                ? item?.content_uz
-                : locale === "ru"
-                ? item?.content_ru
-                : item?.content_en}</p>
+                <h3 className="text-[30px] font-[500]">
+                  {locale === "uz"
+                    ? item?.position_uz
+                    : locale === "ru"
+                    ? item?.position_ru
+                    : item?.position_en}
+                </h3>
+                <h3 className="text-[26px] mt-8 font-[700]">
+                  {locale === "uz"
+                    ? item?.title_uz
+                    : locale === "ru"
+                    ? item?.title_ru
+                    : item?.title_en}
+                </h3>
+                <p
+                  className="text-[20px] mt-3"
+                  dangerouslySetInnerHTML={{
+                    __html: (locale === "uz"
+                      ? item?.content_uz
+                      : locale === "ru"
+                      ? item?.content_ru
+                      : item?.content_en
+                    ).replace(/\n/g, "<br>"),
+                  }}
+                />
               </div>
             </div>
           </div>
