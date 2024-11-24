@@ -7,8 +7,8 @@ import SportNews from '@/app/components/home/SportNews'
 const Yangiliklar = () => {
   return (
     <section className='px-3 overflow-hidden ' data-aos="fade-up">
-      <News/>
       <SportNews/>
+      <News/>
       <Events/>
       <Contact/>
     </section>

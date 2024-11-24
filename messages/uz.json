@@ -6,7 +6,8 @@
     "link3": "Institut haqida",
     "link4": "Yangiliklar",
     "link5": "Bo'limlar",
-    "link6": "Interaktiv xizmatlar"
+    "link6": "Interaktiv xizmatlar",
+    "link7": "Barcha bo'limlar"
   },
   "path": {
     "mainPage": "Asosiy sahifa",
@@ -64,7 +65,8 @@
   "campus": "Kampus hayoti",
   "news": {
     "title": "Yangiliklar",
-    "title2": "Sport yangiliklari",
+    "title2": "Barcha yangiliklari",
+    "title3": "Ilmiy yangiliklar",
     "date": "7 Noyabr, 2024",
     "desc": "Yevropa ittifoqining loyihasi doirasida universitetimizga Bolgariyaning Varna Iqtisodiyot universiteti vakili Evgeni Raychev tashrif buyurdi...",
     "date1": "21 окт. 2024 г.",

@@ -6,34 +6,10 @@ import Image from 'next/image'
 import { fetchStudents } from '@/app/lib/actions'
 import { StudentsType } from '@/app/types/all.types'
 import { usePathname } from 'next/navigation'
-import { BASE_URL } from '@/app/lib/apiClient'
 import { FaFacebook, FaTelegram, FaYoutube } from 'react-icons/fa'
 import { IoLogoInstagram } from 'react-icons/io'
 import Link from 'next/link'
 const TalentedStudentsHero = () => {
-    const desc = "The School of Computing and Technology (SCT), established in 1979, is the oldest unit of the Eastern Mediterranean University . SCT provides a high-tech education in a fully digital and multicultural environment to its multinational student profile. The teaching language is English in the four year Information Technology Program (BS) and in the graduate program Master of Technology in Information Technology (MTech in IT). However, Turkish language is used as a teaching language in the two-year and three-year course programs. "
-    // const students = [
-    //     {
-    //         img: Student1,
-    //         name: "Madina Toshpulatova",
-    //         desc: desc
-    //     },
-    //     {
-    //         img: Student2,
-    //         name: "Madina Toshpulatova",
-    //         desc: desc
-    //     },
-    //     {
-    //         img: Student1,
-    //         name: "Madina Toshpulatova",
-    //         desc: desc
-    //     },
-    //     {
-    //         img: Student2,
-    //         name: "Madina Toshpulatova",
-    //         desc: desc
-    //     },
-    // ]
     const [students, setStudents] = useState<StudentsType[]>([])
     const locale = usePathname().split("/")[1]
     useEffect(()=> {
@@ -41,7 +17,6 @@ const TalentedStudentsHero = () => {
         const students = await fetchStudents()
         setStudents(students)
         console.log(students);
-        
       }
       getStudents()
     },[])

@@ -46,7 +46,7 @@ const InstitutHaqida = () => {
   return (
     <section className='px-3 w-full flex justify-center'>
       <div className='max-w-[1300px] w-full py-[30px]'>
-        <h2 className='text-[32px] font-[600]'>{id === "ABOUT_INSTITUTE" ? t("nav.link3") : t("nav.link5")}</h2>
+        <h2 className='text-[32px] font-[600]'>{id === "ABOUT_INSTITUTE" ? t("nav.link3") : t("nav.link7")}</h2>
         <div className='py-[20px]'>
           <h3 className='text-[24px] font-[600]'>{id === "ABOUT_INSTITUTE" ? t("nav.link3") : t("nav.link5")}</h3>
           {id === "ABOUT_INSTITUTE" ? <div className='w-full grid grid-cols-3 gap-3 mt-3'>

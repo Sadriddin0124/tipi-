@@ -62,18 +62,16 @@ const SingleNews = () => {
                     height={400}
                   />
                 </div>
-                <div className="pt-[26px] px-[18px] pb-[40px] text_main flex flex-col gap-4 ease-linear duration-200">
-                  <span className="text-[20px] font-[600]">
-                    {item?.created_at?.slice(0, 10)}
-                  </span>
-                  <p className="text-[17px] min-h-[100px] font-[600] line-clamp-5 text-center leading-5">
-                    {locale === "ru"
-                      ? item?.name_ru
-                      : locale === "uz"
-                      ? item?.name_uz
-                      : item?.name_ru}
-                  </p>
-                </div>
+                <div className='pt-[26px] px-[18px] pb-[20px] text_main flex flex-col gap-4'>
+              <span className='text-[20px] font-[600]'>{item?.created_at?.slice(0,10)}</span>
+              <p className='text-[17px] min-h-[70px] font-[600] line-clamp-4 text-center leading-5'>{locale ==="ru" ? item?.name_ru : locale === "uz" ? item?.name_uz : item?.name_ru}</p>
+              <Link
+                      href={`/${locale}/news?id=${item?.id}`}
+                      className="hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]"
+                    >
+                      {t("pedagogue.btn")}
+                    </Link>
+            </div>
               </Link>
           ))}
         </div>
