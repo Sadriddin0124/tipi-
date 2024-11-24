@@ -2,3 +2,38 @@
     color: rgb(0, 89, 255);
     text-decoration: underline;
 }
+.scrolling-container {
+    width: 30%; /* Full width of the viewport */
+    overflow: hidden; /* Hide the overflowed content */
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative; /* Ensure proper positioning for the text */
+    height: 50px; /* Set height for consistency */
+  }
+
+  /* Scrolling text */
+  .scrolling-text {
+    display: inline-block; /* Ensure the text is treated as one line */
+    white-space: nowrap; /* Prevent text from wrapping */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 0; /* Start at the left edge */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+  }
+
+  /* Play animation on hover */
+  .scrolling-container:hover .scrolling-text {
+    animation: scroll 5s linear forwards; /* Trigger animation on hover */
+  }
+
+  /* Keyframes for the scrolling animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+      top: 28%; /* Start at the default position */
+    }
+    100% {
+        transform: translateX(-100%); /* Move completely off-screen to the left */
+        top: 28%; /* Start at the default position */
+    }
+  }

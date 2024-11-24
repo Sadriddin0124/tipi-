@@ -58,6 +58,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { fetchEducators } from "@/app/lib/actions";
 import SingleEducator from "@/app/[locale]/pedagoglar/[id]/page";
+import { IoCloseCircle } from "react-icons/io5";
 
 const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
   const t = useTranslations();
@@ -85,13 +86,14 @@ const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
       className="flex justify-center flex-col items-center px-1 gap-10 w-full"
     >
       {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
+        <button className="absolute right-3 top-3 text-white z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
         <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
-        <div className="pl-[20px] max-w-[1100px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
+        <div className="pl-[20px] max-w-[1300px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
           <SingleEducator/>
         </div>
       </div>}
       <h2 className="text-[24px] md:text-[40px] font-[500]">
-        {t("pedagogue.title")}
+        {t("pedagogue.title_direct")}
       </h2>
       <div className=" max-w-[400px] sm:max-w-[1100px] w-full grid sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-[60px]">
         {data?.map((item, index) => {

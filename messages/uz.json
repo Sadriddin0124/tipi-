@@ -91,6 +91,7 @@
   },
   "pedagogue": {
     "title_home": "Pedagoglar",
+    "title_direct": "Kafedra o'qituvchilari",
     "title": "Barcha pedagoglar va o'qituvchilar",
     "title1": "Islom Rustamov Bunyodovich",
     "desc": "Filologiya fanlar doktori (DSc) professor",
@@ -170,7 +171,7 @@
   },
   "information": {
     "title": "Axborot texnologiyalari",
-    "statistics1": "Fakultet haqida",
+    "statistics1": "Yo'nalishlar",
     "statistics2": "Kafedra",
     "statistics3": "Online qabul",
     "th1": "Fakultet nomi",
@@ -273,5 +274,8 @@
     "place1": "Devonxona va arxiv bo'limi boshlig'i",
     "address1": "111709 Chirchiq shahar, Metallurgchilar koʻchasi 13-uy",
     "duration1": "Dushanba-Juma,"
+  },
+  "contact_": {
+    "title": "Tez-tez so'raladigan savollar"
   }
 }

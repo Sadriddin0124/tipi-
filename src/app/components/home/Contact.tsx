@@ -21,11 +21,11 @@ const Contact = () => {
             title: t("contact.mail_t"),
             value: "tipiuniversity@mail.uz"
         },
-        {
-            icon: <FaPhoneAlt size={20}/>,
-            title: t("contact.address_t"),
-            value: t("contact.address_v"),
-        }
+        // {
+        //     icon: <FaPhoneAlt size={20}/>,
+        //     title: t("contact.address_t"),
+        //     value: t("contact.address_v"),
+        // }
     ]
     const [notify, setNotify] = useState(false)
     const [name, setName] = useState<string>("")
@@ -111,7 +111,7 @@ const Contact = () => {
                             <PhoneInput country={'uz'} value={number} onChange={handleChange} inputStyle={contactStyle} />
                         </div>
                     </div>
-                    <textarea value={message} onChange={(e)=>setMessage(e.target.value)} className='contact font-[600] p-4 sm:p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] w-full resize-none h-[134px]' placeholder={t("contact.message_placeholder")}></textarea>
+                    <textarea value={message} onChange={(e)=>setMessage(e.target.value)} className='contact font-[600] p-4 sm:p-6 rounded-[10px] border text-[#404B7C] border-[#404B7C] w-full resize-none h-[110px]' placeholder={t("contact.message_placeholder")}></textarea>
                     <button type='submit' className='hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]'>{t("contact.btn")}</button>
                 </form>
             </div>

@@ -42,9 +42,9 @@ const News = () => {
   
   return (
     <section className='px-2 pb-6 pt-10 md:pt-[100px] md:pb-[80px]' data-aos="fade-up">
-      <div className='max-w-[1320px] mx-auto'>
+      <div className='max-w-[1400px] mx-auto'>
         <h2 className='pl-[20px] text-[32px] md:text-[40px] font-[600] mb-[20px]'>{t('news.title')}</h2>
-        {data?.length > 5 ? <Carousel data={data} category='SCIENCE'/>
+        {data?.length > 6 ? <Carousel data={data} category='SCIENCE'/>
         : <UnCarousel data={data} category='SCIENCE'/>}
         <div className='w-full flex justify-end px-2'>
           {pathname !== `/${locale}/yangiliklar/news` && <Link href={`/${locale}/yangiliklar/news`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>

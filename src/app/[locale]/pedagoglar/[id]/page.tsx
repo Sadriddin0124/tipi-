@@ -405,7 +405,6 @@ import { usePathname, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { KafedraTypes } from "@/app/types/all.types";
 import FileLogo from "@/assets/file_logo.webp";
-// import DOMPurify from "dompurify";
 import Link from "next/link";
 import { FaFacebook, FaTelegram, FaYoutube } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
@@ -440,9 +439,9 @@ const SingleEducator = () => {
 
   const locale = usePathname().split("/")[1];
   return (
-    <section className="px-3 w-full flex justify-center py-[70px]">
+    <section className="px-3 w-full flex h-[600px] overflow-y-auto justify-center py-[70px]">
       <div className="max-w-[1320px] w-full">
-        <div className="flex gap-5 mb-2">
+        <div className="flex justify-center gap-5 mb-2">
           <div className="max-w-[400px] h-full flex flex-col gap-3 justify-between items-center">
             <Image
               src={data?.image?.file as string}
@@ -595,26 +594,26 @@ const SingleEducator = () => {
           </div>
         </div>
         <div className=" flex justify-center py-[70px]">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 w-[80%]">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-3 px-4 w-[80%]">
             {data?.files?.map((item, index) => {
               return (
                 <Link
                   href={item?.file}
                   target="_blank"
                   key={index}
-                  className="flex gap-6 items-center overflow-hidden px-4 max-w-[260px] relative"
+                  className="flex gap-3 items-center overflow-hidden px-4 relative"
                 >
-                  <span
+                  {/* <span
                     className={`${
                       !item ? "bg-blue-600" : "bg-red-600"
                     } uppercase px-1 text-white rounded-sm text-[10px] absolute top-4 left-[0]`}
                   >
                     {"PDF"}
-                  </span>
+                  </span> */}
                   <Image
                     src={FileLogo}
                     alt={`File ${index + 1}`}
-                    className="w-[60px] h-[80px]"
+                    className="w-[25px] h-[30px]"
                   />
                   <span className="font-[500] text-[16px] line-clamp-1">
                     {item?.file?.split("/")[5]}

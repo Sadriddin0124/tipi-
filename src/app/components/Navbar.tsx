@@ -11,16 +11,14 @@ import UzFlag from "@/assets/uz.webp";
 import RuFlag from "@/assets/ru.webp";
 import EnFlag from "@/assets/en.webp";
 import {
-  // BreadcrumbItem,
+  BreadcrumbItem,
   HoverItemType,
   LangType,
-  // LinkType,
 } from "../types/all.types";
 // import { HoverItemType, LangType } from "../types/all.types";
 import HoverComponent from "./HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
-// import Breadcrumb from "./ui/Breadcrumb";
 import Dropdown from "./ui/Dropdown";
 import {
   fetchAboutTipi,
@@ -28,13 +26,14 @@ import {
   fetchFaculties,
   // fetchSections,
 } from "../lib/actions";
+import Breadcrumb from "./ui/Breadcrumb";
 // import { fetchAboutTipi, fetchFaculties } from "../lib/actions";
 
 const Navbar = () => {
   const t = useTranslations();
   const router = useRouter();
   const pathname = usePathname();
-
+  const [breadcrumbItems, setBreadcrumbItems] = useState<BreadcrumbItem[]>([]);
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
@@ -57,6 +56,24 @@ const Navbar = () => {
     { value: "ru", title: "Ru", icon: RuFlag },
   ]);
   useEffect(() => {
+    const Destinations = [
+      { label: t("path.link1"), href: "ilmiy-yonalish" },
+      { label: t("path.link2"), href: "fakultetlar" },
+      { label: t("path.link3"), href: "institut-haqida" },
+      { label: t("path.link4"), href: "yangiliklar" },
+      { label: t("path.link5"), href: "iqtidorli-talabalar" },
+      { label: t("path.link6"), href: "bolimlar" },
+      { label: t("path.link7"), href: "1" },
+      { label: t("path.link8"), href: "almashinuv-dasturi" },
+      { label: "", href: "about" },
+    ];
+    const findBreadcrumbItems = () => {
+      const activePath = pathname.split("/").filter(item => item !== "");
+      const filteredPath: BreadcrumbItem[] = Destinations.filter(item =>
+        activePath.includes(item.href)
+      );
+      setBreadcrumbItems(filteredPath);
+    };
     const locale = pathname?.split("/")[1]
     const lang = languages?.find(item=> item?.value === locale)
     if (lang) {
@@ -73,8 +90,8 @@ const Navbar = () => {
         setActiveLang(languages[1]);
       }
     }
-    // findBreadcrumbItems();
-  }, [pathname, languages]);
+    findBreadcrumbItems();
+  }, [pathname, languages, t]);
   const currentLanguage = pathname.split("/")[1];
   const filterLang =
     languages.find((item) => item.value === currentLanguage) || languages[0];
@@ -208,7 +225,7 @@ const Navbar = () => {
     {
       id: 1,
       label: t("nav.link3"),
-      path: `${pathname}/`,
+      path: `/${activeLang?.value}/section?id=ABOUT_INSTITUTE`,
       hover: true,
       title1: t("hover.about1"),
       title2: t("hover.about4"),
@@ -218,7 +235,7 @@ const Navbar = () => {
     {
       id: 2,
       label: t("nav.link5"),
-      path: `${pathname}/`,
+      path: `/${activeLang?.value}/section?id=DEPARTMENT`,
       hover: true,
       title1: "Bo`limlar",
       item1: sections,
@@ -249,6 +266,12 @@ const Navbar = () => {
       id: 4,
       label: t("nav.link1"),
       path: `/${activeLang?.value}/qabul`,
+      hover: false,
+    },
+    {
+      id: 8,
+      label: t("information.th7"),
+      path: `/${activeLang?.value}/contact?id=faq`,
       hover: false,
     },
   ];
@@ -307,14 +330,7 @@ const Navbar = () => {
   const handleNavigate = (path: string) => {
     sessionStorage.setItem("path", path);
   };
-
-  // const findBreadcrumbItems = () => {
-  //   const activePath = pathname.split("/").filter(item => item !== "");
-  //   const filteredPath: BreadcrumbItem[] = Destinations.filter(item =>
-  //     activePath.includes(item.href)
-  //   );
-  //   setBreadcrumbItems(filteredPath);
-  // };
+  
 
   const HoverEnter = (id: number | undefined) => {
     if (timer) {
@@ -531,7 +547,8 @@ const Navbar = () => {
             </div>
           </div>
         </ul>
-      </div>
+        </div>
+        {breadcrumbItems.length ? <Breadcrumb items={breadcrumbItems} activeLang={activeLang}/> : ""}
     </nav>
   );
 };

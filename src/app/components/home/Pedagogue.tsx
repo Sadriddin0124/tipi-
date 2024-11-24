@@ -16,6 +16,7 @@ import { usePathname } from "next/navigation";
 import { ITeacher } from "@/app/lib/types";
 import { fetchTeachers } from "@/app/lib/fetchers";
 import SingleEducator from "@/app/[locale]/pedagoglar/[id]/page";
+import { IoCloseCircle } from "react-icons/io5";
 const Pedagogue = ({ title }: { title: string }) => {
   const t = useTranslations();
 
@@ -35,7 +36,7 @@ const Pedagogue = ({ title }: { title: string }) => {
   const [activeLang] = useState<LangType>(filterLang);
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     speed: 500,
@@ -89,19 +90,20 @@ const Pedagogue = ({ title }: { title: string }) => {
   return (
     <section className="px-2" id="pedagog">
       {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
+        <button className="absolute right-3 top-3 text-white z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
         <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
-        <div className="pl-[20px] max-w-[1100px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
+        <div className="pl-[20px] max-w-[1400px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
           <SingleEducator/>
         </div>
       </div>}
-      <div className="max-w-[1130px] mx-auto w-full">
+      <div className="max-w-[1400px] mx-auto w-full">
         <h2 className="text-[32px] text-center mb-10 md:mb-12 md:text-[40px] font-[600]">
           {title}
         </h2>
         {teachers?.length > 4 ? <Slider {...settings}>
           {teachers?.map((teacher, index) => {
             return (
-              <div key={index} className="px-3 lg:px-5">
+              <div key={index} className="px-3 ">
                 <div className="shadow-md rounded-[10px] overflow-hidden">
                   <Image
                     src={teacher?.image.file}
@@ -140,7 +142,7 @@ const Pedagogue = ({ title }: { title: string }) => {
             );
           })}
         </Slider>
-        : <div className="grid grid-cols-3">
+        : <div className="grid grid-cols-4 gap-2">
           {teachers?.map((teacher, index) => {
             return (
               <div key={index} className="px-3 lg:px-5">

@@ -33,13 +33,13 @@ const HeroCarousel = ({data, FixedItem}: {data: FakultetlarType[]; FixedItem: ()
   return (
     <div className='relative w-full h-auto overflow-hidden'>
       <div className='rounded-b-[20px] md:rounded-b-[40px] overflow-hidden h-[300px] md:h-[447px]'>
-        <Slider {...settings}>
             {data.map((item, index) => (
-                <header key={index} className=' w-full relative'>
+              <header key={index} className=' w-full relative'>
                   <Image src={item?.img} alt='Hero Image' className='w-[100%] object-cover h-[300px] md:h-[447px]' width={1400} height={600}/>
                 </header>
-            ))}
-        </Slider>
+                ))}
+        {/* <Slider {...settings}>
+        </Slider> */}
       </div>
       <div className="md:absolute top-[0] left-0 w-auto h-full bg-cover bg-center z-0">
         <Image src={HeroImgBlue} alt='Hero Image' className='hidden md:block w-[80%] md:w-full  h-full object-cover' width={1400} height={600}/>

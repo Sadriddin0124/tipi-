@@ -15,17 +15,26 @@ const Carousel = ({ data, category }: { data: NewsType[], category: string }) =>
 
   const settings = {
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     speed: 500,
     autoplaySpeed: 2000,
     responsive: [
       {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true
         }
@@ -52,7 +61,7 @@ const Carousel = ({ data, category }: { data: NewsType[], category: string }) =>
     <Slider {...settings}>
       {data?.filter(item=> item?.category === category)?.map((item, index) => (
         item?.active &&
-        <div className='px-[10px] py-[30px]' key={index}>
+        <div className='px-[2px] py-[30px]' key={index}>
           <Link href={`${locale}/about?id=${item?.id}`} key={index} className='rounded-[10px] overflow-hidden shadow-lg flex flex-col'>
             <div className='bg-[#D9D9D9] min-h-[180px] h-full flex justify-center items-center'>
               <Image src={item.image.file} alt={`Slide ${index + 1}`} className='w-full object-cover h-[180px]' width={500} height={400} />

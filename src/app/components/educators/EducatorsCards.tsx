@@ -212,11 +212,12 @@ import Link from "next/link";
 import { KafedraTypes } from "@/app/types/all.types";
 import { fetchEducators } from "@/app/lib/actions";
 import SingleEducator from "@/app/[locale]/pedagoglar/[id]/page";
+import { IoCloseCircle } from "react-icons/io5";
 
 const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
-  const t = useTranslations("pedagogue");
+  const t = useTranslations();
   const locale = usePathname()?.split("/")[1] || "uz"; // Default to "uz"
-  const [id, setId] = useState<string>("")
+  const [id, setId] = useState<string>("");
   useEffect(() => {
     const getData = async () => {
       try {
@@ -235,14 +236,20 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
       className="flex flex-col items-center px-4 gap-10 w-full"
       // data-aos="fade-up"
     >
-      {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
-        <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
-        <div className="pl-[20px] max-w-[1100px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
-          <SingleEducator/>
+      {id && (
+        <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
+        <button className="absolute right-3 top-3 text-white z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
+        <div
+            className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]"
+            onClick={() => setId("")}
+          ></div>
+          <div className="pl-[20px] max-w-[1300px] scroll_no w-full flex justify-center rounded-lg h-[600px] bg-white overflow-y-auto relative z-10">
+            <SingleEducator />
+          </div>
         </div>
-      </div>}
+      )}
       <h2 className="text-[24px] md:text-[40px] font-medium">
-        {t("title") || "Educators"}
+        {t("pedagogue.title")}
       </h2>
       <div className="max-w-[1100px] w-full flex items-center flex-col sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px]">
         {data?.map((item, index) => (
@@ -257,27 +264,27 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
               />
               <div className="p-5 flex flex-col justify-between gap-[10px] sm:h-[240px]">
                 <div className="flex flex-col gap-[10px]">
-                <h5 className="text-[20px] font-bold">
-                  {locale === "uz"
-                    ? item?.name_uz
-                    : locale === "en"
-                    ? item?.name_en
-                    : item?.name_ru}
-                </h5>
-                <p className="text-sm">
-                  {locale === "uz"
-                    ? item?.description_uz
-                    : locale === "en"
-                    ? item?.description_en
-                    : item?.description_ru}
-                </p>
+                  <h5 className="text-[20px] font-bold">
+                    {locale === "uz"
+                      ? item?.name_uz
+                      : locale === "en"
+                      ? item?.name_en
+                      : item?.name_ru}
+                  </h5>
+                  <p className="text-lg text_main">
+                    {locale === "uz"
+                      ? item?.description_uz
+                      : locale === "en"
+                      ? item?.description_en
+                      : item?.description_ru}
+                  </p>
                 </div>
                 <Link
-                  onClick={()=>setId(item?.id)}
+                  onClick={() => setId(item?.id)}
                   href={`/${locale}/pedagoglar?id=${item?.id}`}
                   className="self-end px-6 py-3 rounded-lg bg-[#404B7C] text-white hover:bg-white hover:text-[#404B7C] border-2 border-transparent hover:border-[#404B7C] transition ease-linear duration-200"
                 >
-                  {t("btn") || "Learn More"}
+                  {t("information.th9")}
                 </Link>
               </div>
             </div>

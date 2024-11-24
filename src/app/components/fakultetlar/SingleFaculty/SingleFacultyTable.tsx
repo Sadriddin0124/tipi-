@@ -8,12 +8,10 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import ITImage from "@/assets/it.webp";
 import { usePathname } from "next/navigation";
-import EducatorsCards from "../../educators/EducatorsCards";
-import AboutFaculty, { NewsItem } from "./AboutFaculty";
-import { fetchBlog, fetchFaculty } from "@/app/lib/actions";
+import { fetchFaculty } from "@/app/lib/actions";
 import FacultyKafedra from "./FacultyKafedra";
 import Constructor from "../../contstructor/Constructor";
-
+import "./SingleFaculty.css"
 const Statistics = ({ id }: { id: string }) => {
   const t = useTranslations();
   const [activeStatistic, setActiveStatistic] = useState<number>(1);
@@ -190,46 +188,9 @@ const DirectionsTable = () => {
     t("information.th2"),
     t("information.th3"),
     t("information.th4"),
-    // t("information.th9"),
+    t("information.th9"),
   ];
 
-  const DirectionTBodies = [
-    {
-      tb1: t("information.faculty1"),
-      tb2: t("information.tb2"),
-      tb3: t("information.tb3"),
-      tb4: t("information.tb4"),
-      // href: `${pathname}/yonalishlar`
-    },
-    {
-      tb1: t("information.faculty2"),
-      tb2: t("information.tb2"),
-      tb3: t("information.tb3"),
-      tb4: t("information.tb4"),
-      // href: `${pathname}/yonalishlar`
-    },
-    {
-      tb1: t("information.faculty3"),
-      tb2: t("information.tb2"),
-      tb3: t("information.tb3"),
-      tb4: t("information.tb4"),
-      // href: `${pathname}/yonalishlar`
-    },
-    {
-      tb1: t("information.faculty4"),
-      tb2: t("information.tb2"),
-      tb3: t("information.tb3"),
-      tb4: t("information.tb4"),
-      // href: `${pathname}/yonalishlar`
-    },
-    {
-      tb1: t("information.faculty5"),
-      tb2: t("information.tb2"),
-      tb3: t("information.tb3"),
-      tb4: t("information.tb4"),
-      // href: `${pathname}/yonalishlar`
-    },
-  ];
   const [directions, setDirections] = useState<DirectionsType[]>([]);
   const id = pathname?.split("/")[3];
   console.log(id);
@@ -243,13 +204,13 @@ const DirectionsTable = () => {
   }, [id]);
   return (
     <div className="overflow-x-auto w-full mx-auto">
-      <table className="w-full max-w-[1300px] mx-auto">
+      <table className="w-full max-w-[1400px] mx-auto">
         <thead>
-          <tr className="w-full whitespace-nowrap text-[16px] lg:text-[26px] py-5 border-b-[2px] border-b-[#404B7C]">
+          <tr className="w-full whitespace-nowrap text-[16px] lg:text-[22px] py-5 border-b-[2px] border-b-[#404B7C]">
             {DirectionTHeads?.map((item, index) => (
               <td
                 key={index}
-                className="py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]"
+                className={`${index === 4 ? "text-right" : ""} py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]`}
               >
                 {item}
               </td>
@@ -259,17 +220,17 @@ const DirectionsTable = () => {
         <tbody>
           {directions?.map((item, index) => (
             <tr
-              className="text-[16px] whitespace-nowrap lg:text-[26px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]"
+              className="text-[16px] whitespace-nowrap lg:text-[20px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]"
               key={index}
             >
-              <td className="py-3 px-2 lg:px-0 lg:py-5">
-                {locale === "uz"
+              <td className="py-3 scrolling-container px-2 lg:px-0 lg:py-5 max-w-[250px] overflow-hidden">
+                <span className="scrolling-text">{locale === "uz"
                   ? item?.title_uz
                   : locale === "ru"
                   ? item?.title_ru
-                  : item?.title_en}
+                  : item?.title_en}</span>
               </td>
-              <td className="py-3 px-2 lg:px-0 lg:py-5">
+              <td className="py-3 px-2 ml-4 lg:px-5  lg:py-5 ">
                 {locale === "uz"
                   ? item?.stage_uz
                   : locale === "ru"
@@ -290,9 +251,9 @@ const DirectionsTable = () => {
                   ? item?.department_ru
                   : item?.department_en}
               </td>
-              <td className='px-2 lg:px-0'>
-                                    <Link href={`${locale}/about?=${item?.id}`} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[20px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
-                                </td>
+              <td className='px-2 lg:px-0 text-right'>
+                  <Link href={`/${locale}/about?=${item?.id}`} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[18px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
+              </td>
             </tr>
           ))}
         </tbody>

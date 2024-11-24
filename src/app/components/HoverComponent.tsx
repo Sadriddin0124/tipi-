@@ -155,7 +155,7 @@ const HoverComponent = ({
       <div
         onMouseLeave={() => HoverComponentLeave(id)}
         onMouseEnter={() => HoverComponentEnter(id)}
-        className={`p-6 max-w-[650px] min-h-[300px] h-auto gap-10 flex justify-between bg-white shadow-md border rounded-[10px]`}
+        className={`p-6 max-w-[850px] min-h-[300px] h-auto gap-10 flex justify-between bg-white shadow-md border rounded-[10px]`}
       >
         {item1 && (
           <div className="flex flex-col">
@@ -184,7 +184,7 @@ const HoverComponent = ({
                   // onClick={() => openElement(item?.id)}
                 >
                   <IoIosArrowForward className="text-[18px]" />
-                  <span className="max-w-[250px] w-full relative flex justify-start group">
+                  <span className=" w-full relative flex justify-start group">
                     {locale === "uz"
                       ? item?.name_uz || item?.title_uz
                       : locale === "en"
@@ -226,7 +226,7 @@ const HoverComponent = ({
                     // onClick={() => openElement(item?.id)}
                   >
                     <IoIosArrowForward className="text-[18px]" />
-                    <span className="max-w-[250px] w-full relative flex justify-start group">
+                    <span className=" w-full relative flex justify-start group">
                     {locale === "uz"
                       ? item?.name_uz || item?.title_uz
                       : locale === "en"

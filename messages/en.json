@@ -91,6 +91,7 @@
   },
   "pedagogue": {
     "title_home": "Educators",
+    "title_direct": "Department teachers",
     "title": "All pedagogues and teachers",
     "title1": "Islom Rustamov Bunyodovich",
     "desc": "Doctor of Philological Sciences (DSc), Professor",
@@ -170,7 +171,7 @@
   },
   "information": {
     "title": "Information Technology",
-    "statistics1": "About the Faculty",
+    "statistics1": "Directions",
     "statistics2": "Departments",
     "statistics3": "Online Admission",
     "th1": "Faculty Name",
@@ -273,5 +274,8 @@
     "place1": "Head of the Office and Archive Department",
     "address1": "111709 Chirchik City, Metallurgist Street, Building 13",
     "duration1": "Monday-Friday,"
+  },
+  "contact_": {
+    "title": "Frequently Asked Questions"
   }
 }
