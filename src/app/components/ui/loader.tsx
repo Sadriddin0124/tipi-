@@ -9,7 +9,7 @@ const Loader = () => {
     }, 2000);
   },[])
   return (
-    loader && <div className='fixed w-full min-h-screen flex items-center justify-center bg-black z-50 top-0'>
+    loader && <div className='fixed w-full min-h-screen flex items-center justify-center bg-white z-50 top-0'>
       <span className="loader"></span>
     </div>
   )
