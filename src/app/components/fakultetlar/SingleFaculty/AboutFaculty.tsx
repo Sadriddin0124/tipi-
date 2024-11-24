@@ -4,7 +4,7 @@ import FileLogo from "@/assets/file_logo.webp";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
+import "./SingleFaculty.css"
 export interface NewsItem {
   id: string;
   created_at: string; // ISO format timestamp
@@ -167,7 +167,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                     : item?.title_en}
                 </h3>
                 <p
-                  className="text-[20px] mt-3"
+                  className="text-[20px] mt-3 links"
                   dangerouslySetInnerHTML={{
                     __html: (locale === "uz"
                       ? item?.content_uz
