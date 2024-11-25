@@ -97,7 +97,7 @@ const Pedagogue = ({ title }: { title: string }) => {
         </div>
       </div>}
       <div className="max-w-[1400px] mx-auto w-full">
-        <h2 className="text-[32px] text-center mb-10 md:mb-12 md:text-[40px] font-[600]">
+        <h2 className="text-[32px] text-center mb-10 md:mb-12 md:text-[32px] font-[600]">
           {title}
         </h2>
         {teachers?.length > 4 ? <Slider {...settings}>

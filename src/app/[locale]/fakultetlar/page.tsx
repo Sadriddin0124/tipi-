@@ -18,8 +18,10 @@ const Fakultetlar = () => {
   return (
     <div>
       <FacultiesHero/>
-      <FakultetlarStatistics/>
-      <IT/>
+      {/* <FakultetlarStatistics/> */}
+      <div className='pt-[30px]'>
+        <IT/>
+      </div>
       <News/>
       <Contact/>
     </div>

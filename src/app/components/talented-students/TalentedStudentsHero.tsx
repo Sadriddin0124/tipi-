@@ -23,7 +23,7 @@ const TalentedStudentsHero = () => {
   return (
     <section className='w-full flex justify-center pt-[20px] pb-[150px] px-3'>
       <div className='max-w-[1340px] w-full flex flex-col items-center gap-[50px]'>
-        <h2 className='text-[40px] font-[500]'>Iqtidorli talabalar</h2>
+        <h2 className='text-[32px] font-[500]'>Iqtidorli talabalar</h2>
         <div className='grid xl:grid-cols-2 gap-[30px] w-full'>
           {
             students?.map((item,index)=> {

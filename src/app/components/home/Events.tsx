@@ -37,7 +37,7 @@ const Events = () => {
   return (
     <section className='px-2 py-12 md:py-[100px]' data-aos="fade-up">
       <div className='max-w-[1400px] mx-auto'>
-        <h2 className='pl-[20px] text-[32px] md:text-[40px] font-[600] mb-[20px]'>{t('events.title')}</h2>
+        <h2 className='pl-[20px] text-[32px] md:text-[32px] font-[600] mb-[20px]'>{t('events.title')}</h2>
         {data?.length > 6 ? <Carousel data={data} category='EVENT'/>
         : <UnCarousel data={data} category='EVENT'/>}
         <div className='w-full flex justify-end px-2'>

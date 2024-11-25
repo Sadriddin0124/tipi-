@@ -72,35 +72,35 @@ const Footer = () => {
         },
     ]
   return (
-    <footer className='py-[58px] px-3 sm:px-[58px] bg_main flex justify-start'>
+    <footer className='py-[28px] px-3 bg_main flex justify-start'>
         <div className='flex justify-between flex-wrap gap-8 md:flex-nowrap max-w-[1100px] w-full'>
             <div className='flex flex-col items-start sm:items-end'>
                 <div className='max-w-[394px] flex gap-4 items-start'>
-                    <Image src={Logo} alt='Logo' width={100} height={100}/>
-                    <span className='max-w-[280px] font-bold text-white'>{t("footer.logo")}</span>
-                </div>
-                <div className='max-w-[276px] flex flex-col gap-5 text-white mt-5'>
-                    <p className=''>{t("footer.address")}</p>
-                    <p className=''>{t("footer.phone")}</p>
-                    <p className=''>{t("footer.mail")}</p>
-                    <div className='flex w-full justify-between gap-2 max-w-[232px] self-start text-white text-[24px]'>
-                        {
-                            social?.map((item,index)=> {
-                                return <a href={item?.path} key={index}>{item?.icon}</a>
-                            })
-                        }
+                    <Image src={Logo} alt='Logo' width={100} height={100} className='w-[90px] h-[90px]'/>
+                    <div className='max-w-[276px] flex flex-col gap-2 text-white mt-5'>
+                        <span className='max-w-[280px] font-bold text-white'>{t("footer.logo")}</span>
+                        <p className=''>{t("footer.address")}</p>
+                        <p className=''>{t("footer.phone")}</p>
+                        <p className=''>{t("footer.mail")}</p>
+                        <div className='flex w-full justify-between gap-2 max-w-[150px] self-start text-white text-[20px]'>
+                            {
+                                social?.map((item,index)=> {
+                                    return <a href={item?.path} key={index}>{item?.icon}</a>
+                                })
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className='flex justify-start sm:justify-between gap-5 flex-wrap max-w-[460px] w-full'>
-                <div className='text-[20px] font-[400] flex flex-col gap-5 text-white'>
+            <div className='flex justify-start sm:justify-between gap-2 flex-wrap max-w-[460px] w-full'>
+                <div className='text-[18px] font-[400] flex flex-col gap-2 text-white'>
                     {
                         links1?.map((item,index)=> {
                             return <Link href={item?.path} key={index}>{item?.label}</Link>
                         })
                     }
                 </div>
-                <div className='text-[20px] font-[400] flex flex-col gap-5 text-white'>
+                <div className='text-[18px] font-[400] flex flex-col gap-2 text-white'>
                     {
                         links2?.map((item,index)=> {
                             return <Link href={item?.path} key={index}>{item?.label}</Link>

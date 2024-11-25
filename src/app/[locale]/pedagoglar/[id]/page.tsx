@@ -272,7 +272,7 @@
 //             </h4>
 //           </div>
 //           <div className="flex flex-col items-start border border-[#404B7C] p-[30px] rounded-[10px] gap-5">
-//             <h3 className="text-[40px] font-[400]">{data[0]?.title}</h3>
+//             <h3 className="text-[32px] font-[400]">{data[0]?.title}</h3>
 //             <div className="flex flex-col gap-5 max-w-[900px]">
 //               {/* {educator?.map((item, index) => {
 //                 return ( */}
@@ -334,7 +334,7 @@
 //                 })
 //               }
 //             </div> */}
-//             {/* <h4 className='text-[40px] font-[500] mb-[10px] mt-5'>{data[0]?.data?.title}</h4>
+//             {/* <h4 className='text-[32px] font-[500] mb-[10px] mt-5'>{data[0]?.data?.title}</h4>
 //             <div className='p-5 flex flex-col border border-[#404B7C] rounded-[10px] max-w-[400px]'>
 //               <div>
 //                 {
@@ -594,7 +594,7 @@ const SingleEducator = () => {
                 })
               }
             </div> */}
-            {/* <h4 className='text-[40px] font-[500] mb-[10px] mt-5'>{data[0]?.data?.title}</h4>
+            {/* <h4 className='text-[32px] font-[500] mb-[10px] mt-5'>{data[0]?.data?.title}</h4>
             <div className='p-5 flex flex-col border border-[#404B7C] rounded-[10px] max-w-[400px]'>
               <div>
                 {

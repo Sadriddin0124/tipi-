@@ -14,7 +14,7 @@ const Contact = () => {
         {
             icon: <FaPhoneAlt size={20}/>,
             title: t("contact.num_t"),
-            value: "+998 70 200 70 07"
+            value: "+998 55 900 06 04"
         },
         {
             icon: <FaPhoneAlt size={20}/>,
@@ -88,7 +88,7 @@ const Contact = () => {
             <IoCloseSharp size={24} onClick={()=>setNotify(false)}/>
         </div>
         <div className='max-w-[1133px] w-full flex flex-col gap-10 items-center'>
-            <h2 className='text-[32px] md:text-[40px] font-[600]' data-aos="fade-up">{t("contact.title")}</h2>
+            <h2 className='text-[32px] md:text-[32px] font-[600]' data-aos="fade-up">{t("contact.title")}</h2>
             <div className='flex flex-col-reverse md:flex-row gap-4 justify-between w-full'>
                 <div className='grid sm:grid-cols-2 md:flex flex-col gap-3 sm:gap-5' data-aos="fade-up">
                     {

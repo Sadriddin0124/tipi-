@@ -22,7 +22,7 @@ const Faq = () => {
   return (
     <section className='w-full flex justify-center px-3 py-[30px]'>
       <div className='max-w-[1300px] w-full'>
-        <h2 className='text-[40px] font-[600]'>{t("contact_.title")}</h2>
+        {/* <h2 className='text-[32px] font-[600]'>{t("contact_.title")}</h2> */}
         <div className="pb-[40px] md:pb-[80px]">
         {
           blog?.map((item,index)=> (

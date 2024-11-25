@@ -72,7 +72,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "TEXT" && (
           <div className="w-full flex flex-col gap-4 ">
-            <h2 className="text-[24px] md:text-[40px] font-[600]">
+            <h2 className="text-[24px] md:text-[32px] font-[600]">
               {locale === "uz"
                 ? item?.title_uz
                 : locale === "ru"
@@ -95,7 +95,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "FILE" && (
           <div className="flex justify-center flex-col">
-              <h2 className="text-[24px] mb-2 md:text-[40px] font-[600]">
+              <h2 className="text-[24px] mb-2 md:text-[32px] font-[600]">
                 {locale === "uz"
                   ? item?.title_uz
                   : locale === "ru"
@@ -134,7 +134,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "VIDEO" && (
           <div className="flex flex-col items-center justify-center gap-5">
-            <h2 className="text-[24px] self-start mb-2 md:text-[40px] font-[600]">
+            <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
               {locale === "uz"
                 ? item?.title_uz
                 : locale === "ru"
@@ -152,7 +152,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "TEACHERS" && (
           <div className="flex flex-col items-center justify-center gap-5">
-            {/* <h2 className="text-[24px] self-start mb-2 md:text-[40px] font-[600]">
+            {/* <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
               {locale === "uz"
                 ? item?.title_uz
                 : locale === "ru"
@@ -201,7 +201,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "STUDENTS" && (
           <div className="flex flex-col items-center justify-center gap-5">
-            {/* <h2 className="text-[24px] self-start mb-2 md:text-[40px] font-[600]">
+            {/* <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
               {locale === "uz"
                 ? item?.title_uz
                 : locale === "ru"

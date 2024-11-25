@@ -26,7 +26,7 @@
 
 //   return (
 //     <section className='flex justify-center flex-col items-center gap-10 w-full py-[100px]' data-aos="fade-up">
-//         <h2 className='text-[24px] md:text-[40px] font-[500]'>{t("pedagogue.title")}</h2>
+//         <h2 className='text-[24px] md:text-[32px] font-[500]'>{t("pedagogue.title")}</h2>
 //         <div className='max-w-[1100px] w-full grid grid-cols-3 gap-[60px]'>
 //             {
 //                 data?.map((item,index)=> {
@@ -92,7 +92,7 @@ const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
           <SingleEducator/>
         </div>
       </div>}
-      <h2 className="text-[24px] md:text-[40px] font-[500]">
+      <h2 className="text-[24px] md:text-[32px] font-[500]">
         {t("pedagogue.title_direct")}
       </h2>
       <div className=" max-w-[400px] sm:max-w-[1300px] w-full grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5">

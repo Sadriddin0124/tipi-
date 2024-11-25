@@ -265,13 +265,13 @@ const Navbar = () => {
     {
       id: 4,
       label: t("nav.link1"),
-      path: `/${activeLang?.value}/qabul`,
+      path: `/${activeLang?.value}/reception?id=qabul`,
       hover: false,
     },
     {
       id: 8,
       label: t("information.th7"),
-      path: `/${activeLang?.value}/contact?id=faq`,
+      path: `/${activeLang?.value}/contact?id=contact`,
       hover: false,
     },
   ];
