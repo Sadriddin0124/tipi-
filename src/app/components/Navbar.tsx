@@ -69,6 +69,9 @@ const Navbar = () => {
       { label: t("crumb.item1"), href: "science" },
       { label: t("crumb.item2"), href: "news" },
       { label: t("crumb.item3"), href: "events" },
+      { label: t("crumb.item4"), href: "campus" },
+      { label: t("crumb.item5"), href: "reception" },
+      { label: t("crumb.item6"), href: "contact" },
     ];
     const findBreadcrumbItems = () => {
       const activePath = pathname.split("/").filter(item => item !== "");

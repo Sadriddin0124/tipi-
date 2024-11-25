@@ -184,7 +184,7 @@
     "th4": "1 yillik to'lov summasi",
     "th5": "Unvoni",
     "th6": "Pedagog ismi",
-    "th7": "Bog’lanish",
+    "th7": "Bog‘lanish",
     "th8": "Ijtimoyi tarmoqlar",
     "th9": "Batafsil",
     "faculty1": "Axborot Texnologiyalari",
@@ -285,6 +285,9 @@
   "crumb": {
     "item1": "Barcha yangiliklar",
     "item2": "Ilmiy yangiliklar",
-    "item3": "Tadbirlar"
+    "item3": "Tadbirlar",
+    "item4": "Kampus hayoti",
+    "item5": "Qabul",
+    "item6": "Bog‘lanish"
   }
 }
