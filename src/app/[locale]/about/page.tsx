@@ -24,12 +24,12 @@ const Constructor = () => {
   }, [id]);
   
   return (
-    <div className="px-3">
+    <div className="px-3 flex justify-center">
       {slider?.file && <ConstructorSlider data={slider} />}
-      <div className="pb-[40px] md:pb-[80px] mt-6">
+      <div className="pb-[40px] md:pb-[80px] mt-6 grid grid-cols-2 gap-3 max-w-[1300px] w-full">
         {
           blog?.map((item,index)=> (
-            <div className="py-2 md:py-[30px]" key={index}>
+            <div className={`${item?.kind === "STUDENTS" ? "col-span-1" : "col-span-2"} py-2 md:py-[30px]`} key={index}>
             <AboutFaculty item={item} />
             </div>
           ))

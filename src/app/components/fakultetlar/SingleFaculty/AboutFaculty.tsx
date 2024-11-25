@@ -4,7 +4,7 @@ import FileLogo from "@/assets/file_logo.webp";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import "./SingleFaculty.css"
+import "./SingleFaculty.css";
 export interface NewsItem {
   id: string;
   created_at: string; // ISO format timestamp
@@ -43,31 +43,33 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
   console.log(item);
 
   return (
-    <section className={`flex justify-center`}>
+    <section className={`flex justify-center w-full`}>
       <div className="max-w-[1300px] w-full flex flex-col ">
         {item?.kind === "IMAGE" && (
           <div>
             <div className={`grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-6`}>
-            {item?.images.map((item, index) => (
-              <div
-                key={index}
-                className={`overflow-hidden rounded-[10px] max-h-[250px] sm:max-h-[200px] md:max-h-[300px]  lg:h-[400px] `}
-              >
-                <Image
-                  width={500}
-                  height={400}
-                  src={item?.file}
-                  alt={"images"}
-                  className="hover:scale-105 transition-all w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-          <h2 className="text-[24px] md:text-[32px] font-[600] mt-2">{locale === "uz"
+              {item?.images.map((item, index) => (
+                <div
+                  key={index}
+                  className={`overflow-hidden rounded-[10px] max-h-[250px] sm:max-h-[200px] md:max-h-[300px]  lg:h-[400px] `}
+                >
+                  <Image
+                    width={500}
+                    height={400}
+                    src={item?.file}
+                    alt={"images"}
+                    className="hover:scale-105 transition-all w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            <h2 className="text-[24px] md:text-[32px] font-[600] mt-2">
+              {locale === "uz"
                 ? item?.title_uz
                 : locale === "ru"
                 ? item?.title_ru
-                : item?.title_en}</h2>
+                : item?.title_en}
+            </h2>
           </div>
         )}
         {item?.kind === "TEXT" && (
@@ -95,13 +97,13 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "FILE" && (
           <div className="flex justify-center flex-col">
-              <h2 className="text-[24px] mb-2 md:text-[32px] font-[600]">
-                {locale === "uz"
-                  ? item?.title_uz
-                  : locale === "ru"
-                  ? item?.title_ru
-                  : item?.title_en}
-              </h2>
+            <h2 className="text-[24px] mb-2 md:text-[32px] font-[600]">
+              {locale === "uz"
+                ? item?.title_uz
+                : locale === "ru"
+                ? item?.title_ru
+                : item?.title_en}
+            </h2>
             <div className="grid sm:grid-cols-2 max-w-[1200px] w-full lg:grid-cols-3 gap-6 px-4">
               {item?.images?.map((item, index) => (
                 <Link
@@ -151,7 +153,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
           </div>
         )}
         {item?.kind === "TEACHERS" && (
-          <div className="flex flex-col items-center justify-center gap-5">
+          <div className="flex flex-col items-center w-full justify-center gap-5">
             {/* <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
               {locale === "uz"
                 ? item?.title_uz
@@ -159,7 +161,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                 ? item?.title_ru
                 : item?.title_en}
             </h2> */}
-            <div className="flex flex-col sm:flex-row max-w-[350px] overflow-hidden sm:max-w-max sm:gap-[10px] md:gap-[40px] w-full px-0 sm:px-3 lg:px-8 py-0 sm:py-2 lg:py-5 rounded-xl border-[2px] shadow-md sm:shadow-none sm:border-[#404B7C]">
+            <div className="flex flex-col sm:flex-row max-w-[350px] overflow-hidden sm:max-w-[1300px] sm:gap-[10px] md:gap-[40px] w-full px-0 sm:px-3 lg:px-8 py-0 sm:py-2 lg:py-5 rounded-xl border-[2px] shadow-md sm:shadow-none sm:border-[#404B7C]">
               <div className="sm:max-w-[200px] md:max-w-[300px] max-h-[300px] sm:max-h-[200px] md:max-h-[300px] lg:max-h-[350px] lg:max-w-[350px]">
                 <Image
                   src={item?.images[0]?.file}
@@ -201,15 +203,8 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "STUDENTS" && (
           <div className="flex flex-col items-center justify-center gap-5">
-            {/* <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
-              {locale === "uz"
-                ? item?.title_uz
-                : locale === "ru"
-                ? item?.title_ru
-                : item?.title_en}
-            </h2> */}
-            <div className="flex gap-[40px] w-full h-[390px] px-8 py-5 rounded-xl border-[2px] border-[#404B7C]">
-              <div className="max-w-[350px]">
+            <div className="flex flex-col md:flex-row w-full items-start gap-[40px] border-2 border-black rounded-[10px] p-3">
+              <div className="max-w-[200px] w-full h-[200px] rounded-[10px] overflow-hidden">
                 <Image
                   src={item?.images[0]?.file}
                   alt={item?.title_uz}
@@ -218,32 +213,33 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                   className="rounded-xl h-full object-cover"
                 />
               </div>
-              <div>
-                {/* <h3 className="text-[30px] font-[500]">
-                  {locale === "uz"
-                    ? item?.position_uz
-                    : locale === "ru"
-                    ? item?.position_ru
-                    : item?.position_en}
-                </h3> */}
-                <h3 className="text-[26px] mt-8 font-[700]">
-                  {locale === "uz"
-                    ? item?.title_uz
-                    : locale === "ru"
-                    ? item?.title_ru
-                    : item?.title_en}
-                </h3>
-                <p
-                  className="text-[20px] mt-3 links"
-                  dangerouslySetInnerHTML={{
-                    __html: (locale === "uz"
-                      ? item?.content_uz
+              <div className="flex flex-col gap-4 lg:gap-[25px] w-full">
+                <div className="flex justify-between w-full">
+                  <h3 className="text-[24px] lg:text-[30px] font-[500]">
+                    {" "}
+                    {locale === "uz"
+                      ? item?.title_uz
                       : locale === "ru"
-                      ? item?.content_ru
-                      : item?.content_en
-                    ).replace(/\n/g, "<br>"),
-                  }}
-                />
+                      ? item?.title_ru
+                      : item?.title_en}
+                  </h3>
+                </div>
+                <div className="flex w-full flex-col min-h-[120px] items-start gap-2 justify-between">
+                  <p
+                    className="text-[20px] mt-3 links"
+                    dangerouslySetInnerHTML={{
+                      __html: (locale === "uz"
+                        ? item?.content_uz
+                        : locale === "ru"
+                        ? item?.content_ru
+                        : item?.content_en
+                      ).replace(/\n/g, "<br>"),
+                    }}
+                  />
+                  <span className=" self-end text-[14px] italic">
+                    {item?.created_at?.slice(0, 10)}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
