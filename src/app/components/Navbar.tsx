@@ -312,10 +312,9 @@ const Navbar = () => {
   
   const SwitchLang = (value: string) => {
     const path = sessionStorage.getItem("path") || "";
-    const id = searchParams.get("id") 
-
+    const params = new URLSearchParams(searchParams.toString());
     startTransition(() => {
-      router.replace(`/${value}/${path}?id=${id}`);
+      router.replace(`/${value}/${path}?${params.toString()}`);
     });
   };
 

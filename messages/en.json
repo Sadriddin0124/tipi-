@@ -281,5 +281,13 @@
   },
   "contact_": {
     "title": "Frequently Asked Questions"
-  }
+  },
+  "crumb": {
+  "item1": "All news",
+  "item2": "Scientific news",
+  "item3": "Events",
+  "item4": "Campus life",
+  "item5": "Admissions",
+  "item6": "Contact"
+}
 }
