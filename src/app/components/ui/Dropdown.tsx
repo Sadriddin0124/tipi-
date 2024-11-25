@@ -2,6 +2,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import Link from "next/link";
 import { HoverItemType } from "@/app/types/all.types";
 import { usePathname } from "next/navigation";
+import { Dispatch, SetStateAction } from "react";
 
 interface DropDownProps {
   id: number | undefined;
@@ -10,6 +11,7 @@ interface DropDownProps {
   item2: HoverItemType[] | undefined;
   title1: string | undefined;
   title2: string | undefined;
+  setAppBar: Dispatch<SetStateAction<boolean>>
 }
 
 const Dropdown: React.FC<DropDownProps> = ({
@@ -19,6 +21,7 @@ const Dropdown: React.FC<DropDownProps> = ({
   title2,
   item1,
   item2,
+  setAppBar
 }) => {
   const locale = usePathname()?.split("/")[1];
 
@@ -38,12 +41,13 @@ const Dropdown: React.FC<DropDownProps> = ({
           {item1?.map((item, index) => {
             return (
               <Link
-                href={
-                  item?.href ? item?.href : `/${locale}/about?id=${item?.id}`
-                }
+                href={item?.href ? item?.href : item?.teachers ? `/${locale}/fakultetlar/${item?.id}` : `/${locale}/about?id=${item?.id}`}
                 key={index}
                 className="hover:bg-[#404B7C] hover:text-white text-[#404B7C] flex items-center gap-1 px-5 py-2"
-                onClick={() => closeDropDown(id)}
+                onClick={() => {
+                  closeDropDown(id)
+                  setAppBar(false)
+                }}
               >
                 <IoIosArrowForward className="text-[16px]" />
                 <span className="max-w-[250px] w-full text-[16px] relative flex justify-start group">

@@ -13,9 +13,9 @@ const Constructor = ({ page }: { page: string }) => {
       getData();
     }, [page]);
     return (
-      <div data-aos="fade-up" className="w-full mx-auto">
+      <div data-aos="fade-up" className="w-full mx-auto mt-6">
         {blog?.map((item, index) => (
-          <div className="py-[30px]" key={index}>
+          <div className="py-2 md:py-[30px]" key={index}>
             <AboutFaculty item={item}/>
           </div>
         ))}

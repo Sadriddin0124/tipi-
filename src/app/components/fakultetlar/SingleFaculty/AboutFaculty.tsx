@@ -43,15 +43,15 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
   console.log(item);
 
   return (
-    <section className={`flex justify-center px-3 `}>
+    <section className={`flex justify-center`}>
       <div className="max-w-[1300px] w-full flex flex-col ">
         {item?.kind === "IMAGE" && (
           <div>
-            <div className={`grid grid-cols-4 gap-3 md:gap-6`}>
+            <div className={`grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-6`}>
             {item?.images.map((item, index) => (
               <div
                 key={index}
-                className={`overflow-hidden rounded-[10px] max-h-[300px]  md:h-[400px] `}
+                className={`overflow-hidden rounded-[10px] max-h-[250px] sm:max-h-[200px] md:max-h-[300px]  lg:h-[400px] `}
               >
                 <Image
                   width={500}
@@ -63,7 +63,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
               </div>
             ))}
           </div>
-          <h2 className="text-[32px] font-[600] mt-2">{locale === "uz"
+          <h2 className="text-[24px] md:text-[32px] font-[600] mt-2">{locale === "uz"
                 ? item?.title_uz
                 : locale === "ru"
                 ? item?.title_ru
@@ -72,7 +72,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "TEXT" && (
           <div className="w-full flex flex-col gap-4 ">
-            <h2 className="text-[24px] md:text-[32px] font-[600]">
+            <h2 className="text-[20px] md:text-[32px] font-[600]">
               {locale === "uz"
                 ? item?.title_uz
                 : locale === "ru"
@@ -110,7 +110,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                   key={index}
                   className="flex gap-6 items-center max-w-[250px] relative"
                 >
-                  <span
+                  {/* <span
                     className={`${
                       item?.file?.endsWith(".docx")
                         ? "bg-blue-600"
@@ -118,13 +118,13 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                     } uppercase px-1 text-white rounded-sm text-[10px] absolute top-4 left-[-12px]`}
                   >
                     {item?.file?.endsWith(".pdf") ? "PDF" : "DOC"}
-                  </span>
+                  </span> */}
                   <Image
                     src={FileLogo}
                     alt={`File ${index + 1}`}
                     className="w-[60px] h-[80px]"
                   />
-                  <span className="font-[500] text-[16px] max-w-[240px] line-clamp-1">
+                  <span className="font-[500] text-[16px] max-w-[240px] overflow-hidden line-clamp-1">
                     {item?.file?.split("/")[5]}
                   </span>
                 </Link>
@@ -159,25 +159,25 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                 ? item?.title_ru
                 : item?.title_en}
             </h2> */}
-            <div className="flex gap-[40px] w-full h-[390px] px-8 py-5 rounded-xl border-[2px] border-[#404B7C]">
-              <div className="max-w-[350px]">
+            <div className="flex flex-col sm:flex-row max-w-[350px] overflow-hidden sm:max-w-max sm:gap-[10px] md:gap-[40px] w-full px-0 sm:px-3 lg:px-8 py-0 sm:py-2 lg:py-5 rounded-xl border-[2px] shadow-md sm:shadow-none sm:border-[#404B7C]">
+              <div className="sm:max-w-[200px] md:max-w-[300px] max-h-[300px] sm:max-h-[200px] md:max-h-[300px] lg:max-h-[350px] lg:max-w-[350px]">
                 <Image
                   src={item?.images[0]?.file}
                   alt={item?.title_uz}
                   width={500}
                   height={500}
-                  className="rounded-xl h-full object-cover"
+                  className="sm:rounded-xl h-full object-cover"
                 />
               </div>
-              <div>
-                <h3 className="text-[30px] font-[500]">
+              <div className="p-3 sm:p-0">
+                <h3 className="text-[20px] md:text-[24px] lg:text-[30px] font-[500]">
                   {locale === "uz"
                     ? item?.position_uz
                     : locale === "ru"
                     ? item?.position_ru
                     : item?.position_en}
                 </h3>
-                <h3 className="text-[26px] mt-8 font-[700]">
+                <h3 className="text-[18px] md:text-[20px] lg:text-[26px] mt-2 md:mt-8 font-[700]">
                   {locale === "uz"
                     ? item?.title_uz
                     : locale === "ru"
@@ -185,7 +185,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                     : item?.title_en}
                 </h3>
                 <p
-                  className="text-[20px] mt-3 links"
+                  className="md:text-[18px] lg:text-[20px] mt-3 links"
                   dangerouslySetInnerHTML={{
                     __html: (locale === "uz"
                       ? item?.content_uz

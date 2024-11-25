@@ -507,6 +507,7 @@ const Navbar = () => {
                   title2={item?.title2}
                   item1={item?.item1}
                   item2={item?.item2}
+                  setAppBar={setAppBar}
                 />
               )}
             </li>

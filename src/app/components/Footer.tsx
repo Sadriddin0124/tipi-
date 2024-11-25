@@ -76,7 +76,7 @@ const Footer = () => {
         <div className='flex justify-between flex-wrap gap-8 md:flex-nowrap max-w-[1100px] w-full'>
             <div className='flex flex-col items-start sm:items-end'>
                 <div className='max-w-[394px] flex gap-4 items-start'>
-                    <Image src={Logo} alt='Logo' width={100} height={100} className='w-[90px] h-[90px]'/>
+                    <Image src={Logo} alt='Logo' width={100} height={100} className='w-[50px] md:w-[90px] h-[50px] md:h-[90px]'/>
                     <div className='max-w-[276px] flex flex-col gap-2 text-white mt-5'>
                         <span className='max-w-[280px] font-bold text-white'>{t("footer.logo")}</span>
                         <p className=''>{t("footer.address")}</p>
