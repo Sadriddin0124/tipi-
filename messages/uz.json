@@ -281,5 +281,10 @@
   },
   "contact_": {
     "title": "Tez-tez so'raladigan savollar"
+  },
+  "crumb": {
+    "item1": "Barcha yangiliklar",
+    "item2": "Ilmiy yangiliklar",
+    "item3": "Tadbirlar"
   }
 }

@@ -41,7 +41,7 @@ const Events = () => {
         {data?.length > 6 ? <Carousel data={data} category='EVENT'/>
         : <UnCarousel data={data} category='EVENT'/>}
         <div className='w-full flex justify-end px-2'>
-          {pathname !== "/uz/yangiliklar" && <Link href={`${locale}/yangiliklar/events`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
+          {pathname !== `/${locale}/yangiliklar/events` && <Link href={`/${locale}/yangiliklar/events`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
             {t("events.more")}
             <span className='group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]'></span>
           </Link>}

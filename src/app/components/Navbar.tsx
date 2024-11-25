@@ -66,6 +66,9 @@ const Navbar = () => {
       { label: t("path.link7"), href: "1" },
       { label: t("path.link8"), href: "almashinuv-dasturi" },
       { label: "", href: "about" },
+      { label: t("crumb.item1"), href: "science" },
+      { label: t("crumb.item2"), href: "news" },
+      { label: t("crumb.item3"), href: "events" },
     ];
     const findBreadcrumbItems = () => {
       const activePath = pathname.split("/").filter(item => item !== "");
