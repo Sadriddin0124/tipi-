@@ -237,7 +237,7 @@ const Navbar = () => {
       label: t("nav.link5"),
       path: `/${activeLang?.value}/section?id=DEPARTMENT`,
       hover: true,
-      title1: "Bo`limlar",
+      title1: "Bo‘limlar",
       item1: sections,
     },
     {

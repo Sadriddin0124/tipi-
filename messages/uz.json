@@ -5,9 +5,9 @@
     "link2": "Fakultetlar",
     "link3": "Institut haqida",
     "link4": "Yangiliklar",
-    "link5": "Bo'limlar",
+    "link5": "Bo‘limlar",
     "link6": "Interaktiv xizmatlar",
-    "link7": "Barcha bo'limlar"
+    "link7": "Barcha bo‘limlar"
   },
   "path": {
     "mainPage": "Asosiy sahifa",
@@ -16,15 +16,15 @@
     "link3": "Institut haqida",
     "link4": "Yangiliklar",
     "link5": "Iqtidorli Talabalar",
-    "link6": "Bo'limlar",
+    "link6": "Bo‘limlar",
     "link7": "Axborot Texnologiyalari",
     "link8": "Almashinuv dasturi",
     "link9": "Pedagoglar",
     "link10": "Pedagog"
   },
   "hover": {
-    "title1": "Bo'limlar",
-    "title2": "Ilmiy bo'lim",
+    "title1": "Bo‘limlar",
+    "title2": "Ilmiy bo‘lim",
     "title3": "Ma'naviyat",
     "title4": "Reja Moliya",
     "title5": "DevonXona",
@@ -53,12 +53,12 @@
     "title_in8": "Rektor online"
   },
   "hero": {
-    "title": "Hoziroq online ro'yxatdan o`tish",
-    "btn": "Ro'yxatdan o'tish"
+    "title": "Hoziroq online ro'yxatdan o‘tish",
+    "btn": "Ro'yxatdan o‘tish"
   },
   "statistics": {
     "item1": "Talabalar",
-    "item2": "O`qituvchilar",
+    "item2": "O‘qituvchilar",
     "item3": "Milliard qiymatli",
     "item4": "Grandlar"
   },
@@ -147,12 +147,12 @@
     "link1": "Kontaktlar",
     "link2": "Biz haqimizda",
     "link3": "Tadbirlar",
-    "link4": "Bo`limlar",
+    "link4": "Bo‘limlar",
     "link5": "Ilmiy salohiyat",
     "link6": "Iqtidorli talabalar",
     "link7": "Ta‘lim sohasi",
     "link8": "Kampus",
-    "link9": "Ro`yxatdan o`tish",
+    "link9": "Ro‘yxatdan o‘tish",
     "link10": "Almashuv dasturi",
     "link11": "Yangiliklar"
   },
@@ -170,7 +170,7 @@
   },
   "aboutFaculty": {
   "title": "Fakultet haqida",
-  "desc": "1979 yilda tashkil etilgan Kompyuter texnologiyalari maktabi (SCT) Sharqiy O'rta dengiz universitetining eng qadimgi bo'limidir. SCT o'zining ko'p millatli talabalar profiliga raqamli va madaniyatlararo muhitda yuqori texnologik ta'lim beradi. Ta'lim tili to'rt yillik Axborot Texnologiyalari dasturida (BS) va magistratura dasturida (MTech in IT) ingliz tili hisoblanadi. Biroq, ikki va uch yillik kurs dasturlarida ta'lim tili turk tilidir. O'zining mukammal inshootlari va 'Loyiha asosida o'rganish'ga sodiqligi bilan SCT quyidagi ta'lim yo'nalishlarini taqdim etadi: SCTda xalqaro talabalar bilan ishlash uchun Xalqaro Talabalar Maslahatchisi (ISA) mavjud bo'lib, u talabalar uchun akademik va akademik bo'lmagan masalalarda yordam beradi. Shuningdek, talabalar yordamchilari tomonidan Talaba-Talaba Maslahati (S2S) xizmatlari taqdim etiladi, bu esa talabalar o'quv muammolariga yordam beradi. Kompyuter texnologiyalari maktabining (SCT) asosiy maqsadi bugungi global raqamli dunyoning biznes, sanoat va xizmat ko'rsatish sohalarida talab qilinadigan yuqori malakali texnik inson resurslarini tayyorlashdir. O'zining asosiy maqsadiga erishish uchun SCT o'z talabalarini o'zlarining sohalarida zarur bilim va ko'nikmalar bilan ta'minlashga intiladi, muntazam ravishda yangilangan loyiha asosidagi o'rganish dasturi va sanoat tajribasiga ega malakali o'qituvchilar orqali. Axborot texnologiyalari bo'yicha o'qitish tili ingliz tilida (BS) va Axborot texnologiyalari bo'yicha magistratura dasturi (MTech in IT), ikki va uch yillik kasbiy dasturlarda esa o'qitish tili turk tilida.",
+  "desc": "1979 yilda tashkil etilgan Kompyuter texnologiyalari maktabi (SCT) Sharqiy O'rta dengiz universitetining eng qadimgi bo‘limidir. SCT o'zining ko'p millatli talabalar profiliga raqamli va madaniyatlararo muhitda yuqori texnologik ta'lim beradi. Ta'lim tili to'rt yillik Axborot Texnologiyalari dasturida (BS) va magistratura dasturida (MTech in IT) ingliz tili hisoblanadi. Biroq, ikki va uch yillik kurs dasturlarida ta'lim tili turk tilidir. O'zining mukammal inshootlari va 'Loyiha asosida o'rganish'ga sodiqligi bilan SCT quyidagi ta'lim yo'nalishlarini taqdim etadi: SCTda xalqaro talabalar bilan ishlash uchun Xalqaro Talabalar Maslahatchisi (ISA) mavjud bo'lib, u talabalar uchun akademik va akademik bo'lmagan masalalarda yordam beradi. Shuningdek, talabalar yordamchilari tomonidan Talaba-Talaba Maslahati (S2S) xizmatlari taqdim etiladi, bu esa talabalar o'quv muammolariga yordam beradi. Kompyuter texnologiyalari maktabining (SCT) asosiy maqsadi bugungi global raqamli dunyoning biznes, sanoat va xizmat ko'rsatish sohalarida talab qilinadigan yuqori malakali texnik inson resurslarini tayyorlashdir. O'zining asosiy maqsadiga erishish uchun SCT o'z talabalarini o'zlarining sohalarida zarur bilim va ko'nikmalar bilan ta'minlashga intiladi, muntazam ravishda yangilangan loyiha asosidagi o'rganish dasturi va sanoat tajribasiga ega malakali o'qituvchilar orqali. Axborot texnologiyalari bo'yicha o'qitish tili ingliz tilida (BS) va Axborot texnologiyalari bo'yicha magistratura dasturi (MTech in IT), ikki va uch yillik kasbiy dasturlarda esa o'qitish tili turk tilida.",
   "fileDesc": "Bu yerda fayl tavsifi bo'lishi mumkin edi..."
   },
   "information": {
@@ -219,21 +219,21 @@
     "edu_t3": "PhD",
     "edu_v3": "Toshkent Davlat Iqtisodiyot Universiteti (2023-2024) ",
     "edu_t4": "Mehnat faoliyati",
-    "edu_v4": "O`qituvchi. Toshkent Yangiyo`l shahri 1-umumiy o`rta ta`lim maktabi O`qituvchi. Toshkent Yangiyo`l shahri 1-umumiy o`rta ta`lim maktabi",
+    "edu_v4": "O‘qituvchi. Toshkent Yangiyo‘l shahri 1-umumiy o‘rta ta`lim maktabi O‘qituvchi. Toshkent Yangiyo‘l shahri 1-umumiy o‘rta ta`lim maktabi",
     "edu_t5": "Hozirgi ish joyi",
     "edu_v5": "Toshkent Iqtisodiyot va Pedagogik Instituti",
     "about_t1": "Daraja",
-    "about_v1": "O`qituvchi",
+    "about_v1": "O‘qituvchi",
     "about_t2": "Fakultet",
-    "about_v2": "O`zbek filologiyasi",
+    "about_v2": "O‘zbek filologiyasi",
     "about_t3": "Kafedra",
     "about_v3": "Adabiy manbashunoslik va matnshunoslik kafedrasi",
-    "media1": "O`quv adabiyotlari",
+    "media1": "O‘quv adabiyotlari",
     "media2": "Sertifikat",
     "media3": "Multimedia",
     "data_t": "Ma`lumotlar",
     "data_t1": "Milati",
-    "data_v1": "O`zbek",
+    "data_v1": "O‘zbek",
     "data_t2": "Tug‘ilgan sanasi",
     "data_v2": "09.09.1980",
     "data_t3": "E-mail",
@@ -249,7 +249,7 @@
   },
   "section1": {
     "name": "Dustmurodov Ma'rufjon Mansur o‘g‘li",
-    "place": "Ilmiy bo'limi boshlig'i",
+    "place": "Ilmiy bo‘limi boshlig'i",
     "address": "111709 Chirchiq shahar, Metallurgchilar koʻchasi 13-uy",
     "duration": "Dushanba-Juma,",
     "about_t": "TOSHKЕNT IQTISODIYOT VA PЕDAGOGIKA INSTITUTI ILMIY TADQIQOTLAR, INNOVATSIYALAR VA ILMIY-PЕDAGOGIK KADRLAR TAYYORLASH BO‘LIMI BOSHLIG‘INING VAZIFALARI"
@@ -265,7 +265,7 @@
   },
   "section3": {
     "name1": "Dusboyev Raxim Ramazanovich",
-    "place1": "Reja-moliya bo'limi boshlig'i",
+    "place1": "Reja-moliya bo‘limi boshlig'i",
     "address1": "111709 Chirchiq shahar, Metallurgchilar koʻchasi 13-uy",
     "duration1": "Dushanba-Juma,",
     "name2": "Dusboyev Nomoz Mamanazar o‘g‘li",
@@ -275,7 +275,7 @@
   },
   "section4": {
     "name1": "Toxirov Shahzod Toxirovich",
-    "place1": "Devonxona va arxiv bo'limi boshlig'i",
+    "place1": "Devonxona va arxiv bo‘limi boshlig'i",
     "address1": "111709 Chirchiq shahar, Metallurgchilar koʻchasi 13-uy",
     "duration1": "Dushanba-Juma,"
   },
