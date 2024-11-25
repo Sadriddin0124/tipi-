@@ -23,7 +23,7 @@
 
   /* Play animation on hover */
   .scrolling-container:hover .scrolling-text {
-    animation: scroll 5s linear forwards; /* Trigger animation on hover */
+    animation: scroll 10s linear forwards; /* Trigger animation on hover */
   }
 
   /* Keyframes for the scrolling animation */
