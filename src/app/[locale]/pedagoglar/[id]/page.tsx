@@ -288,7 +288,7 @@
 //               })} */}
 //             </div>
 //             <div>
-//               <h5 className="text-[20px]">Bog`lanish uchun:</h5>
+//               <h5 className="text-[20px]">Bog‘lanish uchun:</h5>
 //               <div className="flex">
 //                 <div className="flex gap-10">
 //                   <div className="mt-2 flex flex-col gap-2">
@@ -490,7 +490,7 @@ const SingleEducator = () => {
               {/* );
               })} */}
               <div>
-                <h5 className="text-[20px]">Bog`lanish uchun:</h5>
+                <h5 className="text-[20px]">Bog‘lanish uchun:</h5>
                 <div className="flex">
                   <div className="flex items-start gap-10">
                     <div className="mt-2 flex flex-col gap-2">
