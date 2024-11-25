@@ -438,7 +438,7 @@ const SingleEducator = () => {
   // const educator = teachers?.find(item=> item?.id === id)
 
   const locale = usePathname().split("/")[1];
-  // const decodedURL = 
+  const [active, setActive] = useState<boolean>(false)
   return (
     <section className="px-3 w-full flex h-[600px] justify-center py-[70px]">
       <div className="max-w-[1320px] w-full">
@@ -459,7 +459,7 @@ const SingleEducator = () => {
                 : data?.description_ru}
             </h4>
           </div>
-          <div className="flex flex-col items-start border h-[500px] overflow-y-auto border-[#404B7C] p-[30px] rounded-[10px] gap-1">
+          <div className="flex flex-col items-start border h-[500px] w-full overflow-y-auto border-[#404B7C] p-[30px] rounded-[10px] gap-1">
             <h3 className="text-[20px] font-[400]">
               {locale === "en"
                 ? data?.name_en
@@ -467,7 +467,7 @@ const SingleEducator = () => {
                 ? data?.name_uz
                 : data?.name_ru}
             </h3>
-            <div className="flex flex-col gap-2 max-w-[900px]">
+            <div className="flex flex-col gap-2 w-full max-w-[900px]">
               {/* {data?.map((item, index) => {
                 return ( */}
               <div className="flex flex-col items-start ">
@@ -548,10 +548,34 @@ const SingleEducator = () => {
                 </div>
               </div>
               <div className="w-full grid grid-cols-2 gap-4 my-3">
-                <button className="px-3 py-2 bg-[#404b7c] text-white hover:bg-[#404b7c] hover:text-white">{t("book")}</button>
-                <button className="px-3 py-2 border-[#404b7c] hover:bg-[#404b7c] hover:text-white border text_main text-white">{t("cert")}</button>
+                <button onClick={()=>setActive(!active)} className={`px-3 py-2 border-[#404b7c] hover:bg-[#404b7c] hover:text-white border ${!active ? "text-white bg-[#404b7c]" : ""}`}>{t("book")}</button>
+                <button onClick={()=>setActive(!active)} className={`px-3 py-2 border-[#404b7c] hover:bg-[#404b7c] hover:text-white border ${active ? "text-white bg-[#404b7c]" : ""}`}>{t("cert")}</button>
               </div>
-              <div className="flex flex-col items-start mt-1 gap-3 w-[80%]">
+              {active && <div className="mt-1 gap-3 grid grid-cols-3 w-full">
+                {data?.certificates?.map((item, index) => {
+                  return (
+                    <Link
+                      href={item?.file}
+                      target="_blank"
+                      key={index}
+                      className="flex gap-3 items-center overflow-hidden  w-full relative"
+                    >
+                      
+                      <Image
+                        src={item?.file}
+                        alt={`File ${index + 1}`}
+                        width={500}
+                        height={400}
+                        className="w-full object-cover"
+                      />
+                      {/* <span className="font-[500] text-[16px] max-w-[500px] w-full line-clamp-1">
+                      {decodeURIComponent(item?.file?.split("/")[5])}
+                      </span> */}
+                    </Link>
+                  );
+                })}
+              </div>}
+              {!active && <div className="flex flex-col items-start mt-1 gap-3 w-[80%]">
                 {data?.files?.map((item, index) => {
                   return (
                     <Link
@@ -578,6 +602,9 @@ const SingleEducator = () => {
                     </Link>
                   );
                 })}
+              </div>}
+              <div>
+
               </div>
             </div>
           </div>

@@ -144,4 +144,5 @@ export interface KafedraTypes {
     facebook: string
     youtube: string
     files: [{file: string}]
+    certificates: [{file: string}]
 }
