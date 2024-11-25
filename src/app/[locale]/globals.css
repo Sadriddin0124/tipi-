@@ -90,6 +90,7 @@
   position: relative;
 }
 
+
 .loader:before {
   position: absolute;
   content: "";

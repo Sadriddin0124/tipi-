@@ -40,7 +40,7 @@ const SportNews = () => {
   
   return (
     <section className='px-2 ' data-aos="fade-up">
-      <div className='max-w-[1320px] mx-auto'>
+      <div className='max-w-[1400px] mx-auto'>
         <h2 className='pl-[20px] text-[32px] md:text-[32px] font-[600] mb-[20px]'>{t('news.title2')}</h2>
         {data?.length > 5 ? <Carousel data={data} category='SPORT'/>
         : <UnCarousel data={data} category='SPORT'/>}

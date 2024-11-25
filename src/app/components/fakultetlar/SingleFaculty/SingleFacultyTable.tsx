@@ -252,7 +252,7 @@ const DirectionsTable = () => {
                   : item?.department_en}
               </td>
               <td className='px-2 lg:px-0 text-right'>
-                  <Link href={`/${locale}/about?=${item?.id}`} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[18px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
+                  <Link href={`/${locale}/fakultetlar/yonalishlar?id=${item?.id}`} className='bg-[#404B7C] text-white px-3 text-[14px] lg:text-[18px] py-2 rounded-md border-2 border-[#404B7C] hover:text-[#404B7C] hover:bg-white ease-linear duration-200'>{t("information.btn")}</Link>
               </td>
             </tr>
           ))}

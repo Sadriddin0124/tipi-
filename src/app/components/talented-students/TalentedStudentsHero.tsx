@@ -50,7 +50,7 @@ const TalentedStudentsHero = () => {
                     </div>
                   </div>
                   <div className='flex w-full flex-col gap-2 justify-between'>
-                    <p className='text-[16px] lg:text-[20px]'>{locale === "uz" ? item?.description_uz : locale === "ru" ? item?.description_uz : item?.description_en }</p>
+                    <p className='text-[16px] lg:text-[20px] line-clamp-5'>{locale === "uz" ? item?.description_uz : locale === "ru" ? item?.description_uz : item?.description_en }</p>
                     <span className='self-end text-[14px] italic'>{item?.created_at?.slice(0, 10)}</span>
                   </div>
                 </div>

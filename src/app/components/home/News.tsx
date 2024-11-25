@@ -41,7 +41,7 @@ const News = () => {
   const locale = pathname?.split("/")[1]
   
   return (
-    <section className='px-2 pb-6 pt-10 md:pt-[100px] md:pb-[80px]' data-aos="fade-up">
+    <section className='px-2 pb-6 pt-10 md:pt-[100px] md:pb-[80px]'>
       <div className='max-w-[1400px] mx-auto'>
         <h2 className='pl-[20px] text-[32px] md:text-[32px] font-[600] mb-[20px]'>{t('news.title3')}</h2>
         {data?.length > 6 ? <Carousel data={data} category='SCIENCE'/>
