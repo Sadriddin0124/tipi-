@@ -28,7 +28,6 @@ const SportNews = () => {
 
 
     fetchNews("SPORT").then((data) => {
-      setData(data);
       console.log(data);
     }).catch(() => {
       alert("Nimadur noto'g'ri ketdi.");
@@ -42,7 +41,7 @@ const SportNews = () => {
     <section className='px-2 ' data-aos="fade-up">
       <div className='max-w-[1400px] mx-auto'>
         <h2 className='pl-[20px] text-[32px] md:text-[32px] font-[600] mb-[20px]'>{t('news.title2')}</h2>
-        {data?.length > 5 ? <Carousel data={data} category='SPORT'/>
+        {data?.length > 4 ? <Carousel data={data} category='SPORT'/>
         : <UnCarousel data={data} category='SPORT'/>}
         <div className='w-full flex justify-end px-2'>
           {pathname !== `/${locale}/yangiliklar/science` && <Link href={`/${locale}/yangiliklar/science`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>

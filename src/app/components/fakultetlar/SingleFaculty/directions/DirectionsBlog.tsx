@@ -19,7 +19,7 @@ const DirectionsBlog = () => {
   }, [id]);
   
   return (
-    <div>
+    <div className="px-3">
       {/* {slider?.file && <ConstructorSlider data={slider} />} */}
       <div className="pb-[40px] md:pb-[80px]">
         {

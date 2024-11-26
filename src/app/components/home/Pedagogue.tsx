@@ -43,6 +43,15 @@ const Pedagogue = ({ title }: { title: string }) => {
     autoplaySpeed: 2000,
     responsive: [
       {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,

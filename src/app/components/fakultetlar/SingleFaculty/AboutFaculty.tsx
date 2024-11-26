@@ -40,7 +40,6 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
     if (locale == "en") return en;
   }
   const locale = usePathname().split("/")[1];
-  console.log(item);
 
   return (
     <section className={`flex justify-center w-full`}>

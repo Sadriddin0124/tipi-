@@ -108,88 +108,6 @@ const Navbar = () => {
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
   const [isPending, startTransition] = useTransition();
 
-  // const ScientificDirection: HoverItemType[] = [
-  //   {
-  //     id: 1,
-  //     value: t("hover.title1"),
-  //     status: "big",
-  //     href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`,
-  //   },
-  //   {
-  //     id: 2,
-  //     value: t("hover.title2"),
-  //     status: "small",
-  //     href: `/${activeLang?.value}/bolimlar/ilmiy-bolim`,
-  //   },
-  //   {
-  //     id: 3,
-  //     value: t("hover.title3"),
-  //     status: "small",
-  //     href: `/${activeLang?.value}/bolimlar/manaviyat`,
-  //   },
-  //   {
-  //     id: 4,
-  //     value: t("hover.title4"),
-  //     status: "small",
-  //     href: `/${activeLang?.value}/bolimlar/reja`,
-  //   },
-  //   {
-  //     id: 5,
-  //     value: t("hover.title5"),
-  //     status: "small",
-  //     href: `/${activeLang?.value}/bolimlar/devonxona`,
-  //   },
-  //   // {
-  //   //   id: 6,
-  //   //   value: t("hover.title6"),
-  //   //   status: "small",
-  //   //   href: `/${activeLang?.value}`
-  //   // },
-  // ];
-  // const Faculties: any = [
-  //   {
-  //     id: 1,
-  //     name_uz: t("hover.faculty1"),
-  //     name_ru: t("hover.faculty1"),
-  //     name_en: t("hover.faculty1"),
-  //     href: `/${activeLang?.value}/fakultetlar`,
-  //   },
-  //   {
-  //     id: 2,
-  //     name_uz: t("hover.faculty2"),
-  //     name_ru: t("hover.faculty2"),
-  //     name_en: t("hover.faculty2"),
-  //     href: `/${activeLang?.value}`,
-  //   },
-  //   {
-  //     id: 3,
-  //     name_uz: t("hover.faculty3"),
-  //     name_ru: t("hover.faculty3"),
-  //     name_en: t("hover.faculty3"),
-  //     href: `/${activeLang?.value}`,
-  //   },
-  //   {
-  //     id: 4,
-  //     name_uz: t("hover.faculty4"),
-  //     name_ru: t("hover.faculty4"),
-  //     name_en: t("hover.faculty4"),
-  //     href: `/${activeLang?.value}`,
-  //   },
-  //   {
-  //     id: 5,
-  //     name_uz: t("hover.faculty5"),
-  //     name_ru: t("hover.faculty5"),
-  //     name_en: t("hover.faculty5"),
-  //     href: `/${activeLang?.value}`,
-  //   },
-  //   {
-  //     id: 6,
-  //     name_uz: t("hover.faculty6"),
-  //     name_ru: t("hover.faculty6"),
-  //     name_en: t("hover.faculty6"),
-  //     href: `/${activeLang?.value}`,
-  //   },
-  // ];
   const InteractiveService: any = [
     {
       id: 1,
@@ -287,10 +205,6 @@ const Navbar = () => {
       const faculties = await fetchFaculties();
       setFaculties(faculties);
       const about = await fetchAboutTipi();
-      // const admin = await fetchAdmin()
-      // setAdministration(admin)
-      // const sections = await fetchSections()
-      // setSections(sections)
 
       const admin = (about as Array<HoverItemType>)?.filter(
         (item) => item?.page === "ADMINISTRATION"
@@ -379,6 +293,7 @@ const Navbar = () => {
             alt="Logo"
             width={100}
             height={100}
+            priority
             className="w-[50px] sm:w-[90px] h-[50px] sm:h-[90px]"
           />
           <span className="hidden sm:inline-block text-[18px] font-bold">
@@ -486,11 +401,12 @@ const Navbar = () => {
               className="text-[18px] relative flex justify-center group whitespace-nowrap"
               onMouseEnter={() => openDropDown(item?.id)}
               onMouseLeave={() => openDropDown(item?.id)}
+              onClick={()=>setAppBar(!appBar)}
             >
               {item.href && !item?.hover ? (
-                <a target="blank" href={item.href}>
+                <Link target="blank" href={item.href}>
                   {item.label}
-                </a>
+                </Link>
               ) : item?.hover && !item?.href ? (
                 <button onClick={() => handleNavigate(item.path)}>
                   {item.label}

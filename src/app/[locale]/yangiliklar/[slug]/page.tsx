@@ -50,8 +50,7 @@ const SingleNews = () => {
         <div className="grid grid-cols-4 gap-4 w-full">
           {newsData?.filter(item=> item?.category === category)?.map((item, index) => (
             item?.active &&
-              <Link
-              href={`/${locale}/news?id=${item?.id}`}
+              <div
                 key={index}
                 className="rounded-[10px] w-full overflow-hidden shadow-lg flex flex-col"
               >
@@ -74,7 +73,7 @@ const SingleNews = () => {
                       {t("pedagogue.btn")}
                     </Link>
             </div>
-              </Link>
+              </div>
           ))}
         </div>
       </div>

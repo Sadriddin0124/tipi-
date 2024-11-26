@@ -210,7 +210,7 @@ const DirectionsTable = () => {
             {DirectionTHeads?.map((item, index) => (
               <td
                 key={index}
-                className={`${index === 4 ? "text-right" : ""} py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]`}
+                className={`${index === 4 ? "text-right" : index === 1 ? "pl-6" : ""} py-3 px-2 lg:px-0 lg:py-5 min-w-[100px]`}
               >
                 {item}
               </td>
@@ -223,14 +223,14 @@ const DirectionsTable = () => {
               className="text-[16px] whitespace-nowrap lg:text-[20px] py-2 lg:py-5 text_main border-b-[2px] border-b-[#404B7C]"
               key={index}
             >
-              <td className="py-3 scrolling-container px-2 lg:px-0 lg:py-5 max-w-[250px] overflow-hidden">
+              <td className="py-3 scrolling-container min-w-[200px] px-2 lg:px-0 lg:py-5 max-w-[250px] overflow-hidden">
                 <span className="scrolling-text">{locale === "uz"
                   ? item?.title_uz
                   : locale === "ru"
                   ? item?.title_ru
                   : item?.title_en}</span>
               </td>
-              <td className="py-3 px-2 ml-4 lg:px-5  lg:py-5 ">
+              <td className="py-3 pl-6 px-2 ml-4 lg:px-5  lg:py-5 ">
                 {locale === "uz"
                   ? item?.stage_uz
                   : locale === "ru"
