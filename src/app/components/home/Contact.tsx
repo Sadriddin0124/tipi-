@@ -82,7 +82,7 @@ const Contact = () => {
         });
     }, [])
   return (
-    <section className='w-full flex justify-center px-3 pb-[100px] pt-2 lg:pt-[100px]'>
+    <section className='w-full flex justify-center px-3 pb-[100px] pt-2 lg:pt-[30px]'>
         <div className={`${notify ? "right-3" : "right-[-400px] opacity-0"}  ease-linear duration-300 w-full max-w-[300px] p-4 flex cursor-pointer gap-4 items-center fixed z-[30] top-3 text-white shadow-gray-500 shadow-md bg-green-500`}>
             <span>{t("message.success")}</span>
             <IoCloseSharp size={24} onClick={()=>setNotify(false)}/>

@@ -12,50 +12,15 @@ const SingleFacultyHero = () => {
   const pathname = usePathname()
   const id = pathname?.split("/")[3]
   const locale = pathname.split("/")[1]
-  const data = [
-    {
-      img: HeroImg
-    },
-    {
-      img: HeroImg
-    },
-    {
-      img: HeroImg
-    },
-    {
-      img: HeroImg
-    },
-    {
-      img: HeroImg
-    },
-  ]
-  const faculties = [
-    {
-      id: 1,
-      title: "Axborot texnologiyalari",
-    },
-    {
-      id: 2,
-      title: "Pedagogika",
-    },
-    {
-      id: 3,
-      title: "Iqtisodiyot",
-    },
-    {
-      id: 4,
-      title: "Tillar va maktabgacha ta'lim",
-    },
-    {
-      id: 5,
-      title: "Iltimoiy fanlar",
-    },
-  ]
+
 const [title, setTitle] = useState<string>("")  
-console.log(title);
+const [image, setImage] = useState<string>("")
   useEffect(() => {
     const getData = async () => {
       const item = await fetchFaculty(id);
+      console.log(item);
+      
+      setImage(item?.main_image?.file)
       setTitle(locale === "uz"
         ? item?.name_uz
         : locale === "ru"
@@ -72,7 +37,7 @@ console.log(title);
   }
   return (
     <section>
-      <HeroCarousel data={data} FixedItem={FixedItem} />
+      <HeroCarousel data={image} FixedItem={FixedItem} />
     </section>
   )
 }

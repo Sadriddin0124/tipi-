@@ -5,7 +5,8 @@ import CampusImage from "@/assets/Campus.webp"
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useTranslations } from 'next-intl';
 import Aos from 'aos';
-import 'aos/dist/aos.css'; 
+// import 'aos/dist/aos.css';  
+ 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 const Campus = () => {

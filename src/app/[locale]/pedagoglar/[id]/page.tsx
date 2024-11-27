@@ -440,18 +440,18 @@ const SingleEducator = () => {
   const locale = usePathname().split("/")[1];
   const [active, setActive] = useState<boolean>(false)
   return (
-    <section className="px-3 w-full flex h-[600px] justify-center py-[70px]">
+    <section className="px-3 w-full flex overflow-y-auto md:overflow-y-visible h-[600px] justify-center py-[70px]">
       <div className="max-w-[1320px] w-full">
-        <div className="flex justify-center gap-5 mb-2">
+        <div className="flex justify-center flex-col md:flex-row gap-5 mb-2">
           <div className="max-w-[400px] h-full flex flex-col gap-3 justify-between items-center">
             <Image
               src={data?.image?.file as string}
               alt={data?.name_uz as string}
               width={400}
               height={700}
-              className=" rounded-[10px] mb-[10px] h-[415px] w-full object-cover"
+              className=" rounded-[10px] mb-[10px] h-[350px] lg:h-[415px] w-full object-cover"
             />
-            <h4 className="text-[24px] font-[500] text-center">
+            <h4 className="text-[20px] lg:text-[24px] font-[500] text-center">
               {locale === "en"
                 ? data?.name_en
                 : locale === "uz"
@@ -459,7 +459,7 @@ const SingleEducator = () => {
                 : data?.description_ru}
             </h4>
           </div>
-          <div className="flex flex-col items-start border h-[500px] w-full overflow-y-auto border-[#404B7C] p-[30px] rounded-[10px] gap-1">
+          <div className="flex flex-col items-start border md:h-[500px] w-full md:overflow-y-auto border-[#404B7C] p-[30px] rounded-[10px] gap-1">
             <h3 className="text-[20px] font-[400]">
               {locale === "en"
                 ? data?.name_en
@@ -491,9 +491,9 @@ const SingleEducator = () => {
               })} */}
               <div>
                 <h5 className="text-[20px]">Bog‘lanish uchun:</h5>
-                <div className="flex">
-                  <div className="flex items-start gap-10">
-                    <div className="mt-2 flex flex-col gap-2">
+                <div className="flex ">
+                  <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-10">
+                    <div className="mt-2 flex flex-col gap-2 whitespace-nowrap">
                       {data?.contact2 && (
                         <Link
                           href={`tel:${data?.contact2}`}
@@ -506,7 +506,7 @@ const SingleEducator = () => {
                       +998 99 876 6522
                     </Link> */}
                     </div>
-                    <div className="grid grid-cols-2 items-center text-[22px]">
+                    <div className="grid lg:grid-cols-2 items-center text-[22px]">
                       {data?.telegram && (
                         <Link
                           href={data?.telegram}
@@ -596,7 +596,7 @@ const SingleEducator = () => {
                         alt={`File ${index + 1}`}
                         className="w-[25px] h-[30px]"
                       />
-                      <span className="font-[500] text-[16px] max-w-[500px] w-full line-clamp-1">
+                      <span className="font-[500] text-[16px] max-w-[550px] w-full line-clamp-1">
                       {decodeURIComponent(item?.file?.split("/")[5])}
                       </span>
                     </Link>

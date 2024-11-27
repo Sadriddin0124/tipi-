@@ -28,7 +28,6 @@ const Carousel = ({ data, category }: { data: NewsType[], category: string }) =>
           slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
         }
       },
       {
@@ -37,7 +36,6 @@ const Carousel = ({ data, category }: { data: NewsType[], category: string }) =>
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
         }
       },
       {

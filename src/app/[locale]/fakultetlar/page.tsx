@@ -6,7 +6,8 @@ import IT from '@/app/components/fakultetlar/IT'
 import News from '@/app/components/home/News'
 import React, { useEffect } from 'react'
 import Aos from 'aos';
-import 'aos/dist/aos.css'; 
+// import 'aos/dist/aos.css';  
+ 
 const Fakultetlar = () => {
   useEffect(() => {
     Aos.init({

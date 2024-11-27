@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl';
 import Carousel from '../Carousel';
 import Aos from 'aos';
-import 'aos/dist/aos.css';
+// import 'aos/dist/aos.css';  
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { fetchNews } from '@/app/lib/fetchers';
@@ -36,15 +37,15 @@ const Events = () => {
   return (
     <section className='px-2 py-12 md:py-[100px]' data-aos="fade-up">
       <div className='max-w-[1400px] mx-auto'>
-        <h2 className='pl-[20px] text-[32px] md:text-[32px] font-[600] mb-[20px]'>{t('events.title')}</h2>
-        {data?.length > 4 ? <Carousel data={data} category='EVENT'/>
-        : <UnCarousel data={data} category='EVENT'/>}
-        <div className='w-full flex justify-end px-2'>
+        <div className='w-full flex justify-between items-center px-2'>
+          <h2 className='pl-[20px] text-[32px] md:text-[32px] font-[600]'>{t('events.title')}</h2>
           {pathname !== `/${locale}/yangiliklar/events` && <Link href={`/${locale}/yangiliklar/events`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
             {t("events.more")}
             <span className='group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]'></span>
           </Link>}
         </div>
+        {data?.length > 4 ? <Carousel data={data} category='EVENT'/>
+        : <UnCarousel data={data} category='EVENT'/>}
       </div>
     </section>
   )

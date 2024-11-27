@@ -6,7 +6,8 @@ import Statistics1 from "@/assets/statistics1.webp"
 import Statistics2 from "@/assets/statistics2.webp"
 import Statistics3 from "@/assets/statistics3.webp"
 import Aos from 'aos';
-import 'aos/dist/aos.css'; 
+// import 'aos/dist/aos.css';  
+ 
 import CountUp from 'react-countup';
 
 const Counter = ({data}: {data: CounterType[]}) => {

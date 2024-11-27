@@ -108,7 +108,6 @@
 
 // export default HoverComponent;
 
-import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
@@ -123,8 +122,8 @@ interface PropsHover {
   hoverStatus: number | undefined;
   HoverComponentEnter: (id: number | undefined) => void;
   HoverComponentLeave: (id: number | undefined) => void;
-  title1: string | undefined;
-  title2: string | undefined;
+  title1: {title: string, href: string};
+  title2: {title: string, href: string};
   item1: LinkType[] | HoverItemType[] | undefined;
   item2: HoverItemType[] | LinkType[] | undefined;
 }
@@ -159,18 +158,19 @@ const HoverComponent = ({
       >
         {item1 && (
           <div className="flex flex-col">
-            <h5
+            <Link
+            href={title1?.href}
               className={
-                "flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[18px]"
+                "text-black flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[18px]"
               }
               // onClick={() => openElement(item?.id)}
             >
               <IoIosArrowForward className="text-[18px]" />
-              {title1}
+              {title1?.title}
               {/* <span className="max-w-[250px] w-full relative flex justify-start group">
                   <span className={`bottom-[-5px] left-[-24px]" absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C]`}></span>
                 </span> */}
-            </h5>
+            </Link>
             {item1?.map((item, index) => {
               return (
                 item?.active && (
@@ -201,18 +201,19 @@ const HoverComponent = ({
         )}
         {item2 && (
           <div className="flex flex-col">
-            <h5
+            <Link
+            href={title2?.href}
               className={
-                "flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[18px]"
+                "text-black flex w-full mb-[10px] min-w-[250px] whitespace-normal cursor-pointer gap-2 pb-1 pt-3 border-b-2 items-center text-[18px]"
               }
               // onClick={() => openElement(item?.id)}
             >
               <IoIosArrowForward className="text-[18px]" />
-              {title2}
+              {title2?.title}
               {/* <span className="max-w-[250px] w-full relative flex justify-start group">
                   <span className={`bottom-[-5px] left-[-24px]" absolute inline-block w-0 h-[2px] group-hover:w-full ease-linear duration-200 bg-[#404B7C]`}></span>
                 </span> */}
-            </h5>
+            </Link>
             {item2?.map((item, index) => {
               return (
                 item?.active && (

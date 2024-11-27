@@ -1,10 +1,11 @@
 import { NextIntlClientProvider } from 'next-intl';
 import React, { ReactNode } from 'react';
 import "./globals.css"
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar/Navbar';
 import Loader from '../components/ui/loader';
 import Footer from '../components/Footer';
-import 'aos/dist/aos.css';  
+// // import 'aos/dist/aos.css';  
+  
 
 interface RootLayoutProps {
     children: ReactNode;

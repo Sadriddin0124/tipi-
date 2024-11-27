@@ -1,0 +1,11 @@
+.scrolled {
+    animation: navbar .5s linear forwards;
+}
+
+@keyframes navbar {
+    from {
+        top: -100px;
+    }to {
+        top: 0;
+    }
+}

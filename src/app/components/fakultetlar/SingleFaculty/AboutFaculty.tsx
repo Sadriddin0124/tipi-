@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import FileLogo from "@/assets/file_logo.webp";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import "./SingleFaculty.css";
+import { RiCloseCircleLine } from "react-icons/ri";
 export interface NewsItem {
   id: string;
   created_at: string; // ISO format timestamp
@@ -40,9 +41,13 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
     if (locale == "en") return en;
   }
   const locale = usePathname().split("/")[1];
-
+  const [popUp, setPopUp] = useState<string>("")
   return (
     <section className={`flex justify-center w-full`}>
+      {popUp && <div className="fixed w-full h-full bg-[#0000006c] top-0 left-0 flex justify-center items-center z-[220]">
+        <RiCloseCircleLine  className="absolute right-6 top-6 text-white text-[30px] cursor-pointer" onClick={()=>setPopUp("")}/>
+        <Image src={popUp} alt="POp up" width={800} height={500} className="max-w-[300px] sm:max-w-[800px] max-h-[600px] object-contain"/>
+      </div>}
       <div className="max-w-[1300px] w-full flex flex-col ">
         {item?.kind === "IMAGE" && (
           <div>
@@ -51,6 +56,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                 <div
                   key={index}
                   className={`overflow-hidden rounded-[10px] max-h-[250px] sm:max-h-[200px] md:max-h-[300px]  lg:h-[400px] `}
+                  onClick={()=>setPopUp(item?.file)}
                 >
                   <Image
                     width={500}

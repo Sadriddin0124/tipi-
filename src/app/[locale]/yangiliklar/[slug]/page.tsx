@@ -47,7 +47,7 @@ const SingleNews = () => {
             ? t("events.title")
             : ""}
         </h2>
-        <div className="grid grid-cols-4 gap-4 w-full">
+        <div className="grid max-w-[400px] sm:max-w-[100%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
           {newsData?.filter(item=> item?.category === category)?.map((item, index) => (
             item?.active &&
               <div

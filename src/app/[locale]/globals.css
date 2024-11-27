@@ -5,6 +5,8 @@
 @font-face {
   font-family: Inter;
   src: url("../../fonts/Inter/Inter_18pt-Regular.ttf"), format(truetype);
+  /* src: url("../../fonts/Roboto/Roboto-Regular.ttf"), format(truetype); */
+  /* src: url("../../fonts/Poppins/Poppins-Regular.ttf"), format(truetype); */
 }
 
 * {

@@ -9,8 +9,8 @@ interface DropDownProps {
   closeDropDown: (id: number | undefined) => void;
   item1: HoverItemType[] | undefined;
   item2: HoverItemType[] | undefined;
-  title1: string | undefined;
-  title2: string | undefined;
+  title1:  {title: string, href: string}
+  title2:  {title: string, href: string}
   setAppBar: Dispatch<SetStateAction<boolean>>
 }
 
@@ -29,15 +29,16 @@ const Dropdown: React.FC<DropDownProps> = ({
     <div className="flex flex-col absolute top-6 z-50 min-w-[300px] overflow-y-auto max-h-[380px] bg-white w-full shadow-md">
       {item1 && (
         <div className="flex flex-col bg-white">
-          <div
-            className="hover:bg-[#404B7C] hover:text-white text-[#000] flex items-center gap-1 px-3 py-2"
+          <Link
+          href={title1?.href}
+            className="hover:bg-[#404B7C] cursor-pointer hover:text-white text-[#000] flex items-center gap-1 px-3 py-2"
             onClick={() => closeDropDown(id)}
           >
             <IoIosArrowForward className="text-[16px]" />
             <span className="max-w-[250px] w-full relative flex justify-start group">
-              {title1}
+              {title1?.title}
             </span>
-          </div>
+          </Link>
           {item1?.map((item, index) => {
             return (
               <Link
@@ -64,15 +65,16 @@ const Dropdown: React.FC<DropDownProps> = ({
       )}
       {item2 && (
         <div className="flex flex-col bg-white">
-          <div
-            className="hover:bg-[#404B7C] hover:text-white text-[#000] flex items-center gap-1 px-3 py-2"
+          <Link
+          href={title2?.href}
+            className="hover:bg-[#404B7C] cursor-pointer hover:text-white text-[#000] flex items-center gap-1 px-3 py-2"
             onClick={() => closeDropDown(id)}
           >
             <IoIosArrowForward className="text-[16px]" />
             <span className="max-w-[250px] w-full relative flex justify-start group">
-              {title2}
+              {title2?.title}
             </span>
-          </div>
+          </Link>
           {item2?.map((item, index) => {
             return (
               <Link

@@ -2,7 +2,8 @@
 import EducatorsCards from '@/app/components/educators/EducatorsCards'
 import Aos from 'aos';
 import React, { useEffect, useState } from 'react'
-import 'aos/dist/aos.css'; 
+// import 'aos/dist/aos.css';  
+ 
 import { fetchEducators } from '@/app/lib/actions';
 import Contact from '@/app/components/home/Contact';
 

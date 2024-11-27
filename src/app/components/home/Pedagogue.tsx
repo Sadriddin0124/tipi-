@@ -48,7 +48,6 @@ const Pedagogue = ({ title }: { title: string }) => {
           slidesToShow: 3,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -57,7 +56,6 @@ const Pedagogue = ({ title }: { title: string }) => {
           slidesToShow: 2,
           slidesToScroll: 2,
           infinite: true,
-          dots: true,
         },
       },
       {
@@ -101,14 +99,23 @@ const Pedagogue = ({ title }: { title: string }) => {
       {id && <div className="fixed w-full z-[200] h-[100vh] top-0 left-0 bg-[#0000006b] flex justify-center items-center">
         <div className="absolute w-full h-[100vh] top-0 left-0 bg-[#0000006b]" onClick={()=>setId("")}></div>
         <div className="pl-[20px] max-w-[1200px] w-full flex justify-center rounded-lg h-[600px] bg-white relative z-10">
-        <button className="absolute right-5 top-5 text_main z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
+        <button className="absolute right-5 top-[-40px] md:top-5 text-white md:text-[#404B7C] z-20 cursor-pointer" onClick={()=>setId("")}><IoCloseCircle size={30}/></button>
           <SingleEducator/>
         </div>
       </div>}
       <div className="max-w-[1400px] mx-auto w-full">
-        <h2 className="text-[32px] mb-10 md:mb-12 md:text-[32px] font-[600]">
-          {title}
-        </h2>
+        <div className="w-full flex justify-between items-center mt-4">
+          <h2 className="text-[32px] mb-10 md:mb-12 md:text-[32px] font-[600]">
+            {title}
+          </h2>
+          <Link
+            href={`${locale}/pedagoglar`}
+            className="text-[20px] pb-0 text-[#404B7C] relative group flex justify-center"
+          >
+            {t("news.more")}
+            <span className="group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]"></span>
+          </Link>
+        </div>
         {teachers?.length > 4 ? <Slider {...settings}>
           {teachers?.map((teacher, index) => {
             return (
@@ -193,15 +200,6 @@ const Pedagogue = ({ title }: { title: string }) => {
             );
           })}
         </div>}
-        <div className="w-full flex justify-end mt-4">
-          <Link
-            href={`${locale}/pedagoglar`}
-            className="text-[20px] pb-0 text-[#404B7C] relative group flex justify-center"
-          >
-            {t("news.more")}
-            <span className="group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]"></span>
-          </Link>
-        </div>
       </div>
     </section>
   );
