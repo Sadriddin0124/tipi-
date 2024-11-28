@@ -26,7 +26,16 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
     getData();
   }, []);
   // const educator = data?.find(item=> item?.id === id)
-
+  function l(
+    locale: string | null | undefined,
+    uz: string | null | undefined,
+    ru: string | null | undefined,
+    en: string | null | undefined
+  ) {
+    if (locale == "uz") return uz;
+    if (locale == "ru") return ru;
+    if (locale == "en") return en;
+  }
   return (
     <section
       className="flex flex-col items-center px-4 gap-10 w-full"
@@ -62,13 +71,23 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
                       ? item?.name_en
                       : item?.name_ru}
                   </h5>
-                  <p className="text-lg text_main line-clamp-2">
-                    {locale === "uz"
+                  <p className="text-lg text_main line-clamp-2"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      l(
+                        locale,
+                        item?.description_uz,
+                        item?.description_ru,
+                        item?.description_en
+                      )?.replace(/\n/g, "<br>") || "",
+                  }}
+                />
+                    {/* {locale === "uz"
                       ? item?.description_uz
                       : locale === "en"
                       ? item?.description_en
                       : item?.description_ru}
-                  </p>
+                  </p> */}
                 </div>
                 <Link
                   onClick={() => setId(item?.id)}

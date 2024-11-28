@@ -401,7 +401,7 @@ const Navbar = () => {
         </div>
         <div
           className={`${
-            appBar ? "h-[450px] bg-blue-600" : "h-0"
+            appBar ? "h-[450px] bg_main" : "h-0"
           } w-full overflow-hidden xl:hidden transition-all ease-linear duration-200`}
         >
           <ul className="flex flex-col items-center gap-[10px] mt-[25px]">

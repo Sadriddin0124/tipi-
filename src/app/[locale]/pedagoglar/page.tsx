@@ -26,6 +26,7 @@ useEffect(() => {
   return (
     <div className='py-[100px]'>
       <EducatorsCards data={teachers}/>
+      <div className='py-[40px]'></div>
       <Contact/>
     </div>
   )

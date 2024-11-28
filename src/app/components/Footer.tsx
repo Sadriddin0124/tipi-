@@ -166,7 +166,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-            <span className='self-end text-white p-3 text-[12px]'>Powered by Sector Soft</span>
+            <Link href={"https://www.instagram.com/sector_soft"} target='_blank' className='self-end text-white p-3 text-[12px]'>Powered by Sector Soft</Link>
     </footer>
   )
 }
