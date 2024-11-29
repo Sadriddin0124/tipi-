@@ -116,7 +116,7 @@ const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
                         ? item?.name_ru
                         : item?.name_en}
                     </h5>
-                    <p className="text_main sm:text-[18px] font-[600]">
+                    <p className="text_main sm:text-[18px] font-[600] line-clamp-3 overflow-hidden">
                       {locale === "uz"
                         ? item?.description_uz
                         : locale === "ru"
