@@ -7,8 +7,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import HeroImage from "@/assets/hero.webp"
 import HeroImgBlue from "@/assets/hero-blue.webp";
-import { FakultetlarType } from "@/app/types/all.types";
-import { fetchHero } from "@/app/lib/fetchers";
 import { DataType } from "../home/Hero";
 
 const HeroCarousel = ({
