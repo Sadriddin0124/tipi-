@@ -3,20 +3,22 @@ import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
 // import HeroImg from "@/assets/hero.webp"
 import HeroCarousel from "@/app/components/ui/HeroCarousel";
-import { DirectionsType, fetchDirection } from "@/app/lib/fetchers";
+import { DirectionsType, fetchDirection, fetchHero } from "@/app/lib/fetchers";
 import { usePathname, useSearchParams } from "next/navigation";
+import { DataType } from "@/app/components/home/Hero";
 
 const DirectionsHero = () => {
   const t = useTranslations();
   const id = useSearchParams()?.get("id");
-  const [image, setImage] = useState<string>("");
+  const [images, setImages] = useState<DataType[]>([]);
   const [title, setTitle] = useState<DirectionsType>();
   useEffect(() => {
     const getData = async () => {
       const res = await fetchDirection(id as string);
-      console.log(res);
       setTitle(res);
-      setImage(`https://api.tipi.sectorsoft.uz${res?.image?.file}`);
+      const data = await fetchHero(id as string);
+      console.log(data);
+      setImages(data?.filter((item) => item?.page === id));
     };
     getData();
   }, [id]);
@@ -36,7 +38,7 @@ const DirectionsHero = () => {
   };
   return (
     <section>
-      <HeroCarousel data={image} FixedItem={FixedItem} />
+      <HeroCarousel data={images} FixedItem={FixedItem} />
     </section>
   );
 };

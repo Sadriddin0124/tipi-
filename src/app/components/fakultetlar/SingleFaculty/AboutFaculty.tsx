@@ -158,7 +158,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
           </div>
         )}
         {item?.kind === "TEACHERS" && (
-          <div className="flex flex-col items-center w-full justify-center gap-5">
+          <div className="flex flex-col items-center w-full h-full justify-center gap-5">
             {/* <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
               {locale === "uz"
                 ? item?.title_uz
@@ -166,8 +166,8 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                 ? item?.title_ru
                 : item?.title_en}
             </h2> */}
-            <div className="flex flex-col sm:flex-row max-w-[350px] overflow-hidden sm:max-w-[1300px] sm:gap-[10px] md:gap-[40px] w-full px-0 sm:px-3 lg:px-8 py-0 sm:py-2 lg:py-5 rounded-xl border-[2px] shadow-md sm:shadow-none sm:border-[#404B7C]">
-              <div className="sm:max-w-[200px] md:max-w-[300px] max-h-[300px] sm:max-h-[200px] md:max-h-[300px] lg:max-h-[350px] lg:max-w-[350px]">
+            <div className="flex flex-col lg:h-[250px] sm:flex-row max-w-[350px] overflow-hidden sm:max-w-[1300px] sm:gap-[10px] md:gap-[20px] w-full px-0 sm:px-3 lg:px-5 py-0 sm:py-2 lg:py-5 rounded-xl border-[2px] shadow-md sm:shadow-none sm:border-[#404B7C]">
+              <div className="sm:max-w-[200px] md:max-w-[300px] max-h-[300px] sm:max-h-[200px] md:max-h-[300px] h-full lg:max-h-[450px] w-full lg:max-w-[250px]">
                 <Image
                   src={item?.images[0]?.file}
                   alt={item?.title_uz}
@@ -177,14 +177,14 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                 />
               </div>
               <div className="p-3 sm:p-0">
-                <h3 className="text-[20px] md:text-[24px] lg:text-[30px] font-[500]">
+                <h3 className="text-[20px] md:text-[24px] lg:text-[16px] font-[500]">
                   {locale === "uz"
                     ? item?.position_uz
                     : locale === "ru"
                     ? item?.position_ru
                     : item?.position_en}
                 </h3>
-                <h3 className="text-[18px] md:text-[20px] lg:text-[26px] mt-2 md:mt-8 font-[700]">
+                <h3 className="text-[18px] md:text-[20px] lg:text-[16px] mt-2 md:mt-4 lg:mt-1 font-[700]">
                   {locale === "uz"
                     ? item?.title_uz
                     : locale === "ru"
@@ -192,7 +192,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                     : item?.title_en}
                 </h3>
                 <p
-                  className="md:text-[18px] lg:text-[20px] mt-3 links"
+                  className="md:text-[18px] lg:text-[14px] mt-3 lg:mt-1 links"
                   dangerouslySetInnerHTML={{
                     __html: (locale === "uz"
                       ? item?.content_uz

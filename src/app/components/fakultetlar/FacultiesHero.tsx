@@ -41,7 +41,7 @@ const FacultiesHero = () => {
   }
   return (
     <section>
-      <HeroCarousel data={images[images?.length - 1]?.files[0]?.file} FixedItem={FixedItem}/>
+      <HeroCarousel data={images} FixedItem={FixedItem}/>
     </section>
   )
 }

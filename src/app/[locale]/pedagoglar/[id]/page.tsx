@@ -435,6 +435,8 @@ const SingleEducator = () => {
   }, []);
 
   const data = teachers?.find((item) => item?.id === id);
+  console.log(data);
+  
   // const educator = teachers?.find(item=> item?.id === id)
 
   const locale = usePathname().split("/")[1];
@@ -443,7 +445,7 @@ const SingleEducator = () => {
     <section className="px-3 w-full flex overflow-y-auto md:overflow-y-visible h-[600px] justify-center py-[70px]">
       <div className="max-w-[1320px] w-full">
         <div className="flex justify-center flex-col md:flex-row gap-5 mb-2">
-          <div className="max-w-[400px] h-full flex flex-col gap-3 justify-between items-center">
+          <div className="max-w-[330px] w-full h-full flex flex-col gap-3 justify-between items-center">
             <Image
               src={data?.image?.file as string}
               alt={data?.name_uz as string}

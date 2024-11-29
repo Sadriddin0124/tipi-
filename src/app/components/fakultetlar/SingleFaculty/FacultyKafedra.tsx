@@ -131,7 +131,6 @@ const FacultyKafedra = ({ data }: { data: KafedraTypes[] }) => {
                   >
                     {t("pedagogue.btn")}
                   </Link>
-                  
                 </div>
               </div>
             </div>
