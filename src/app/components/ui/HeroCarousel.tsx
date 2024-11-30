@@ -38,7 +38,7 @@ const HeroCarousel = ({
             {fileExtension(item?.files[0]?.file) === "mov" ? (
               <video
                 autoPlay={true}
-                loop
+                loop 
                 muted
                 className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
               >

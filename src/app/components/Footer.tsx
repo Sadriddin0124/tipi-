@@ -166,7 +166,8 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-            <Link href={"https://www.instagram.com/sector_soft"} target='_blank' className='self-end text-white p-3 text-[12px]'>Powered by Sector Soft</Link>
+        <iframe className='w-full' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.152144074336!2d69.54135817588119!3d41.4359202712938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aefb81e98fa5bf%3A0x6f0f86d77ec98842!2sToshkent%20Iqtisodiyot%20va%20Pedagogika%20Instituti!5e0!3m2!1sen!2s!4v1732942504174!5m2!1sen!2s" height="200" loading="lazy" ></iframe>            
+        <Link href={"https://www.instagram.com/sector_soft"} target='_blank' className='self-end text-white p-3 text-[12px]'>Powered by Sector Soft</Link>
     </footer>
   )
 }
