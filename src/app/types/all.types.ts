@@ -46,11 +46,11 @@ export interface CounterType {
 
 
 export interface BreadcrumbItem {
-    label: string;
+    label: string | undefined;
     href: string;
 }
 export interface HoverItemType {
-    id: number;
+    id: string;
     value?: string;
     title_uz?: string
     title_ru?: string

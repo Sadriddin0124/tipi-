@@ -35,18 +35,18 @@ const HeroCarousel = ({
         <Slider {...settings}>
             {data.map((item, index) => (
           <header key={index} className=" w-full relative">
-            {fileExtension(item?.files[0]?.file) === "mov" ? (
+            {fileExtension(item?.files[item?.files?.length - 1]?.file) === "mov" ? (
               <video
                 autoPlay={true}
                 loop 
                 muted
                 className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
               >
-                <source src={item?.files[0]?.file} type="video/mp4" />
+                <source src={item?.files[item?.files?.length - 1]?.file} type="video/mp4" />
               </video>
             ) : (
               <Image
-                src={item?.files[0]?.file|| HeroImage}
+                src={item?.files[item?.files?.length - 1]?.file|| HeroImage}
                 alt="Hero Image"
                 className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
                 width={1400}

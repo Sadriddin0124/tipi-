@@ -34,13 +34,18 @@ const Pedagogue = ({ title }: { title: string }) => {
   const filterLang =
     languages.find((item) => item.value === currentLanguage) || languages[0];
   const [activeLang] = useState<LangType>(filterLang);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  console.log(currentSlide);
+  
   const settings = {
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
+    swipeToSlide: true,
     speed: 500,
     autoplaySpeed: 2000,
+    
     responsive: [
       {
         breakpoint: 1024,

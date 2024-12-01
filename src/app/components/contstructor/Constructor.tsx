@@ -13,12 +13,14 @@ const Constructor = ({ page }: { page: string }) => {
       getData();
     }, [page]);
     return (
-      <div className="w-full mx-auto mt-6 grid lg:grid-cols-2 gap-4">
-        {blog?.map((item, index) => (
-          <div className={`py-2 md:py-[30px] h-full ${item?.kind === "TEACHERS" ? "lg:col-span-1" : "lg:col-span-2"} `} key={index}>
-            <AboutFaculty item={item}/>
-          </div>
-        ))}
+      <div className="flex justify-center w-full">
+        <div className="w-full mx-auto mt-6 grid max-w-[1300px] lg:grid-cols-2 gap-4">
+          {blog?.map((item, index) => (
+            <div className={`py-2 md:py-[30px] h-full ${item?.kind === "TEACHERS" ? "lg:col-span-1" : "lg:col-span-2"} `} key={index}>
+              <AboutFaculty item={item}/>
+            </div>
+          ))}
+        </div>
       </div>
     );
   };

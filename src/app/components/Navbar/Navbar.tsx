@@ -55,7 +55,11 @@ const Navbar = () => {
     { value: "en", title: "En", icon: EnFlag },
     { value: "ru", title: "Ru", icon: RuFlag },
   ]);
+  const id = useSearchParams().get("id")
+  const locale = pathname?.split("/")[1]
+  const [breadCrumbDynamic, setBreadCrumbDynamic] = useState<HoverItemType[]>([]);
   useEffect(() => {
+    const blogTitle = breadCrumbDynamic?.find(item=> item?.id === id as string)
     const Destinations = [
       { label: t("path.link1"), href: "ilmiy-yonalish" },
       { label: t("path.link2"), href: "fakultetlar" },
@@ -65,7 +69,7 @@ const Navbar = () => {
       { label: t("path.link6"), href: "bolimlar" },
       { label: t("path.link7"), href: "1" },
       { label: t("path.link8"), href: "almashinuv-dasturi" },
-      { label: "", href: "about" },
+      { label: locale === "uz" ? blogTitle?.title_uz : locale === "ru" ? blogTitle?.title_ru : blogTitle?.title_en as string, href: "about" },
       { label: t("crumb.item1"), href: "science" },
       { label: t("crumb.item2"), href: "news" },
       { label: t("crumb.item3"), href: "events" },
@@ -80,7 +84,6 @@ const Navbar = () => {
       );
       setBreadcrumbItems(filteredPath);
     };
-    const locale = pathname?.split("/")[1]
     const lang = languages?.find(item=> item?.value === locale)
     if (lang) {
       try {
@@ -97,7 +100,7 @@ const Navbar = () => {
       }
     }
     findBreadcrumbItems();
-  }, [pathname, languages, t]);
+  }, [pathname, languages, t, id, breadCrumbDynamic, locale]);
   const currentLanguage = pathname.split("/")[1];
   const filterLang =
     languages.find((item) => item.value === currentLanguage) || languages[0];
@@ -136,11 +139,33 @@ const Navbar = () => {
       target: "blank",
     },
   ];
-  // href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`
-  const faculty = {
-    title: "Fakultetlar",
-    href: `/${activeLang?.value}/`,
-  };
+  const News: any = [
+    {
+      id: 1,
+      name_uz: t('news.title2'),
+      name_ru: t('news.title2'),
+      name_en: t('news.title2'),
+      active: true,
+      href: `/${activeLang?.value}/yangiliklar/science`,
+    },
+    {
+      id: 8,
+      name_uz: t('news.title3'),
+      name_ru: t('news.title3'),
+      name_en: t('news.title3'),
+      active: true,
+      href: `/${activeLang?.value}/yangiliklar/news`,
+    },
+    {
+      id: 9,
+      name_uz: t('events.title'),
+      name_ru: t('events.title'),
+      name_en: t('events.title'),
+      active: true,
+      href: `/${activeLang?.value}/yangiliklar/events`,
+    },
+  ];
+  
   const [aboutTipi, setAboutTipi] = useState<HoverItemType[]>([]);
   const [administration, setAdministration] = useState<HoverItemType[]>([]);
   const [sections, setSections] = useState<HoverItemType[]>([]);
@@ -176,7 +201,9 @@ const Navbar = () => {
       id: 6,
       label: t("nav.link4"),
       path: `/${activeLang?.value}/yangiliklar`,
-      hover: false,
+      hover: true,
+      title1: {title: t("nav.link4"), href: `/${activeLang?.value}/section?id=NEWS`},
+      item1: News
     },
     {
       id: 5,
@@ -205,7 +232,7 @@ const Navbar = () => {
       const faculties = await fetchFaculties();
       setFaculties(faculties);
       const about = await fetchAboutTipi();
-
+      setBreadCrumbDynamic(about)
       const admin = (about as Array<HoverItemType>)?.filter(
         (item) => item?.page === "ADMINISTRATION"
       );

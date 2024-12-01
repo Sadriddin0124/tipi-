@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { BreadcrumbItem, LangType } from '@/app/types/all.types';
-import { IoIosArrowForward, IoMdArrowDropright } from 'react-icons/io';
+import { IoIosArrowForward, } from 'react-icons/io';
 
 export interface BreadcrumbProps {
   items: BreadcrumbItem[];

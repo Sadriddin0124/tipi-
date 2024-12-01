@@ -44,9 +44,11 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
   const [popUp, setPopUp] = useState<string>("")
   return (
     <section className={`flex justify-center w-full`}>
-      {popUp && <div className="fixed w-full h-full bg-[#0000006c] top-0 left-0 flex justify-center items-center z-[220]">
-        <RiCloseCircleLine  className="absolute right-6 top-6 text-white text-[30px] cursor-pointer" onClick={()=>setPopUp("")}/>
-        <Image src={popUp} alt="POp up" width={800} height={500} className="max-w-[300px] sm:max-w-[800px] max-h-[600px] object-contain"/>
+      {popUp && <div onClick={()=>setPopUp("")} className="fixed w-full h-full bg-[#0000006c] top-0 left-0 flex justify-center items-center z-[220]">
+        <div className=" h-[90vh] object-contain absolute">
+          <RiCloseCircleLine  className="absolute right-1 sm:-right-12 -top-8 sm:-top-6 text-white text-[30px] cursor-pointer" onClick={()=>setPopUp("")}/>
+          <Image src={popUp} alt="POp up" width={800} height={500} className="w-full h-full object-contain"/>
+        </div>
       </div>}
       <div className="max-w-[1300px] w-full flex flex-col ">
         {item?.kind === "IMAGE" && (

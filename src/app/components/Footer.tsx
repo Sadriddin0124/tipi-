@@ -12,54 +12,6 @@ import { fetchAboutTipi, fetchFaculties } from '../lib/actions'
 import { usePathname } from 'next/navigation'
 const Footer = () => {
     const t = useTranslations()
-    const links1 = [
-        {
-            label: t("footer.link1"),
-            path: "/"
-        },
-        {
-            label: t("footer.link2"),
-            path: "/"
-        },
-        {
-            label: t("footer.link3"),
-            path: "/"
-        },
-        {
-            label: t("footer.link4"),
-            path: "/"
-        },
-        {
-            label: t("footer.link5"),
-            path: "/"
-        },
-        {
-            label: t("footer.link6"),
-            path: "/"
-        },
-    ]
-    const links2 = [
-        {
-            label: t("footer.link7"),
-            path: "/"
-        },
-        {
-            label: t("footer.link8"),
-            path: "/"
-        },
-        {
-            label: t("footer.link9"),
-            path: "/"
-        },
-        {
-            label: t("footer.link10"),
-            path: "/"
-        },
-        {
-            label: t("footer.link11"),
-            path: "/"
-        },
-    ]
     const social = [
         {
             icon: <FaTelegramPlane />,
@@ -117,8 +69,8 @@ const Footer = () => {
         <div className='flex pb-[28px] justify-between flex-wrap gap-8 md:flex-nowrap max-w-[1400px] w-full'>
             {/* <div className='flex max-w-[400px] w-full flex-col items-start sm:items-end'>
             </div> */}
-            <div className='flex flex-col items-start sm:grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2 w-full'>
-                <div className='max-w-[450px] col-span-2 w-full flex gap-4 items-start'>
+            <div className='flex flex-col items-start sm:grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-10 gap-2 w-full'>
+                <div className='max-w-[450px] col-span-3 w-full flex gap-4 items-start'>
                     <Image src={Logo} alt='Logo' width={100} height={100} className='w-[50px] md:w-[90px] h-[50px] md:h-[90px]'/>
                     <div className='max-w-[276px] flex flex-col gap-2 text-white'>
                         <span className='max-w-[280px] font-bold text-white'>{t("footer.logo")}</span>
@@ -134,7 +86,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className='text-[16px] font-[400] flex flex-col gap-2 text-white'>
+                <div className='text-[16px] font-[400] col-span-2 flex flex-col gap-2 text-white'>
                     <Link href={`/${locale}/section?id=ABOUT_INSTITUTE`} className='text-[18px]'>{t("nav.link3")}</Link>
                     {
                         aboutTipi?.map((item,index)=> {
@@ -148,7 +100,7 @@ const Footer = () => {
                         })
                     }
                 </div>
-                <div className='text-[16px] font-[400] flex flex-col gap-2 text-white'>
+                <div className='text-[16px] font-[400] col-span-2 flex flex-col gap-2 text-white'>
                     <Link href={`/${locale}/section?id=DEPARTMENT`} className='text-[18px]'>{t("nav.link5")}</Link>
                     {
                         sections?.map((item,index)=> {
@@ -156,17 +108,18 @@ const Footer = () => {
                         })
                     }
                 </div>
-                <div className='text-[18px] font-[400] flex flex-col gap-2 text-white'>
+                {/* <div className='text-[18px] font-[400] flex flex-col gap-2 text-white'>
                     <Link href={`/${locale}/fakultetlar`}>{t("nav.link2")}</Link>
                     {
                         faculties?.map((item,index)=> {
                             return <Link href={`/${locale}/about?id=${item?.id}`} key={index}>{l(locale, item?.name_uz, item?.name_ru, item?.name_en)}</Link>
                         })
                     }
-                </div>
+                </div> */}
+                <iframe className='max-w-[350px] min-h-[200px] col-span-3 w-full rounded-2xl' src="https://yandex.com/map-widget/v1/?ll=69.544003%2C41.435949&mode=search&oid=193297945866&ol=biz&z=16.63"></iframe>
+                {/* <iframe className='w-full' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.152144074336!2d69.54135817588119!3d41.4359202712938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aefb81e98fa5bf%3A0x6f0f86d77ec98842!2sToshkent%20Iqtisodiyot%20va%20Pedagogika%20Instituti!5e0!3m2!1sen!2s!4v1732942504174!5m2!1sen!2s" height="200" loading="lazy" ></iframe>             */}
             </div>
         </div>
-        <iframe className='w-full' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.152144074336!2d69.54135817588119!3d41.4359202712938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aefb81e98fa5bf%3A0x6f0f86d77ec98842!2sToshkent%20Iqtisodiyot%20va%20Pedagogika%20Instituti!5e0!3m2!1sen!2s!4v1732942504174!5m2!1sen!2s" height="200" loading="lazy" ></iframe>            
         <Link href={"https://www.instagram.com/sector_soft"} target='_blank' className='self-end text-white p-3 text-[12px]'>Powered by Sector Soft</Link>
     </footer>
   )
