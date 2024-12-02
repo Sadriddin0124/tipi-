@@ -48,7 +48,7 @@ const News = () => {
             <span className='group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]'></span>
           </Link>}
         </div>
-        {data?.length > 4 ? <Carousel data={data} category='SCIENCE'/>
+        {data?.length > 3 ? <Carousel data={data} category='SCIENCE'/>
         : <UnCarousel data={data} category='SCIENCE'/>}
       </div>
     </section>

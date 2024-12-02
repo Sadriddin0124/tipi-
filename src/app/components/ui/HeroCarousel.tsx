@@ -31,7 +31,7 @@ const HeroCarousel = ({
     }
   return (
     <div className="relative w-full h-auto overflow-hidden">
-      <div className="rounded-b-[20px] md:rounded-b-[40px] overflow-hidden h-[300px] md:h-[547px]">
+      <div className="rounded-b-[20px] md:rounded-b-[40px] overflow-hidden max-h-[400px] md:max-h-[] md:min-h-[80vh] slider-h">
         <Slider {...settings}>
             {data.map((item, index) => (
           <header key={index} className=" w-full relative">
@@ -40,7 +40,7 @@ const HeroCarousel = ({
                 autoPlay={true}
                 loop 
                 muted
-                className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
+                className="w-[100%] top-0 left-0 object-cover md:min-h-[80vh] slider-h max-h-[400px] md:max-h-[]"
               >
                 <source src={item?.files[item?.files?.length - 1]?.file} type="video/mp4" />
               </video>
@@ -48,7 +48,7 @@ const HeroCarousel = ({
               <Image
                 src={item?.files[item?.files?.length - 1]?.file|| HeroImage}
                 alt="Hero Image"
-                className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
+                className="w-[100%] top-0 left-0 object-cover md:min-h-[80vh] slider-h max-h-[400px] md:max-h-[]"
                 width={1400}
                 height={600}
               />
@@ -66,7 +66,7 @@ const HeroCarousel = ({
           height={600}
         />
         <FixedItem />
-        <div className="hidden md:block absolute w-[50px] h-[40px] bottom-0 left-0 bg-white z-[-1]"></div>
+        <div className="hidden md:block absolute w-[150px] h-[140px] bottom-0 left-0 bg-white z-[-1]"></div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import IT1 from "@/assets/it1.webp";
 import IT2 from "@/assets/it2.webp";
 import IT3 from "@/assets/it3.webp";
@@ -12,9 +12,11 @@ import { fetchFaculty } from "@/app/lib/actions";
 import FacultyKafedra from "./FacultyKafedra";
 import Constructor from "../../contstructor/Constructor";
 import "./SingleFaculty.css"
+import { RiCloseCircleLine } from "react-icons/ri";
 const Statistics = ({ id }: { id: string }) => {
   const t = useTranslations();
   const [activeStatistic, setActiveStatistic] = useState<number>(1);
+  const [popUp, setPopUp] = useState<string>("")
 
   const data = [
     {
@@ -54,14 +56,20 @@ const Statistics = ({ id }: { id: string }) => {
   };
 
   const components = [
-    { id: 1, component: <Faculties id={id} /> },
-    { id: 2, component: <Kafedra id={id}/> },
+    { id: 1, component: <Faculties id={id} setPopUp={setPopUp}/> },
+    { id: 2, component: <Kafedra id={id} setPopUp={setPopUp}/> },
     { id: 3, component: <OnlineReception /> },
   ];
   return (
     <section
       className="w-full flex flex-col items-center gap-3 md:gap-20 justify-center pt-[60px] lg:pt-[122px] pb-20 lg:pb-[100px] px-3"
     >
+      {popUp && <div onClick={()=>setPopUp("")} className={`fixed w-full h-full bg-[#0000006c] top-0 left-0 flex justify-center items-center z-[220]`}>
+        <div className=" h-[90vh] object-contain absolute">
+            <RiCloseCircleLine  className="absolute right-1 sm:-right-12 -top-8 sm:-top-6 text-white text-[30px] cursor-pointer" onClick={()=>setPopUp("")}/>
+            <Image src={popUp} alt="POp up" width={800} height={500} className="w-full h-full object-contain"/>
+          </div>
+        </div>}
       <div className="max-w-[1166px] w-full flex flex-row items-center md:border-0 border rounded-full justify-between md:justify-center lg:justify-between bg-slate-200 md:bg-transparent p-1 md:gap-3 lg:gap-8">
         {data?.map((item, index) => {
           return item?.line ? (
@@ -263,16 +271,16 @@ const DirectionsTable = () => {
 };
 
 
-const Faculties = ({ id }: { id: string }) => {
+const Faculties = ({ id, setPopUp }: { id: string, setPopUp: Dispatch<SetStateAction<string>> }) => {
   return (
     <div data-aos="fade-up" className="w-full mx-auto">
       <DirectionsTable />
-      <Constructor page={`faculty-${id}-about`}/>
+      <Constructor setPopUp={setPopUp} page={`faculty-${id}-about`}/>
     </div>
   );
 };
 
-const Kafedra = ({id}: {id: string}) => {
+const Kafedra = ({ id, setPopUp }: { id: string, setPopUp: Dispatch<SetStateAction<string>> }) => {
     const [teachers, setTeachers] = useState([]);
   useEffect(() => {
     const getData = async () => {
@@ -284,7 +292,7 @@ const Kafedra = ({id}: {id: string}) => {
   return (
     <div className="w-full">
       <FacultyKafedra data={teachers}/>
-      <Constructor page={`faculty-${id}-kafedra`}/>
+      <Constructor setPopUp={setPopUp} page={`faculty-${id}-kafedra`}/>
     </div>
   );
 };

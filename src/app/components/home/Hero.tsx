@@ -21,28 +21,11 @@ const Hero = () => {
     useEffect(() => {
       const getData = async()=> {
         const data = await fetchHero("home")
-        console.log(data);
         setImages(data?.filter(item=>item?.page === "home"))
       }
       getData()
   }, []);
-  const data = [
-    {
-      img: HeroImg
-    },
-    {
-      img: HeroImg
-    },
-    {
-      img: HeroImg
-    },
-    {
-      img: HeroImg
-    },
-    {
-      img: HeroImg
-    },
-  ]
+  
   const settings = {
     // dots: true,
     infinite: true,
@@ -57,6 +40,8 @@ const Hero = () => {
     const fileExtension = url?.split('.')?.pop()?.split('?')[0].toLowerCase();
     return fileExtension; // This will return "mov" for a .mov file
   }
+  console.log(images);
+  
   return (
     <div className='pb-4 relative'>
       <div className='rounded-b-[20px] md:rounded-b-[40px] overflow-hidden md:h-[400px] lg:h-[577px]'>
@@ -64,11 +49,11 @@ const Hero = () => {
           {images?.map((item, index) => (
               <header key={index} className=' w-full relative' data-aos="zoom-up" >
                 {
-                  getType(item?.files[item?.files?.length - 1]?.file) === "mov" ?
+                  getType(item?.files[0]?.file) === "mov" ?
                   <video autoPlay={true} loop muted className='w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]'>
-                  <source src={item?.files[item?.files?.length - 1]?.file} type="video/mp4" />
+                  <source src={item?.files[0]?.file} type="video/mp4" />
                 </video>
-                 : <Image src={item?.files[item?.files?.length - 1]?.file} alt='Hero Image' className='w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]' width={1400} height={600}/>
+                 : <Image src={item?.files[0]?.file} alt='Hero Image' className='w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]' width={1400} height={600}/>
                 }
               </header>
           ))}

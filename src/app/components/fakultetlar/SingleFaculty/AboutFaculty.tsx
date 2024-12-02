@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import FileLogo from "@/assets/file_logo.webp";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -29,7 +29,7 @@ export interface NewsItem {
   ]; // Assuming this is an identifier for an image
 }
 
-const AboutFaculty = ({ item }: { item: NewsItem }) => {
+const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<SetStateAction<string>> }) => {
   function l(
     locale: string | null | undefined,
     uz: string | null | undefined,
@@ -41,15 +41,9 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
     if (locale == "en") return en;
   }
   const locale = usePathname().split("/")[1];
-  const [popUp, setPopUp] = useState<string>("")
   return (
     <section className={`flex justify-center w-full`}>
-      {popUp && <div onClick={()=>setPopUp("")} className="fixed w-full h-full bg-[#0000006c] top-0 left-0 flex justify-center items-center z-[220]">
-        <div className=" h-[90vh] object-contain absolute">
-          <RiCloseCircleLine  className="absolute right-1 sm:-right-12 -top-8 sm:-top-6 text-white text-[30px] cursor-pointer" onClick={()=>setPopUp("")}/>
-          <Image src={popUp} alt="POp up" width={800} height={500} className="w-full h-full object-contain"/>
-        </div>
-      </div>}
+      
       <div className="max-w-[1300px] w-full flex flex-col ">
         {item?.kind === "IMAGE" && (
           <div>
@@ -168,25 +162,25 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                 ? item?.title_ru
                 : item?.title_en}
             </h2> */}
-            <div className="flex flex-col lg:h-[250px] sm:flex-row max-w-[350px] overflow-hidden sm:max-w-[1300px] sm:gap-[10px] md:gap-[20px] w-full px-0 sm:px-3 lg:px-5 py-0 sm:py-2 lg:py-5 rounded-xl border-[2px] shadow-md sm:shadow-none sm:border-[#404B7C]">
-              <div className="sm:max-w-[200px] md:max-w-[300px] max-h-[300px] sm:max-h-[200px] md:max-h-[300px] h-full lg:max-h-[450px] w-full lg:max-w-[250px]">
+            <div className="flex flex-col lg:h-[300px] sm:flex-row max-w-[350px] overflow-hidden sm:max-w-[1000px] sm:gap-[10px] md:gap-[25px] w-full rounded-xl border-[2px] shadow-md  sm:border">
+              <div className="sm:max-w-[200px] md:max-w-[300px] max-h-[300px] sm:max-h-[200px] md:max-h-[300px] h-full lg:max-h-[450px] w-full lg:max-w-[300px]" onClick={()=>setPopUp(item?.images[0]?.file)}              >
                 <Image
                   src={item?.images[0]?.file}
                   alt={item?.title_uz}
                   width={500}
                   height={500}
-                  className="sm:rounded-xl h-full object-cover"
+                  className="sm:rounded-l-xl h-full object-cover"
                 />
               </div>
-              <div className="p-3 sm:p-0">
-                <h3 className="text-[20px] md:text-[24px] lg:text-[16px] font-[500]">
+              <div className="p-3 sm:p-0 sm:py-3 flex flex-col lg:gap-2">
+                <h3 className="text-[20px] md:text-[24px] lg:text-[26px] font-[500]">
                   {locale === "uz"
                     ? item?.position_uz
                     : locale === "ru"
                     ? item?.position_ru
                     : item?.position_en}
                 </h3>
-                <h3 className="text-[18px] md:text-[20px] lg:text-[16px] mt-2 md:mt-4 lg:mt-1 font-[700]">
+                <h3 className="text-[18px] md:text-[20px] lg:text-[26px] mt-2 md:mt-4 lg:mt-1 font-[700]">
                   {locale === "uz"
                     ? item?.title_uz
                     : locale === "ru"
@@ -194,7 +188,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                     : item?.title_en}
                 </h3>
                 <p
-                  className="md:text-[18px] lg:text-[14px] mt-3 lg:mt-1 links"
+                  className="md:text-[18px] lg:text-[24px] mt-3 lg:mt-1 links"
                   dangerouslySetInnerHTML={{
                     __html: (locale === "uz"
                       ? item?.content_uz
@@ -210,19 +204,19 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
         )}
         {item?.kind === "STUDENTS" && (
           <div className="flex flex-col items-center justify-center gap-5">
-            <div className="flex flex-col md:flex-row w-full items-start gap-[40px] border-2 border-black rounded-[10px] p-3">
-              <div className="max-w-[200px] w-full h-[200px] rounded-[10px] overflow-hidden">
+            <div className="flex flex-col max-w-[400px] overflow-hidden sm:max-w-[100%] sm:h-[200px] sm:flex-row w-full shadow-sm items-start gap-2 sm:gap-[40px] border rounded-[10px]">
+              <div className="sm:max-w-[200px] w-full h-full rounded-l-[10px] overflow-hidden" onClick={()=>setPopUp(item?.images[0]?.file)}>
                 <Image
                   src={item?.images[0]?.file}
                   alt={item?.title_uz}
                   width={500}
                   height={500}
-                  className="rounded-xl h-full object-cover"
+                  className="h-full object-cover"
                 />
               </div>
-              <div className="flex flex-col gap-4 lg:gap-[25px] w-full">
+              <div className="flex flex-col gap-4 px-3 sm:px-0 py-2 lg:gap-[15px] w-full">
                 <div className="flex justify-between w-full">
-                  <h3 className="text-[24px] lg:text-[30px] font-[500]">
+                  <h3 className="text-[24px] lg:text-[20px] xl:text-[26px] font-[500]">
                     {" "}
                     {locale === "uz"
                       ? item?.title_uz
@@ -233,7 +227,7 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                 </div>
                 <div className="flex w-full flex-col min-h-[120px] items-start gap-2 justify-between">
                   <p
-                    className="text-[20px] mt-3 links"
+                    className="text-[20px] links sm:line-clamp-2 overflow-hidden"
                     dangerouslySetInnerHTML={{
                       __html: (locale === "uz"
                         ? item?.content_uz
@@ -243,9 +237,9 @@ const AboutFaculty = ({ item }: { item: NewsItem }) => {
                       ).replace(/\n/g, "<br>"),
                     }}
                   />
-                  <span className=" self-end text-[14px] italic">
+                  {/* <span className=" self-end text-[14px] italic">
                     {item?.created_at?.slice(0, 10)}
-                  </span>
+                  </span> */}
                 </div>
               </div>
             </div>

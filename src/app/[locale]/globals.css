@@ -78,6 +78,15 @@
   display: none !important;
 }
 
+
+
+@media (min-width: 768px) {
+  .slider-h {
+    height: calc(100vh - 150px);
+  }
+
+}
+
 .loader {
   width: 100px;
   height: 100px;
