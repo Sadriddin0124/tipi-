@@ -35,9 +35,13 @@ const [images, setImages] = useState<DataType[]>([]);
   }, [id, locale])
 
   const FixedItem = () => {
-    return <div className='md:absolute left-0 bottom-0  w-full gap-4 md:gap-14 h-full p-4 md:p-14 flex flex-col items-center md:items-start justify-end'>
-      <h2 className='font-[500] text-[24px] md:text-[32px] text-center max-w-[300px] text-black md:text-white'>{title}</h2>
-      <BtnWhite value={t("hero.btn")} />
+    return <div className='md:absolute left-0 bottom-0  w-full gap-4 md:gap-14 h-full min-w-[400px] p-4 md:p-14 flex flex-col items-center md:items-start justify-center'>
+    {/* <div className="w-0 h-0 relative border-t-[400px] border-r-[400px] border-t-[#404B7C] border-r-transparent "> */}
+      <h2 className='font-[500] text-[24px] bg-[#404b7cc7] px-6 py-4  md:text-[32px] max-w-[300px] text-black md:text-white'>{title}</h2>
+
+      {/* <BtnWhite value={t("hero.btn")} /> */}
+
+    {/* </div> */}
     </div>
   }
   return (

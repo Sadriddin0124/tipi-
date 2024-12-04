@@ -146,3 +146,42 @@ export interface KafedraTypes {
     files: [{file: string}]
     certificates: [{file: string}]
 }
+
+export type UpdateEducatorValues = {
+    files?: { id: string; file: string }[];
+    certificates?: { id: string; file: string }[];
+    id: string;
+    image: { file: string; id: string };
+    name?: string;
+    order: number;
+    name_uz: string;
+    name_ru: string;
+    name_en: string;
+    degree_uz: string;
+    degree_ru: string;
+    degree_en: string;
+    description_uz?: string;
+    description_ru?: string;
+    description_en?: string;
+    telegram: string;
+    instagram: string;
+    youtube: string;
+    facebook: string;
+    sections_ru: string;
+    sections_en: string;
+    place: string;
+    phone: string;
+    is_active?: boolean;
+    active?: boolean;
+    created_at: string;
+    contact: string;
+    contact1?: string;
+    contact2?: string;
+  };
+
+  export interface TeacherTypes {
+    active: boolean;
+    id: string;
+    order: number;
+    teacher: UpdateEducatorValues;
+  }; 

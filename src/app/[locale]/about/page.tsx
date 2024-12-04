@@ -39,7 +39,7 @@ const Constructor = () => {
       <div className="pb-[40px] md:pb-[80px] mt-6 grid grid-cols-1 lg:grid-cols-2 gap-3 max-w-[1300px] w-full">
         {
           blog?.map((item,index)=> (
-            <div className={`${item?.kind === "STUDENTS" ? "lg:col-span-1" : "lg:col-span-2"} py-2 md:py-[30px]`} key={index}>
+            <div className={`${item?.kind === "STUDENTS" ? "lg:col-span-1" : item?.kind === "TEACHERS" && item?.news_category === "SCIENCE" ? "col-span-2" :  item?.kind === "TEACHERS" && item?.news_category === "SPORT" ? "col-span-1" : "lg:col-span-2"} py-2 md:py-[30px]`} key={index}>
             <AboutFaculty item={item} setPopUp={setPopUp}/>
             </div>
           ))

@@ -18,11 +18,13 @@ const Constructor = ({ page, setPopUp }: { page: string, setPopUp: Dispatch<SetS
       <div className="flex justify-center w-full">
         
         <div className="w-full mx-auto mt-6 grid max-w-[1300px] lg:grid-cols-2 gap-4">
-          {blog?.map((item, index) => (
-            <div className={`py-2 md:py-[30px] h-full ${item?.kind === "TEACHERS" ? "lg:col-span-1" : "lg:col-span-2"} `} key={index}>
-              <AboutFaculty item={item} setPopUp={setPopUp}/>
+        {
+          blog?.map((item,index)=> (
+            <div className={`${item?.kind === "STUDENTS" ? "lg:col-span-1" : item?.kind === "TEACHERS" && item?.news_category === "SCIENCE" ? "col-span-2" :  item?.kind === "TEACHERS" && item?.news_category === "SPORT" ? "lg:col-span-1" : "lg:col-span-2"} py-2 md:py-[30px]`} key={index}>
+            <AboutFaculty item={item} setPopUp={setPopUp}/>
             </div>
-          ))}
+          ))
+        }
         </div>
       </div>
     );

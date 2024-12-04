@@ -173,14 +173,14 @@ const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<S
                 />
               </div>
               <div className="p-3 sm:p-0 sm:py-3 flex flex-col lg:gap-2">
-                <h3 className="text-[20px] md:text-[24px] lg:text-[26px] font-[500]">
+                <h3 className="text-[20px] md:text-[24px] lg:text-[20px] font-[500]">
                   {locale === "uz"
                     ? item?.position_uz
                     : locale === "ru"
                     ? item?.position_ru
                     : item?.position_en}
                 </h3>
-                <h3 className="text-[18px] md:text-[20px] lg:text-[26px] mt-2 md:mt-4 lg:mt-1 font-[700]">
+                <h3 className="text-[18px] md:text-[20px] lg:text-[20px] mt-2 md:mt-4 lg:mt-1 font-[700]">
                   {locale === "uz"
                     ? item?.title_uz
                     : locale === "ru"
@@ -188,7 +188,7 @@ const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<S
                     : item?.title_en}
                 </h3>
                 <p
-                  className="md:text-[18px] lg:text-[24px] mt-3 lg:mt-1 links"
+                  className="md:text-[18px] lg:text-[16px] mt-3 lg:mt-1 links"
                   dangerouslySetInnerHTML={{
                     __html: (locale === "uz"
                       ? item?.content_uz
