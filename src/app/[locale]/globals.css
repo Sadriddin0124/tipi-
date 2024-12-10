@@ -82,7 +82,7 @@
 
 @media (min-width: 768px) {
   .slider-h {
-    max-height: calc(110vh - 150px);
+    max-height: calc(95vh - 150px);
     height: 100%;
   }
 
