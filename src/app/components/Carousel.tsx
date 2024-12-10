@@ -63,14 +63,17 @@ const Carousel = ({
   const t = useTranslations();
   
   return (
-    <Slider {...(settings as React.ComponentProps<typeof Slider>)}>
+    <Slider {...settings as React.ComponentProps<typeof Slider>}>
       {data
         ?.filter((item) => item?.category === category)
         ?.map(
           (item, index) =>
             item?.active && (
               <div className="px-[6px] py-[30px]" key={index}>
-                <div className="rounded-[10px] overflow-hidden shadow-lg flex flex-col">
+                <div
+                  key={index}
+                  className="rounded-[10px] overflow-hidden shadow-lg flex flex-col"
+                >
                   <div className="bg-[#D9D9D9] min-h-[180px] h-full flex justify-center items-center">
                     <Image
                       src={item.image.file}
