@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { LangType, PedagogueType } from "@/app/types/all.types";
+import { LangType } from "@/app/types/all.types";
 import Link from "next/link";
 import UzFlag from "@/assets/uz.webp";
 import RuFlag from "@/assets/ru.webp";
@@ -34,8 +34,6 @@ const Pedagogue = ({ title }: { title: string }) => {
   const filterLang =
     languages.find((item) => item.value === currentLanguage) || languages[0];
   const [activeLang] = useState<LangType>(filterLang);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  console.log(currentSlide);
   
   const settings = {
     infinite: true,
@@ -94,8 +92,8 @@ const Pedagogue = ({ title }: { title: string }) => {
     setId(id)
     setTimeout(() => {
       window.scrollTo({
-        top: 2300, // Scroll to 1000px from the top
-        behavior: "smooth", // Smooth scrolling
+        top: 2300, 
+        behavior: "smooth",
       });
     }, 1000);
   }
