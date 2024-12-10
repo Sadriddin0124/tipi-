@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
@@ -17,63 +17,60 @@ const Carousel = ({
 }) => {
   const locale = usePathname().split("/")[1];
 
-  const settings = {
-    infinite: true,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 500,
-    swipeToSlide: true,
-    autoplaySpeed: 2000,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  // const settings = {
+  //   infinite: true,
+  //   slidesToShow: 5,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   speed: 500,
+  //   swipeToSlide: true,
+  //   autoplaySpeed: 2000,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1200,
+  //       settings: {
+  //         slidesToShow: 4,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 768,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 2,
+  //         initialSlide: 2,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //   ],
+  // };
 
   const t = useTranslations();
   
   return (
-    <Slider {...settings as React.ComponentProps<typeof Slider>}>
+    <div className="grid grid-cols-5">
       {data
         ?.filter((item) => item?.category === category)
         ?.map(
           (item, index) =>
             item?.active && (
               <div className="px-[6px] py-[30px]" key={index}>
-                <div
-                  key={index}
-                  className="rounded-[10px] overflow-hidden shadow-lg flex flex-col"
-                >
+                <div className="rounded-[10px] overflow-hidden shadow-lg flex flex-col">
                   <div className="bg-[#D9D9D9] min-h-[180px] h-full flex justify-center items-center">
                     <Image
                       src={item.image.file}
@@ -106,7 +103,9 @@ const Carousel = ({
               </div>
             )
         )}
-    </Slider>
+    </div>
+    // <Slider {...(settings as React.ComponentProps<typeof Slider>)}>
+    // </Slider>
   );
 };
 
