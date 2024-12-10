@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import './carousel.css';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 const Carousel = ({
   data,
   category,
@@ -28,6 +28,11 @@ const Carousel = ({
       clickable: true,
       enabled: false
     }}
+    autoplay={{
+      delay: 3000, // Delay in ms between each slide (3 seconds)
+      disableOnInteraction: false, // Continue autoplay after user interaction
+    }}
+    loop={true}
     breakpoints={{
       640: {
         slidesPerView: 2,
@@ -46,7 +51,7 @@ const Carousel = ({
         spaceBetween: 10,
       },
     }}
-    modules={[Pagination]}
+    modules={[Pagination, Autoplay]}
     className="mySwiper"
   >
       {data

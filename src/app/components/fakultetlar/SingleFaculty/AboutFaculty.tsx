@@ -5,7 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import "./SingleFaculty.css";
-import { RiCloseCircleLine } from "react-icons/ri";
+import Logo from "@/assets/logo.webp";
 export interface NewsItem {
   id: string;
   created_at: string; // ISO format timestamp
@@ -29,7 +29,13 @@ export interface NewsItem {
   ]; // Assuming this is an identifier for an image
 }
 
-const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<SetStateAction<string>> }) => {
+const AboutFaculty = ({
+  item,
+  setPopUp,
+}: {
+  item: NewsItem;
+  setPopUp: Dispatch<SetStateAction<string>>;
+}) => {
   function l(
     locale: string | null | undefined,
     uz: string | null | undefined,
@@ -42,10 +48,9 @@ const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<S
   }
   const locale = usePathname().split("/")[1];
   console.log(item.kind);
-  
+
   return (
     <section className={`flex justify-center w-full `}>
-      
       <div className="max-w-[1300px] w-full flex flex-col ">
         {item?.kind === "IMAGE" && (
           <div>
@@ -54,7 +59,7 @@ const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<S
                 <div
                   key={index}
                   className={`overflow-hidden rounded-[10px] max-h-[250px] sm:max-h-[200px] md:max-h-[300px]  lg:h-[400px] `}
-                  onClick={()=>setPopUp(item?.file)}
+                  onClick={() => setPopUp(item?.file)}
                 >
                   <Image
                     width={500}
@@ -139,13 +144,13 @@ const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<S
         )}
         {item?.kind === "VIDEO" && (
           <div className="flex flex-col items-center justify-center gap-5">
-              {item?.images?.map((item, index) => (
-                <div className="max-w-[800px]" key={index}>
-                  <video controls className="w-full h-auto">
-                    <source src={item?.file} type="video/mp4" />
-                  </video>
-                </div>
-              ))}
+            {item?.images?.map((item, index) => (
+              <div className="max-w-[800px]" key={index}>
+                <video controls className="w-full h-auto">
+                  <source src={item?.file} type="video/mp4" />
+                </video>
+              </div>
+            ))}
             <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
               {locale === "uz"
                 ? item?.title_uz
@@ -155,34 +160,31 @@ const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<S
             </h2>
           </div>
         )}
-        {item?.kind === "TEACHERS" && (
-          <div className="flex flex-col items-center w-full h-full justify-center gap-5">
-            {/* <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
-              {locale === "uz"
-                ? item?.title_uz
-                : locale === "ru"
-                ? item?.title_ru
-                : item?.title_en}
-            </h2> */}
-            <div className="flex flex-col lg:h-[600px] sm:flex-row max-w-[350px] overflow-hidden sm:max-w-[1300px] sm:gap-[10px] md:gap-[35px] w-full rounded-xl border-[2px] shadow-md  sm:border">
-              <div className="sm:max-w-[200px] md:max-w-[400px] max-h-[300px] sm:max-h-[200px] md:max-h-[300px] h-full lg:max-h-[650px] w-full lg:max-w-[700px]" onClick={()=>setPopUp(item?.images[0]?.file)}              >
+        {(item?.kind === "TEACHERS" && (item?.news_category === "SCIENCE" || item?.news_category === null || item?.news_category === "")) && (
+          <div className="flex flex-col items-center w-full mx-auto max-w-[400px] md:max-w-[100%] relative h-full justify-center gap-5 md:p-5 lg:p-10 border rounded-[10px] md:border-[#404B7C] shadow-md">
+            {/* <Image src={Logo} alt="Logo" width={150} height={150} className="w-[100px] h-[100px] absolute right-[15px] top-[15px]"/> */}
+            <div className="w-full md:h-[350px] lg:h-[550px] flex flex-col md:flex-row justify-between gap-3 md:gap-8">
+              <div
+                className="md:max-w-[350px] h-[350px] lg:h-[550px] lg:max-w-[500px] xl:max-w-[550px] w-full"
+                onClick={() => setPopUp(item?.images[0]?.file)}
+              >
                 <Image
                   src={item?.images[0]?.file}
                   alt={item?.title_uz}
                   width={500}
                   height={500}
-                  className="sm:rounded-l-xl w-full h-full object-cover"
+                  className="rounded-t-[10px] md:rounded-[10px] w-full h-full object-cover"
                 />
               </div>
-              <div className="p-3 sm:p-0 sm:py-3 justify-center flex flex-col lg:gap-2">
-                <h3 className="text-[20px] md:text-[24px] lg:text-[32px] font-[500]">
+              <div className="p-5 md:p-0 sm:py-3 justify-center flex flex-col lg:gap-[35px] max-w-[580px]">
+                <h3 className="text-[20px] md:text-[24px] lg:text-[30px] font-[500]">
                   {locale === "uz"
                     ? item?.position_uz
                     : locale === "ru"
                     ? item?.position_ru
                     : item?.position_en}
                 </h3>
-                <h3 className="text-[18px] md:text-[20px] lg:text-[28px] mt-2 md:mt-4 lg:mt-1 font-[700]">
+                <h3 className="text-[18px] md:text-[20px] lg:text-[26px] font-[400]">
                   {locale === "uz"
                     ? item?.title_uz
                     : locale === "ru"
@@ -190,7 +192,49 @@ const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<S
                     : item?.title_en}
                 </h3>
                 <p
-                  className="md:text-[18px] lg:text-[26px] mt-3 lg:mt-1 links"
+                  className="md:text-[18px] lg:text-[26px] links md:leading-[50px]"
+                  dangerouslySetInnerHTML={{
+                    __html: (locale === "uz"
+                      ? item?.content_uz
+                      : locale === "ru"
+                      ? item?.content_ru
+                      : item?.content_en
+                    ).replace(/\n/g, "<br>"),
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        )}
+         {item?.kind === "TEACHERS" && item?.news_category === "SPORT" && (
+          <div className="flex flex-col items-center w-full h-full justify-center gap-5">
+            <div className="flex flex-col lg:h-[300px] sm:flex-row max-w-[350px] overflow-hidden sm:max-w-[1000px] sm:gap-[10px] md:gap-[25px] w-full rounded-xl border-[2px] shadow-md  sm:border">
+              <div className="sm:max-w-[200px] md:max-w-[300px] max-h-[300px] sm:max-h-[200px] md:max-h-[300px] h-full lg:max-h-[450px] w-full lg:max-w-[300px]" onClick={()=>setPopUp(item?.images[0]?.file)}              >
+                <Image
+                  src={item?.images[0]?.file}
+                  alt={item?.title_uz}
+                  width={500}
+                  height={500}
+                  className="sm:rounded-l-xl h-full object-cover"
+                />
+              </div>
+              <div className="p-3 sm:p-0 sm:py-3 flex flex-col lg:gap-2">
+                <h3 className="text-[20px] md:text-[24px] lg:text-[26px] font-[500]">
+                  {locale === "uz"
+                    ? item?.position_uz
+                    : locale === "ru"
+                    ? item?.position_ru
+                    : item?.position_en}
+                </h3>
+                <h3 className="text-[18px] md:text-[20px] lg:text-[26px] mt-2 md:mt-4 lg:mt-1 font-[700]">
+                  {locale === "uz"
+                    ? item?.title_uz
+                    : locale === "ru"
+                    ? item?.title_ru
+                    : item?.title_en}
+                </h3>
+                <p
+                  className="md:text-[18px] lg:text-[24px] mt-3 lg:mt-1 links"
                   dangerouslySetInnerHTML={{
                     __html: (locale === "uz"
                       ? item?.content_uz
@@ -207,7 +251,10 @@ const AboutFaculty = ({ item, setPopUp }: { item: NewsItem, setPopUp: Dispatch<S
         {item?.kind === "STUDENTS" && (
           <div className="flex flex-col items-center justify-center gap-5">
             <div className="flex flex-col max-w-[400px] overflow-hidden sm:max-w-[100%] sm:h-[200px] sm:flex-row w-full shadow-sm items-start gap-2 sm:gap-[40px] border rounded-[10px]">
-              <div className="sm:max-w-[200px] w-full h-full rounded-l-[10px] overflow-hidden" onClick={()=>setPopUp(item?.images[0]?.file)}>
+              <div
+                className="sm:max-w-[200px] w-full h-full rounded-l-[10px] overflow-hidden"
+                onClick={() => setPopUp(item?.images[0]?.file)}
+              >
                 <Image
                   src={item?.images[0]?.file}
                   alt={item?.title_uz}

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { LangType } from "@/app/types/all.types";
@@ -105,6 +105,10 @@ const Pedagogue = ({ title }: { title: string }) => {
               clickable: true,
               enabled: false
             }}
+            autoplay={{
+              delay: 300,
+              disableOnInteraction: false
+            }}
             breakpoints={{
               768: {
                 slidesPerView: 2,
@@ -119,7 +123,7 @@ const Pedagogue = ({ title }: { title: string }) => {
                 spaceBetween: 10,
               },
             }}
-            modules={[Pagination]}
+            modules={[Pagination, Autoplay]}
             className="mySwiper"
           >
             {teachers?.map((teacher, index) => {

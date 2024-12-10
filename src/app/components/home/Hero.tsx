@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { fetchHero } from "@/app/lib/fetchers";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -54,12 +54,16 @@ const Hero = () => {
           slidesPerView={1}
           spaceBetween={30}
           loop={true}
+          autoplay={{
+            delay: 5000, // Delay in ms between each slide (3 seconds)
+            disableOnInteraction: false, // Continue autoplay after user interaction
+          }}
           pagination={{
             clickable: true,
             enabled: false
           }}
           // navigation={true}
-          modules={[Pagination, Navigation]}
+          modules={[Pagination, Navigation, Autoplay]}
           className="mySwiper"
         >
           {images?.map((item, index) => (

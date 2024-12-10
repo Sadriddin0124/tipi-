@@ -56,7 +56,7 @@ const Constructor = () => {
           <div
             className={`${
               item?.kind == "VIDEO"
-                ? "col-span-1"
+                ? "lg:col-span-1"
                 : item?.kind === "STUDENTS"
                 ? "lg:col-span-1"
                 : item?.kind === "TEACHERS" && item?.news_category === "SCIENCE"
