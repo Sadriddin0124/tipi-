@@ -4,10 +4,16 @@ import HeroImgBlur from "@/assets/hero1.webp";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { fetchHero } from "@/app/lib/fetchers";
+import { Navigation, Pagination } from "swiper/modules";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 export type DataType = {
   files: { file: string }[];
@@ -44,30 +50,43 @@ const Hero = () => {
   return (
     <div className="pb-4 relative">
       <div className="rounded-b-[20px] md:rounded-b-[40px] overflow-hidden md:h-[400px] lg:h-[577px]">
-        <Slider {...settings as React.ComponentProps<typeof Slider>}>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+            enabled: false
+          }}
+          // navigation={true}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
           {images?.map((item, index) => (
-            <header key={index} className=" w-full relative" data-aos="zoom-up">
-              {getType(item?.files[0]?.file) === "mov" ? (
-                <video
-                  autoPlay={true}
-                  loop
-                  muted
-                  className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
-                >
-                  <source src={item?.files[0]?.file} type="video/mp4" />
-                </video>
-              ) : (
-                <Image
-                  src={item?.files[0]?.file}
-                  alt="Hero Image"
-                  className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
-                  width={1400}
-                  height={600}
-                />
-              )}
-            </header>
+            <SwiperSlide key={index}>
+              <header className=" w-full relative" data-aos="zoom-up">
+                {getType(item?.files[0]?.file) === "mov" ? (
+                  <video
+                    autoPlay={true}
+                    loop
+                    muted
+                    className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
+                  >
+                    <source src={item?.files[0]?.file} type="video/mp4" />
+                  </video>
+                ) : (
+                  <Image
+                    src={item?.files[0]?.file}
+                    alt="Hero Image"
+                    className="w-[100%] top-0 left-0 object-cover h-[300px] md:h-[577px]"
+                    width={1400}
+                    height={600}
+                  />
+                )}
+              </header>
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
       </div>
       <div className="absolute top-0 left-0 w-[50%] md:w-auto h-full bg-cover bg-center z-0">
         <Image

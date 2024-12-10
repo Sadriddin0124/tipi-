@@ -1,30 +1,12 @@
 "use client";
 import { useTranslations } from "next-intl";
 import React, { useEffect, useState } from "react";
-import HeroImg from "@/assets/hero.webp";
 import HeroCarousel from "../ui/HeroCarousel";
 import { fetchHero } from "@/app/lib/fetchers";
 import { DataType } from "../home/Hero";
 
 const FacultiesHero = () => {
   const t = useTranslations();
-  const data = [
-    {
-      img: HeroImg,
-    },
-    {
-      img: HeroImg,
-    },
-    {
-      img: HeroImg,
-    },
-    {
-      img: HeroImg,
-    },
-    {
-      img: HeroImg,
-    },
-  ];
   const [images, setImages] = useState<DataType[]>([]);
   useEffect(() => {
     const getData = async () => {
