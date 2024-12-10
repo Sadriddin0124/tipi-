@@ -1,11 +1,8 @@
 import { NextIntlClientProvider } from 'next-intl';
 import React, { ReactNode } from 'react';
-import "./globals.css"
+import "./globals.css";
 import Navbar from '../components/Navbar/Navbar';
-import Loader from '../components/ui/loader';
 import Footer from '../components/Footer';
-// // import 'aos/dist/aos.css';  
-  
 
 interface RootLayoutProps {
     children: ReactNode;
@@ -24,12 +21,13 @@ export const metadata = {
     },
 };
 
-export default function RootLayout({ children, params }: RootLayoutProps) {
+export default async function RootLayout({ children, params }: RootLayoutProps) {
     const { locale } = params;
 
+    // Dynamically load the locale-specific messages
     let messages;
     try {
-        messages = require(`../../../messages/${locale}.json`);
+        messages = await import(`../../../messages/${locale}.json`);
     } catch (error) {
         console.error("Locale file not found:", error);
         messages = {};
@@ -38,14 +36,13 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
     return (
         <html lang={locale}>
             <head>
-                <link rel="icon" href="/favicon.ico" sizes='any' type="image/x-icon"/>
+                <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
             </head>
             <body>
-                <NextIntlClientProvider locale={locale} messages={messages}>
-                    <Navbar/>
-                    {/* <Loader/> */}
+                <NextIntlClientProvider locale={locale} messages={messages.default || messages}>
+                    <Navbar />
                     {children}
-                    <Footer/>
+                    <Footer />
                 </NextIntlClientProvider>
             </body>
         </html>
