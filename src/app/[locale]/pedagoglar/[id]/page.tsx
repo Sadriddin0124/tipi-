@@ -442,10 +442,10 @@ const SingleEducator = () => {
   const locale = usePathname().split("/")[1];
   const [active, setActive] = useState<boolean>(false)
   return (
-    <section className="px-3 w-full flex overflow-y-auto md:overflow-y-visible h-[600px] justify-center py-[70px]">
+    <section className="px-3 w-full flex overflow-y-auto md:overflow-y-visible min-h-[600px] justify-center py-[70px]">
       <div className="max-w-[1320px] w-full">
         <div className="flex justify-center flex-col md:flex-row gap-5 mb-2">
-          <div className="max-w-[330px] w-full h-full flex flex-col gap-3 justify-between items-center">
+          <div className="max-w-[330px] w-full flex flex-col gap-3 justify-between items-center">
             <Image
               src={data?.image?.file as string}
               alt={data?.name_uz as string}
@@ -461,7 +461,7 @@ const SingleEducator = () => {
                 : data?.description_ru}
             </h4>
           </div>
-          <div className="flex flex-col items-start border md:h-[500px] w-full md:overflow-y-auto border-[#404B7C] p-[30px] rounded-[10px] gap-1">
+          <div className="flex flex-col items-start border md:h-full w-full md:overflow-y-auto border-[#404B7C] p-[30px] rounded-[10px] gap-1">
             <h3 className="text-[20px] font-[400]">
               {locale === "en"
                 ? data?.name_en
@@ -611,51 +611,7 @@ const SingleEducator = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-8 items-center">
-          <div className="flex flex-col">
-            {/* <div className='flex flex-col gap-5 p-5 border border-[#404B7C] rounded-[10px] max-w-[400px]'>
-              {
-                data[0]?.about?.map((item,index)=> {
-                  return <div  className='flex flex-col'>
-                    <span className='text-[20px] text-[#404B7C] font-[500]'>{item?.key}</span>
-                    <span className='text-[24px] font-[500]'>{item?.value}</span>
-                  </div>
-                })
-              }
-            </div> */}
-            {/* <h4 className='text-[32px] font-[500] mb-[10px] mt-5'>{data[0]?.data?.title}</h4>
-            <div className='p-5 flex flex-col border border-[#404B7C] rounded-[10px] max-w-[400px]'>
-              <div>
-                {
-                  data[0]?.data?.items?.map((item,index)=> {
-                    return <div key={index} className='flex flex-col'>
-                      <span className='text-[20px] text-[#404B7C] font-[500]'>{item?.key}</span>
-                      <span className='text-[24px] font-[500]'>{item?.value}</span>
-                  </div>
-                  })
-                }
-              </div>
-            </div> */}
-          </div>
-          <div className="grid grid-cols-1 gap-10 w-[35%]">
-            {/* {
-              data[0]?.media?.map((item,index)=> {
-                return <button key={index} className='text-[24px] p-4 rounded-[10px] bg-[#404B7C] text-white'>
-                  {item}
-                  </button>
-              })
-            } */}
-            {/* {
-              data[0]?.social?.map((item,index)=> {
-                return <button key={index} className='text-[24px] flex items-center justify-center gap-[10px] p-4 rounded-[10px] border border-[#404B7C] text-[#404B7C]'>
-                  {item?.text}
-                  <Image src={item?.icon} alt={item?.text} width={100} height={200} className='w-6 h-6'/>
-                </button>
-              })
-            } */}
-          </div>
-        </div>
-        <div className=" flex justify-center py-[70px]"></div>
+
       </div>
     </section>
   );

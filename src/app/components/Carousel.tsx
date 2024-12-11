@@ -60,8 +60,8 @@ const Carousel = ({
           (item, index) =>
             item?.active && (
               <SwiperSlide key={index}>
-                <div className="px-[6px] py-[30px] flex justify-center">
-                <div className="rounded-[10px] max-w-[400px] overflow-hidden shadow-lg flex flex-col">
+                <div className="px-[6px] py-[30px] flex justify-center w-full">
+                <div className="rounded-[10px] max-w-[400px] overflow-hidden w-full shadow-lg flex flex-col">
                   <div className="bg-[#D9D9D9] min-h-[180px] h-full flex justify-center items-center">
                     <Image
                       src={item.image.file}
