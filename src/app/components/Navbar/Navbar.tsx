@@ -15,19 +15,15 @@ import {
   HoverItemType,
   LangType,
 } from "../../types/all.types";
-// import { HoverItemType, LangType } from "../types/all.types";
 import HoverComponent from "../HoverComponent";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
 import { RiCloseLargeFill } from "react-icons/ri";
 import Dropdown from "../ui/Dropdown";
 import {
   fetchAboutTipi,
-  // fetchAdmin,
   fetchFaculties,
-  // fetchSections,
 } from "../../lib/actions";
 import Breadcrumb from "../ui/Breadcrumb";
-// import { fetchAboutTipi, fetchFaculties } from "../lib/actions";
 import "./Navbar.css"
 const Navbar = () => {
   const t = useTranslations();
@@ -342,7 +338,7 @@ const Navbar = () => {
               {navLink.map((item) => (
                 <li
                   key={item.id}
-                  className="text-[20px] whitespace-nowrap text-white flex flex-col items-center"
+                  className="text-[20px] whitespace-nowrap text-white flex flex-col items-start"
                   onMouseLeave={() => HoverLeave()}
                   onMouseEnter={() => HoverEnter(item.id)}
                 >

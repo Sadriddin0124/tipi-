@@ -148,7 +148,7 @@ const HoverComponent = ({
       className={`${
         hoverStatus === id ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
       } ${
-        pathname < 4 ? "top-[110px]" : "top-[152px]"
+        pathname < 4 ? "top-[110px]" : "top-[150px]"
       } transform transition-all duration-300 linear origin-top fixed z-50  h-[100vh] flex justify-center items-start`}
     >
       <div
