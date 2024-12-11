@@ -122,8 +122,8 @@ interface PropsHover {
   hoverStatus: number | undefined;
   HoverComponentEnter: (id: number | undefined) => void;
   HoverComponentLeave: (id: number | undefined) => void;
-  title1: {title: string, href: string};
-  title2: {title: string, href: string};
+  title1: TitleType;
+  title2: TitleType;
   item1: LinkType[] | HoverItemType[] | undefined;
   item2: HoverItemType[] | LinkType[] | undefined;
 }
@@ -148,7 +148,7 @@ const HoverComponent = ({
       className={`${
         hoverStatus === id ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
       } ${
-        pathname < 4 ? "top-[110px]" : "top-[110px]"
+        pathname < 4 ? "top-[110px]" : "top-[152px]"
       } transform transition-all duration-300 linear origin-top fixed z-50  h-[100vh] flex justify-center items-start`}
     >
       <div

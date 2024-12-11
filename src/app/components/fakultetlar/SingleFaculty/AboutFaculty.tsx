@@ -176,7 +176,7 @@ const AboutFaculty = ({
                   className="rounded-t-[10px] md:rounded-[10px] w-full h-full object-cover"
                 />
               </div>
-              <div className="p-5 md:p-0 sm:py-3 justify-center flex flex-col lg:gap-[35px] max-w-[580px]">
+              <div className="p-5 md:p-0 sm:py-3 justify-center w-full flex flex-col lg:gap-[35px] max-w-[580px]">
                 <h3 className="text-[20px] md:text-[24px] lg:text-[30px] font-[500]">
                   {locale === "uz"
                     ? item?.position_uz
