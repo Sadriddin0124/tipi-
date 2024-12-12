@@ -117,25 +117,22 @@ const AboutFaculty = ({
                   href={item?.file}
                   target="_blank"
                   key={index}
-                  className="flex gap-6 items-center max-w-[250px] relative"
+                  className="flex gap-6 items-center max-w-[450px] overflow-hidden relative"
                 >
-                  {/* <span
-                    className={`${
-                      item?.file?.endsWith(".docx")
-                        ? "bg-blue-600"
-                        : "bg-red-600"
-                    } uppercase px-1 text-white rounded-sm text-[10px] absolute top-4 left-[-12px]`}
-                  >
-                    {item?.file?.endsWith(".pdf") ? "PDF" : "DOC"}
-                  </span> */}
                   <Image
                     src={FileLogo}
                     alt={`File ${index + 1}`}
                     className="w-[60px] h-[80px]"
                   />
-                  <span className="font-[500] text-[16px] max-w-[240px] overflow-hidden line-clamp-1">
-                    {item?.file?.split("/")[5]}
-                  </span>
+                  <p
+                    className="font-[500] text-[16px] max-w-[440px] block overflow-hidden line-clamp-1"
+                    title={decodeURIComponent(item?.file?.split("/")[5])}
+                  >
+                    {item?.file &&
+                      decodeURIComponent(item.file.split("/")[5])
+                        .split("_")
+                        .join(" ")}
+                  </p>
                 </Link>
               ))}
             </div>

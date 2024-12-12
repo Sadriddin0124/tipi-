@@ -291,8 +291,8 @@ const Kafedra = ({ id, setPopUp }: { id: string, setPopUp: Dispatch<SetStateActi
   }, [id]);
   return (
     <div className="w-full">
-      <FacultyKafedra data={teachers}/>
       <Constructor setPopUp={setPopUp} page={`faculty-${id}-kafedra`}/>
+      <FacultyKafedra data={teachers}/>
     </div>
   );
 };

@@ -25,6 +25,14 @@ import {
 } from "../../lib/actions";
 import Breadcrumb from "../ui/Breadcrumb";
 import "./Navbar.css"
+import Cookies from 'js-cookie';
+
+const setCookie = (name: string, value: string, minutes: number) => {
+  const expires = new Date(new Date().getTime() + minutes * 60 * 1000); // Set expiration time (in ms)
+  Cookies.set(name, value, { expires }); // Set cookie with expiration
+};
+
+
 const Navbar = () => {
   const t = useTranslations();
   const router = useRouter();
@@ -33,6 +41,10 @@ const Navbar = () => {
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
+    const handleSetCookie = () => {
+      setCookie('NEXT_LOCALE', pathname?.split("/")[1], 1); // Set 'userLocale' cookie with 1-hour expiration
+    };
+    handleSetCookie()
     const handleScroll = () => {
       setScrollTop(window.scrollY); // or window.pageYOffset
     };
@@ -44,7 +56,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrollTop]);
+  }, [scrollTop, pathname]);
 
   const [languages] = useState<LangType[]>([
     { value: "uz", title: "Uz", icon: UzFlag },

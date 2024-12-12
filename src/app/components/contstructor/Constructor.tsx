@@ -3,8 +3,6 @@ import AboutFaculty, {
   NewsItem,
 } from "../fakultetlar/SingleFaculty/AboutFaculty";
 import { fetchBlog } from "@/app/lib/actions";
-import Image from "next/image";
-import { RiCloseCircleLine } from "react-icons/ri";
 
 const Constructor = ({
   page,
