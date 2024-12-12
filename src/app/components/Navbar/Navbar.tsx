@@ -258,7 +258,8 @@ const Navbar = () => {
     const handleScroll = () => {
       if (window.scrollY > 150) {
         setIsScrolled(true);
-      } else {
+      }
+       else if(window.scrollY < 10) {
         setIsScrolled(false);
       }
     };
@@ -330,7 +331,7 @@ const Navbar = () => {
 
   return (
     <header className="min-h-[70px] sm:min-h-[110px]">
-      <nav className={`${isScrolled ? 'scrolled fixed w-full z-[200] shadow-md' : ''} ease-linear duration-200 flex justify-center flex-col items-center px-3 bg_main`}>
+      <nav className={`${isScrolled ? 'scrolled fixed w-full z-[200] shadow-md' : 'w-full z-[200] shadow-md'} ease-linear duration-200 flex justify-center flex-col items-center px-3 bg_main`}>
         <div className="py-[10px] w-full max-w-[1400px] flex items-center justify-between">
           <Link href="/" className="flex items-center max-w-[400px] gap-[20px]">
             <Image

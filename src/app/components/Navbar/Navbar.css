@@ -9,3 +9,21 @@
         top: 0;
     }
 }
+.un_scrolled {
+    animation: navbar2 .5s linear forwards;
+}
+
+@keyframes navbar2 {
+    0% {
+        top: 0;
+        position: fixed;
+    }
+    70% {
+        top: -30px;
+        position: fixed;
+    }
+    100% {
+        /* top: -30px; */
+        position: static;
+    }
+}
