@@ -35,7 +35,7 @@ const Constructor = ({
                 : item?.kind === "TEACHERS" && item?.news_category === "SPORT"
                 ? "lg:col-span-1"
                 : "lg:col-span-2"
-            } py-2 md:py-[30px]`}
+            } py-2 md:py-[30px] flex items-end`}
             key={index}
           >
             <AboutFaculty item={item} setPopUp={setPopUp} />

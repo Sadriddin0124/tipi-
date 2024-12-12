@@ -51,7 +51,7 @@ const Constructor = () => {
         </div>
       )}
       {slider?.file && <ConstructorSlider data={slider} />}
-      <div className="pb-[40px] md:pb-[80px] mt-6 grid grid-cols-1 lg:grid-cols-2 gap-3 max-w-[1400px] w-full">
+      <div className="pb-[40px] md:pb-[80px] mt-6 grid items-end grid-cols-1 lg:grid-cols-2 gap-3 max-w-[1400px] w-full">
         {blog?.map((item, index) => (
           <div
             className={`${
@@ -64,7 +64,7 @@ const Constructor = () => {
                 : item?.kind === "TEACHERS" && item?.news_category === "SPORT"
                 ? "col-span-1"
                 : "lg:col-span-2"
-            } py-2 md:py-[30px]`}
+            } py-2 md:py-[30px] flex items-end`}
             key={index}
           >
             <AboutFaculty item={item} setPopUp={setPopUp} />

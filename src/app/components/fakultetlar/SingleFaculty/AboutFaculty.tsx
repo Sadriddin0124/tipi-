@@ -141,6 +141,14 @@ const AboutFaculty = ({
         {item?.kind === "VIDEO" && (
           <div className="flex flex-col items-center justify-start gap-5">
             {/* {item?.images?.map((item, index) => ( */}
+            {/* ))} */}
+            <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
+              {locale === "uz"
+                ? item?.title_uz
+                : locale === "ru"
+                ? item?.title_ru
+                : item?.title_en}
+            </h2>
             <div className="max-w-[800px] bg-black w-full">
               <video
                 controls
@@ -150,14 +158,6 @@ const AboutFaculty = ({
                 <source src={item?.images[0]?.file} type="video/mp4" />
               </video>
             </div>
-            {/* ))} */}
-            <h2 className="text-[24px] self-start mb-2 md:text-[32px] font-[600]">
-              {locale === "uz"
-                ? item?.title_uz
-                : locale === "ru"
-                ? item?.title_ru
-                : item?.title_en}
-            </h2>
           </div>
         )}
         {item?.kind === "TEACHERS" &&
