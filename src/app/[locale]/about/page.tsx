@@ -27,7 +27,7 @@ const Constructor = () => {
   }, [id]);
 
   return (
-    <div className="px-3 flex justify-center">
+    <div className=" flex flex-col items-center justify-center">
       {popUp && (
         <div
           onClick={() => setPopUp("")}
@@ -51,7 +51,7 @@ const Constructor = () => {
         </div>
       )}
       {slider?.file && <ConstructorSlider data={slider} />}
-      <div className="pb-[40px] md:pb-[80px] mt-6 grid items-end grid-cols-1 lg:grid-cols-2 gap-3 max-w-[1400px] w-full">
+      <div className="pb-[40px] px-3 md:pb-[80px] mt-6 grid items-end grid-cols-1 lg:grid-cols-2 gap-3 max-w-[1400px] w-full">
         {blog?.map((item, index) => (
           <div
             className={`${

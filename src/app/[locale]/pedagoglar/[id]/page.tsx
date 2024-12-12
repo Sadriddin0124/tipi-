@@ -160,15 +160,17 @@ const SingleEducator = () => {
                       href={item?.file}
                       target="_blank"
                       key={index}
-                      className="flex gap-3 items-center overflow-hidden  w-full relative"
+                      className="flex gap-3 h-[200px] items-start overflow-hidden  w-full relative"
                     >
                       
                       <Image
-                        src={item?.file}
+                        src={["JPG", "PNG"].includes(
+                          item?.file?.split(".").pop()?.toUpperCase() as string
+                        ) ? item?.file : FileLogo}
                         alt={`File ${index + 1}`}
                         width={500}
                         height={400}
-                        className="w-full object-cover"
+                        className="w-full object-contain h-full"
                       />
                       {/* <span className="font-[500] text-[16px] max-w-[500px] w-full line-clamp-1">
                       {decodeURIComponent(item?.file?.split("/")[5])}
@@ -199,7 +201,8 @@ const SingleEducator = () => {
                         className="w-[25px] h-[30px]"
                       />
                       <span className="font-[500] text-[16px] max-w-[550px] w-full line-clamp-1">
-                      {decodeURIComponent(item?.file?.split("/")[5])}
+                      {decodeURIComponent(item?.file?.split("/")[5]).split(/[-_]/)
+                                .join(" ")}
                       </span>
                     </Link>
                   );
