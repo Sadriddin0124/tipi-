@@ -50,7 +50,7 @@ const Pedagogue = ({ title }: { title: string }) => {
         setTeachers(data);
       })
       .catch(() => {
-        alert("Nimadur noto'g'ri ketdi.");
+        // alert("Nimadur noto'g'ri ketdi.");
       });
   }, []);
 

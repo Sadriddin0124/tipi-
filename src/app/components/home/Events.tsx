@@ -28,7 +28,7 @@ const Events = () => {
     fetchNews("EVENT").then((data) => {
       setData(data);
     }).catch(() => {
-      alert("Nimadur noto'g'ri ketdi.");
+      // alert("Nimadur noto'g'ri ketdi.");
     });
   }, []);
   const pathname = usePathname()

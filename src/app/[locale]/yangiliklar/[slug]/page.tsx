@@ -21,7 +21,7 @@ const SingleNews = () => {
           console.log(data);
         })
         .catch(() => {
-          alert("Nimadur noto'g'ri ketdi.");
+          // alert("Nimadur noto'g'ri ketdi.");
         });
     } else {
       fetchNews("EVENT")
@@ -30,7 +30,7 @@ const SingleNews = () => {
           console.log(data);
         })
         .catch(() => {
-          alert("Nimadur noto'g'ri ketdi.");
+          // alert("Nimadur noto'g'ri ketdi.");
         });
     }
   }, [slug]);

@@ -32,7 +32,7 @@ const SportNews = () => {
       console.log(data);
       setData(data)
     }).catch(() => {
-      alert("Nimadur noto'g'ri ketdi.");
+      // alert("Nimadur noto'g'ri ketdi.");
     });
 
   }, []);

@@ -25,39 +25,7 @@ const IT = () => {
     const lng = pathname.split("/")[1]
         setLang(lng)
     },[pathname])
-    
-    const data = [
-        {
-            id: 1,
-            title: "Axborot texnologiyalari",
-            img: ITImage,
-            href: `/${lang}`
-        },
-        {
-            id: 2,
-            title: "Pedagogika",
-            img: ITImage,
-            href: `/${lang}`
-        },
-        {
-            id: 3,
-            title: "Iqtisodiyot",
-            img: ITImage,
-            href: `/${lang}`
-        },
-        {
-            id: 4,
-            title: "Tillar va maktabgacha ta'lim",
-            img: ITImage,
-            href: `/${lang}`
-        },
-        {
-            id: 5,
-            title: "Iltimoiy fanlar",
-            img: ITImage,
-            href: `/${lang}`
-        },
-    ]
+ 
     const [faculties, setFaculties] = useState<FacultyType[]>([])
     useEffect(()=> {
         const getData = async() => {
@@ -69,7 +37,7 @@ const IT = () => {
     },[])
   return (
     <section className='w-full flex justify-center px-3'data-aos="fade-up">
-      <div className='max-w-[700px] lg:max-w-[1240px] w-full grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-[20px]'>
+      <div className='max-w-[700px] lg:max-w-[1400px] w-full grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-[20px]'>
         {
             faculties?.map((item,index)=> {
                 return <Link href={`/${lang}/fakultetlar/${item?.id}`}  key={index} className='w-full rounded-[10px] overflow-hidden relative flex justify-center items-center h-[160px]'>
