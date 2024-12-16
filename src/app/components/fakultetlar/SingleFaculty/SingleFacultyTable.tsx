@@ -274,8 +274,8 @@ const DirectionsTable = () => {
 const Faculties = ({ id, setPopUp }: { id: string, setPopUp: Dispatch<SetStateAction<string>> }) => {
   return (
     <div data-aos="fade-up" className="w-full mx-auto">
-      <DirectionsTable />
       <Constructor setPopUp={setPopUp} page={`faculty-${id}-about`}/>
+      <DirectionsTable />
     </div>
   );
 };

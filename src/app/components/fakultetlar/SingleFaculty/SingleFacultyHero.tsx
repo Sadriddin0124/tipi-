@@ -26,7 +26,6 @@ const [images, setImages] = useState<DataType[]>([]);
         ? item?.name_ru
         : item?.name_en)
         const data = await fetchHero(id);
-        console.log(data);
         setImages(data?.filter((item) => item?.page === id));
       };
     getData()

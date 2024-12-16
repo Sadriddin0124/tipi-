@@ -11,11 +11,12 @@ const FacultiesHero = () => {
   useEffect(() => {
     const getData = async () => {
       const data = await fetchHero("faculties");
-      console.log(data);
       setImages(data?.filter((item) => item?.page === "faculties"));
     };
     getData();
   }, []);
+  console.log(images);
+  
   const FixedItem = () => {
     return (
       <div className="md:absolute left-0 bottom-0  w-full h-full p-3 md:p-14 hidden md:flex items-end md:items-center justify-center md:justify-start">
