@@ -259,7 +259,7 @@ const Navbar = () => {
       if (window.scrollY > 150) {
         setIsScrolled(true);
       }
-       else if(window.scrollY < 10) {
+       else if(window.scrollY < 0) {
         setIsScrolled(false);
       }
     };

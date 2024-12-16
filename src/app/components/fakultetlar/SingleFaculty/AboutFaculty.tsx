@@ -211,9 +211,9 @@ const AboutFaculty = ({
           )}
         {item?.kind === "TEACHERS" && item?.news_category === "SPORT" && (
           <div className="flex flex-col items-center w-full h-full justify-center gap-5">
-            <div className="flex flex-col lg:h-[300px] sm:flex-row max-w-[350px] overflow-hidden sm:max-w-[1000px] sm:gap-[10px] md:gap-[25px] w-full rounded-xl border-[2px] shadow-md  sm:border">
+            <div className="flex flex-col min-h-[200px] md:h-[300px] md:flex-row max-w-[400px] overflow-hidden md:max-w-[1000px] sm:gap-[10px] md:gap-[25px] w-full rounded-xl border-[2px] shadow-md  sm:border">
               <div
-                className="sm:max-w-[200px] md:max-w-[300px] max-h-[300px] sm:max-h-[200px] md:max-h-[300px] h-full lg:max-h-[450px] w-full lg:max-w-[300px]"
+                className="sm:max-w-[100%] md:max-w-[300px] max-h-[300px] sm:h-[350px] md:h-[300px] h-full lg:max-h-[450px] w-full lg:max-w-[300px]"
                 onClick={() => setPopUp(item?.images[0]?.file)}
               >
                 <Image

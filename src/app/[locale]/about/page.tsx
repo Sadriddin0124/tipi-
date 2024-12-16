@@ -62,8 +62,8 @@ const Constructor = () => {
                 : item?.kind === "TEACHERS" && item?.news_category === "SCIENCE"
                 ? "col-span-2"
                 : item?.kind === "TEACHERS" && item?.news_category === "SPORT"
-                ? "col-span-1"
-                : "lg:col-span-2"
+                ? "col-span-2 lg:col-span-1"
+                : "col-span-2"
             } py-2 md:py-[30px] flex items-end`}
             key={index}
           >
