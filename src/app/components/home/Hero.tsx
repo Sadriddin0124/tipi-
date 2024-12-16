@@ -6,10 +6,8 @@ import { useTranslations } from "next-intl";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { fetchHero } from "@/app/lib/fetchers";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
+import HeroImage from "@/assets/hero.webp"
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -31,16 +29,6 @@ const Hero = () => {
     getData();
   }, []);
 
-  const settings = {
-    // dots: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 500,
-    autoplaySpeed: 15000,
-    pauseOnHover: false,
-  };
   function getType(url: string) {
     const fileExtension = url?.split(".")?.pop()?.split("?")[0].toLowerCase();
     return fileExtension; // This will return "mov" for a .mov file
@@ -66,6 +54,30 @@ const Hero = () => {
           modules={[Pagination, Navigation, Autoplay]}
           className="mySwiper"
         >
+          {images?.length === 0 && (
+            <SwiperSlide>
+              <Image
+                className="opacity-0"
+                priority
+                src={HeroImage}
+                alt="fd"
+                width={345}
+                height={345}
+              />
+            </SwiperSlide>
+          )}
+          {images?.length === 0 && (
+            <SwiperSlide>
+              <Image
+                className="opacity-0"
+                priority
+                src={HeroImage}
+                alt="fd"
+                width={345}
+                height={345}
+              />
+            </SwiperSlide>
+          )}
           {images?.map((item, index) => (
             <SwiperSlide key={index}>
               <header className=" w-full relative" data-aos="zoom-up">

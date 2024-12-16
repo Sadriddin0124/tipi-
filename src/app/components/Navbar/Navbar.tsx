@@ -41,10 +41,10 @@ const Navbar = () => {
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
-    const handleSetCookie = () => {
-      setCookie('NEXT_LOCALE', pathname?.split("/")[1], 1); // Set 'userLocale' cookie with 1-hour expiration
-    };
-    handleSetCookie()
+    // const handleSetCookie = () => {
+    //   setCookie('NEXT_LOCALE', "uz", 1); // Set 'userLocale' cookie with 1-hour expiration
+    // };
+    // handleSetCookie()
     const handleScroll = () => {
       setScrollTop(window.scrollY); // or window.pageYOffset
     };
@@ -295,7 +295,6 @@ const Navbar = () => {
     sessionStorage.setItem("path", path);
   };
   
-
   const HoverEnter = (id: number | undefined) => {
     if (timer) {
       clearTimeout(timer);
