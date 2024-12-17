@@ -39,7 +39,7 @@ const IT = () => {
         {
             faculties?.map((item,index)=> {
                 return <Link href={`/${lang}/fakultetlar/${item?.id}`}  key={index} className='w-full rounded-[10px] overflow-hidden relative flex justify-center items-center h-[160px]'>
-                    <Image src={Blur} alt={item?.name_en} width={400} height={300} className='absolute w-full h-full left-0 top-0 z-[1] object-cover'/>
+                    <Image src={Blur} alt={item?.name_en} width={400} height={300} className='absolute scale-110 w-full h-full left-0 top-0 z-[1] object-cover'/>
                     <Image src={item?.main_image?.file} alt={item?.name_en} width={400} height={300} className='absolute w-full h-full left-0 top-0 z-[-1] object-cover'/>
                     <span className='text-white font-[500] text-[24px] relative z-[2] lg:text-[30px] text-center'>{lang === "uz" ? item?.name_uz : lang === "en" ? item?.name_en : item?.name_ru}</span>
                 </Link>
