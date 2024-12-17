@@ -40,9 +40,9 @@ const HeroCarousel = ({
       <Image
         src={fileUrl || HeroImage}
         alt="Hero Slide Image"
-        className="w-full object-cover slider-h max-h-[400px]"
+        className="w-full object-cover slider-h h-[400px] md:h-[800px] max-h-[400px]"
         width={1400}
-        height={600}
+        height={900}
         priority
       />
     );
