@@ -33,7 +33,6 @@ const Hero = () => {
     const fileExtension = url?.split(".")?.pop()?.split("?")[0].toLowerCase();
     return fileExtension; // This will return "mov" for a .mov file
   }
-  console.log(images);
 
   return (
     <div className="pb-4 relative">

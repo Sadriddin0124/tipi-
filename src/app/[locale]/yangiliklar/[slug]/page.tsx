@@ -18,7 +18,6 @@ const SingleNews = () => {
       fetchNews("SCIENCE")
         .then((data) => {
           setNewsData(data);
-          console.log(data);
         })
         .catch(() => {
           // alert("Nimadur noto'g'ri ketdi.");
@@ -27,7 +26,6 @@ const SingleNews = () => {
       fetchNews("EVENT")
         .then((data) => {
           setNewsData(data);
-          console.log(data);
         })
         .catch(() => {
           // alert("Nimadur noto'g'ri ketdi.");
@@ -38,7 +36,7 @@ const SingleNews = () => {
   return (
     <section className="px-3 overflow-hidden pb-6 pt-10 md:pt-[100px] md:pb-[80px]">
       <div className="max-w-[1320px] mx-auto flex flex-col gap-6 items-center">
-        <h2 className="pl-[20px] text-[32px] self-start md:text-[32px] font-[600] mb-[20px]">
+        <h2 className="text-[24px] self-start md:text-[32px] font-[600] md:mb-[20px]">
           {slug === "news"
             ? t("news.title3")
             : slug === "science"

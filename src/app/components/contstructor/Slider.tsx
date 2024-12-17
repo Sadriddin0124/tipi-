@@ -23,8 +23,6 @@ const ConstructorSlider = ({ data }: { data: AboutSliderType | null }) => {
     });
   }, []);
 
-  // console.log(`${BASE_URL}${data?.file?.file}`);
-
   return (
     <div className="pb-4 relative w-full">
       <header className=" w-full relative h-[377px] rounded-b-[20px] overflow-hidden">

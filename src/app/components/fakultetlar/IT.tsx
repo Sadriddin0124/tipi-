@@ -30,7 +30,6 @@ const IT = () => {
     useEffect(()=> {
         const getData = async() => {
             const faculties = await fetchFaculties()
-            console.log(faculties);
             setFaculties(faculties)
         }
         getData()

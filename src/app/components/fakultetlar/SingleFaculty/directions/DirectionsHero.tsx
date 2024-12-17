@@ -17,7 +17,6 @@ const DirectionsHero = () => {
       const res = await fetchDirection(id as string);
       setTitle(res);
       const data = await fetchHero(id as string);
-      console.log(data);
       setImages(data?.filter((item) => item?.page === id));
     };
     getData();

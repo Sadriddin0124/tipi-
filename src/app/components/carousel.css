@@ -1,2 +1,38 @@
-
+/* Styles when data is missing */
+.ugly-state {
+    background-color: #f0f0f0;
+  }
+  
+  .no-animation {
+    animation: none !important;
+  }
+  
+  /* Empty state styling for no data */
+  .empty-state {
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 400px;
+  }
+  
+  /* When data is available, apply animations */
+  .animated-container {
+    transition: all 0.5s ease;
+  }
+  
+  /* Optional: Ensure the carousel does not appear with animation when data is not available */
+  .mySwiper {
+    transition: none;
+  }
+  
+@media (min-width: 1200px) {
+    .container-carousel {
+      min-height: calc(100vh - 150px) !important;
+    }
+  
+  }
   

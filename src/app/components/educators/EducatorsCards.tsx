@@ -18,7 +18,6 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
     const getData = async () => {
       try {
         const res = await fetchEducators();
-        console.log(res); // Validate API response
       } catch (error) {
         console.error("Failed to fetch educators:", error);
       }
@@ -48,7 +47,7 @@ const EducatorsCards = ({ data }: { data: KafedraTypes[] }) => {
           <SingleEducator/>
         </div>
       </div>}
-      <h2 className="text-[28px] font-[500] md:text-[32px] md:font-medium">
+      <h2 className="text-[28px] text-center font-[500] md:text-[32px] md:font-medium">
         {t("pedagogue.title")}
       </h2>
       <div className="max-w-[1300px] w-full flex items-center flex-col sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px]">

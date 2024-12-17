@@ -201,7 +201,6 @@ const DirectionsTable = () => {
 
   const [directions, setDirections] = useState<DirectionsType[]>([]);
   const id = pathname?.split("/")[3];
-  console.log(id);
   const locale = pathname?.split("/")[1];
   useEffect(() => {
     const getData = async () => {

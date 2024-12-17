@@ -46,7 +46,6 @@ const InstitutHaqida = () => {
       const department = (about as Array<HoverItemType>)?.filter(
         (item) => item?.page === "DEPARTMENT"
       );
-      console.log(about_tipi);
       setAboutTipi(about_tipi);
       setSections(department);
       setAdministration(admin);

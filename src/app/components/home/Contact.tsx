@@ -44,7 +44,6 @@ const Contact = () => {
         }
         try {
             const res = await apiClient.post(`/murojat/`, data)
-            console.log('Xabar yuborildi:', res);
             if (res?.status === 201) {
                     setNotify(true)
                 }

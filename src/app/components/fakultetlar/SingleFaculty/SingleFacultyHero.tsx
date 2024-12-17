@@ -18,7 +18,6 @@ const [images, setImages] = useState<DataType[]>([]);
   useEffect(() => {
     const getData = async () => {
       const item = await fetchFaculty(id);
-      console.log(item);
       
       setTitle(locale === "uz"
         ? item?.name_uz
@@ -41,8 +40,14 @@ const [images, setImages] = useState<DataType[]>([]);
     </div>
   }
   return (
-    <section>
+    <section className='h-full w-full' data-aos="zoom-in">
+      {images.length ? 
       <HeroCarousel data={images} FixedItem={FixedItem} />
+    : 
+    <div className='w-full h-full min-h-[85vh] flex justify-center items-center'>
+        {/* <div className='border-8 border-t-transparent animate-spin rounded-full border-[#404B7C] h-[200px] w-[200px]'></div> */}
+    </div>
+    }
     </section>
   )
 }

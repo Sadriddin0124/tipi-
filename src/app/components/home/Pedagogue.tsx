@@ -35,8 +35,6 @@ const Pedagogue = ({ title }: { title: string }) => {
   const filterLang =
     languages.find((item) => item.value === currentLanguage) || languages[0];
   const [activeLang] = useState<LangType>(filterLang);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  console.log(currentSlide);
 
   useEffect(() => {
     Aos.init({
@@ -79,8 +77,8 @@ const Pedagogue = ({ title }: { title: string }) => {
         </div>
       )}
       <div className="max-w-[1400px] mx-auto w-full">
-        <div className="w-full flex justify-between items-center mt-4">
-          <h2 className="text-[32px] mb-10 md:mb-12 md:text-[32px] font-[600]">
+        <div className="px-3 w-full flex justify-between items-center mt-4">
+          <h2 className="text-[24px] md:mb-12 md:text-[32px] font-[600]">
             {title}
           </h2>
           <Link

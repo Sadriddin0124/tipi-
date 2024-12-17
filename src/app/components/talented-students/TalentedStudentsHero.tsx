@@ -16,7 +16,6 @@ const TalentedStudentsHero = () => {
     const getStudents = async () => {
       const students = await fetchStudents();
       setStudents(students);
-      console.log(students);
     };
     getStudents();
   }, []);
@@ -30,7 +29,7 @@ const TalentedStudentsHero = () => {
               item?.active &&
               <div
                 key={index}
-                className="flex flex-col md:flex-row w-full items-start gap-[40px] border-2 border-black rounded-[10px] p-3"
+                className="flex flex-col md:flex-row w-full items-start gap-[40px] shadow-md sm:border-2 sm:border-[#404B7C] rounded-[10px] p-3"
               >
                 <div className="max-w-[200px] w-full h-[200px] rounded-[10px] overflow-hidden">
                   <Image

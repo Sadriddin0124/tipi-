@@ -15,7 +15,6 @@ const FacultiesHero = () => {
     };
     getData();
   }, []);
-  console.log(images);
   
   const FixedItem = () => {
     return (

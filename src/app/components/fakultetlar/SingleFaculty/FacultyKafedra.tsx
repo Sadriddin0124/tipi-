@@ -17,7 +17,6 @@ const FacultyKafedra = ({ data }: { data: TeacherTypes[] }) => {
   useEffect(() => {
     const getData = async () => {
       const res = await fetchEducators();
-      console.log(res);
     };
     getData();
   }, []);
@@ -32,7 +31,6 @@ const FacultyKafedra = ({ data }: { data: TeacherTypes[] }) => {
     }, 1000);
   }
   const pathname = usePathname();
-  console.log(data);
 
   return (
     <section className="flex justify-center flex-col item items-center px-1 gap-10 w-full">

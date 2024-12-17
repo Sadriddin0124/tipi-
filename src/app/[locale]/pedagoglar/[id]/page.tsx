@@ -35,16 +35,15 @@ const SingleEducator = () => {
   }, []);
 
   const data = teachers?.find((item) => item?.id === id);
-  console.log(data);
   
   // const educator = teachers?.find(item=> item?.id === id)
 
   const locale = usePathname().split("/")[1];
   const [active, setActive] = useState<boolean>(false)
   return (
-    <section className="px-3 w-full flex overflow-y-auto md:overflow-y-visible min-h-[600px] justify-center py-[70px]">
+    <section className="md:px-3 w-full flex h-[90vh] md:h-auto overflow-y-auto md:overflow-y-visible min-h-[600px] justify-center py-10 md:py-[70px]">
       <div className="max-w-[1320px] w-full">
-        <div className="flex justify-center flex-col md:flex-row gap-5 mb-2">
+        <div className="flex justify-center pr-3 flex-col md:flex-row gap-5 mb-2">
           <div className="max-w-[330px] w-full flex flex-col gap-3 justify-start items-center">
             <Image
               src={data?.image?.file as string}
@@ -61,7 +60,7 @@ const SingleEducator = () => {
                 : data?.description_ru}
             </h4>
           </div>
-          <div className="flex flex-col items-start border md:h-full max-h-[550px] w-full md:overflow-y-auto border-[#404B7C] p-[30px] rounded-[10px] gap-1">
+          <div className="flex flex-col items-start md:border md:h-full max-h-[550px] w-full md:overflow-y-auto md:border-[#404B7C] md:p-[30px] rounded-[10px] gap-1">
             <h3 className="text-[20px] font-[400]">
               {locale === "en"
                 ? data?.name_en
@@ -69,7 +68,7 @@ const SingleEducator = () => {
                 ? data?.name_uz
                 : data?.name_ru}
             </h3>
-            <div className="flex flex-col gap-2 w-full max-w-[900px]">
+            <div className="flex flex-col gap-2 mx-auto w-full max-w-[900px]">
               {/* {data?.map((item, index) => {
                 return ( */}
               <div className="flex flex-col items-start ">

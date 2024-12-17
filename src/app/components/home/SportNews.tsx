@@ -29,7 +29,6 @@ const SportNews = () => {
 
 
     fetchNews("SPORT").then((data) => {
-      console.log(data);
       setData(data)
     }).catch(() => {
       // alert("Nimadur noto'g'ri ketdi.");
@@ -42,8 +41,8 @@ const SportNews = () => {
   return (
     <section className='px-2 ' data-aos="fade-up">
       <div className='max-w-[1400px] mx-auto'>
-        <div className='flex justify-between w-full items-center'>
-          <h2 className='pl-[20px] text-[32px] md:text-[32px] font-[600] mb-[20px]'>{t('news.title2')}</h2>
+        <div className='flex justify-between mt-6 w-full items-center'>
+          <h2 className='text-[24px] md:text-[32px] font-[600]'>{t('news.title2')}</h2>
           {pathname !== `/${locale}/yangiliklar/science` && <Link href={`/${locale}/yangiliklar/science`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
             {t("news.more")}
             <span className='group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]'></span>

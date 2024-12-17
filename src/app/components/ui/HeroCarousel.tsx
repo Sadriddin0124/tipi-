@@ -30,6 +30,7 @@ const HeroCarousel = ({
           loop
           muted
           className="w-full object-cover slider-h max-h-[400px]"
+          data-aos="zoom-up"
         >
           <source src={fileUrl} type="video/mp4" />
         </video>
@@ -40,16 +41,17 @@ const HeroCarousel = ({
       <Image
         src={fileUrl || HeroImage}
         alt="Hero Slide Image"
-        className="w-full object-cover slider-h h-[300px] sm:h-[400px] md:h-[800px] max-h-[400px]"
+        className="w-full object-cover slider-h h-[400px] md:h-[800px] max-h-[400px]"
         width={1400}
         height={900}
         priority
+        data-aos="zoom-up"
       />
     );
   };
 
   return (
-    <div className="relative w-full h-auto overflow-hidden">
+    <div className="relative w-full h-auto overflow-hidden" data-aos="zoom-up">
       <div className="rounded-b-[20px] md:rounded-b-[40px] overflow-hidden slider-h max-h-[400px]">
         <Swiper
           slidesPerView={1}

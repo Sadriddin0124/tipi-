@@ -38,8 +38,8 @@ const Events = () => {
     <section className='px-2 py-12 md:py-[100px]' data-aos="fade-up">
       <div className='max-w-[1400px] mx-auto'>
         <div className='w-full flex justify-between items-center px-2'>
-          <h2 className='pl-[20px] text-[32px] md:text-[32px] font-[600]'>{t('events.title')}</h2>
-          {pathname !== `/${locale}/yangiliklar/events` && <Link href={`/${locale}/yangiliklar/events`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
+        <h2 className='text-[24px] md:text-[32px] font-[600]'>{t('events.title')}</h2>
+        {pathname !== `/${locale}/yangiliklar/events` && <Link href={`/${locale}/yangiliklar/events`} className='text-[20px] pb-0 text-[#404B7C] relative group flex justify-center'>
             {t("events.more")}
             <span className='group-hover:w-full w-0 h-[2px] ease-linear duration-200 bg-[#404B7C] absolute bottom-[-2px]'></span>
           </Link>}
