@@ -27,7 +27,7 @@ const FacultiesHero = () => {
   };
   return (
     <section>
-      <HeroCarousel data={images} FixedItem={FixedItem} />
+      {images.length ? <HeroCarousel data={images} FixedItem={FixedItem} /> : ""}
     </section>
   );
 };

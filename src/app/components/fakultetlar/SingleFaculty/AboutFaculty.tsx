@@ -179,15 +179,15 @@ const AboutFaculty = ({
                     className="rounded-t-[10px] md:rounded-[10px] w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-5 md:p-0 sm:py-3 justify-center w-full flex flex-col lg:gap-[35px] max-w-[680px]">
-                  <h3 className="text-[20px] md:text-[24px] lg:text-[30px] font-[500]">
+                <div className="p-5 md:p-0 sm:py-3 justify-center w-full flex flex-col lg:gap-[25px] max-w-[680px]">
+                  <h3 className="text-[20px] md:text-[24px] lg:text-[26px] font-[500]">
                     {locale === "uz"
                       ? item?.position_uz
                       : locale === "ru"
                       ? item?.position_ru
                       : item?.position_en}
                   </h3>
-                  <h3 className="text-[18px] md:text-[20px] lg:text-[26px] font-[400]">
+                  <h3 className="text-[18px] md:text-[20px] lg:text-[22px] font-[400]">
                     {locale === "uz"
                       ? item?.title_uz
                       : locale === "ru"
@@ -195,7 +195,7 @@ const AboutFaculty = ({
                       : item?.title_en}
                   </h3>
                   <p
-                    className="md:text-[18px] lg:text-[26px] links md:leading-[50px]"
+                    className="md:text-[18px] lg:text-[20px] links md:leading-[35px]"
                     dangerouslySetInnerHTML={{
                       __html: (locale === "uz"
                         ? item?.content_uz

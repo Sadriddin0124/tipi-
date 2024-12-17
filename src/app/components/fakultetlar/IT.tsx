@@ -1,11 +1,10 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import ITImage from "@/assets/it.webp"
 import Image from 'next/image'
 import Link from 'next/link'
 import Blur from "@/assets/faculties_blur.webp"
 import { usePathname } from 'next/navigation'
-import { fetchFaculties } from '@/app/lib/actions'
+import { fetchFacultiesMin } from '@/app/lib/actions'
 type ImagesType = {
     id: string;
     file: string
@@ -29,7 +28,7 @@ const IT = () => {
     const [faculties, setFaculties] = useState<FacultyType[]>([])
     useEffect(()=> {
         const getData = async() => {
-            const faculties = await fetchFaculties()
+            const faculties = await fetchFacultiesMin()
             setFaculties(faculties)
         }
         getData()

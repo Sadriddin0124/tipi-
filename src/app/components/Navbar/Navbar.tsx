@@ -21,17 +21,10 @@ import { RiCloseLargeFill } from "react-icons/ri";
 import Dropdown from "../ui/Dropdown";
 import {
   fetchAboutTipi,
-  fetchFaculties,
+  fetchFacultiesMin,
 } from "../../lib/actions";
 import Breadcrumb from "../ui/Breadcrumb";
 import "./Navbar.css"
-import Cookies from 'js-cookie';
-
-const setCookie = (name: string, value: string, minutes: number) => {
-  const expires = new Date(new Date().getTime() + minutes * 60 * 1000); // Set expiration time (in ms)
-  Cookies.set(name, value, { expires }); // Set cookie with expiration
-};
-
 
 const Navbar = () => {
   const t = useTranslations();
@@ -237,7 +230,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const getData = async () => {
-      const faculties = await fetchFaculties();
+      const faculties = await fetchFacultiesMin();
       setFaculties(faculties);
       const about = await fetchAboutTipi();
       setBreadCrumbDynamic(about)

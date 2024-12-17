@@ -78,7 +78,7 @@ const Pedagogue = ({ title }: { title: string }) => {
       )}
       <div className="max-w-[1400px] mx-auto w-full">
         <div className="px-3 w-full flex justify-between items-center mt-4">
-          <h2 className="text-[24px] md:mb-12 md:text-[32px] font-[600]">
+          <h2 className="text-[24px] md:text-[32px] font-[600]">
             {title}
           </h2>
           <Link
