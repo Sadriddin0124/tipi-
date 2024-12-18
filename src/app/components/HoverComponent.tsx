@@ -175,7 +175,7 @@ const HoverComponent = ({
               return (
                 item?.active && (
                 <Link
-                  href={item?.href ? item?.href : item?.teachers ? `/${locale}/fakultetlar/${item?.id}` : `/${locale}/about?id=${item?.id}`}
+                  href={item?.href ? item?.href : item?.name_uz && !item?.href ? `/${locale}/fakultetlar/${item?.id}` : `/${locale}/about?id=${item?.id}`}
                   // target={item?.target ? "_blank" : ""}
                   key={index}
                   className={
