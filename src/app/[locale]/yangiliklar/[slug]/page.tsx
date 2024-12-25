@@ -22,6 +22,14 @@ const SingleNews = () => {
         .catch(() => {
           // alert("Nimadur noto'g'ri ketdi.");
         });
+    } else if (slug === "science") {
+      fetchNews("SPORT")
+        .then((data) => {
+          setNewsData(data);
+        })
+        .catch(() => {
+          // alert("Nimadur noto'g'ri ketdi.");
+        });
     } else {
       fetchNews("EVENT")
         .then((data) => {
@@ -32,7 +40,9 @@ const SingleNews = () => {
         });
     }
   }, [slug]);
-  const category = slug === "news" ? "SCIENCE" : "EVENT"
+  const category = slug === "news" ? "SCIENCE" : slug == "science" ? "SPORT" : "EVENT"
+  console.log(category);
+  
   return (
     <section className="px-3 overflow-hidden pb-6 pt-10 md:pt-[100px] md:pb-[80px]">
       <div className="max-w-[1320px] mx-auto flex flex-col gap-6 items-center">

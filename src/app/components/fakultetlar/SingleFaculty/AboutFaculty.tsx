@@ -53,6 +53,13 @@ const AboutFaculty = ({
       <div className="max-w-[1400px] w-full flex flex-col ">
         {item?.kind === "IMAGE" && (
           <div>
+            <h2 className="text-[24px] md:text-[32px] font-[600] mt-2">
+              {locale === "uz"
+                ? item?.title_uz
+                : locale === "ru"
+                ? item?.title_ru
+                : item?.title_en}
+            </h2>
             <div className={`grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-6`}>
               {item?.images.map((item, index) => (
                 <div
@@ -70,13 +77,6 @@ const AboutFaculty = ({
                 </div>
               ))}
             </div>
-            <h2 className="text-[24px] md:text-[32px] font-[600] mt-2">
-              {locale === "uz"
-                ? item?.title_uz
-                : locale === "ru"
-                ? item?.title_ru
-                : item?.title_en}
-            </h2>
           </div>
         )}
         {item?.kind === "TEXT" && (

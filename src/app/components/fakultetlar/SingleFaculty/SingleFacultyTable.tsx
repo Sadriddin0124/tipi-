@@ -210,6 +210,7 @@ const DirectionsTable = () => {
     getData();
   }, [id]);
   return (
+    directions?.length > 0 ?
     <div className="overflow-x-auto w-full mx-auto">
       <table className="w-full max-w-[1400px] mx-auto">
         <thead>
@@ -265,7 +266,7 @@ const DirectionsTable = () => {
           ))}
         </tbody>
       </table>
-    </div>
+    </div> : ""
   );
 };
 

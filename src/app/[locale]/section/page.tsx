@@ -170,7 +170,7 @@ const InstitutHaqida = () => {
               News?.map((item,index)=> {
                 return (
                 item?.active &&
-                <Link target={item?.target ? "_blank" : ""} href={`/${locale}/about?id=${item?.id}`} key={index} className='bg-[#404B7C] border-[#404B7C] px-5 shadow py-4 text-[14px] md:text-[24px] hover:bg-white  hover:border-[#404B7C]  border-2 hover:text-[#404B7C] ease-linear duration-200 border-transparent rounded-[10px] gap-1 sm:gap-3 text-white'>
+                <Link target={item?.target ? "_blank" : ""} href={item?.href} key={index} className='bg-[#404B7C] border-[#404B7C] px-5 shadow py-4 text-[14px] md:text-[24px] hover:bg-white  hover:border-[#404B7C]  border-2 hover:text-[#404B7C] ease-linear duration-200 border-transparent rounded-[10px] gap-1 sm:gap-3 text-white'>
                     <span className='flex justify-center items-center gap-3'>{locale === "uz" ? item?.name_uz : locale === "ru" ? item?.name_ru : item?.name_en}<FaArrowRightLong /></span>
                 </Link>)
               })

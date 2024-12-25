@@ -111,14 +111,14 @@ const Hero = () => {
           width={500}
           height={400}
         />
-        <div className="hidden sm:flex justify-center gap-5 w-[100%] h-full items-center absolute z-10 top-0 left-0">
+        {/* <div className="hidden sm:flex justify-center gap-5 w-[100%] h-full items-center absolute z-10 top-0 left-0">
           <button className="btn_gradient text-[14px] md:text-[24px] rounded-[10px] gap-1 sm:gap-3 text-white">
             <span className="flex items-center px-2 sm:px-4 py-1 sm:py-3 gap-3">
               {btn}
               <FaArrowRightLong />
             </span>
           </button>
-        </div>
+        </div> */}
       </div>
       <div className="sm:hidden flex justify-center">
         <button className="btn_gradient mt-6 text-[14px] md:text-[24px] rounded-[10px] gap-1 sm:gap-3 text-white">
