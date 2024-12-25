@@ -42,7 +42,7 @@ const Dropdown: React.FC<DropDownProps> = ({
           {item1?.map((item, index) => {
             return (
               <Link
-                href={item?.href ? item?.href : item?.teachers ? `/${locale}/fakultetlar/${item?.id}` : `/${locale}/about?id=${item?.id}`}
+                href={item?.href ? item?.href : item?.name_uz && !item?.href ? `/${locale}/fakultetlar/${item?.id}` : `/${locale}/about?id=${item?.id}`}
                 key={index}
                 className="hover:bg-[#404B7C] hover:text-white text-[#404B7C] flex items-center gap-1 px-5 py-2"
                 onClick={() => {
