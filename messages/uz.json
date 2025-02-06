@@ -148,11 +148,11 @@
     "item4": "Grandlar"
   },
   "aboutFaculty": {
-  "title": "Fakultet haqida",
-  "desc": "1979 yilda tashkil etilgan Kompyuter texnologiyalari maktabi (SCT) Sharqiy O'rta dengiz universitetining eng qadimgi bo‘limidir. SCT o'zining ko'p millatli talabalar profiliga raqamli va madaniyatlararo muhitda yuqori texnologik ta'lim beradi. Ta'lim tili to'rt yillik Axborot Texnologiyalari dasturida (BS) va magistratura dasturida (MTech in IT) ingliz tili hisoblanadi. Biroq, ikki va uch yillik kurs dasturlarida ta'lim tili turk tilidir. O'zining mukammal inshootlari va 'Loyiha asosida o'rganish'ga sodiqligi bilan SCT quyidagi ta'lim yo'nalishlarini taqdim etadi: SCTda xalqaro talabalar bilan ishlash uchun Xalqaro Talabalar Maslahatchisi (ISA) mavjud bo'lib, u talabalar uchun akademik va akademik bo'lmagan masalalarda yordam beradi. Shuningdek, talabalar yordamchilari tomonidan Talaba-Talaba Maslahati (S2S) xizmatlari taqdim etiladi, bu esa talabalar o'quv muammolariga yordam beradi. Kompyuter texnologiyalari maktabining (SCT) asosiy maqsadi bugungi global raqamli dunyoning biznes, sanoat va xizmat ko'rsatish sohalarida talab qilinadigan yuqori malakali texnik inson resurslarini tayyorlashdir. O'zining asosiy maqsadiga erishish uchun SCT o'z talabalarini o'zlarining sohalarida zarur bilim va ko'nikmalar bilan ta'minlashga intiladi, muntazam ravishda yangilangan loyiha asosidagi o'rganish dasturi va sanoat tajribasiga ega malakali o'qituvchilar orqali. Axborot texnologiyalari bo'yicha o'qitish tili ingliz tilida (BS) va Axborot texnologiyalari bo'yicha magistratura dasturi (MTech in IT), ikki va uch yillik kasbiy dasturlarda esa o'qitish tili turk tilida.",
-  "fileDesc": "Bu yerda fayl tavsifi bo'lishi mumkin edi..."
-  },
-  "information": {
+  "title": "Fakultet haqida"
+},
+"information": {
+    "item1": "O‘quv departamenti",
+    "item2": "O‘quv-uslubiy faoliyatni tartibga soluvchi me’yoriy xujjatlar",
     "title": "Axborot texnologiyalari",
     "statistics1": "Fakultet haqida",
     "statistics2": "Kafedra",
@@ -189,27 +189,10 @@
     "title": "Yo‘nalishlar"
   },
   "educator": {
-    "name": "Avazov Avaz Avazovich",
     "title": "Ta`lim",
     "edu_t1": "Bakalavr",
-    "edu_v1": "Toshkent Davlat Iqtisodiyot Universiteti (2014-2018) ",
-    "edu_t2": "Magistratura",
-    "edu_v2": "Toshkent Davlat Iqtisodiyot Universiteti (2020-2022) ",
-    "edu_t3": "PhD",
-    "edu_v3": "Toshkent Davlat Iqtisodiyot Universiteti (2023-2024) ",
-    "edu_t4": "Mehnat faoliyati",
-    "edu_v4": "O‘qituvchi. Toshkent Yangiyo‘l shahri 1-umumiy o‘rta ta`lim maktabi O‘qituvchi. Toshkent Yangiyo‘l shahri 1-umumiy o‘rta ta`lim maktabi",
-    "edu_t5": "Hozirgi ish joyi",
-    "edu_v5": "Toshkent Iqtisodiyot va Pedagogik Instituti",
-    "about_t1": "Daraja",
-    "about_v1": "O‘qituvchi",
-    "about_t2": "Fakultet",
-    "about_v2": "O‘zbek filologiyasi",
     "about_t3": "Kafedra",
     "about_v3": "Adabiy manbashunoslik va matnshunoslik kafedrasi",
-    "media1": "O‘quv adabiyotlari",
-    "media2": "Sertifikat",
-    "media3": "Multimedia",
     "data_t": "Ma`lumotlar",
     "data_t1": "Milati",
     "data_v1": "O‘zbek",

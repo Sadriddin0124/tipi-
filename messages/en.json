@@ -152,6 +152,8 @@
     "fileDesc": "A file description could be here..."
   },
   "information": {
+    "item1": "Academic Department",
+    "item2": "Regulatory documents governing academic and methodological activities",
     "title": "Information Technology",
     "statistics1": "About the Faculty",
     "statistics2": "Departments",
@@ -261,11 +263,11 @@
     "title": "Frequently Asked Questions"
   },
   "crumb": {
-  "item1": "All news",
-  "item2": "Scientific news",
-  "item3": "Events",
-  "item4": "Campus life",
-  "item5": "Admissions",
-  "item6": "Contact"
-}
+    "item1": "All news",
+    "item2": "Scientific news",
+    "item3": "Events",
+    "item4": "Campus life",
+    "item5": "Admissions",
+    "item6": "Contact"
+  }
 }
