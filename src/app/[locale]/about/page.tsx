@@ -70,19 +70,19 @@ const Constructor = () => {
       )}
       {slider?.file && <ConstructorSlider data={slider} />}
       {groups && (
-        <div className="pt-5 grid grid-cols-2 gap-2 max-w-[1000px] w-full">
+        <div className="pt-5 grid grid-cols-2 gap-2 max-w-[1400px] w-full px-3">
           {items?.map((item, index) => (
             <button
               onClick={() => setActiveTab(item?.id)}
               key={index}
-              className="ease-linear group duration-200 md:bg-[#404B7C] shadow-md shadow-gray-500 w-full md:w-auto whitespace-nowrap group px-4 md:px-12 py-3 md:py-6 text-white cursor-pointer text-[11px] sm:text-[16px] md:text-[20px] rounded-full md:rounded-[10px] lg:text-[24px] font-[600] justify-center flex gap-3 items-center"
+              className="ease-linear group duration-200 bg-[#404B7C] shadow-md shadow-gray-500 w-full md:w-auto  group px-4 md:px-12 py-3 md:py-6 text-white cursor-pointer text-[11px] sm:text-[14px] xl:text-[20px] break-words rounded-full md:rounded-[10px] font-[600] justify-center flex gap-3 items-center"
             >
               <div className="relative flex items-center flex-col justify-center">
                 {item?.label}
                 <span
                   className={`${
                     item?.id === activeTab ? "w-full" : ""
-                  } ease-linear duration-200 w-0 group-hover:w-full h-[3px] bottom-0 left-0 bg-white rounded-full`}
+                  } ease-linear duration-200 w-0 group-hover:w-full h-[1px] md:h-[3px] bottom-0 left-0 bg-white rounded-full`}
                 ></span>
               </div>
             </button>
