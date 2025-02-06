@@ -64,6 +64,7 @@ export interface HoverItemType {
     target?: string;
     page: string
     teachers: string
+    groups: boolean
 }
 
 interface MediaType {
@@ -102,6 +103,7 @@ export interface LinkType {
     target?: string
     status?: string
     teachers: string
+    groups: boolean
 
 };
 

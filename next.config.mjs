@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['api.tipi.sectorsoft.uz'], // Add your image domains here
+    domains: ['api.tipi.sector-soft.ru'], // Add your image domains here
   },
 };
 
