@@ -127,7 +127,7 @@ const Navbar = () => {
       name_ru: t("hover.title8"),
       name_en: t("hover.title8"),
       active: true,
-      href: `https://www.online-library.uz/`,
+      href: `https://library.tipi.uz/`,
       target: "blank",
     },
     {
