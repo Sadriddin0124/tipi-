@@ -81,7 +81,7 @@ const Carousel = ({
                         ? item?.name_ru
                         : locale === "uz"
                         ? item?.name_uz
-                        : item?.name_ru}
+                        : item?.name_en}
                     </p>
                     <Link
                       href={`/${locale}/news?id=${item?.id}`}
