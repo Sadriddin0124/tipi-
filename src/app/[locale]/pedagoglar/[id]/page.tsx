@@ -60,7 +60,7 @@ const SingleEducator = () => {
                 : data?.description_ru}
             </h4>
           </div>
-          <div className="flex flex-col items-start md:border md:h-full max-h-[550px] w-full md:overflow-y-auto md:border-[#404B7C] md:p-[30px] rounded-[10px] gap-1">
+          <div className="flex flex-col items-start md:border md:h-full max-h-[500px] w-full md:overflow-y-auto md:border-[#404B7C] md:p-[30px] rounded-[10px] gap-1">
             <h3 className="text-[20px] font-[400]">
               {locale === "en"
                 ? data?.name_en
