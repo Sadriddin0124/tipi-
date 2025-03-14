@@ -59,6 +59,7 @@ const Navbar = () => {
   const id = useSearchParams().get("id")
   const locale = pathname?.split("/")[1]
   const [breadCrumbDynamic, setBreadCrumbDynamic] = useState<HoverItemType[]>([]);
+
   useEffect(() => {
     const blogTitle = breadCrumbDynamic?.find(item=> item?.id === id as string)
     const Destinations = [
@@ -170,6 +171,7 @@ const Navbar = () => {
   const [aboutTipi, setAboutTipi] = useState<HoverItemType[]>([]);
   const [administration, setAdministration] = useState<HoverItemType[]>([]);
   const [sections, setSections] = useState<HoverItemType[]>([]);
+  const [greenInstitute, setGreenInstitute] = useState<HoverItemType[]>([]);
   const [faculties, setFaculties] = useState([]);
   const navLink: NavLinkType[] = [
     {
@@ -192,6 +194,14 @@ const Navbar = () => {
     },
     {
       id: 3,
+      label: t("green_institute"),
+      path: `/${activeLang?.value}/section?id=GREEN`,
+      hover: true,
+      title1: {title: t("green_institute"), href: `/${activeLang?.value}/section?id=GREEN`},
+      item1: greenInstitute,
+    },
+    {
+      id: 4,
       label: t("nav.link2"),
       path: `/${activeLang?.value}/fakultetlar`,
       hover: true,
@@ -199,7 +209,7 @@ const Navbar = () => {
       item1: faculties,
     },
     {
-      id: 6,
+      id: 5,
       label: t("nav.link4"),
       path: `/${activeLang?.value}/yangiliklar`,
       hover: true,
@@ -207,7 +217,7 @@ const Navbar = () => {
       item1: News
     },
     {
-      id: 5,
+      id: 6,
       label: t("nav.link6"),
       path: `/${activeLang?.value}/section?id=SERVICE`,
       hover: true,
@@ -215,7 +225,7 @@ const Navbar = () => {
       item1: InteractiveService,
     },
     {
-      id: 4,
+      id: 7,
       label: t("nav.link1"),
       path: `/${activeLang?.value}/reception?id=qabul`,
       hover: false,
@@ -243,9 +253,13 @@ const Navbar = () => {
       const department = (about as Array<HoverItemType>)?.filter(
         (item) => item?.page === "DEPARTMENT"
       );
+      const green = (about as Array<HoverItemType>)?.filter(
+        (item) => item?.page === "GREEN"
+      );
       setAboutTipi(about_tipi);
       setSections(department);
       setAdministration(admin);
+      setGreenInstitute(green);
     };
     getData();
     const handleScroll = () => {
