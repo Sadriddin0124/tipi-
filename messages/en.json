@@ -63,7 +63,7 @@
     "item4": "Grants"
   },
   "campus": "Campus Life",
-  "book": "Books",
+  "book": "Scientific developments",
   "cert": "Certificates",
   "news": {
     "title": "News",
@@ -269,5 +269,7 @@
     "item4": "Campus life",
     "item5": "Admissions",
     "item6": "Contact"
-  }
+  },
+  "green_institute": "Green Institute",
+  "for_contact": "For contact"
 }

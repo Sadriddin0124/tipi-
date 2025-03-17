@@ -91,7 +91,7 @@ const SingleEducator = () => {
               {/* );
               })} */}
               <div>
-                <h5 className="text-[20px]">Bog‘lanish uchun:</h5>
+                <h5 className="text-[20px]">{t("for_contact")}</h5>
                 <div className="flex ">
                   <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-10">
                     <div className="mt-2 flex flex-col gap-2 whitespace-nowrap">

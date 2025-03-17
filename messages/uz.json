@@ -63,7 +63,7 @@
     "item4": "Grandlar"
   },
   "campus": "Kampus hayoti",
-  "book": "Kitoblar",
+  "book": "Ilmiya ishlanmalar",
   "cert": "Sertifikatlar",
   "news": {
     "title": "Yangiliklar",
@@ -252,5 +252,6 @@
     "item5": "Qabul",
     "item6": "Bog‘lanish"
   },
-  "green_institute": "Yashil Institut"
+  "green_institute": "Yashil Institut",
+  "for_contact": "Bog‘lanish uchun:"
 }
