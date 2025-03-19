@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import { FaTelegramPlane } from 'react-icons/fa'
-import { FaFacebookF } from 'react-icons/fa6'
+import { FaFacebookF, FaYoutube } from 'react-icons/fa6'
 import { RiInstagramFill } from 'react-icons/ri'
 import { HoverItemType } from '../types/all.types'
 import { fetchAboutTipi, fetchFaculties } from '../lib/actions'
@@ -24,6 +24,10 @@ const Footer = () => {
         {
             icon: <RiInstagramFill />,
             path: "https://instagram.com/tipi_rasmiy?igshid=ZDdkNTZiNTM="
+        },
+        {
+            icon: <FaYoutube size={24} />,
+            path: "https://www.youtube.com/channel/UCXzPya-NF5QYsZijFamzzmg"
         },
     ]
     function l(
@@ -77,7 +81,7 @@ const Footer = () => {
                         <p className=''>{t("footer.address")}</p>
                         <p className=''>{t("footer.phone")}</p>
                         <p className=''>{t("footer.mail")}</p>
-                        <div className='flex w-full justify-between gap-2 max-w-[150px] self-start text-white text-[20px]'>
+                        <div className='flex w-full justify-between items-center gap-2 max-w-[150px] self-start text-white text-[20px]'>
                             {
                                 social?.map((item,index)=> {
                                     return <Link target='_blank' href={item?.path} key={index}>{item?.icon}</Link>
