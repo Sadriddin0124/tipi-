@@ -15,15 +15,15 @@ const Footer = () => {
     const social = [
         {
             icon: <FaTelegramPlane />,
-            path: "https://t.me/"
+            path: "https://t.me/uztipi_uz"
         },
         {
             icon: <FaFacebookF />,
-            path: "https://facebook.com/"
+            path: "http://fb.com/tipi.uz"
         },
         {
             icon: <RiInstagramFill />,
-            path: "https://instagram.com/"
+            path: "https://instagram.com/tipi_rasmiy?igshid=ZDdkNTZiNTM="
         },
     ]
     function l(
@@ -80,7 +80,7 @@ const Footer = () => {
                         <div className='flex w-full justify-between gap-2 max-w-[150px] self-start text-white text-[20px]'>
                             {
                                 social?.map((item,index)=> {
-                                    return <a href={item?.path} key={index}>{item?.icon}</a>
+                                    return <Link target='_blank' href={item?.path} key={index}>{item?.icon}</Link>
                                 })
                             }
                         </div>
