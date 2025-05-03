@@ -1,9 +1,9 @@
 {
   "nav": {
-    "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA INSTITUTI",
+    "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA UNIVERSITETI",
     "link1": "Qabul",
     "link2": "Fakultetlar",
-    "link3": "Institut haqida",
+    "link3": "Universitet haqida",
     "link4": "Yangiliklar",
     "link5": "Bo‘limlar",
     "link6": "Interaktiv xizmatlar",
@@ -13,7 +13,7 @@
     "mainPage": "Asosiy sahifa",
     "link1": "Ilmiy yo'nalish",
     "link2": "Fakultetlar",
-    "link3": "Institut haqida",
+    "link3": "Universitet haqida",
     "link4": "Yangiliklar",
     "link5": "Iqtidorli Talabalar",
     "link6": "Bo‘limlar",
@@ -39,15 +39,15 @@
     "faculty4": "Axborot texnologiyalari",
     "faculty5": "Tillar va maktabgacha ta'lim",
     "faculty6": "Ijtimoiy fanlar",
-    "about1": "Institut haqida",
+    "about1": "Universitet haqida",
     "about2": "Lisenziya",
-    "about3": "TIPI haqida",
+    "about3": "TIPU haqida",
     "about4": "Adminstratsiya",
     "title_in1": "Ilmiy kengash a`zolari",
     "title_in2": "Rektorat",
     "title_in3": "Pedagoklar",
     "title_in4": "Hujatlari",
-    "title_in5": "Institut ijoriya kengashi hujatlari",
+    "title_in5": "Universitet ijoriya kengashi hujatlari",
     "title_in6": "Rektor haqida",
     "title_in7": "Rektor xabari",
     "title_in8": "Rektor online"
@@ -119,7 +119,7 @@
     "btn": "Jo'natish"
   },
   "footer": {
-    "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA INSTITUTI",
+    "logo": "TOSHKENT IQTISODIYOT VA PEDAGOGIKA UNIVERSITETI",
     "address": "Toshkent v. Chirchiq sh. Metallurgchilar 13",
     "phone": "Tel: +998 55 900 06 04",
     "mail": "E-mail: tipiuniversity@mail.uz",
@@ -214,14 +214,14 @@
     "place": "Ilmiy bo‘limi boshlig'i",
     "address": "111709 Chirchiq shahar, Metallurgchilar koʻchasi 13-uy",
     "duration": "Dushanba-Juma,",
-    "about_t": "TOSHKЕNT IQTISODIYOT VA PЕDAGOGIKA INSTITUTI ILMIY TADQIQOTLAR, INNOVATSIYALAR VA ILMIY-PЕDAGOGIK KADRLAR TAYYORLASH BO‘LIMI BOSHLIG‘INING VAZIFALARI"
+    "about_t": "TOSHKЕNT IQTISODIYOT VA PЕDAGOGIKA UNIVERSITETI ILMIY TADQIQOTLAR, INNOVATSIYALAR VA ILMIY-PЕDAGOGIK KADRLAR TAYYORLASH BO‘LIMI BOSHLIG‘INING VAZIFALARI"
   },
   "section2": {
     "name1": "Mamatova Muxarram Xakimjanovna",
     "place1": "Ma'naviyat va ma'rifat bo‘lim boshlig‘i",
     "award1": "2021-yil O‘zbekiston Respublikasi mustaqilligining 30 yilligi esdalik nishoni",
     "name2": "G‘afforov Kamoliddin Baxodir o‘g‘li",
-    "place2": "Institut matbuot kotibi",
+    "place2": "Universitet matbuot kotibi",
     "about1": "Ma'naviyat va ma'rifat bo‘limi",
     "about2": "Bo‘limning asosiy vazifalari"
   },
@@ -252,6 +252,6 @@
     "item5": "Qabul",
     "item6": "Bog‘lanish"
   },
-  "green_institute": "Yashil Institut",
+  "green_institute": "Yashil Universitet",
   "for_contact": "Bog‘lanish uchun:"
 }
