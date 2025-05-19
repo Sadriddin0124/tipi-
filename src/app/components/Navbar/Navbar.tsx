@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { NavLinkType } from "../../types/navbar.types";
-import Logo from "@/assets/logo_white.webp";
+import Logo from "@/assets/logo.webp";
 import UzFlag from "@/assets/uz.webp";
 import RuFlag from "@/assets/ru.webp";
 import EnFlag from "@/assets/en.webp";
@@ -115,14 +115,6 @@ const Navbar = () => {
 
   const InteractiveService: any = [
     {
-      id: 1,
-      name_uz: t("hover.title10"),
-      name_ru: t("hover.title10"),
-      name_en: t("hover.title10"),
-      active: true,
-      href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`,
-    },
-    {
       id: 8,
       name_uz: t("hover.title8"),
       name_ru: t("hover.title8"),
@@ -193,14 +185,6 @@ const Navbar = () => {
       item1: sections,
     },
     {
-      id: 3,
-      label: t("green_institute"),
-      path: `/${activeLang?.value}/section?id=GREEN`,
-      hover: true,
-      title1: {title: t("green_institute"), href: `/${activeLang?.value}/section?id=GREEN`},
-      item1: greenInstitute,
-    },
-    {
       id: 4,
       label: t("nav.link2"),
       path: `/${activeLang?.value}/fakultetlar`,
@@ -209,26 +193,26 @@ const Navbar = () => {
       item1: faculties,
     },
     {
-      id: 5,
+      id: 3,
+      label: t("green_institute"),
+      path: `/${activeLang?.value}/section?id=GREEN`,
+      hover: true,
+      title1: {title: t("green_institute"), href: `/${activeLang?.value}/section?id=GREEN`},
+      item1: [{
+        id: 1,
+        name_uz: t("hover.title10"),
+        name_ru: t("hover.title10"),
+        name_en: t("hover.title10"),
+        active: true,
+        href: `/${activeLang?.value}/interaktiv-xizmatlar/iqtidorli-talabalar`,
+      },...greenInstitute],
+    },
+    {id: 5,
       label: t("nav.link4"),
       path: `/${activeLang?.value}/yangiliklar`,
       hover: true,
       title1: {title: t("nav.link4"), href: `/${activeLang?.value}/section?id=NEWS`},
       item1: News
-    },
-    {
-      id: 6,
-      label: t("nav.link6"),
-      path: `/${activeLang?.value}/section?id=SERVICE`,
-      hover: true,
-      title1: {title: t("nav.link6"), href: `/${activeLang?.value}/section?id=SERVICE`},
-      item1: InteractiveService,
-    },
-    {
-      id: 7,
-      label: t("nav.link1"),
-      path: `/${activeLang?.value}/reception?id=qabul`,
-      hover: false,
     },
     {
       id: 8,

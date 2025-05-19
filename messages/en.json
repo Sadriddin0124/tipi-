@@ -1,9 +1,9 @@
 {
   "nav": {
-    "logo": "TASHKENT INSTITUTE OF ECONOMICS AND PEDAGOGY",
+    "logo": "TASHKENT UNIVERSITY OF ECONOMICS AND PEDAGOGY",
     "link1": "Admission",
     "link2": "Faculties",
-    "link3": "About the Institute",
+    "link3": "About the University",
     "link4": "News",
     "link5": "Departments",
     "link6": "Interactive Services",
@@ -13,7 +13,7 @@
     "mainPage": "Main Page",
     "link1": "Scientific Direction",
     "link2": "Faculties",
-    "link3": "About the Institute",
+    "link3": "About the University",
     "link4": "News",
     "link5": "Talented Students",
     "link6": "Departments",
@@ -39,7 +39,7 @@
     "faculty4": "Information Technology",
     "faculty5": "Languages and Preschool Education",
     "faculty6": "Social Sciences",
-    "about1": "About the Institute",
+    "about1": "About the University",
     "about2": "License",
     "about3": "About TIPE",
     "about4": "Administration",
@@ -54,13 +54,16 @@
   },
   "hero": {
     "title": "Register Online Right Now",
-    "btn": "Register"
+    "btn": "Register",
+    "year": "Admissions 2025",
+    "reg1": "Register via Telegram",
+    "reg2": "Register via website"
   },
   "statistics": {
     "item1": "Students",
     "item2": "Educators",
-    "item3": "Billion Value",
-    "item4": "Grants"
+    "item3": "Faculties",
+    "item4": "IRC Fund"
   },
   "campus": "Campus Life",
   "book": "Scientific developments",
@@ -118,8 +121,10 @@
     "btn": "Send"
   },
   "footer": {
-    "logo": "TASHKENT INSTITUTE OF ECONOMICS AND PEDAGOGY",
-    "address": "Tashkent Region, Chirchik City, Metallurgists 13",
+    "logo": "TASHKENT UNIVERSITY OF ECONOMICS AND PEDAGOGY",
+    "address": "Main Building: Tashkent Region, Chirchiq city, Metallurgchilar street, building 13.",
+    "addressB":"Building B: Tashkent Region, Chirchiq city, A.Navoiy street, building 255.",
+    "addressC":"Building C: Tashkent Region, Bekobod city, Shiroq street, building 350.",
     "phone": "Phone: +998 55 900 06 04",
     "mail": "Email: tipiuniversity@mail.uz",
     "link1": "Contacts",
@@ -201,7 +206,7 @@
     "edu_t4": "Work Experience",
     "edu_v4": "Teacher. School No. 1, Yangiyol, Tashkent region.",
     "edu_t5": "Current Workplace",
-    "edu_v5": "Tashkent Institute of Economics and Pedagogy",
+    "edu_v5": "Tashkent University of Economics and Pedagogy",
     "about_t1": "Degree",
     "about_v1": "Teacher",
     "about_t2": "Faculty",
@@ -232,14 +237,14 @@
     "place": "Head of the Scientific Department",
     "address": "111709 Chirchik City, Metallurgist Street, Building 13",
     "duration": "Monday-Friday,",
-    "about_t": "RESPONSIBILITIES OF THE HEAD OF THE DEPARTMENT OF SCIENTIFIC RESEARCH, INNOVATIONS, AND TRAINING OF SCIENTIFIC-PEDAGOGICAL STAFF AT THE TASHKENT INSTITUTE OF ECONOMICS AND PEDAGOGY"
+    "about_t": "RESPONSIBILITIES OF THE HEAD OF THE DEPARTMENT OF SCIENTIFIC RESEARCH, INNOVATIONS, AND TRAINING OF SCIENTIFIC-PEDAGOGICAL STAFF AT THE TASHKENT UNIVERSITY OF ECONOMICS AND PEDAGOGY"
   },
   "section2": {
     "name1": "Mamatova Mukharram Khakimjanovna",
     "place1": "Head of the Spirituality and Enlightenment Department",
     "award1": "Memorial Badge for the 30th Anniversary of Independence of the Republic of Uzbekistan (2021)",
     "name2": "Gafforov Kamoliddin Bakhodirovich",
-    "place2": "Press Secretary of the Institute",
+    "place2": "Press Secretary of the University",
     "about1": "Spirituality and Enlightenment Department",
     "about2": "Main Responsibilities of the Department"
   },
@@ -270,6 +275,15 @@
     "item5": "Admissions",
     "item6": "Contact"
   },
-  "green_institute": "Green Institute",
-  "for_contact": "For contact"
+  "green_institute": "Students",
+  "for_contact": "For contact",
+  "interactive": {
+    "1": "Rectorate",
+    "2": "Hemis Teacher",
+    "3": "Hemis Student",
+    "4": "Electronic Library",
+    "5": "Portfolio",
+    "6": "Appeal to the Rector",
+    "7": "Distance Learning"
+  }
 }

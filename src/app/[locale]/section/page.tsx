@@ -1,5 +1,5 @@
 "use client"
-import { fetchAboutTipi, fetchFaculties } from '@/app/lib/actions';
+import { fetchAboutTipi } from '@/app/lib/actions';
 import { HoverItemType } from '@/app/types/all.types';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -55,14 +55,6 @@ const InstitutHaqida = () => {
     getData();
   }, []);
   const [services] = useState<ServicesType[]>([
-    {
-      id: 1,
-      name_uz: t("hover.title10"),
-      name_ru: t("hover.title10"),
-      name_en: t("hover.title10"),
-      active: true,
-      href: `/${locale}/interaktiv-xizmatlar/iqtidorli-talabalar`,
-    },
     {
       id: 8,
       name_uz: t("hover.title8"),

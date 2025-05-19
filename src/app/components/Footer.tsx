@@ -79,6 +79,8 @@ const Footer = () => {
                     <div className='max-w-[276px] flex flex-col gap-2 text-white'>
                         <span className='max-w-[280px] font-bold text-white'>{t("footer.logo")}</span>
                         <p className=''>{t("footer.address")}</p>
+			            <p className=''>{t("footer.addressB")}</p>
+			            <p className=''>{t("footer.addressC")}</p>
                         <p className=''>{t("footer.phone")}</p>
                         <p className=''>{t("footer.mail")}</p>
                         <div className='flex w-full justify-between items-center gap-2 max-w-[150px] self-start text-white text-[20px]'>

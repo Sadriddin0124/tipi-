@@ -21,7 +21,7 @@ const Counter = ({data}: {data: CounterType[]}) => {
     }, []);
   return (
     <section className='w-full flex justify-center pt-2 md:pt-[60px] lg:pt-[122px] pb-10 lg:pb-[100px] px-3' data-aos="fade-up">
-        <div className='max-w-[1000px] w-full flex flex-col sm:flex-row items-center justify-center lg:justify-between gap-8'>
+        <div className='max-w-[1000px] w-full flex flex-col sm:flex-row items-center justify-center gap-8'>
             {
                 data?.map((item,index)=> {
                     return <div key={index} className={`${item?.title ? "gap-2 sm:gap-7 flex flex-col items-center" : "hidden lg:block w-[3px] h-full bg-[#404B7C]"}`}>

@@ -9,7 +9,9 @@ const Statistics = () => {
         {title: "", count: 0, icon: "", start: 0, increase: 0, price: ""},
         {title: t("statistics.item2"), count: 400, start: 0, increase: 3, price: ""}, 
         {title: "", count: 0, icon: "", start: 0, increase: 0, price: ""},
-        {title: t("statistics.item4"), count: 1, start: 1, increase: 0, price: t("statistics.item3")},
+        {title: t("statistics.item3"), count: 5, start: 0, increase: 1, price: ""},
+	{title: "", count: 0, icon: "", start: 0, increase: 0, price: ""},	
+	{title: t("statistics.item4"), count: 14875, start: 0, increase:65, price: ""}
     ]
   return (
     <Counter data={data}/>

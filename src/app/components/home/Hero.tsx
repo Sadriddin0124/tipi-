@@ -98,6 +98,22 @@ const Hero = () => {
                     height={600}
                   />
                 )}
+                <div
+                    className="z-40 absolute top-0 h-full w-full bg-white bg-opacity-25 text-center flex gap-12 flex-col items-center justify-center backdrop-blur-sm ">
+                    <h1 className="font-extrabold text-5xl text-white animate-bounce">{t("hero.year")}</h1>
+                    <div className="flex md:gap-12 gap-3 flex-wrap justify-center">
+                        <a href="https://t.me/Tipi_qabul_bot" target="_blank"
+                           className="flex items-center gap-3 py-6 px-12 font-bold bg_main rounded-2xl text-white">
+                            {t("hero.reg1")}
+                            <FaArrowRightLong/>
+                        </a>
+                        <a href="https://qabul.tipu.uz/" target="_blank"
+                           className="flex items-center gap-3 py-6 px-12 font-bold bg_main rounded-2xl text-white">
+                            {t("hero.reg2")}
+                            <FaArrowRightLong/>
+                        </a>
+                    </div>
+                </div>
               </header>
             </SwiperSlide>
           ))}
@@ -120,14 +136,15 @@ const Hero = () => {
           </button>
         </div> */}
       </div>
-      <div className="sm:hidden flex justify-center">
-        <button className="btn_gradient mt-6 text-[14px] md:text-[24px] rounded-[10px] gap-1 sm:gap-3 text-white">
-          <span className="flex items-center px-2 sm:px-4 py-1 sm:py-3 gap-3">
-            {btn}
-            <FaArrowRightLong />
-          </span>
-        </button>
-      </div>
+      {/*<div className="sm:hidden flex justify-center">*/}
+        {/*    <button*/}
+        {/*        className="btn_gradient mt-6 text-[14px] md:text-[24px] rounded-[10px] gap-1 sm:gap-3 text-white">*/}
+        {/*      <span className="flex items-center px-2 sm:px-4 py-1 sm:py-3 gap-3">*/}
+        {/*        {btn}*/}
+        {/*          <FaArrowRightLong/>*/}
+        {/*      </span>*/}
+        {/*    </button>*/}
+        {/*</div>*/}
     </div>
   );
 };
