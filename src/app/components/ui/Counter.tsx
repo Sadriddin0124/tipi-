@@ -11,7 +11,7 @@ import Aos from 'aos';
 import CountUp from 'react-countup';
 
 const Counter = ({data}: {data: CounterType[]}) => {
-    const icons = [Statistics1, "", Statistics2, "", Statistics3]
+    const icons = [Statistics1, "", Statistics2, "", Statistics3, "", Statistics3]
     useEffect(() => {
         Aos.init({
             duration: 1000,
@@ -19,6 +19,7 @@ const Counter = ({data}: {data: CounterType[]}) => {
             easing: 'linear',
         });
     }, []);
+
   return (
     <section className='w-full flex justify-center pt-2 md:pt-[60px] lg:pt-[122px] pb-10 lg:pb-[100px] px-3' data-aos="fade-up">
         <div className='max-w-[1000px] w-full flex flex-col sm:flex-row items-center justify-center gap-8'>
