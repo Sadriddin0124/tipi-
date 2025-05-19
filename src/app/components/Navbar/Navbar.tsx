@@ -311,10 +311,13 @@ const Navbar = () => {
   const HoverComponentLeave = () => {
     setHoverStatus(0);
   };
+
   const [dropDown, setDropDown] = useState<number | undefined>(0);
+
   const openDropDown = (id: number | undefined) => {
     setDropDown(dropDown === id ? 0 : id);
   };
+
   const closeDropDown = (id: number | undefined) => {
     setDropDown(dropDown === id ? 0 : id);
   };
@@ -322,8 +325,8 @@ const Navbar = () => {
   return (
     <header className="min-h-[70px] sm:min-h-[110px]">
       <nav className={`${isScrolled ? 'scrolled fixed w-full z-[200] shadow-md' : 'w-full z-[200] shadow-md'} ease-linear duration-200 flex justify-center flex-col items-center px-3 bg_main`}>
-        <div className="py-[10px] w-full max-w-[1400px] flex items-center justify-between">
-          <Link href="/" className="flex items-center max-w-[400px] gap-[20px]">
+        <div className="py-[10px] w-full max-w-[1400px] gap-4 flex items-center justify-between">
+          <Link href="/" className="flex items-center max-w-[400px] md:min-w-[150px] gap-[20px]">
             <Image
               src={Logo}
               alt="Logo"
@@ -332,16 +335,16 @@ const Navbar = () => {
               priority
               className="w-[50px] sm:w-[90px] h-[50px] sm:h-[90px]"
             />
-            <span className="hidden text-white sm:inline-block text-[18px] font-bold">
+            <span className="hidden text-white sm:inline-block 2xl:text-[18px] font-bold">
               {t("nav.logo")}
             </span>
           </Link>
-          <div className="hidden xl:flex items-center gap-[22px]">
-            <ul className="flex items-center gap-[22px]">
+          <div className="hidden xl:flex items-center gap-4 2xl:gap-[22px]">
+            <ul className="flex items-center gap-3">
               {navLink.map((item) => (
                 <li
                   key={item.id}
-                  className="text-[20px] whitespace-nowrap text-white flex flex-col items-start"
+                  className="text-lg whitespace-nowrap text-white flex flex-col items-start"
                   onMouseLeave={() => HoverLeave()}
                   onMouseEnter={() => HoverEnter(item.id)}
                 >

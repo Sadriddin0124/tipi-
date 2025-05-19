@@ -49,7 +49,7 @@ const AboutFaculty = ({
   const locale = usePathname().split("/")[1];
 
   return (
-    <section className={`flex justify-center w-full `}>
+    <section className={`flex justify-center w-full px-4`}>
       <div className="max-w-[1400px] w-full flex flex-col ">
         {item?.kind === "IMAGE" && (
           <div>
