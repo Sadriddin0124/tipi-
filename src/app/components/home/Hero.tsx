@@ -102,7 +102,7 @@ const Hero = () => {
                     className="z-40 absolute top-0 h-full w-full bg-white bg-opacity-25 text-center flex gap-12 flex-col items-center justify-center backdrop-blur-sm ">
                     <h1 className="font-extrabold text-5xl text-white animate-bounce">{t("hero.year")}</h1>
                     <div className="flex md:gap-12 gap-3 flex-wrap justify-center">
-                        <a href="https://t.me/Tipi_qabul_bot" target="_blank"
+                        <a href="https://t.me/qabul_tipu_bot" target="_blank"
                            className="flex items-center gap-3 py-6 px-12 font-bold bg_main rounded-2xl text-white">
                             {t("hero.reg1")}
                             <FaArrowRightLong/>
