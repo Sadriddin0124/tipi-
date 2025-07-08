@@ -7,7 +7,8 @@
     "link4": "Yangiliklar",
     "link5": "Bo‘limlar",
     "link6": "Interaktiv xizmatlar",
-    "link7": "Barcha bo‘limlar"
+    "link7": "Barcha bo‘limlar",
+    "link8": "Yo‘nalishlar"
   },
   "path": {
     "mainPage": "Asosiy sahifa",
@@ -56,8 +57,8 @@
     "title": "Hoziroq online ro'yxatdan o‘tish",
     "btn": "Ro'yxatdan o‘tish",
     "year": "Qabul 2025",
-    "reg1":"Telegram orqali ro'yxatdan  o'tish",
-    "reg2":"Web-sayt orqali ro'yxatdan  o'tish"
+    "reg1": "Telegram orqali ro'yxatdan  o'tish",
+    "reg2": "Web-sayt orqali ro'yxatdan  o'tish"
   },
   "statistics": {
     "item1": "Talabalar",
@@ -190,9 +191,6 @@
   "exchange": {
     "title": "Almashinuv dasturi"
   },
-  "directions": {
-    "title": "Yo‘nalishlar"
-  },
   "educator": {
     "title": "Ta`lim",
     "edu_t1": "Bakalavr",
@@ -267,5 +265,8 @@
     "5": "Portfolio",
     "6": "Rektorga murojaat",
     "7": "Masofaviy kurslar"
+  },
+  "directions": {
+    "title": "Yo'nalishlar"
   }
 }

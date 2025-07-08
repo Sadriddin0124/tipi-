@@ -165,6 +165,7 @@ const Navbar = () => {
   const [sections, setSections] = useState<HoverItemType[]>([]);
   const [greenInstitute, setGreenInstitute] = useState<HoverItemType[]>([]);
   const [faculties, setFaculties] = useState([]);
+  const [directory, setDirectory] = useState<HoverItemType[]>([]);
   const navLink: NavLinkType[] = [
     {
       id: 1,
@@ -213,6 +214,14 @@ const Navbar = () => {
       hover: true,
       title1: {title: t("nav.link4"), href: `/${activeLang?.value}/section?id=NEWS`},
       item1: News
+    },
+    {
+      id: 6,
+      label: t("nav.link8"),
+      path: `/${activeLang?.value}/directions`,
+      hover: false,
+      title1: {title: t("nav.link8"), href: `/${activeLang?.value}/section?id=DIRECTION`},
+      // item1: directory
     },
     {
       id: 8,
