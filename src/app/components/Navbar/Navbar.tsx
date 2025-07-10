@@ -65,6 +65,7 @@ const Navbar = () => {
     const Destinations = [
       { label: t("path.link1"), href: "ilmiy-yonalish" },
       { label: t("path.link2"), href: "fakultetlar" },
+      { label: t("path.link11"), href: "abituriyentlar" },
       { label: t("path.link3"), href: "institut-haqida" },
       { label: t("path.link4"), href: "yangiliklar" },
       { label: t("path.link5"), href: "iqtidorli-talabalar" },
@@ -165,7 +166,6 @@ const Navbar = () => {
   const [sections, setSections] = useState<HoverItemType[]>([]);
   const [greenInstitute, setGreenInstitute] = useState<HoverItemType[]>([]);
   const [faculties, setFaculties] = useState([]);
-  const [directory, setDirectory] = useState<HoverItemType[]>([]);
   const navLink: NavLinkType[] = [
     {
       id: 1,
@@ -218,7 +218,7 @@ const Navbar = () => {
     {
       id: 6,
       label: t("nav.link8"),
-      path: `/${activeLang?.value}/directions`,
+      path: `/${activeLang?.value}/direction`,
       hover: false,
       title1: {title: t("nav.link8"), href: `/${activeLang?.value}/section?id=DIRECTION`},
       // item1: directory

@@ -8,7 +8,7 @@
     "link5": "Departments",
     "link6": "Interactive Services",
     "link7": "All sections",
-    "link8": "Directions"
+    "link8": "Entrants"
   },
   "path": {
     "mainPage": "Main Page",
@@ -124,8 +124,8 @@
   "footer": {
     "logo": "TASHKENT UNIVERSITY OF ECONOMICS AND PEDAGOGY",
     "address": "Main Building: Tashkent Region, Chirchiq city, Metallurgchilar street, building 13.",
-    "addressB":"Building B: Tashkent Region, Chirchiq city, A.Navoiy street, building 255.",
-    "addressC":"Building C: Tashkent Region, Bekobod city, Shiroq street, building 350.",
+    "addressB": "Building B: Tashkent Region, Chirchiq city, A.Navoiy street, building 255.",
+    "addressC": "Building C: Tashkent Region, Bekobod city, Shiroq street, building 350.",
     "phone": "Phone: +998 55 900 06 04",
     "mail": "Email: tipiuniversity@mail.uz",
     "link1": "Contacts",
@@ -286,5 +286,46 @@
     "5": "Portfolio",
     "6": "Appeal to the Rector",
     "7": "Distance Learning"
+  },
+  "abiturents": {
+    "title": "Entrants"
+  },
+  "table": {
+    "bachelor_heading": "Regarding the determination of tuition fees for bachelor's degree programs at the Tashkent University of Economics and Pedagogy for the 2025–2026 academic year",
+    "master_heading": "Regarding the determination of tuition fees for master's degree programs at the Tashkent University of Economics and Pedagogy for the 2025–2026 academic year",
+    "columns": {
+      "number": "№",
+      "code": "Program code",
+      "name": "Program name",
+      "form": "Study mode",
+      "price": "Tuition fee",
+      "year": "Admission 2025 - 2026"
+    }
+  },
+  "programs": {
+    "year": "Admission 2025 - 2026",
+    "60410100": "economy (by sectors and sectors)",
+    "60610300": "computer injection",
+    "60110900": "foreign language and literature",
+    "60110100": "pedagogy",
+    "60110400": "primary education",
+    "60110200": "preschool",
+    "60220300": "history",
+    "60111200": "Physical Culture",
+    "60110700": "Uzbek Language and Literature",
+    "60310300": "Psychology",
+    "60730100": "Architecture",
+    "60721700": "Cadastre",
+    "60711200": "Metallurgical Engineering",
+    "60710400": "Energy Engineering",
+    "60230100": "Philology and Language Teaching",
+    "60610400": "Software Engineering",
+    "70610101": "Computer Systems and Software",
+    "70110901": "foreign language and literature",
+    "70110701": "Uzbek Language and Literature"
+  },
+  "education": {
+    "Kunduzgi": "Full-time",
+    "Sirtqi": "Part-time"
   }
 }

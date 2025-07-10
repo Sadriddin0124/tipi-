@@ -16,7 +16,7 @@ const Banner = () => {
       </div>
       <div className="absolute top-1/2 left-1/2 w-full h-full bg-black/50 transform -translate-x-1/2 -translate-y-1/2">
         <h1 className="absolute  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-4xl text-center text-white">
-          {t("directions.title")}
+          {t("abiturents.title")}
         </h1>
       </div>
     </div>

@@ -8,7 +8,7 @@
     "link5": "Bo‘limlar",
     "link6": "Interaktiv xizmatlar",
     "link7": "Barcha bo‘limlar",
-    "link8": "Yo‘nalishlar"
+    "link8": "Abituriyentlar"
   },
   "path": {
     "mainPage": "Asosiy sahifa",
@@ -21,7 +21,8 @@
     "link7": "Axborot Texnologiyalari",
     "link8": "Almashinuv dasturi",
     "link9": "Pedagoglar",
-    "link10": "Pedagog"
+    "link10": "Pedagog",
+    "link11": "Abituriyentlar"
   },
   "hover": {
     "title1": "Bo‘limlar",
@@ -266,7 +267,45 @@
     "6": "Rektorga murojaat",
     "7": "Masofaviy kurslar"
   },
-  "directions": {
-    "title": "Yo'nalishlar"
+  "abiturents": {
+    "title": "Abituriyentlar"
+  },
+  "table": {
+    "bachelor_heading": "Toshkent iqtisodiyot va pedagogika universitetida 2025-2026 o‘quv yilida bakalavriyat ta’lim yo‘nalishlari to‘lov miqdorlarini belgilash tо‘g‘risida",
+    "master_heading": "Toshkent iqtisodiyot va pedagogika universitetida 2025-2026 o‘quv yilida magistratura ta’lim yo‘nalishlari to‘lov miqdorlarini belgilash tо‘g‘risida",
+    "columns": {
+      "number": "№",
+      "code": "Yo‘nalish kodi",
+      "name": "Yo‘nalish nomi",
+      "form": "Ta’lim shakli",
+      "price": "Shartnoma narxi",
+      "year": "Qabul 2025 - 2026"
+    }
+  },
+   "programs": {
+    "year": "Qabul 2025 - 2026",
+    "60410100": "Iqtisodiyot (tarmoqlar va sohalar bo'yicha)",
+    "60610300": "Kompyuter injiringi",
+    "60110900": "Xorijiy til va adabiyoti",
+    "60110100": "Pedagogika",
+    "60110400": "Boshlang‘ich ta’lim",
+    "60110200": "Maktabgacha ta’lim",
+    "60220300": "Tarix",
+    "60111200": "Jismoniy madaniyat",
+    "60110700": "O‘zbek tili va adabiyoti",
+    "60310300": "Psixologiya",
+    "60730100": "Arxitektura",
+    "60721700": "Kadastr",
+    "60711200": "Metallurgiya muhandisligi",
+    "60710400": "Energetika muhandisligi",
+    "60230100": "Filologiya va tillarni o‘qitish",
+    "60610400": "Dasturiy injiniring",
+    "70610101": "Kompyuter tizimlari va ularning dasturiy ta’minoti",
+    "70110901": "Xorijiy til va adabiyoti",
+    "70110701": "O‘zbek tili va adabiyoti"
+  },
+  "education": {
+    "Kunduzgi": "Kunduzgi",
+    "Sirtqi": "Sirtqi"
   }
 }
