@@ -8,18 +8,21 @@ import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import Aos from 'aos';
 import apiClient from '@/app/lib/apiClient';
+import Link from 'next/link';
 const Contact = () => {
     const t = useTranslations()
     const data = [
         {
             icon: <FaPhoneAlt size={20}/>,
             title: t("contact.num_t"),
-            value: "+998 55 900 06 04"
+            value: "tel:+998559000604",
+            label: "+998 55 900 06 04"
         },
         {
             icon: <FaPhoneAlt size={20}/>,
             title: t("contact.mail_t"),
-            value: "tipiuniversity@mail.uz"
+            label: "info@tipu.uz",
+            value: "https://mail.google.com/mail/?view=cm&fs=1&to=info@tipu.uz"
         },
         // {
         //     icon: <FaPhoneAlt size={20}/>,
@@ -96,7 +99,7 @@ const Contact = () => {
                                 <span className='text_main bg-white p-3 rounded-full'>{item?.icon}</span>
                                 <div className='flex flex-col text-white text-[16px] lg:text-[20px] font-[600] gap-[14px]'>
                                     <span>{item?.title}</span>
-                                    <a href="" className={index === 0 ? 'whitespace-nowrap' : ""}>{item?.value}</a>
+                                    <Link href={item?.value} target='_blank' className={index === 0 ? 'whitespace-nowrap' : ""}>{item?.label}</Link>
                                 </div>
                             </div>
                         })
