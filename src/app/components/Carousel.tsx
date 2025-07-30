@@ -26,7 +26,7 @@ const Carousel = ({
     spaceBetween={40}
     pagination={{
       clickable: true,
-      enabled: true
+      enabled: false
     }}
     autoplay={{
       delay: 3000, // Delay in ms between each slide (3 seconds)
