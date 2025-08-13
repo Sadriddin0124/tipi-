@@ -7,6 +7,7 @@ import Statistics from '@/app/components/home/Statistics'
 import {useTranslations} from 'next-intl'
 import React from 'react'
 import InteractiveServices from "@/app/components/home/InteractiveServices";
+import Partners from '../components/home/partners'
 
 const Home = () => {
     const t = useTranslations()
@@ -20,6 +21,7 @@ const Home = () => {
             <InteractiveServices/>
             <Events/>
             <Contact/>
+            <Partners/>
         </div>
     )
 }
