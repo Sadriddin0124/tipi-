@@ -38,16 +38,6 @@ const logos = [
   { logo: Client8, link: "https://sbe.sakarya.edu.tr/" },
   { logo: Client9, link: "https://edu.uz/" },
   { logo: Client10, link: "https://uztitu.uz/uz" },
-  { logo: Client1, link: "https://ege.edu.tr/eng-0/homepage.html" },
-  { logo: Client2, link: "https://ayu.edu.kz/kz/" },
-  { logo: Client3, link: "https://selcuk.edu.tr/" },
-  { logo: Client4, link: "https://auezov.edu.kz/rus/" },
-  { logo: Client5, link: "https://adu.edu.az/" },
-  { logo: Client6, link: "https://www.khazar.org/" },
-  { logo: Client7, link: "https://www.bandirma.edu.tr/" },
-  { logo: Client8, link: "https://sbe.sakarya.edu.tr/" },
-  { logo: Client9, link: "https://edu.uz/" },
-  { logo: Client10, link: "https://uztitu.uz/uz" },
 ];
 
 type RowProps = {
