@@ -15,14 +15,14 @@ interface TableRow {
 const bakalavriat: TableRow[] = [
   {
     name: "Iqtisodiyot (tarmoqlar va sohalar bo'yicha)",
-    education: ["Kunduzgi", "Sirtqi"],
+    education: ["Kunduzgi", "Kechki"],
     code: "60410100",
     year: "Qabul 2025 - 2026",
     price: ["17000000", "15000000"],
   },
   {
     name: "Kompyuter injiringi",
-    education: ["Kunduzgi", "Sirtqi"],
+    education: ["Kunduzgi", "Kechki"],
     code: "60610300",
     year: "Qabul 2025 - 2026",
     price: ["17000000", "15000000"],
@@ -78,61 +78,62 @@ const bakalavriat: TableRow[] = [
   },
   {
     name: "Psixologiya",
-    education: ["Kunduzgi", "Sirtqi"],
+    education: ["Kunduzgi", "Kechki"],
     code: "60310300",
     year: "Qabul 2025 - 2026",
     price: ["16000000", "14000000"],
   },
   {
     name: "Arxitektura",
-    education: ["Kunduzgi", "Sirtqi"],
+    education: ["Kunduzgi", "Kechki"],
     code: "60730100",
     year: "Qabul 2025 - 2026",
     price: ["16000000", "14000000"],
   },
   {
     name: "Kadastr",
-    education: ["Kunduzgi", "Sirtqi"],
+    education: ["Kunduzgi", "Kechki"],
     code: "60721700",
     year: "Qabul 2025 - 2026",
     price: ["16000000", "14000000"],
   },
   {
     name: "Metallurgiya muhandisligi",
-    education: ["Kunduzgi", "Sirtqi"],
+    education: ["Kunduzgi", "Kechki"],
     code: "60711200",
     year: "Qabul 2025 - 2026",
     price: ["16000000", "14000000"],
   },
   {
     name: "Energetika muhandisligi",
-    education: ["Kunduzgi", "Sirtqi"],
+    education: ["Kunduzgi", "Kechki"],
     code: "60710400",
     year: "Qabul 2025 - 2026",
     price: ["16000000", "14000000"],
   },
   {
     name: "Filologiya va tillarni o‘qitish",
-    education: ["Kunduzgi", "Sirtqi"],
+    education: ["Kunduzgi", "Kechki"],
     code: "60230100",
     year: "Qabul 2025 - 2026",
     price: ["16000000", "14000000"],
   },
   {
     name: "Dasturiy injiniring",
-    education: ["Kunduzgi", "Sirtqi"],
+    education: ["Kunduzgi", "Kechki"],
     code: "60610400",
     year: "Qabul 2025 - 2026",
     price: ["16000000", "14000000"],
   },
 ];
+
 const magistratura: TableRow[] = [
   {
     name: "Kompyuter tizimlari va ularning dasturiy ta’minoti",
     education: ["Kunduzgi"],
     code: "70610101",
     year: "Qabul 2025 - 2026",
-    price: ["17000000"],
+    price: ["21000000"],
   },
   {
     name: "Xorijiy til va adabiyoti",
