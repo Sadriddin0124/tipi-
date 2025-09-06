@@ -40,9 +40,10 @@ const SingleNews = () => {
         });
     }
   }, [slug]);
-  const category = slug === "news" ? "SCIENCE" : slug == "science" ? "SPORT" : "EVENT"
+  const category =
+    slug === "news" ? "SCIENCE" : slug == "science" ? "SPORT" : "EVENT";
   console.log(category);
-  
+
   return (
     <section className="px-3 overflow-hidden pb-6 pt-10 md:pt-[100px] md:pb-[80px]">
       <div className="max-w-[1320px] mx-auto flex flex-col gap-6 items-center">
@@ -56,33 +57,45 @@ const SingleNews = () => {
             : ""}
         </h2>
         <div className="grid max-w-[400px] sm:max-w-[100%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-          {newsData?.filter(item=> item?.category === category)?.map((item, index) => (
-            item?.active &&
-              <div
-                key={index}
-                className="rounded-[10px] w-full overflow-hidden shadow-lg flex flex-col"
-              >
-                <div className="bg-[#D9D9D9] w-full min-h-[180px] h-full flex justify-center items-center">
-                  <Image
-                    src={item?.image?.file}
-                    alt={`Slide ${index + 1}`}
-                    className=" object-cover w-full h-[180px]"
-                    width={500}
-                    height={400}
-                  />
-                </div>
-                <div className='pt-[26px] px-[18px] pb-[20px] text_main flex flex-col gap-4'>
-              <span className='text-[20px] font-[600]'>{item?.created_at?.slice(0,10)}</span>
-              <p className='text-[17px] min-h-[70px] font-[600] line-clamp-4 text-center leading-5'>{locale ==="ru" ? item?.name_ru : locale === "uz" ? item?.name_uz : item?.name_ru}</p>
-              <Link
-                      href={`/${locale}/news?id=${item?.id}`}
-                      className="hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]"
-                    >
-                      {t("pedagogue.btn")}
-                    </Link>
-            </div>
-              </div>
-          ))}
+          {newsData
+            ?.filter((item) => item?.category === category)
+            ?.map(
+              (item, index) =>
+                item?.active && (
+                  <div
+                    key={index}
+                    className="rounded-[10px] w-full overflow-hidden shadow-lg flex flex-col"
+                  >
+                    <div className="bg-[#D9D9D9] w-full min-h-[180px] h-full flex justify-center items-center">
+                      <Image
+                        src={item?.image?.file}
+                        alt={`Slide ${index + 1}`}
+                        className=" object-cover w-full h-[180px]"
+                        width={500}
+                        height={400}
+                      />
+                    </div>
+                    <div className="pt-[26px] px-[18px] pb-[20px] text_main flex flex-col gap-4">
+                      <span className="text-[20px] font-[600]">
+                        {item?.created_at?.slice(0, 10)}
+                      </span>
+                      <p className="text-[17px] min-h-[70px] font-[600] line-clamp-4 text-center leading-5">
+                        {locale === "ru"
+                          ? item?.name_ru
+                          : locale === "uz"
+                          ? item?.name_uz
+                          : item?.name_en}
+                      </p>
+                      <Link
+                        href={`/${locale}/news?id=${item?.id}`}
+                        className="hover:bg-white self-end text-white px-6 py-3 rounded-lg border-2 border-transparent hover:border-[#404B7C] ease-linear duration-200 bg-[#404B7C] hover:text-[#404B7C]"
+                      >
+                        {t("pedagogue.btn")}
+                      </Link>
+                    </div>
+                  </div>
+                )
+            )}
         </div>
       </div>
     </section>
